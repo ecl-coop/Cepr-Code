@@ -1,0 +1,29 @@
+{
+  "name": "cepr",
+  "version": "1.0.0",
+  "description": "cepr app",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "start": "npm-run-all --parallel watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "ECL",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "include-media": "^1.4.9",
+    "normalize.css": "^8.0.0",
+    "svgxuse": "^1.2.6"
+  }
+}

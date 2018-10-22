@@ -1,0 +1,207 @@
+.logo-cepr {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    .logo-med {
+        display: none;
+    }
+}
+
+
+#menubar-container{
+    background-color: var(--color-Black);
+    list-style: none;
+    color: var(--color-White);
+    font-family: var(--font-Display);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+        padding: 0 1.5rem;
+        .column{
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+}
+.menubar__header {
+        height: 4rem;
+        background-color: var(--color-White);
+        padding: 0 1.5rem;
+    }
+
+.menubar-toggle,
+.search-toggle {
+    line-height: 1;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    height: 3rem;
+}
+.menubar__logo {
+    position: relative;
+    height: 50%;
+}
+
+.menubar__btn,
+.menubar__search {
+    position: relative;
+    height: 50%;
+    fill: var(--color-Black);
+    align-self: center;
+}
+
+    .menubar-item,
+    .menu-item,
+    .submenu-item,
+    .menubar-item-donate {
+        height: 3rem;
+        border-bottom: 0.5px solid var(--color-Primary-light);
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+    .menu-container,
+    .submenu-container {
+    background-color: var(--color-Black);
+    color: var(--color-White);
+    }
+
+.menu-container{
+    text-transform: capitalize;
+    display: none;
+}
+    .menubar-target, .menu-target, .submenu-target {
+        color: var(--color-White);
+        padding-left: 2rem;
+    }
+
+.menubar-item-donate{
+    background-color: var(--color-Action-light);
+    background-image: url("/img/donate-background.svg");
+    background-size: 120%;
+    background-position-x: center;
+    border-bottom: none;
+}
+.menubar-target-donate{
+    color: var(--color-Primary-dark);
+    font-family: var(--font-Primary);
+    font-weight: 700;
+    padding-left: 2rem;
+}
+
+@include media ('>phone', '<tablet') {
+        #menubar-container,
+        .menubar__header {
+            padding: 0 2rem;
+        }
+
+        .menubar-item,
+        .menu-item,
+        .submenu-item,
+        .menubar-item-donate {
+            height: 4rem;
+        }
+    }
+@include media ('>=tablet') {
+    #menubar-container{
+        background-color: var(--color-White);
+        border-top: 0.8px solid var(--color-Black);
+        border-bottom: 0.8px solid var(--color-Black);
+        width: 100vw;
+        .column{
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding: 0 0;
+            flex-basis: auto;
+            justify-content: left;
+        }
+    }
+    .menubar-item,
+    .menu-item,
+    .submenu-item,
+    .menubar-item-donate {
+        margin-left: 0rem;
+        margin-right: 0rem;
+        border-bottom: none;
+    }
+    .menubar-item-donate{
+        background-color: transparent;
+        border-left: 0.8px solid var(--color-Black);
+        border-right: 0.8px solid var(--color-Black);
+        width: 58px;
+        background-size: 400%;
+        display: flex;
+    }
+     .menubar-target{
+             color: var(--color-Black);
+     }
+
+     .menubar-target-donate {
+         text-align: center;
+         width: 100%;
+     }
+
+    .menubar-target,
+    .menu-target,
+    .submenu-target {
+        font-size: .5625rem;
+        padding: 1rem 0;
+    }
+
+        .menubar-target,
+        .menu-target,
+        .menubar-target-donate,
+        .submenu-target {
+            font-size: .5625rem;
+            padding: 1rem 0;
+        }
+
+    .menubar__header {
+        height: 5rem;
+        color: var(--color-Black);
+            padding-left: 2rem;
+            padding-right: 2rem;
+    }
+    .menubar__logo {
+        height: 100%;
+        color: var(--color-Black);
+        margin: 0 auto;
+    }
+    .menubar-toggle {
+        display: none;
+    }
+
+    .menu-container{
+        .column{
+           display: none;
+        }
+    }
+    .submenu-container{
+        .column{
+        display: none;
+        }
+    }
+}
+
+
+@include media ('>=desktop') {
+    .menubar-container{
+        padding: 0 auto;
+    }
+    
+    .menubar__header {
+        height: 6rem;
+        }
+        .menubar-target, .menu-target, .submenu-target {
+            font-size: .75rem;
+        }
+
+        .menu-container, .submenu-container{
+            //display: none;
+            //width: 100vw;
+        }
+
+        
+    }
