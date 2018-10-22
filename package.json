@@ -23,6 +23,7 @@
   "dependencies": {
     "bulma": "^0.7.2",
     "include-media": "^1.4.9",
+    "jshint": "^2.9.6",
     "normalize.css": "^8.0.0",
     "svgxuse": "^1.2.6"
   }
