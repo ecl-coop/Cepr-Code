@@ -1,29 +1,15 @@
+////////////////////////////////////////////
+/////MENU HEADER STYLES
 .logo-cepr {
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
+
     .logo-med {
         display: none;
     }
-}
-
-
-#menubar-container{
-    background-color: var(--color-Black);
-    list-style: none;
-    color: var(--color-White);
-    font-family: var(--font-Display);
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-        padding: 0 1.5rem;
-        .column{
-            padding: 1rem 0;
-            display: flex;
-            align-items: center;
-        }
 }
 .menubar__header {
         height: 4rem;
@@ -53,14 +39,38 @@
     align-self: center;
 }
 
+/////////////////////////////////////////////////////////
+//////////Menu Styles
+
+#menubar-container {
+    background-color: var(--color-Black);
+    list-style: none;
+    color: var(--color-White);
+    font-family: var(--font-Display);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100vw;
+    justify-content: center;
+}
     .menubar-item,
     .menu-item,
     .submenu-item,
     .menubar-item-donate {
+        min-width: 100%;
+        //flex-grow: 1;
+        //flex-shrink: 1;
         height: 3rem;
         border-bottom: 0.5px solid var(--color-Primary-light);
         margin-left: -2rem;
         margin-right: -2rem;
+        display: flex;
+        align-items: center;
+        position: relative;
     }
     .menu-container,
     .submenu-container {
@@ -69,13 +79,19 @@
     }
 
 .menu-container{
-    text-transform: capitalize;
     display: none;
 }
     .menubar-target, .menu-target, .submenu-target {
-        color: var(--color-White);
-        padding-left: 2rem;
+        padding: 0 2rem;
     }
+
+    .menubar-target{
+        color: var(--color-White);
+    }
+    .menu-target,
+    .submenu-target {
+        color: var(--color-White);
+        text-transform: capitalize;}
 
 .menubar-item-donate{
     background-color: var(--color-Action-light);
@@ -104,19 +120,41 @@
             height: 4rem;
         }
     }
+
+
+//////////////////////////////////////////////
+///////////////////////////MENU HEADER TABLET
+
 @include media ('>=tablet') {
+
+    .menubar__header {
+        height: 5rem;
+        color: var(--color-Black);
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .menubar__logo {
+        height: 100%;
+        color: var(--color-Black);
+        margin: 0 auto;
+    }
+
+    .menubar-toggle {
+        display: none;
+    }
+
+//////////////////////////////////////////////////
+/////////////////MENU CONTENT TABLET
     #menubar-container{
+        flex-direction: row;
+        justify-content: space-between;
         background-color: var(--color-White);
         border-top: 0.8px solid var(--color-Black);
         border-bottom: 0.8px solid var(--color-Black);
         width: 100vw;
-        .column{
-            flex-direction: row;
-            flex-wrap: nowrap;
-            padding: 0 0;
-            flex-basis: auto;
-            justify-content: left;
-        }
+        position: relative;
+        padding: 0 0;
     }
     .menubar-item,
     .menu-item,
@@ -125,6 +163,12 @@
         margin-left: 0rem;
         margin-right: 0rem;
         border-bottom: none;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        min-width: 4rem;
+        height: 100%;
     }
     .menubar-item-donate{
         background-color: transparent;
@@ -133,6 +177,7 @@
         width: 58px;
         background-size: 400%;
         display: flex;
+        margin-right: 2rem;
     }
      .menubar-target{
              color: var(--color-Black);
@@ -147,7 +192,7 @@
     .menu-target,
     .submenu-target {
         font-size: .5625rem;
-        padding: 1rem 0;
+        padding: 1rem auto;
     }
 
         .menubar-target,
@@ -158,36 +203,32 @@
             padding: 1rem 0;
         }
 
-    .menubar__header {
-        height: 5rem;
-        color: var(--color-Black);
-            padding-left: 2rem;
-            padding-right: 2rem;
-    }
-    .menubar__logo {
-        height: 100%;
-        color: var(--color-Black);
-        margin: 0 auto;
-    }
-    .menubar-toggle {
-        display: none;
-    }
+    .menu-container {
+           display: flex;
+           flex-direction: row;
+           position: absolute;
+           justify-content: space-around;
+           left: 0;
+           top: 0;
+           width: 100vw;
+           transform: translateY(3rem);
+        }
 
-    .menu-container{
-        .column{
-           display: none;
-        }
-    }
-    .submenu-container{
-        .column{
-        display: none;
-        }
-    }
+    .submenu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        transform: translateY(3rem);
+        width: 100vw;
+        position: absolute;
+        left: 0;
+    }   
 }
 
 
+
 @include media ('>=desktop') {
-    .menubar-container{
+    #menubar-container{
         padding: 0 auto;
     }
     
@@ -199,9 +240,9 @@
         }
 
         .menu-container, .submenu-container{
+            .column{
             //display: none;
+            }
             //width: 100vw;
         }
-
-        
     }
