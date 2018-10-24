@@ -40,4 +40,17 @@
 
 body{
     font-family: var(--font-Primary), sans-serif;
+    background-color: var(--color-White);
+}
+
+#viewport{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main-container{
+    width: 100%;
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
 }

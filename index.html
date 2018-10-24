@@ -10,94 +10,96 @@
     <title>CEPR Home</title>
 </head> 
 <body>
-    <section id="navbar">
-        <header class="menubar__header level is-marginless is-mobile">
-            <div class="menubar__btn level-left">
-                <button type="button" id="toggle-menubar" class="menubar-toggle" aria-expanded="false" aria-controls="menubar-collapse">
-                    <svg width="36" height="36">
-                        <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+    <div id="viewport" class="main-container">
+        <section id="navbar">
+            <header class="menubar__header level is-marginless is-mobile">
+                <div class="menubar__btn level-left">
+                    <button type="button" id="toggle-menubar" class="menubar-toggle" aria-expanded="false" aria-controls="menubar-collapse">
+                        <svg width="36" height="36">
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+                        </svg>
+                        <span class="is-sr-only">Toggle navigation</span>
+                    </button>
+                </div>
+                <a class="menubar__logo level-item"  href="/" title="Center for Economic and Policy Research">
+                    <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-cepr">
+                        <defs>
+                            <style>
+                                .darkBlue {fill: #07074e;}
+                                .lightBlue {fill: #0066b3;}
+                                .grey {fill: #bcbec0;}
+                            </style>
+                        </defs>
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-small" class="is-inline-block-mobile is-hidden-tablet"></use>
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-med" class="is-flex-tablet-only logo-med"></use>
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-large" class="is-flex-desktop is-hidden-touch"></use>
                     </svg>
-                    <span class="is-sr-only">Toggle navigation</span>
-                </button>
+                </a>
+                <div class="menubar__search level-right">
+                    <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse" aria-expanded="false" aria-controls="search-collapse">
+                        <svg width="36" height="36">
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
+                        </svg>
+                        <span class="is-sr-only">Toggle navigation</span>
+                    </button>
+                </div>
+            </header>
+            <nav role="navigation"> 
+                <ul id="menubar-container">
+                    <li class="menubar-item"><a href="#" class="menubar-target">Our Work</a>
+                        <ul id="menubar-OurWork" class="menu-container">
+                            <li class="menu-item">
+                                <a href="#" class="menu-target">Us</a>
+                                    <ul id="menu-US" class="submenu-container">
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Workers</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Inequality</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Growth</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Goverment</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Wall Street</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Health and Social Programs</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-target">Intellectual Property</a></li>
+                                    </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-target">World</a>
+                                    <ul id="menu-World" class="submenu-container">
+                                        <li class="submenu-item"><a href="" class="submenu-target">Europe</a></li>
+                                        <li class="submenu-item"><a href="" class="submenu-target">Globalization and trade</a></li>
+                                        <li class="submenu-item"><a href="" class="submenu-target">Latin America and the Caribean</a></li>
+                                        <li class="submenu-item"><a href="" class="submenu-target">US Foreign Policy</a></li>
+                                    </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-target">Blogs</a>
+                                    <ul id="menu-Blogs" class="submenu-container">
+                                        <li class="submenu-item"><a href="" class="submenu-target">Beat the Press</a></li>
+                                        <li class="submenu-item"><a href="" class="submenu-target">The Americas Blog</a></li>
+                                        <li class="submenu-item"><a href="" class="submenu-target">Haiti Relief and Reconstruction Watch</a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menubar-item"><a href="#" class="menubar-target">Experts and Staff</a></li>
+                    <li class="menubar-item"><a href="#" class="menubar-target">Publications and events</a></li>
+                    <li class="menubar-item"><a href="#" class="menubar-target">Projects and Resources</a></li>
+                    <li class="menubar-item"><a href="#" class="menubar-target">Beat the Press</a></li>
+                    <li class="menubar-item"><a href="#" class="menubar-target">About</a></li>
+                    <li class="menubar-item-donate"><a href="#" class="menubar-target-donate">donate</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="section">
+            <div class="main-articles column">
+                <article class="main-article-1">
+                    <img src="" alt="Article Picture">
+                    <title>Presidential Election Is about a Fight for Democracy in Brazil</title>
+                    <sub>The world is watching Brazil’s elections, probably as never before.</sub>
+                    <p>BY MARK WEISBROT OCTOBER 7, 2018</p>
+                </article>
             </div>
-            <a class="menubar__logo level-item"  href="/" title="Center for Economic and Policy Research">
-                <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-cepr">
-                    <defs>
-                        <style>
-                            .darkBlue {fill: #07074e;}
-                            .lightBlue {fill: #0066b3;}
-                            .grey {fill: #bcbec0;}
-                        </style>
-                    </defs>
-                    <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-small" class="is-inline-block-mobile is-hidden-tablet"></use>
-                    <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-med" class="is-flex-tablet-only logo-med"></use>
-                    <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-large" class="is-flex-desktop is-hidden-touch"></use>
-                </svg>
-            </a>
-            <div class="menubar__search level-right">
-                <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse" aria-expanded="false" aria-controls="search-collapse">
-                    <svg width="36" height="36">
-                        <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
-                    </svg>
-                    <span class="is-sr-only">Toggle navigation</span>
-                </button>
-            </div>
-        </header>
-        <nav role="navigation"> 
-            <ul id="menubar-container">
-                <li class="menubar-item"><a href="#" class="menubar-target">Our Work</a>
-                    <ul id="menubar-OurWork" class="menu-container">
-                        <li class="menu-item">
-                            <a href="#" class="menu-target">Us</a>
-                                <ul id="menu-US" class="submenu-container">
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Workers</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Inequality</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Growth</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Goverment</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Wall Street</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Health and Social Programs</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-target">Intellectual Property</a></li>
-                                </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-target">World</a>
-                                <ul id="menu-World" class="submenu-container">
-                                    <li class="submenu-item"><a href="" class="submenu-target">Europe</a></li>
-                                    <li class="submenu-item"><a href="" class="submenu-target">Globalization and trade</a></li>
-                                    <li class="submenu-item"><a href="" class="submenu-target">Latin America and the Caribean</a></li>
-                                    <li class="submenu-item"><a href="" class="submenu-target">US Foreign Policy</a></li>
-                                </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-target">Blogs</a>
-                                <ul id="menu-Blogs" class="submenu-container">
-                                    <li class="submenu-item"><a href="" class="submenu-target">Beat the Press</a></li>
-                                    <li class="submenu-item"><a href="" class="submenu-target">The Americas Blog</a></li>
-                                    <li class="submenu-item"><a href="" class="submenu-target">Haiti Relief and Reconstruction Watch</a></li>
-                                </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menubar-item"><a href="#" class="menubar-target">Experts and Staff</a></li>
-                <li class="menubar-item"><a href="#" class="menubar-target">Publications and events</a></li>
-                <li class="menubar-item"><a href="#" class="menubar-target">Projects and Resources</a></li>
-                <li class="menubar-item"><a href="#" class="menubar-target">Beat the Press</a></li>
-                <li class="menubar-item"><a href="#" class="menubar-target">About</a></li>
-                <li class="menubar-item-donate"><a href="#" class="menubar-target-donate">donate</a></li>
-            </ul>
-        </nav>
-    </section>
-    <section class="section">
-        <div class="main-articles column">
-            <article class="main-article-1">
-                <img src="" alt="Article Picture">
-                <title>Presidential Election Is about a Fight for Democracy in Brazil</title>
-                <sub>The world is watching Brazil’s elections, probably as never before.</sub>
-                <p>BY MARK WEISBROT OCTOBER 7, 2018</p>
-            </article>
-        </div>
-    </section>
-    <section class="section">LASTEST</section>
+        </section>
+        <section class="section">LASTEST</section>
+    </div>
 </body>
 <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
 </body>
