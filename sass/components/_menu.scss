@@ -1,3 +1,11 @@
+#nav ul[data-state=closed] {
+    display: none;
+}
+
+#nav ul[data-state=open] {
+    display: inherit;
+}
+
 ////////////////////////////////////////////
 /////MENU HEADER STYLES
 .logo-cepr {

@@ -45,6 +45,12 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+#nav ul[data-state=closed] {
+  display: none; }
+
+#nav ul[data-state=open] {
+  display: inherit; }
+
 .logo-cepr {
   position: absolute;
   height: 100%;

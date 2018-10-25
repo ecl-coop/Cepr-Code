@@ -7,14 +7,15 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
+    <script defer src="js/menu.js"></script>
     <title>CEPR Home</title>
 </head> 
 <body>
     <div id="viewport" class="main-container">
-        <section id="navbar">
+        <section id="nav">
             <header class="menubar__header level is-marginless is-mobile">
                 <div class="menubar__btn level-left">
-                    <button type="button" id="toggle-menubar" class="menubar-toggle" aria-expanded="false" aria-controls="menubar-collapse">
+                    <button type="button" id="toggle-menubar" class="nav__toggle">
                         <svg width="36" height="36">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
                         </svg>
@@ -36,7 +37,7 @@
                     </svg>
                 </a>
                 <div class="menubar__search level-right">
-                    <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse" aria-expanded="false" aria-controls="search-collapse">
+                    <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse">
                         <svg width="36" height="36">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
                         </svg>
@@ -45,7 +46,7 @@
                 </div>
             </header>
             <nav role="navigation"> 
-                <ul id="menubar-container">
+                <ul id="menubar-container" data-state="closed">
                     <li class="menubar-item"><a href="#" class="menubar-target">Our Work</a>
                         <ul id="menubar-OurWork" class="menu-container">
                             <li class="menu-item">
