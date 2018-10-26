@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
     <script defer src="js/menu.js"></script>
@@ -13,9 +13,9 @@
 <body>
     <div id="viewport" class="main-container">
         <section id="nav">
-            <header class="menubar__header level is-marginless is-mobile">
+            <header class="menubar__header level is-marginless is-mobile" data-state="closed">
                 <div class="menubar__btn level-left">
-                    <button type="button" id="toggle-menubar" class="nav__toggle">
+                    <button type="button" id="menubar-toggle" class="menubar__toggle">
                         <svg width="36" height="36">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
                         </svg>
@@ -35,6 +35,9 @@
                         <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-med" class="is-flex-tablet-only logo-med"></use>
                         <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-large" class="is-flex-desktop is-hidden-touch"></use>
                     </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon-cepr"> 
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#cepr-icon"></use>
+                    </svg>
                 </a>
                 <div class="menubar__search level-right">
                     <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse">
@@ -45,13 +48,13 @@
                     </button>
                 </div>
             </header>
-            <nav role="navigation"> 
+            <nav class="nav" role="navigation"> 
                 <ul id="menubar-container" data-state="closed">
-                    <li class="menubar-item"><a href="#" class="menubar-target">Our Work</a>
-                        <ul id="menubar-OurWork" class="menu-container">
+                    <li class="menubar-item"><a href="#" class="menubar-target menu__toggle">Our Work</a>
+                        <ul id="menubar-OurWork" data-state="closed" class="menu-container"><span><a class="backto-menubar" href="">Our Work</a></span>
                             <li class="menu-item">
-                                <a href="#" class="menu-target">Us</a>
-                                    <ul id="menu-US" class="submenu-container">
+                                <a href="#" class="menu-target submenu__toggle">Us</a>
+                                    <ul id="menu-US" data-state="closed" class="submenu-container"><span class="backto-menu is-hidden-tablet"><a href="">Us</a></span>
                                         <li class="submenu-item"><a href="#" class="submenu-target">Workers</a></li>
                                         <li class="submenu-item"><a href="#" class="submenu-target">Inequality</a></li>
                                         <li class="submenu-item"><a href="#" class="submenu-target">Growth</a></li>
@@ -62,8 +65,8 @@
                                     </ul>
                             </li>
                             <li class="menu-item">
-                                <a href="#" class="menu-target">World</a>
-                                    <ul id="menu-World" class="submenu-container">
+                                <a href="#" class="menu-target submenu__toggle">World</a>
+                                    <ul id="menu-World" data-state="closed" class="submenu-container"><span class="backto-menu is-hidden-tablet"><a href="">World</a></span>
                                         <li class="submenu-item"><a href="" class="submenu-target">Europe</a></li>
                                         <li class="submenu-item"><a href="" class="submenu-target">Globalization and trade</a></li>
                                         <li class="submenu-item"><a href="" class="submenu-target">Latin America and the Caribean</a></li>
@@ -71,8 +74,8 @@
                                     </ul>
                             </li>
                             <li class="menu-item">
-                                <a href="#" class="menu-target">Blogs</a>
-                                    <ul id="menu-Blogs" class="submenu-container">
+                                <a href="#" class="menu-target submenu__toggle">Blogs</a>
+                                    <ul id="menu-Blogs" data-state="closed" class="submenu-container"><span class="backto-menu is-hidden-tablet"><a href="">Blogs</a></span>
                                         <li class="submenu-item"><a href="" class="submenu-target">Beat the Press</a></li>
                                         <li class="submenu-item"><a href="" class="submenu-target">The Americas Blog</a></li>
                                         <li class="submenu-item"><a href="" class="submenu-target">Haiti Relief and Reconstruction Watch</a></li>
@@ -90,7 +93,7 @@
             </nav>
         </section>
         <section class="section">
-            <div class="main-articles column">
+            <div class="main-articles">
                 <article class="main-article-1">
                     <img src="" alt="Article Picture">
                     <title>Presidential Election Is about a Fight for Democracy in Brazil</title>
