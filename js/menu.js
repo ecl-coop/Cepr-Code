@@ -9,33 +9,36 @@ var toggleState = function (elem, one, two) {
     elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);
 };
 
-menubar.onclick = function (e) {
-    toggleState('#menubar-container', 'closed', 'open');
-    toggleState('.menubar__header', 'closed', 'open')
-    e.preventDefault();
-};
-menu.onclick = function (e) {
-    toggleState('#menubar-container', 'open', 'inside-1');
-    toggleState('.menu-container', 'closed', 'open');
-    e.preventDefault();
-};
 
-submenu.onclick = function (e) {
-    toggleState('#menubar-container', 'inside-1', 'inside-2');
-    toggleState('.menu-container', 'open', 'closed');
-    toggleState('.submenu-container', 'closed', 'open');
-    e.preventDefault();
-};
+if (screen.width <= 768) {
+    menubar.onclick = function (e) {
+        toggleState('#menubar-container', 'closed', 'open');
+        toggleState('.menubar__header', 'closed', 'open')
+        e.preventDefault();
+    };
+    menu.onclick = function (e) {
+        toggleState('#menubar-container', 'open', 'inside-1');
+        toggleState('.menu-container', 'closed', 'open');
+        e.preventDefault();
+    };
 
-backMenu.onclick = function (e) {
-    toggleState('#menubar-container', 'inside-1', 'inside-2');
-    toggleState('.menu-container', 'open', 'closed');
-    toggleState('.submenu-container', 'closed', 'open');
-    e.preventDefault();
-};
+    submenu.onclick = function (e) {
+        toggleState('#menubar-container', 'inside-1', 'inside-2');
+        toggleState('.menu-container', 'open', 'closed');
+        toggleState('.submenu-container', 'closed', 'open');
+        e.preventDefault();
+    };
 
-backMenubar.onclick = function (e) {
-    toggleState('#menubar-container', 'open', 'inside-1');
-    toggleState('.menu-container', 'open', 'closed');
-    e.preventDefault();
-};
+    backMenu.onclick = function (e) {
+        toggleState('#menubar-container', 'inside-1', 'inside-2');
+        toggleState('.menu-container', 'open', 'closed');
+        toggleState('.submenu-container', 'closed', 'open');
+        e.preventDefault();
+    };
+
+    backMenubar.onclick = function (e) {
+        toggleState('#menubar-container', 'open', 'inside-1');
+        toggleState('.menu-container', 'open', 'closed');
+        e.preventDefault();
+    };
+} 

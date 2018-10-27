@@ -1,3 +1,7 @@
+/*This is a three level menu that turns into a Mega Menu of one level on Desktop.
+The structure is: Container > Item > Target on each level.
+The accompaining Js is a very rudimentary implementaion just to show the basic functionality, it have to be rebuild by the Development Team.
+*/
 ////////////////////////////////////////////
 /////MENU HEADER STYLES
 .logo-cepr, .icon-cepr {
@@ -138,13 +142,6 @@
 }
 
 .menubar-item{
-        &:hover{
-            border-bottom: 4px solid var(--color-Primary-light);
-            .menubar-target{
-                color: var(--color-Action-light);
-                letter-spacing: .15em
-            }
-        }
         &:active{
             background-color: var(--color-Primary-light);
             border-bottom: 0;
@@ -154,14 +151,6 @@
         }
     }
     .menu-item {
-        &:hover {
-            border-bottom: 4px solid var(--color-Primary-light);
-
-            .menu-target {
-                color: var(--color-Action-light);
-            }
-        }
-
         &:active {
             background-color: var(--color-Primary-light);
             border-bottom: 0;
@@ -172,14 +161,6 @@
     }
 
     .submenu-item {
-        &:hover {
-            border-bottom: 4px solid var(--color-Primary-light);
-
-            .submenu-target {
-                color: var(--color-Action-light);
-            }
-        }
-
         &:active {
             background-color: var(--color-Primary-light);
             border-bottom: 0;
@@ -272,14 +253,15 @@
         color: var(--color-Black);
         padding-left: 2rem;
         padding-right: 2rem;
-        &[data-state=open] {
+        &[data-state=open],
+        &[data-state=closed] {
             background-color: var(--color-White);
         }
     }
 
     .menubar__logo {
         height: 100%;
-        color: var(--color-Black);
+        //color: var(--color-Black);
         margin: 0 auto;
     }
 
@@ -292,7 +274,7 @@
     #menubar-container{
         &[data-state=closed],
         &[data-state=open] {
-            transform: translateX(0) translateY(0);
+            transform: translateY(0);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -302,6 +284,11 @@
             width: 100%;
             position: relative;
             padding: 0 0;
+            z-index: 888;
+            height: 50px;
+        }
+        &[data-state=inside-1], &[data-state=inside-2] {
+            transform: translateX(0);
         }
     }
 
@@ -316,11 +303,16 @@
             position: absolute;
             justify-content: flex-start;
             left: 0;
-            top: 0;
+            top:500px;
             width: 100vw;
             margin-left: -2rem;
             padding-left: 2rem;
             transform: translateY(50px);
+            z-index: 777;
+
+            &[data-state=open]{
+                top: 0;
+            }
         }
 
         .submenu-container {
@@ -348,14 +340,21 @@
         padding-left: 0;
         &:hover {
             border-bottom: 0;
+        }
+        a{
+            &:hover{
+                color: var(--color-Action-light);
+            }
+        }
+    }
+    .menubar-item{
+        &:hover{
             .menubar-target {
                 color: var(--color-Black);
                 letter-spacing: 0.07em;
             }
         }
-
     }
-   
     .menu-item,
     .submenu-item {
         align-items: flex-start;
