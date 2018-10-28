@@ -17,7 +17,7 @@ var setStatesTablet = function (elem, state) {
 if (screen.width <= 768) {
     menubar.onclick = function (e) {
         toggleState('#menubar-container', 'closed', 'open');
-        toggleState('.menubar__header', 'closed', 'open')
+        toggleState('.menubar__header', 'closed', 'open');
         e.preventDefault();
     };
     menu.onclick = function (e) {

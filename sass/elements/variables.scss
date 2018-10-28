@@ -1,6 +1,32 @@
 $phone: 373px;
 $tablet: 769px;
+$desktop: 1024px;
+$widescreen: 1216px;
 
-$menu-header-heigth: between(64px, 80px, $phone, $tablet);
-$menu-items-heigth: between(48px, 64px, $phone, $tablet);
-$menu-margin-top: calc(#{$menu-items-heigth}* -7);
+//////////COLORS
+
+$Black: var(--color-Black);
+$White: var(--color-White);
+$Blue: var(--color-Primary);
+$Blue-dark: var(--color-Primary-dark);
+$Blue-light: var(--color-Primary-light);
+
+///////////////TYPOGRAPHY
+$size-small-fluid: between(9px, 12px, $tablet, $desktop);
+
+
+//////////HEIGHTS & WIDTHS
+
+$menu-header-height: between(64px, 80px, $phone, $tablet);
+$menu-items-height: between(48px, 64px, $phone, $tablet);
+$menu-margin-top: calc(#{$menu-items-height}* -7);
+
+
+
+////////////////MARGINS
+
+
+
+
+
+/////////////////PADDINGS

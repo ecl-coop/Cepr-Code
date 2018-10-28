@@ -244,7 +244,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     height: 5rem;
     color: var(--color-Black);
     padding-left: 2rem;
-    padding-right: 2rem; }
+    padding-right: 2rem;
+    border-bottom: 0; }
     .menubar__header[data-state=open], .menubar__header[data-state=closed] {
       background-color: var(--color-White); }
   .menubar__logo {
@@ -723,7 +724,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       width: 100%; }
     .column.is-offset-12, .column.is-offset-12-tablet {
       margin-left: 100%; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .column.is-narrow-touch {
       flex: none; }
     .column.is-full-touch {
@@ -834,7 +835,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       width: 100%; }
     .column.is-offset-12-touch {
       margin-left: 100%; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .column.is-narrow-desktop {
       flex: none; }
     .column.is-full-desktop {
@@ -945,7 +946,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       width: 100%; }
     .column.is-offset-12-desktop {
       margin-left: 100%; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .column.is-narrow-widescreen {
       flex: none; }
     .column.is-full-widescreen {
@@ -1198,7 +1199,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns:not(.is-desktop) {
       display: flex; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-desktop {
       display: flex; } }
 
@@ -1217,22 +1218,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-0-tablet {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-0-tablet-only {
       --columnGap: 0rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-0-touch {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-0-desktop {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-0-desktop-only {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-0-widescreen {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-0-widescreen-only {
       --columnGap: 0rem; } }
   @media screen and (min-width: 1472px) {
@@ -1246,22 +1247,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-1-tablet {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-1-tablet-only {
       --columnGap: 0.25rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-1-touch {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-1-desktop {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-1-desktop-only {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-1-widescreen {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-1-widescreen-only {
       --columnGap: 0.25rem; } }
   @media screen and (min-width: 1472px) {
@@ -1275,22 +1276,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-2-tablet {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-2-tablet-only {
       --columnGap: 0.5rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-2-touch {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-2-desktop {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-2-desktop-only {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-2-widescreen {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-2-widescreen-only {
       --columnGap: 0.5rem; } }
   @media screen and (min-width: 1472px) {
@@ -1304,22 +1305,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-3-tablet {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-3-tablet-only {
       --columnGap: 0.75rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-3-touch {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-3-desktop {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-3-desktop-only {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-3-widescreen {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-3-widescreen-only {
       --columnGap: 0.75rem; } }
   @media screen and (min-width: 1472px) {
@@ -1333,22 +1334,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-4-tablet {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-4-tablet-only {
       --columnGap: 1rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-4-touch {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-4-desktop {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-4-desktop-only {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-4-widescreen {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-4-widescreen-only {
       --columnGap: 1rem; } }
   @media screen and (min-width: 1472px) {
@@ -1362,22 +1363,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-5-tablet {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-5-tablet-only {
       --columnGap: 1.25rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-5-touch {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-5-desktop {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-5-desktop-only {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-5-widescreen {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-5-widescreen-only {
       --columnGap: 1.25rem; } }
   @media screen and (min-width: 1472px) {
@@ -1391,22 +1392,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-6-tablet {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-6-tablet-only {
       --columnGap: 1.5rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-6-touch {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-6-desktop {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-6-desktop-only {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-6-widescreen {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-6-widescreen-only {
       --columnGap: 1.5rem; } }
   @media screen and (min-width: 1472px) {
@@ -1420,22 +1421,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-7-tablet {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-7-tablet-only {
       --columnGap: 1.75rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-7-touch {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-7-desktop {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-7-desktop-only {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-7-widescreen {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-7-widescreen-only {
       --columnGap: 1.75rem; } }
   @media screen and (min-width: 1472px) {
@@ -1449,22 +1450,22 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-8-tablet {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-8-tablet-only {
       --columnGap: 2rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-8-touch {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-8-desktop {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-8-desktop-only {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-8-widescreen {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1471px) {
     .columns.is-variable.is-8-widescreen-only {
       --columnGap: 2rem; } }
   @media screen and (min-width: 1472px) {
@@ -1713,7 +1714,7 @@ table th {
   .is-size-7-tablet {
     font-size: 0.75rem !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-size-1-touch {
     font-size: 3rem !important; }
   .is-size-2-touch {
@@ -1729,7 +1730,7 @@ table th {
   .is-size-7-touch {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-size-1-desktop {
     font-size: 3rem !important; }
   .is-size-2-desktop {
@@ -1745,7 +1746,7 @@ table th {
   .is-size-7-desktop {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-size-1-widescreen {
     font-size: 3rem !important; }
   .is-size-2-widescreen {
@@ -1797,27 +1798,27 @@ table th {
   .has-text-centered-tablet {
     text-align: center !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-centered-tablet-only {
     text-align: center !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-centered-touch {
     text-align: center !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-centered-desktop {
     text-align: center !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-centered-desktop-only {
     text-align: center !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-centered-widescreen {
     text-align: center !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .has-text-centered-widescreen-only {
     text-align: center !important; } }
 
@@ -1833,27 +1834,27 @@ table th {
   .has-text-justified-tablet {
     text-align: justify !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-justified-tablet-only {
     text-align: justify !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-justified-touch {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-justified-desktop {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-justified-desktop-only {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-justified-widescreen {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .has-text-justified-widescreen-only {
     text-align: justify !important; } }
 
@@ -1869,27 +1870,27 @@ table th {
   .has-text-left-tablet {
     text-align: left !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-left-tablet-only {
     text-align: left !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-left-touch {
     text-align: left !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-left-desktop {
     text-align: left !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-left-desktop-only {
     text-align: left !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-left-widescreen {
     text-align: left !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .has-text-left-widescreen-only {
     text-align: left !important; } }
 
@@ -1905,27 +1906,27 @@ table th {
   .has-text-right-tablet {
     text-align: right !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-right-tablet-only {
     text-align: right !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-right-touch {
     text-align: right !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-right-desktop {
     text-align: right !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-right-desktop-only {
     text-align: right !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-right-widescreen {
     text-align: right !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .has-text-right-widescreen-only {
     text-align: right !important; } }
 
@@ -2112,27 +2113,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-block-tablet {
     display: block !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-block-tablet-only {
     display: block !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-block-touch {
     display: block !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-block-desktop {
     display: block !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-block-desktop-only {
     display: block !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-block-widescreen {
     display: block !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-block-widescreen-only {
     display: block !important; } }
 
@@ -2151,27 +2152,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-flex-tablet {
     display: flex !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-flex-tablet-only {
     display: flex !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-flex-touch {
     display: flex !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-flex-desktop {
     display: flex !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-flex-desktop-only {
     display: flex !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-flex-widescreen {
     display: flex !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-flex-widescreen-only {
     display: flex !important; } }
 
@@ -2190,27 +2191,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-tablet {
     display: inline !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-tablet-only {
     display: inline !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-touch {
     display: inline !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-desktop {
     display: inline !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-desktop-only {
     display: inline !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-widescreen {
     display: inline !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-inline-widescreen-only {
     display: inline !important; } }
 
@@ -2229,27 +2230,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-block-tablet {
     display: inline-block !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-block-tablet-only {
     display: inline-block !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-block-touch {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-block-desktop {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-block-desktop-only {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-block-widescreen {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-inline-block-widescreen-only {
     display: inline-block !important; } }
 
@@ -2268,27 +2269,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-flex-tablet {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-flex-tablet-only {
     display: inline-flex !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-flex-touch {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-flex-desktop {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-flex-desktop-only {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-flex-widescreen {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-inline-flex-widescreen-only {
     display: inline-flex !important; } }
 
@@ -2317,27 +2318,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-hidden-tablet {
     display: none !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-hidden-tablet-only {
     display: none !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-hidden-touch {
     display: none !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-hidden-desktop {
     display: none !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-hidden-desktop-only {
     display: none !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-hidden-widescreen {
     display: none !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-hidden-widescreen-only {
     display: none !important; } }
 
@@ -2356,27 +2357,27 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-invisible-tablet {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-invisible-tablet-only {
     visibility: hidden !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-invisible-touch {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-invisible-desktop {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-invisible-desktop-only {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-invisible-widescreen {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1471px) {
   .is-invisible-widescreen-only {
     visibility: hidden !important; } }
 

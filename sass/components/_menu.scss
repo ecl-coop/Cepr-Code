@@ -19,20 +19,20 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 .menubar__header {
         transition: all .35s;
         height: 4rem;
-        background-color: var(--color-White);
+        background-color: $White;
         padding: 0 1.5rem;
         z-index: 999;
         position: relative;
-        border-bottom: 1px solid var(--color-Black);
+        border-bottom: 1px solid $Black;
 
         &[data-state=open]{
-            background-color: var(--color-Black);
+            background-color: $Black;
             .menubar__logo{
                 height: 80%;
             }
             .menubar__btn,
             .menubar__search {
-                fill: var(--color-White);
+                fill: $White;
                 align-self: center;
             }
             .menubar__btn{
@@ -40,7 +40,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             }
             .icon-cepr {
                 display: flex;
-                fill: var(--color-White);
+                fill: $White;
                 align-self: center;
             }
             .logo-cepr{
@@ -70,7 +70,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 .menubar__btn,
 .menubar__search {
-    fill: var(--color-Black);
+    fill: $Black;
     align-self: center;
 }
 
@@ -86,7 +86,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     height: 100%;
     margin-top: $menu-margin-top;
     transition: all .35s;
-    background-color: var(--color-Black);
+    background-color: $Black;
     list-style: none;
     margin-left: 0;
     margin-right: 0;
@@ -120,8 +120,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         flex-direction: column;
         align-self: flex-start;
         justify-content: center;
-        background-color: var(--color-Black);
-        color: var(--color-White);
+        background-color: $Black;
+        color: $White;
          
         &[data-state=open] {
             display: flex;
@@ -141,7 +141,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         flex-grow: 1;
         flex-wrap: nowrap;
         height: 3rem;
-        border-bottom: 0.5px solid var(--color-Primary-light);
+        border-bottom: 0.5px solid $Blue-light;
         display: flex;
         align-items: flex-start;
         transition: all 0.10s;
@@ -149,29 +149,29 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 .menubar-item{
         &:active{
-            background-color: var(--color-Primary-light);
+            background-color: $Blue-light;
             border-bottom: 0;
             .menubar-target {
-                color: var(--color-Black);
+                color: $Black;
             }
         }
     }
     .menu-item {
         &:active {
-            background-color: var(--color-Primary-light);
+            background-color: $Blue-light;
             border-bottom: 0;
             .menu-target {
-                color: var(--color-Black);
+                color: $Black;
             }
         }
     }
 
     .submenu-item {
         &:active {
-            background-color: var(--color-Primary-light);
+            background-color: $Blue-light;
             border-bottom: 0;
             .submenu-target {
-                color: var(--color-Black);
+                color: $Black;
             }
         }
     }
@@ -180,7 +180,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         flex: 0 0 100%;
         flex-wrap: nowrap;
         align-self: center;
-        color: var(--color-White);
+        color: $White;
         font-family: var(--font-Display);
         font-weight: 500;
         font-size: 0.875rem;
@@ -206,14 +206,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     &:hover {
         .menubar-target-donate {
         font-weight: 800;
-        color: var(--color-Black);
+        color: $Black;
         letter-spacing: 0.05em;
         }
     }
     &:active{
         background-color: var(--color-Accent-dark);
             .menubar-target-donate {
-            color: var(--color-White);
+            color: $White;
             transform: scale(.90);
         }
     }
@@ -234,14 +234,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 @include media ('>phone', '<tablet') {
         .menubar__header {
-            height: $menu-header-heigth;
+            height: $menu-header-height;
         }
 
         .menubar-item,
         .menu-item,
         .submenu-item,
         .menubar-item-donate {
-            height: $menu-items-heigth;
+            height: $menu-items-height;
         }
     }
 
@@ -253,18 +253,19 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
     .menubar__header {
         height: 5rem;
-        color: var(--color-Black);
+        color: $Black;
         padding-left: 2rem;
         padding-right: 2rem;
+        border-bottom: 0;
         &[data-state=open],
         &[data-state=closed] {
-            background-color: var(--color-White);
+            background-color: $White;
         }
     }
 
     .menubar__logo {
         height: 100%;
-        //color: var(--color-Black);
+        //color: $Black;
         margin: 0 auto;
     }
 
@@ -281,9 +282,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: var(--color-White);
-            border-top: 0.8px solid var(--color-Black);
-            border-bottom: 0.8px solid var(--color-Black);
+            background-color: $White;
+            border-top: 0.8px solid $Black;
+            border-bottom: 0.8px solid $Black;
             width: 100%;
             position: relative;
             padding: 0 0;
@@ -353,7 +354,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar-item{
         &:hover{
             .menubar-target {
-                color: var(--color-Black);
+                color: $Black;
                 letter-spacing: 0.07em;
             }
         }
@@ -369,15 +370,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     .menubar-item-donate{
         background-color: transparent;
-        border-left: 0.8px solid var(--color-Black);
-        border-right: 0.8px solid var(--color-Black);
+        border-left: 0.8px solid $Black;
+        border-right: 0.8px solid $Black;
         width: 58px;
         background-size: 400%;
         display: flex;
         margin-right: 2rem;
     }
      .menubar-target{
-        color: var(--color-Black);
+        color: $Black;
      }
 
      .menubar-target-donate {
@@ -404,7 +405,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             $tablet: 769px;
             $desktop: 1024px;
             $widescreen: 1216px;
-            font-size: between(9px, 12px, $tablet, $desktop);
+            font-size: $size-small-fluid;
             padding: 1rem 0;
             letter-spacing: .025em;
         } 
