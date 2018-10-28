@@ -23,9 +23,13 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         padding: 0 1.5rem;
         z-index: 999;
         position: relative;
+        border-bottom: 1px solid var(--color-Black);
 
         &[data-state=open]{
             background-color: var(--color-Black);
+            .menubar__logo{
+                height: 80%;
+            }
             .menubar__btn,
             .menubar__search {
                 fill: var(--color-White);
@@ -35,10 +39,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
                 transform: rotateX(180deg);
             }
             .icon-cepr {
-                display: inline-block;
+                display: flex;
                 fill: var(--color-White);
                 align-self: center;
-
             }
             .logo-cepr{
                 display: none;
@@ -78,15 +81,16 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     max-height: auto;
 }
 #menubar-container {
-    //position: fixed;
-    //top: -500px;
-    transform: translateY(-100%);
+    $phone: 375px;
+    $tablet: 769px;
+    height: 100%;
+    margin-top: $menu-margin-top;
     transition: all .35s;
     background-color: var(--color-Black);
     list-style: none;
     margin-left: 0;
     margin-right: 0;
-
+    //padding-top: 4rem;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -94,17 +98,19 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     justify-content: center;
 
     &[data-state=open] {
-        //top: 0;
-        transform: translateY(0);
-        transform: translateX(0vw);
-        
+        margin-top: 0;
+        height: auto;
     }
     &[data-state=inside-1] {
-        transform: translateX(-100vw);
+        //transform: translateX(-100vw);
+        margin-left: -100vw;
         margin-right: 4rem;
+        margin-top: 0;
     }
     &[data-state=inside-2] {
-        transform: translateX(-200vw);
+        margin-top: 0;
+        margin-left: -200vw;
+        //transform: translateX(-200vw);
     }
 }
     .menu-container,
@@ -127,7 +133,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar-item,
     .menu-item,
     .submenu-item,
-    .menubar-item-donate { 
+    .menubar-item-donate,
+    .backto-menubar, .backto-menu {
         padding-left: 2rem;
         min-width: 100%;
         width: 100vw;
@@ -137,7 +144,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         border-bottom: 0.5px solid var(--color-Primary-light);
         display: flex;
         align-items: flex-start;
-        position: relative;
         transition: all 0.10s;
 }
 
@@ -227,18 +233,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 ///////////////////////////////////////////////////////////
 
 @include media ('>phone', '<tablet') {
-        #menubar-container,
         .menubar__header {
-            //padding: 0 2rem;
+            height: $menu-header-heigth;
         }
 
         .menubar-item,
         .menu-item,
         .submenu-item,
         .menubar-item-donate {
-            $phone: 375px;
-            $tablet: 769px;
-            height: between(48px, 64px, $phone, $tablet);
+            height: $menu-items-heigth;
         }
     }
 
@@ -274,7 +277,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     #menubar-container{
         &[data-state=closed],
         &[data-state=open] {
-            transform: translateY(0);
+            margin-top: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -288,7 +291,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             height: 50px;
         }
         &[data-state=inside-1], &[data-state=inside-2] {
-            transform: translateX(0);
+            margin-left: 0;
         }
     }
 
@@ -298,12 +301,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     
         .menu-container {
-            display: flex;
-            flex-direction: row;
+            display: none;
             position: absolute;
-            justify-content: flex-start;
             left: 0;
-            top:500px;
+            top:0;
             width: 100vw;
             margin-left: -2rem;
             padding-left: 2rem;
@@ -311,7 +312,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             z-index: 777;
 
             &[data-state=open]{
-                top: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
             }
         }
 

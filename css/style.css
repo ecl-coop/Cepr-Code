@@ -66,9 +66,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   background-color: var(--color-White);
   padding: 0 1.5rem;
   z-index: 999;
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid var(--color-Black); }
   .menubar__header[data-state=open] {
     background-color: var(--color-Black); }
+    .menubar__header[data-state=open] .menubar__logo {
+      height: 80%; }
     .menubar__header[data-state=open] .menubar__btn,
     .menubar__header[data-state=open] .menubar__search {
       fill: var(--color-White);
@@ -76,7 +79,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar__header[data-state=open] .menubar__btn {
       transform: rotateX(180deg); }
     .menubar__header[data-state=open] .icon-cepr {
-      display: inline-block;
+      display: flex;
       fill: var(--color-White);
       align-self: center; }
     .menubar__header[data-state=open] .logo-cepr {
@@ -110,7 +113,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   max-height: auto; }
 
 #menubar-container {
-  transform: translateY(-100%);
+  height: 100%;
+  margin-top: calc(calc(32.92929px + 4.0404vw)* -7);
   transition: all .35s;
   background-color: var(--color-Black);
   list-style: none;
@@ -122,13 +126,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   width: 100vw;
   justify-content: center; }
   #menubar-container[data-state=open] {
-    transform: translateY(0);
-    transform: translateX(0vw); }
+    margin-top: 0;
+    height: auto; }
   #menubar-container[data-state=inside-1] {
-    transform: translateX(-100vw);
-    margin-right: 4rem; }
+    margin-left: -100vw;
+    margin-right: 4rem;
+    margin-top: 0; }
   #menubar-container[data-state=inside-2] {
-    transform: translateX(-200vw); }
+    margin-top: 0;
+    margin-left: -200vw; }
 
 .menu-container,
 .submenu-container {
@@ -148,7 +154,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 .menubar-item,
 .menu-item,
 .submenu-item,
-.menubar-item-donate {
+.menubar-item-donate,
+.backto-menubar, .backto-menu {
   padding-left: 2rem;
   min-width: 100%;
   width: 100vw;
@@ -158,7 +165,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   border-bottom: 0.5px solid var(--color-Primary-light);
   display: flex;
   align-items: flex-start;
-  position: relative;
   transition: all 0.10s; }
 
 .menubar-item:active {
@@ -225,11 +231,13 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   content: "="; }
 
 @media (min-width: 376px) and (max-width: 768px) {
+  .menubar__header {
+    height: calc(48.92929px + 4.0404vw); }
   .menubar-item,
   .menu-item,
   .submenu-item,
   .menubar-item-donate {
-    height: calc(32.77157px + 4.06091vw); } }
+    height: calc(32.92929px + 4.0404vw); } }
 
 @media (min-width: 769px) {
   .menubar__header {
@@ -245,7 +253,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .menubar__toggle {
     display: none; }
   #menubar-container[data-state=closed], #menubar-container[data-state=open] {
-    transform: translateY(0);
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -258,23 +266,23 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     z-index: 888;
     height: 50px; }
   #menubar-container[data-state=inside-1], #menubar-container[data-state=inside-2] {
-    transform: translateX(0); }
+    margin-left: 0; }
   .menubar-item:first-child {
     margin-left: 2rem; }
   .menu-container {
-    display: flex;
-    flex-direction: row;
+    display: none;
     position: absolute;
-    justify-content: flex-start;
     left: 0;
-    top: 500px;
+    top: 0;
     width: 100vw;
     margin-left: -2rem;
     padding-left: 2rem;
     transform: translateY(50px);
     z-index: 777; }
     .menu-container[data-state=open] {
-      top: 0; }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; }
   .submenu-container {
     display: flex;
     flex-direction: column;

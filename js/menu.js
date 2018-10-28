@@ -8,6 +8,10 @@ var toggleState = function (elem, one, two) {
     var elem = document.querySelector(elem);
     elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);
 };
+var setStatesTablet = function (elem, state) {
+    var elem = document.querySelector(elem);
+    elem.setAttribute('data-state', elem.getAttribute('data-state'));
+};
 
 
 if (screen.width <= 768) {
@@ -41,4 +45,9 @@ if (screen.width <= 768) {
         toggleState('.menu-container', 'open', 'closed');
         e.preventDefault();
     };
-} 
+} else {
+    menu.onclick = function (e) {
+        toggleState('.menu-container', 'closed', 'open');
+        e.preventDefault();
+    };
+}

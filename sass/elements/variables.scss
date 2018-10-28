@@ -1,0 +1,6 @@
+$phone: 373px;
+$tablet: 769px;
+
+$menu-header-heigth: between(64px, 80px, $phone, $tablet);
+$menu-items-heigth: between(48px, 64px, $phone, $tablet);
+$menu-margin-top: calc(#{$menu-items-heigth}* -7);
