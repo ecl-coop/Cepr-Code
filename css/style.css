@@ -46,6 +46,85 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.column-header-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 36px;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  .column-header-container:before, .column-header-container::after {
+    content: "\00b7";
+    font-size: 6em;
+    color: var(--color-Primary-light);
+    line-height: 0;
+    align-self: baseline;
+    padding-top: .075em; }
+  .column-header-container:before {
+    right: 1.5%; }
+  .column-header-container:after {
+    left: 1.5%; }
+
+h2.column-header {
+  width: 98%;
+  display: flex;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 24px;
+  align-items: center;
+  color: var(--color-Primary-light);
+  letter-spacing: .15em;
+  font-weight: 300;
+  flex: 1 0 auto; }
+  h2.column-header:before, h2.column-header:after {
+    border-top: 1px solid var(--color-Primary-light);
+    position: relative;
+    width: 45%;
+    content: "";
+    display: table-cell; }
+  h2.column-header:before {
+    right: 1.5%; }
+  h2.column-header:after {
+    left: 1.5%; }
+
+h4.note-title {
+  font-size: 24px;
+  color: var(--color-Black); }
+
+@media (min-width: 769px) {
+  h2.column-header,
+  .h4.note-title {
+    font-size: calc(10.23714px + 1.78971vw); } }
+
+.tag {
+  font-size: calc(0.11862vw + 9.55753px);
+  letter-spacing: .1em;
+  font-family: var(--font-Primary);
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: center; }
+
+.tag-type {
+  color: var(--color-Accent-dark);
+  text-transform: uppercase;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem; }
+  .tag-type::before {
+    content: "\00b7";
+    font-size: 3em;
+    margin-right: 0.5rem; }
+
+.tag-theme {
+  color: var(--color-Accent);
+  text-transform: capitalize;
+  border: 1px solid var(--color-Accent);
+  border-radius: 50px;
+  padding: .2em 1em; }
+
 /*This is a three level menu that turns into a Mega Menu of one level on Desktop.
 The structure is: Container > Item > Target on each level.
 The accompaining Js is a very rudimentary implementaion just to show the basic functionality, it have to be rebuild by the Development Team.
@@ -113,7 +192,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   max-height: auto; }
 
 #menubar-container {
-  height: 100%;
   margin-top: calc(calc(32.92929px + 4.0404vw)* -7);
   transition: all .35s;
   background-color: var(--color-Black);
@@ -347,7 +425,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .menu-target,
   .menubar-target-donate,
   .submenu-target {
-    font-size: calc(-0.04706px + 1.17647vw);
+    font-size: calc(0.11862vw + 9.55753px);
     padding: 1rem 0;
     letter-spacing: .025em; } }
 

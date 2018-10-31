@@ -1,7 +1,12 @@
 @import "node_modules/include-media/dist/include-media.scss";
-@import "utilities/functions.scss"; 
+@import "utilities/functions.scss";
+@import "utilities/mixins.scss";
+@import "base.scss";
 @import "elements/variables.scss";
-@import "base";
+@import "elements/circle.scss";
+@import "elements/headings.scss";
+@import "elements/tag.scss";
+@import "components/note.scss";
 @import "components/menu.scss";
 @import "node_modules/normalizecss/normalize.css";
 @import "node_modules/bulma/sass/utilities/_all.sass";

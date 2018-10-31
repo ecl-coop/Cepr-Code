@@ -10,10 +10,18 @@ $White: var(--color-White);
 $Blue: var(--color-Primary);
 $Blue-dark: var(--color-Primary-dark);
 $Blue-light: var(--color-Primary-light);
+$Orange: var(--color-Accent);
+$Orange-dark: var(--color-Accent-dark);
+$Orange-light: var(--color-Accent-light);
 
 ///////////////TYPOGRAPHY
-$size-small-fluid: between(9px, 12px, $tablet, $desktop);
+$Sans: var(--font-Primary);
+$Serif: var(--font-Display);
 
+$size-small: 10px;
+$size-h4: 24px;
+$size-h4-fluid: between($size-h4, 32px, $tablet, $widescreen);
+$size-small-fluid: calc-interpolation($phone, $size-small, $widescreen, 11px);
 
 //////////HEIGHTS & WIDTHS
 
@@ -25,8 +33,10 @@ $menu-margin-top: calc(#{$menu-items-height}* -7);
 
 ////////////////MARGINS
 
-
+$margin-vertical-small: .5rem;
+$margin-horizontal-medium: 1.5rem;
 
 
 
 /////////////////PADDINGS
+$padding-vertical-small: 1em;

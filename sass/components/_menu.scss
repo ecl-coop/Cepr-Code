@@ -81,9 +81,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     max-height: auto;
 }
 #menubar-container {
-    $phone: 375px;
-    $tablet: 769px;
-    height: 100%;
     margin-top: $menu-margin-top;
     transition: all .35s;
     background-color: $Black;
