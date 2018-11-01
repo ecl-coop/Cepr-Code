@@ -1,0 +1,16 @@
+%line-base{
+    display: block;
+    height: $line-heigth;
+    border: 0;
+    border-top: 1px solid $Black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+hr {
+    @extend %line-base;
+}
+
+@mixin line-2 {
+    @extend %line-base;
+}

@@ -14,21 +14,32 @@ $Orange: var(--color-Accent);
 $Orange-dark: var(--color-Accent-dark);
 $Orange-light: var(--color-Accent-light);
 
+$Grey: var(--color-Grey);
+
 ///////////////TYPOGRAPHY
 $Sans: var(--font-Primary);
 $Serif: var(--font-Display);
 
-$size-small: 10px;
+$size-small-min: 10px;
+$size-small-max: 11px;
 $size-h4: 24px;
+$size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
 $size-h4-fluid: between($size-h4, 32px, $tablet, $widescreen);
-$size-small-fluid: calc-interpolation($phone, $size-small, $widescreen, 11px);
+
+@mixin small-text {
+    font-size: $size-small-fluid;
+    font-family: $Sans;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
 
 //////////HEIGHTS & WIDTHS
 
 $menu-header-height: between(64px, 80px, $phone, $tablet);
 $menu-items-height: between(48px, 64px, $phone, $tablet);
 $menu-margin-top: calc(#{$menu-items-height}* -7);
-
+//$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
 
 
 ////////////////MARGINS
@@ -40,3 +51,7 @@ $margin-horizontal-medium: 1.5rem;
 
 /////////////////PADDINGS
 $padding-vertical-small: 1em;
+
+//////////////////LINE WEIGHTS
+$line-heigth: 1px;
+$line-base: $line-heigth solid $Blue-light;

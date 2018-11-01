@@ -8,26 +8,15 @@
     margin-bottom: $margin-horizontal-medium;
     &:before,
     &::after {
-        content: "\00b7";
-        font-size: 6em;
+        @include bullet;
         color: $Blue-light;
-        line-height: 0;
         align-self: baseline;
-        padding-top: .075em;
-    }
-    &:before {
-        //align-self: center;
-        right: 1.5%
-        
-    }
-    &:after {
-       // align-self: flex-end;
-       left: 1.5%;
     }
 }
 
 h2.column-header{
-    width: 98%;
+    @include responsive-property("width", 95%, 98%, $phone, $widescreen); ///<<<<<<<<<<<<<<<<<is not working
+    //width: 98%;
     display: flex;
     white-space: nowrap;
     text-transform: uppercase;
@@ -40,7 +29,7 @@ h2.column-header{
 
     &:before,
     &:after {
-        border-top: 1px solid $Blue-light;
+        border-top: $line-base;
         position: relative;
         width: 45%;
         content: "";
@@ -59,6 +48,7 @@ h2.column-header{
 h4.note-title{
     font-size: $size-h4;
     color: $Black;
+    margin: 1rem 0;
 }
 
 @include media ('>=tablet') {

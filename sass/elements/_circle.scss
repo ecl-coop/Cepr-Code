@@ -7,6 +7,13 @@ $size: 12px;
       display: inline-block;
 }
 
+@mixin bullet {
+      content: "\00b7";
+      font-size: 6em;
+      line-height: 0;
+      padding-top: .075em;
+}
+
 @mixin half-circle-right() {
     @extend %half-circle-base;
           border-bottom-right-radius: $size * 2;
