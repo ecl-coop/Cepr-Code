@@ -1,0 +1,38 @@
+.block-featured{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    background-color: $Black;
+}
+
+.featured-menu-container{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    order: 1;
+}
+.featured-pictures-container{
+    display: flex;
+    flex-flow: row;
+}
+.featured-articles-container {
+    display: flex;
+    flex-flow: row;
+    flex-basis: 1 0 100%;
+    width: 100vw;
+    position: relative;
+    clear: both;
+    order: 2;
+    //float: left;
+}
+
+.featured-article-content{
+    flex-basis: 1 0 100%;
+}
+
+//////////////////////////////////////////
+////////////////////////////////
+
+.article-text-container{
+    padding: 1rem 2.5rem;
+}
+

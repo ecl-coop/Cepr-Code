@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
     <script defer src="js/menu.js"></script>
-    <title>CEPR Home</title>
+    <script src="to-title-case.js"></script>
+    <title>Center for Economic and Policy Research</title>
 </head> 
 <body>
     <div id="viewport" class="main-container">
@@ -93,39 +94,236 @@
             </nav>
         </section>
         <section class="section">
-            <div class="main-articles">
-                <article class="main-article-1">
-                    <picture>
-                        <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x600">
+            <div class="block-featured">
+                <nav class="featured-menu-container">
+                    <label class="tag tag-type" for="featured-1">latin america and the caribbean</label>
+                    <label class="tag tag-type" for="featured-2">goverment</label>
+                    <label class="tag tag-type" for="featured-3">europe</label>
+                    <label class="tag tag-type" for="featured-4">Growth</label>
+                </nav>
+                <div class="featured-pictures-container">
+                    <picture id="featured-1" class="article-hero-picture" data-state="open">
+                        <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
                         <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
                         <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
                         <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                     </picture>
-                    <title>Presidential Election Is about a Fight for Democracy in Brazil</title>
-                    <sub>The world is watching Brazil’s elections, probably as never before.</sub>
-                    <small class="credits"><p class="author">MARK WEISBROT</p><p class="date"> OCTOBER 7, 2018</p></small>
-                </article>
+                    <picture id="featured-2" class="article-hero-picture" data-state="close">
+                        <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                        <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                        <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                        <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                    </picture>
+                </div>
+                <div class="featured-articles-container">
+                    <div id="featured-1" class="featured-article-content" data-state="open">
+                        <main class="article-hero-text">
+                            <h1 class="article-hero-title">Presidential Election Is about a Fight for Democracy in Brazil</h1>
+                            <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
+                            <small class="credits"><p class="author">MARK WEISBROT</p><p class="date">OCTOBER 7, 2018</p></small>
+                        </main>
+                        <aside class="article-hero-related">
+                            <small>more on</small><h6 class="heading-6 heading-6-bold">Latin America and the caribbean</h6>
+                            <ul class="list">
+                                <li class="list-item">
+                                    <h5 class="heading-5">Is Latin America Still the US’s “Backyard”?</h5> 
+                                    <small class="credits"><p class="author">Alexander Main</p></small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5">Latin America: The End of An Era</h5>
+                                    <small class="credits"><p class="author">Mark Weisbrot</p></small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5">Will Trump Be Better for Latin America than Obama?</h5>
+                                    <small class="credits"><p class="author">Alexander Main</p></small>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div id="featured-2" class="featured-article-content" data-state="close">
+                        <main class="article-hero-text">
+                            <h1 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h1>
+                            <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
+                            <small class="credits">
+                                <p class="author">Dean Baker</p>
+                                <p class="date">May 29, 2017</p>
+                            </small>
+                        </main>
+                        <aside class="article-hero-related">
+                            <small>more on</small>
+                            <h6 class="heading-6 heading-6_bold">Goverment</h6>
+                            <ul class="list-2 list-2-dark">
+                                <li class="list-item">
+                                    <h5 class="heading-5">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</h5>
+                                    <small class="credits"><p class="author">Dean Baker</p></small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5">Trump Works to Make Federal Government Employment Less Attractive</h5>
+                                    <small class="credits"><p class="author">Dean Baker</p></small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5">Economic Populism Doesn't Have to Involve More Government</h5>
+                                    <small class="credits"><p class="author">Dean Baker</p></small>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section">
-            <div class="column-header-container"></span><h2 class="column-header">latest</h2></div>
-            <article class="note">
-                <picture>
-                    <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x600">
-                    <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                    <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                    <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                </picture>
-                <div class="article-text-container column is-6">
-                    <small class="tag"><span class="tag-type">report</span><span class="tag-theme">Intellectual Property</span></small>
-                    <h4 class="note-title">
-                        Working Paper: Is Intellectual Property the Root of All Evil? Patents, Copyrights, and Inequality
-                    </h4>
-                    <small class="credits"><p class="author">Dean Baker</p><p class="date">october 25, 2018</p></small>
-                </div>
-            </article>
-            <hr>
+            <div class="block-list-2">
+                <header class="column-header-container"><h4 class="column-header">latest</h4></header>
+                <dl class="list-2-container">
+                    <dt class="list-2-item">
+                        <picture>
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <div class="article-text-container">
+                            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Intellectual Property</a></small>
+                            <h4 class="heading-4">
+                                Working Paper: Is Intellectual Property the Root of All Evil? Patents, Copyrights, and Inequality
+                            </h4>
+                            <small class="credits"><p class="author">Dean Baker</p><p class="date">october 25, 2018</p></small>
+                        </div>
+                    </dt>
+                    <hr>
+                    <dt class="list-2-item">
+                        <picture>
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <div class="article-text-container">
+                            <small class="tag"><a class="tag-type">article</a><a class="tag-theme">Goverment</a></small>
+                            <h4 class="heading-4">
+                                Amazon’s $15 an Hour Minimum Wage and the Federal Reserve Board
+                            </h4>
+                            <small class="credits">
+                                <p class="author">Dean Baker</p>
+                                <p class="date">TRUTHOUT, OCTOBER 8, 2018</p>
+                            </small>
+                        </div>
+                    </dt>
+                    <hr>
+                    <dt class="list-2-item">
+                        <picture>
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <div class="article-text-container">
+                            <small class="tag"><a class="tag-type">presentation</a><a class="tag-theme">workers</a></small>
+                            <h4 class="heading-4">
+                                Fissuring of Labor Markets, Wage Stagnation, and Rising Wage Inequality
+                            </h4>
+                            <small class="credits">
+                                <p class="author">EILEEN APPELBAUM</p>
+                                <p class="date">SEPTEMBER 13, 2018</p>
+                            </small>
+                        </div>
+                    </dt>
+                    <dt class="list-2-item">
+                        <picture>
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <div class="article-text-container">
+                            <small class="tag"><a class="tag-type">article</a><a class="tag-theme">US Foreign Policy</a></small>
+                            <h4 class="heading-4">
+                                Puerto Rico’s Colonial Legacy and its Continuing Economic Troubles
+                            </h4>
+                            <small class="credits">
+                                <p class="author">LARA MERLING</p>
+                                <p class="date">UNCTAD, SEPTEMBER 26, 2018</p>
+                            </small>
+                        </div>
+                    </dt>
+                </dl>
+            </div>
         </section>
+        <section class="section">
+            <div class="block-BeatThePress">
+                <header class="BeatThePress-Header">
+                    <h4 class="heading-4 heading-4-extraBold">DEAN BAKER'S<br><em>BEAT THE PRESS</em></h4>
+                    <p>Beat the Press is Dean Baker's commentary on economic reporting. He is a Senior Economist at the Center for Economic and Policy Research (CEPR).</p>
+                    <div class="buttons-container">
+                        <button class="btn-2">SUBSCRIBE</button>
+                        <button class="btn-1">patreon</button>
+                    </div>
+                </header>
+                <dl class="list-3 list-3-dark">
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</h6>
+                        <small class="date">AUGUST 28, 2018</small>
+                    </dt>
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">Mixed Up Math in NYT on Health Care</h6>
+                        <small class="date">AUGUST 26, 2018</small>
+                    </dt>
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">Quick Thoughts on the Collapse of Lehman</h6>
+                        <small class="date">AUGUST 25, 2018</small>
+                    </dt>
+                </dl>
+            </div>
+        </section>
+        <div class="block-banner">
+            
+        </div>
+        <section class="section">
+            <div class="block-inTheNews">
+                <header class="column-header-container">
+                    <h4 class="column-header">cepr in the news</h4>
+                </header>
+                <dl class="list-3">
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">Donald Trump’s Loco Attack on the Federal Reserve</h6>
+                        <small class="date"><em>The New Yorker.</em>OCTOBER 5, 2018</small>
+                    </dt>
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">When the Next Recession Hits</h6>
+                        <small class="date"><em>The New Republic.</em>OCTOBER 10, 2018</small>
+                    </dt>
+                    <dt class="list-3-item">
+                        <h6 class="heading-6">Google to Shut Down Google+ after Failing to Disclose User Data Breach</h6>
+                        <small class="date"><em>The Guardian.</em>OCTOBER 09, 2018</small>
+                    </dt>
+                </dl>
+            </div>
+        </section>
+        <footer class="block-footer">
+            <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <defs>
+                    <style>
+                        .darkBlue {fill: #07074e;}
+                        .lightBlue {fill: #0066b3;}
+                        .grey {fill: #bcbec0;}
+                    </style>
+                </defs>
+                <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-small" class="is-inline-block-mobile is-hidden-tablet"></use>
+                <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-med" class="is-flex-tablet-only logo-med"></use>
+                <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-large" class="is-flex-desktop is-hidden-touch"></use>
+            </svg>
+            <dl class="footer-list">
+                <dt class="footer-item">Contact Us</dt>
+                <dt class="footer-item">About Us</dt>
+                <dt class="footer-item">Newsroom</dt>
+            </dl>
+            <div class="footer-social">
+
+            </div>
+            <div class="footer-license">
+                <p>This website is licensed under a Creative Commons Attribution 4.0 International License and governed by our Privacy Policy.</p>
+            </div>
+        </footer>
     </div>
 <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
 </body>

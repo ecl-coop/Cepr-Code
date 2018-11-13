@@ -1,0 +1,25 @@
+.article-hero-text {
+    //position: relative;
+    clear: both;
+    margin-top: 1em;
+
+    h1.article-hero-title {
+        font-size: $size-h1-fluid;
+        font-family: $Serif;
+        color: $Green;
+        letter-spacing: -.025em;
+        font-weight: 700;
+        line-height: 1.25;
+    }
+}
+
+.article-hero-picture {
+    position: relative;
+    top: 0;
+}
+
+.article-hero-summary {
+    font-family: $Sans;
+    color: $Grey;
+    font-size: 15px;
+}

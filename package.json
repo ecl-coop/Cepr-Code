@@ -21,6 +21,7 @@
     "postcss-cli": "^4.1.1"
   },
   "dependencies": {
+    "@gouch/to-title-case": "^2.2.1",
     "bulma": "^0.7.2",
     "include-media": "^1.4.9",
     "jshint": "^2.9.6",

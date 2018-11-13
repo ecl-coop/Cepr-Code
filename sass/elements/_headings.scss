@@ -14,17 +14,14 @@
     }
 }
 
-h2.column-header{
+h4.column-header{
     @include responsive-property("width", 95%, 98%, $phone, $widescreen); ///<<<<<<<<<<<<<<<<<is not working
     //width: 98%;
+    @include heading-4;
     display: flex;
-    white-space: nowrap;
-    text-transform: uppercase;
-    font-size: $size-h4;
+    //white-space: nowrap;
     align-items: center;
     color: $Blue-light;
-    letter-spacing: .15em;
-    font-weight: 300;
     flex: 1 0 auto;
 
     &:before,
@@ -45,10 +42,39 @@ h2.column-header{
     }
 }
 
-h4.note-title{
-    font-size: $size-h4;
+.heading-4{
+    font-size: $size-h4-fluid;
     color: $Black;
     margin: 1rem 0;
+    line-height: 1.25;
+
+    &.-extraBold{
+        font-weight: $ExtraBold;
+    }
+}
+
+.heading-5{
+    font-family: $Sans;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: $Light;
+    text-transform: capitalize;
+    letter-spacing: 0;
+}
+
+.heading-6{
+    font-family: $Sans;
+    font-size: $size-h6-fluid;
+    line-height: 1.25;
+    font-weight: $Light;
+    text-transform: capitalize;
+    letter-spacing: 0;
+
+    &._bold{
+        font-weight: $Bold;
+        letter-spacing: 50;
+        text-transform: uppercase;
+    }
 }
 
 @include media ('>=tablet') {

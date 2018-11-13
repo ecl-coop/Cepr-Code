@@ -1,15 +1,28 @@
 @import "node_modules/include-media/dist/include-media.scss";
 @import "utilities/functions.scss";
 @import "utilities/mixins.scss";
+@import "mixins/typography-mixins.scss";
 @import "base.scss";
+
+//elements
 @import "elements/variables.scss";
 @import "elements/circle.scss";
 @import "elements/headings.scss";
 @import "elements/tag.scss";
 @import "elements/lines.scss";
 @import "elements/credits.scss";
-@import "components/note.scss";
+@import "elements/buttons.scss";
+
+//components
+@import "components/article-hero.scss";
 @import "components/menu.scss";
+
+//blocks
+@import "blocks/block-featured.scss";
+@import "blocks/block-BeatThePress.scss";
+@import "blocks/block-inTheNews.scss";
+@import "blocks/block-Footer.scss";
+
 @import "node_modules/normalizecss/normalize.css";
 @import "node_modules/bulma/sass/utilities/_all.sass";
 @import "node_modules/bulma/sass/grid/columns.sass";

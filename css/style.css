@@ -19,7 +19,11 @@
   --color-Grey-darkest: #282828;
   --color-Grey-light: #c6c6c6;
   --font-Primary: 'Merriweather Sans', sans-serif;
-  --font-Display: 'Merriweather', serif; }
+  --font-Display: 'Merriweather', serif;
+  --weigth-Light: 300;
+  --weight-Regular: 400;
+  --weight-Bold: 700;
+  --weight-ExtraBold: 800; }
 
 * {
   margin: 0;
@@ -62,43 +66,65 @@ body {
     color: var(--color-Primary-light);
     align-self: baseline; }
 
-h2.column-header {
+h4.column-header {
   width: 95%;
-  display: flex;
-  white-space: nowrap;
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: calc(20.46026px + 0.94899vw);
+  letter-spacing: .15em;
+  font-weight: var(--weigth-Light);
+  display: flex;
   align-items: center;
   color: var(--color-Primary-light);
-  letter-spacing: .15em;
-  font-weight: 300;
   flex: 1 0 auto; }
   @media screen and (min-width: 373px) {
-    h2.column-header {
+    h4.column-header {
       width: 95%; } }
   @media screen and (min-width: 1216px) {
-    h2.column-header {
+    h4.column-header {
       width: 98%; } }
-  h2.column-header:before, h2.column-header:after {
+  h4.column-header:before, h4.column-header:after {
     border-top: 1px solid var(--color-Primary-light);
     position: relative;
     width: 45%;
     content: "";
     display: table-cell; }
-  h2.column-header:before {
+  h4.column-header:before {
     right: 1.5%; }
-  h2.column-header:after {
+  h4.column-header:after {
     left: 1.5%; }
 
-h4.note-title {
-  font-size: 24px;
+.heading-4 {
+  font-size: calc(20.46026px + 0.94899vw);
   color: var(--color-Black);
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  line-height: 1.25; }
+  .heading-4.-extraBold {
+    font-weight: var(--weigth-ExtraBold); }
+
+.heading-5 {
+  font-family: var(--font-Primary);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: var(--weigth-Light);
+  text-transform: capitalize;
+  letter-spacing: 0; }
+
+.heading-6 {
+  font-family: var(--font-Primary);
+  font-size: calc(0.23725vw + 15.11507px);
+  line-height: 1.25;
+  font-weight: var(--weigth-Light);
+  text-transform: capitalize;
+  letter-spacing: 0; }
+  .heading-6._bold {
+    font-weight: var(--weigth-Bold);
+    letter-spacing: 50;
+    text-transform: uppercase; }
 
 @media (min-width: 769px) {
   h2.column-header,
   .h4.note-title {
-    font-size: calc(10.23714px + 1.78971vw); } }
+    font-size: calc(20.46026px + 0.94899vw); } }
 
 .tag {
   font-size: calc(0.11862vw + 9.55753px);
@@ -137,7 +163,7 @@ hr {
   margin: 1em 0;
   padding: 0; }
 
-.credits {
+.credits, .date {
   font-size: calc(0.11862vw + 9.55753px);
   font-family: var(--font-Primary);
   text-transform: uppercase;
@@ -146,6 +172,45 @@ hr {
 
 .author {
   font-weight: 700; }
+
+.btn-1, .btn-2 {
+  height: 40px;
+  border: 3px solid;
+  font-size: calc(0.11862vw + 9.55753px);
+  font-family: var(--font-Primary);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-radius: calc(40px/2);
+  margin: .5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center; }
+
+.btn-1 {
+  background-color: var(--color-White); }
+
+.btn-2 {
+  background-color: var(--color-Primary-light); }
+
+.article-hero-text {
+  clear: both;
+  margin-top: 1em; }
+  .article-hero-text h1.article-hero-title {
+    font-size: calc(39.11507px + 0.23725vw);
+    font-family: var(--font-Display);
+    color: var(--color-Secondary);
+    letter-spacing: -.025em;
+    font-weight: 700;
+    line-height: 1.25; }
+
+.article-hero-picture {
+  position: relative;
+  top: 0; }
+
+.article-hero-summary {
+  font-family: var(--font-Primary);
+  color: var(--color-Grey);
+  font-size: 15px; }
 
 /*This is a three level menu that turns into a Mega Menu of one level on Desktop.
 The structure is: Container > Item > Target on each level.
@@ -462,6 +527,67 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 @media (min-width: 1216px) {
   .menu-container {
     width: 1216px; } }
+
+.block-featured {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  background-color: var(--color-Black); }
+
+.featured-menu-container {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  order: 1; }
+
+.featured-pictures-container {
+  display: flex;
+  flex-flow: row; }
+
+.featured-articles-container {
+  display: flex;
+  flex-flow: row;
+  flex-basis: 1 0 100%;
+  width: 100vw;
+  position: relative;
+  clear: both;
+  order: 2; }
+
+.featured-article-content {
+  flex-basis: 1 0 100%; }
+
+.article-text-container {
+  padding: 1rem 2.5rem; }
+
+.block-BeatThePress {
+  background-color: var(--color-Black);
+  display: flex;
+  flex-flow: column;
+  margin: 0 1.5rem; }
+  .block-BeatThePress .heading-4, .block-BeatThePress .heading-6 {
+    color: var(--color-Secondary-dark); }
+
+.BeatThePress-Header {
+  display: flex;
+  flex-flow: column;
+  padding: 2em; }
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .buttons-container .btn-1,
+  .buttons-container .btn-2 {
+    border-color: var(--color-Secondary-dark);
+    margin: 0; }
+  .buttons-container .btn-1 {
+    background-color: transparent;
+    color: var(--color-Secondary-dark); }
+  .buttons-container .btn-2 {
+    background-color: var(--color-Secondary-light);
+    color: var(--color-White); }
+
+.block-footer {
+  background-color: var(--color-White); }
 
 @keyframes spinAround {
   from {

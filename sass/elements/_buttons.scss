@@ -1,0 +1,23 @@
+$btn-height: 40px;
+$btn-radius: calc(#{$btn-height}/2);
+
+%btn-base{
+    height: $btn-height;
+    @include border-heavy;
+    @include small-text;
+    border-radius: $btn-radius;
+    margin: .5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-1{
+    @extend %btn-base;
+    background-color: $White;
+}
+
+.btn-2 {
+    @extend %btn-base;
+    background-color: $Blue-light;
+}

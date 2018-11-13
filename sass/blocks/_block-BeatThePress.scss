@@ -1,0 +1,38 @@
+.block-BeatThePress{
+    background-color: $Black;
+    display: flex;
+    flex-flow: column;
+    margin: 0 $margin-vertical-large;
+
+    .heading-4, .heading-6{
+        color: $Green-dark;
+    }
+}
+
+.BeatThePress-Header{
+    display: flex;
+    flex-flow: column;
+    padding: 2em;
+
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn-1,
+    .btn-2 {
+        border-color: $Green-dark;
+        margin: 0;
+    }
+
+    .btn-1 {
+        background-color: transparent;
+        color: $Green-dark;
+    }
+
+    .btn-2 {
+        background-color: $Green-light;
+        color: $White;
+    }
+}
