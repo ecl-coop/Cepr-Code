@@ -26,6 +26,11 @@ $Grey: var(--color-Grey);
 $Sans: var(--font-Primary);
 $Serif: var(--font-Display);
 
+$Light: var(--weigth-Light);
+$Regular: var(--weigth-Regular);
+$Bold: var(--weigth-Bold);
+$ExtraBold: var(--weigth-ExtraBold);
+
 $size-small-min: 10px;
 $size-small-max: 11px;
 
@@ -47,11 +52,6 @@ $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
 $size-h6-fluid: calc-interpolation($phone, $size-h6-min, $widescreen, $size-h6-max);
 
-$Light: var(--weigth-Light);
-$Regular: var(--weigth-Regular);
-$Bold: var(--weigth-Bold);
-$ExtraBold: var(--weigth-ExtraBold);
-
 
 //////////HEIGHTS & WIDTHS
 
@@ -67,12 +67,15 @@ $margin-vertical-small: .5rem;
 $margin-vertical-normal: 1rem;
 $margin-vertical-large: 1.5rem;
 $margin-horizontal-medium: 1.5rem;
-
-
+$margin-horizontal-regular: 1rem;
+$margin-horizontal-large: 2rem;
 
 
 /////////////////PADDINGS
 $padding-vertical-small: 1em;
+$padding-vertical-normal: 1.5em;
+$padding-vertical-large: 2em;
+$padding-horizontal-regular: 1rem;
 
 //////////////////LINE WEIGHTS
 $line-heigth: 1px;

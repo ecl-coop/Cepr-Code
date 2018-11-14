@@ -3,20 +3,28 @@
     display: flex;
     flex-flow: column;
     margin: 0 $margin-vertical-large;
+    padding: 0 $padding-vertical-small;
 
     .heading-4, .heading-6{
         color: $Green-dark;
+    }
+
+    p{
+        @include paragraph-small;
+        color: $White;
     }
 }
 
 .BeatThePress-Header{
     display: flex;
     flex-flow: column;
-    padding: 2em;
+    padding: $padding-vertical-normal;
 
 }
 
 .buttons-container{
+    margin: 0 calc(#{$padding-vertical-normal}*-1);
+    margin-top: $margin-horizontal-large;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,4 +43,8 @@
         background-color: $Green-light;
         color: $White;
     }
+}
+
+.list-3-item{
+    border-bottom-color: $Green-dark;
 }
