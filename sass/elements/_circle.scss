@@ -1,27 +1,9 @@
 $size: 12px;
 
-%half-circle-base{
-      height: $size*2;
-      width: $size;
-      background: $Blue-light;
-      display: inline-block;
-}
-
 @mixin bullet {
-      content: "\00b7";
-      font-size: 6em;
-      line-height: 0;
-      padding-top: .075em;
+      content: "";
+      width: $size;
+      height: $size;
+      clip-path: circle();
+      background-color: $Black;
 }
-
-@mixin half-circle-right() {
-    @extend %half-circle-base;
-          border-bottom-right-radius: $size * 2;
-          border-top-right-radius: $size * 2;
-    }
-
-@mixin half-circle-left() {
-    @extend %half-circle-base;
-          border-bottom-left-radius: $size * 2;
-          border-top-left-radius: $size * 2;
-    }

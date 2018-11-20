@@ -15,6 +15,8 @@
     --color-Action-dark: #ffd100;
     --color-Action-light: #ffe880;
 
+    --color-lilac: #7F80AA;
+
     --color-Black: #000033;
     --color-White: #f8f8f8;
     --color-Grey: #7f7f7f;
@@ -24,11 +26,6 @@
 
     --font-Primary: 'Merriweather Sans', sans-serif;
     --font-Display: 'Merriweather', serif;
-
-    --weigth-Light: 300;
-    --weight-Regular: 400;
-    --weight-Bold: 700;
-    --weight-ExtraBold: 800;
 
 }
 
@@ -45,7 +42,7 @@
 
 body{
     font-family: var(--font-Primary), sans-serif;
-    background-color: var(--color-White);
+    background-color: #ffff;
 }
 
 #viewport{

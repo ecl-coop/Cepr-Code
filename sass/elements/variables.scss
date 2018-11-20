@@ -16,8 +16,13 @@ $Orange-light: var(--color-Accent-light);
 $Green: var(--color-Secondary);
 $Green-dark: var(--color-Secondary-dark);
 $Green-light: var(--color-Secondary-light);
+$Yellow: var(--color-Action);
+$Yellow-dark: var(--color-Action-dark);
+$Yellow-light: var(--color-Action-light);
 
 $Grey: var(--color-Grey);
+$Grey-light: var(--color-Grey-light);
+$Grey-lilac: var(--color-lilac);
 
 ///////////////TYPOGRAPHY
 //
@@ -26,31 +31,39 @@ $Grey: var(--color-Grey);
 $Sans: var(--font-Primary);
 $Serif: var(--font-Display);
 
-$Light: var(--weigth-Light);
-$Regular: var(--weigth-Regular);
-$Bold: var(--weigth-Bold);
-$ExtraBold: var(--weigth-ExtraBold);
+$Light: 300;
+$Regular: 400;
+$Bold: 700;
+$ExtraBold: 800;
 
+$size-smallest-min: 8px;
+$size-smallest-max: 10px;
 $size-small-min: 10px;
 $size-small-max: 11px;
 
 $size-h1-min: 40px;
 $size-h1-max: 42px;
 $size-h2-min: 32px;
-$size-h2-max: 40px;
+$size-h2-max: 36px;
 $size-h3-min: 24px;
 $size-h3-max: 32px;
 $size-h4-min: 24px;
-$size-h4-max: 32px;
+$size-h4-max: 30px;
 $size-h5-min: 20px;
-$size-h5-max: 28px;
+$size-h5-max: 26px;
 $size-h6-min: 16px;
 $size-h6-max: 18px;
+$size-h7-min: 14px;
+$size-h7-max: 16px;
 
+
+//fluid scale functions
+$size-smallest-fluid: calc-interpolation($phone, $size-smallest-min, $widescreen, $size-smallest-max);
 $size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
 $size-h6-fluid: calc-interpolation($phone, $size-h6-min, $widescreen, $size-h6-max);
+$size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-max);
 
 
 //////////HEIGHTS & WIDTHS
@@ -84,4 +97,9 @@ $line-base: $line-heigth solid $Blue-light;
 ///////////////////BORDERS
 @mixin border-heavy {
     border: 3px solid;
+}
+
+@mixin outline-regular {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $Black;
 }

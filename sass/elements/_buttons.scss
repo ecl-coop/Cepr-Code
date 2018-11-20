@@ -1,15 +1,25 @@
 $btn-height: 40px;
-$btn-radius: calc(#{$btn-height}/2);
+$btn-radius: $btn-height/2;
 
 %btn-base{
     height: $btn-height;
     @include border-heavy;
     @include small-text;
-    border-radius: $btn-radius;
+    border-radius: $btn-height;
     margin: .5rem;
-    padding: 1rem;
+    padding: 1rem $btn-radius;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+%shadow-base{
+     height: 120%;
+     width: 115%;
+     content: "";
+     position: absolute;
+     top: 0px;
+     left: -3px;
 }
 
 .btn-1{
@@ -19,5 +29,44 @@ $btn-radius: calc(#{$btn-height}/2);
 
 .btn-2 {
     @extend %btn-base;
-    background-color: $Blue-light;
+    font-weight: $Bold;
+    background-color: transparent;
+
+    &-texture-orange{
+        background: url("/img/btn-2_textureOr.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-black {
+        background: url("/img/btn-2_texture.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-blueLight {
+        background: url("/img/btn-2_textureBlueLight.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-green {
+        background: url("/img/btn-2_textureGreen.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-shadow-black{
+        position: relative;
+        &::after{
+            @extend %shadow-base;
+            background: url("/img/btn-2_shadows.png") center no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    &-shadow-green {
+        position: relative;
+        &::after {
+            @extend %shadow-base;
+            background: url("/img/btn-2_shadowGreen.png") center no-repeat;
+            background-size: 100%;
+        }
+    }
 }

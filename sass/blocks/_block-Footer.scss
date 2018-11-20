@@ -1,4 +1,54 @@
 .block-footer{
     background-color: $White;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    height: 21rem;
+    justify-content: space-between;
 
+    .line-2{
+        margin: 0;
+    }
+}
+.footer-logo{
+    height: 3.5rem;
+}
+
+.footer-list{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.footer-item a{
+    @include small-text;
+    font-size: .75rem;
+    color: $Blue-dark;
+    font-weight: $ExtraBold;
+}
+
+.footer-social{
+    display: inline-flex;
+    width: 3.5rem;
+    justify-content: space-between;
+    .social-logo{
+        fill: $Blue;
+        width: 30%;
+    }
+}
+
+.footer-license{
+    height: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid $Blue-light;
+    p{
+        @include smallest-text;
+        width: 85%;
+        color: $Blue-light;
+        text-transform: none;
+    }
 }

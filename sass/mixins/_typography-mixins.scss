@@ -1,6 +1,13 @@
 /////////////////////////////////
 //////////////////SMALL-TEXTS
 
+@mixin smallest-text {
+    font-size: $size-smallest-fluid;
+    font-family: $Sans;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
 @mixin small-text {
     font-size: $size-small-fluid;
     font-family: $Sans;
@@ -16,6 +23,13 @@
     font-size: $size-h4-fluid;
     letter-spacing: .15em;
     font-weight: $Light;
+}
+
+@mixin heading-7 {
+    text-transform: uppercase;
+    font-size: $size-h7-fluid;
+    letter-spacing: .15em;
+    font-weight: $ExtraBold;
 }
 
 /////////////////////////////////

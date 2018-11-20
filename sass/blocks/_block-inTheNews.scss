@@ -1,0 +1,10 @@
+.block-inTheNews{
+        display: flex;
+        flex-flow: column;
+        margin: $margin-horizontal-large 0;
+
+        .list-3{
+                margin: 0 $margin-vertical-large;
+                padding: 0 $padding-vertical-small;
+        }
+}

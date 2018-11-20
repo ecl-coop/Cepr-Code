@@ -1,0 +1,82 @@
+%banner-base{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 7.5rem;
+}
+////////////////////////////////////////
+/////SUBSCRIPTION BANNER
+
+$input-heigth: 40px;
+
+.banner-subscribe{
+    background-color: $Blue-light;
+    @extend %banner-base;
+    flex-flow: column;
+    text-decoration: none;
+    justify-content: center;
+    padding-bottom: 3%;
+
+    .heading-7{
+        color: $Orange;
+    }
+    .btn-2{
+        margin: 0;
+        @include outline-regular;
+        border-radius: 0 $input-heigth $input-heigth 0;
+        color: $Orange-dark;
+        border-color: $Black;
+        border-left: none;
+        padding: 0;
+        width: 25%;
+        font-size: $size-smallest-fluid;
+        background-color: $Black;
+    }
+}
+
+.sign-up{
+    width: 80%;
+    height: $input-heigth;
+    display: inline-flex;
+}
+
+.input{
+    @include outline-regular;
+    height: 100%;
+    width: 80%;
+    border-radius: $input-heigth 0 0 $input-heigth;
+    border-right: none;
+    padding-left: $padding-vertical-normal;
+
+
+    &::placeholder {
+        color: $Grey-lilac;
+    }
+}
+
+////////////////////////////////////////
+/////DONATION BANNER
+
+.banner-donate{
+    background-color: $Yellow-light;
+    @extend %banner-base;
+
+    .btn-2{
+        //width: 30%;
+        width: 104px;
+        height: 37%;
+        text-align: center;
+        margin: 0;
+        border-color: $Blue-dark;
+        color: $Blue-dark;
+    }
+}
+
+.banner-donate-text{
+    width: 45%;
+    color: $Blue-dark;
+    p{
+        @include paragraph-small;
+        font-weight: $Light;
+    }
+}

@@ -2,4 +2,33 @@
     margin-bottom: $margin-horizontal-regular;
     border-bottom: 1px dotted;
     padding-bottom: $padding-horizontal-regular;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+    &-news{
+        .heading-6, .date{
+            margin-left: 3.5rem;
+        }
+
+        .heading-6{
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &::before{
+                content: "";
+                justify-self: flex-start;
+                width: 35px;
+                height: 31px;
+                flex: 0 0 auto;
+                margin-left: -3.5rem;
+                //fill: $Blue;
+                background-image: url("/img/md-paper.svg");
+                background-size: cover;
+                margin-right: 1.5rem;
+            }
+        }
+    }
 }

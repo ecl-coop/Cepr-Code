@@ -2,7 +2,7 @@
     background-color: $Black;
     display: flex;
     flex-flow: column;
-    margin: 0 $margin-vertical-large;
+    margin: $margin-horizontal-large $margin-vertical-large;
     padding: 0 $padding-vertical-small;
 
     .heading-4, .heading-6{
@@ -19,7 +19,19 @@
     display: flex;
     flex-flow: column;
     padding: $padding-vertical-normal;
+    position: relative;
 
+    &:before{
+        width: 100%;
+        height: 56px;
+        position: absolute;
+        right: 0;
+        top: -16px;
+        content: "";
+        background: url("/img/btp_header.svg") right no-repeat;
+        margin: 0 $padding-vertical-small*-1;
+        border-bottom: 1px solid $Green-dark;
+    }
 }
 
 .buttons-container{

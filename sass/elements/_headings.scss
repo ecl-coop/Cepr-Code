@@ -1,16 +1,22 @@
 .column-header-container{
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     height: 36px;
     width: 100%;
-    margin-top: $margin-horizontal-medium;
-    margin-bottom: $margin-horizontal-medium;
+    margin: $margin-horizontal-medium 0;
+    //position: relative;
     &:before,
-    &::after {
+    &:after {
         @include bullet;
-        color: $Blue-light;
-        align-self: baseline;
+        background-color: $Blue-light;
+        align-self: center;
+    }
+    &:before{
+        margin-left: -5px;
+    }
+    &:after {
+        margin-right: -5px;
     }
 }
 
@@ -19,15 +25,18 @@ h4.column-header{
     //width: 98%;
     @include heading-4;
     display: flex;
-    //white-space: nowrap;
+    white-space: nowrap;
     align-items: center;
+    justify-content: center;
     color: $Blue-light;
     flex: 1 0 auto;
+    text-align: center;
+    line-height: 1;
+    font-weight: $Regular;
 
     &:before,
     &:after {
         border-top: $line-base;
-        position: relative;
         width: 45%;
         content: "";
         display: table-cell;
@@ -35,10 +44,12 @@ h4.column-header{
 
     &:before {
         right: 1.5%;
+        margin-right: $padding-vertical-small/2;
     }
 
     &:after {
         left: 1.5%;
+        margin-left: $padding-vertical-small/2
     }
 }
 
@@ -75,6 +86,11 @@ h4.column-header{
         letter-spacing: 50;
         text-transform: uppercase;
     }
+}
+
+.heading-7{
+    @include heading-7;
+    margin-bottom: .75em;
 }
 
 @include media ('>=tablet') {
