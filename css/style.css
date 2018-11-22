@@ -259,23 +259,44 @@ hr, .line-2 {
 
 .article-hero-text {
   clear: both;
-  margin-top: 1em; }
+  margin-top: 1em;
+  padding: 1em 0; }
   .article-hero-text h1.article-hero-title {
     font-size: calc(39.11507px + 0.23725vw);
     font-family: var(--font-Display);
     color: var(--color-Secondary);
     letter-spacing: -.025em;
     font-weight: 700;
-    line-height: 1.25; }
-
-.article-hero-picture {
-  position: relative;
-  top: 0; }
+    line-height: 1.25;
+    display: inline; }
+    .article-hero-text h1.article-hero-title:hover {
+      border-bottom: 1px solid var(--color-Secondary); }
+    .article-hero-text h1.article-hero-title:active {
+      color: var(--color-Accent); }
 
 .article-hero-summary {
+  display: block;
   font-family: var(--font-Primary);
   color: var(--color-Grey);
   font-size: 15px; }
+
+.article-hero-related {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+  .article-hero-related .heading-5 a {
+    color: var(--color-White);
+    transition: all .2s; }
+  .article-hero-related .heading-5 :hover {
+    color: var(--color-Secondary); }
+  .article-hero-related .heading-5 :active {
+    color: var(--color-Secondary-dark); }
+  .article-hero-related .heading-7,
+  .article-hero-related .preheading {
+    align-self: center;
+    text-align: center;
+    color: var(--color-Secondary);
+    line-height: 1; }
 
 /*This is a three level menu that turns into a Mega Menu of one level on Desktop.
 The structure is: Container > Item > Target on each level.
@@ -680,34 +701,113 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     font-weight: 300; }
 
 .block-featured {
-  position: relative;
   display: flex;
   flex-flow: column;
-  background-color: var(--color-Black); }
+  background-color: var(--color-Black);
+  position: relative; }
 
-.featured-menu-container {
+.featured-tabs-container {
   display: inline-flex;
-  flex-wrap: nowrap;
-  order: 1; }
+  position: absolute;
+  z-index: 1;
+  top: 232px;
+  white-space: nowrap;
+  overflow-x: auto;
+  width: 100vw;
+  height: 40px; }
+  .featured-tabs-container a.tab {
+    cursor: pointer;
+    border-top: 8px solid transparent;
+    order: 2;
+    color: var(--color-lilac);
+    font-weight: 400;
+    padding: 1em;
+    z-index: 3;
+    transition: all 0.25s; }
+    .featured-tabs-container a.tab:hover {
+      color: var(--color-Accent-light); }
+    .featured-tabs-container a.tab:active {
+      color: var(--color-Accent-dark); }
+  .featured-tabs-container a.tab-is-selected {
+    order: 1;
+    border: 1px solid var(--color-Accent);
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0 16px 0 0;
+    background-color: var(--color-Black);
+    margin-bottom: 1em;
+    margin-left: 1.5rem;
+    position: relative;
+    color: var(--color-Accent-dark);
+    font-weight: 700;
+    cursor: default; }
+    .featured-tabs-container a.tab-is-selected:hover, .featured-tabs-container a.tab-is-selected:active {
+      color: var(--color-Accent-dark); }
+    .featured-tabs-container a.tab-is-selected:before {
+      content: "\0025E2";
+      color: var(--color-Black);
+      font-size: 40px;
+      text-shadow: -1px -1px 0px var(--color-Accent-dark);
+      text-align: left;
+      position: absolute;
+      top: -6px;
+      left: -31px;
+      padding-right: -1px;
+      height: 100%;
+      z-index: 2;
+      line-height: 1; }
 
-.featured-pictures-container {
+.featured-tabs {
+  padding: 0 1.5em;
   display: flex;
-  flex-flow: row; }
+  overflow: hidden;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  position: relative; }
 
 .featured-articles-container {
   display: flex;
-  flex-flow: row;
-  flex-basis: 1 0 100%;
-  width: 100vw;
-  position: relative;
+  flex-wrap: nowrap;
   clear: both;
-  order: 2; }
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: mandatory; }
 
 .featured-article-content {
-  flex-basis: 1 0 100%; }
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  /*display: grid;
+    grid-template-areas: 
+        "title title"
+        "related related";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;*/ }
 
-.article-text-container {
-  padding: 1rem 2.5rem; }
+.article-hero-picture {
+  grid-area: picture;
+  display: flex;
+  height: 240px;
+  margin-bottom: 32px; }
+
+.article-hero-text,
+.article-hero-related {
+  padding: 0 2em; }
+
+@media (min-width: 1024px) {
+  .featured-tabs-container {
+    margin-top: 0; }
+  .featured-article-content {
+    grid-template-areas: "title picture" "related related"; }
+  .article-hero-picture {
+    position: relative;
+    top: 0; }
+  .featured-footer {
+    background-color: var(--color-Secondary);
+    display: flex;
+    justify-content: space-evenly; } }
 
 .block-BeatThePress {
   background-color: var(--color-Black);
@@ -773,7 +873,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   align-items: center;
   flex-flow: column;
   height: 21rem;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-top: 1px solid var(--color-Black);
+  padding-top: 2rem; }
   .block-footer .line-2 {
     margin: 0; }
 
@@ -799,13 +901,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 .footer-social {
   display: inline-flex;
   width: 3.5rem;
-  justify-content: space-between; }
+  justify-content: space-between;
+  height: 10%; }
   .footer-social .social-logo {
     fill: var(--color-Primary);
     width: 30%; }
 
 .footer-license {
   height: 17%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,7 +1,7 @@
 .article-hero-text {
-    //position: relative;
     clear: both;
     margin-top: 1em;
+    padding: $padding-vertical-small 0;
 
     h1.article-hero-title {
         font-size: $size-h1-fluid;
@@ -10,16 +10,48 @@
         letter-spacing: -.025em;
         font-weight: 700;
         line-height: 1.25;
+        display: inline;
+        &:hover{
+            border-bottom: 1px solid $Green;
+        }
+        &:active{
+            color: $Orange;
+        }
     }
 }
 
-.article-hero-picture {
-    position: relative;
-    top: 0;
-}
-
 .article-hero-summary {
+    display: block;
     font-family: $Sans;
     color: $Grey;
     font-size: 15px;
+}
+
+.article-hero-related {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .heading-5 {
+        a {
+            color: $White;
+            transition: all .2s;
+        }
+
+        :hover {
+            color: $Green;
+        }
+
+        :active {
+            color: $Green-dark;
+        }
+    }
+
+    .heading-7,
+    .preheading {
+        align-self: center;
+        text-align: center;
+        color: $Green;
+        line-height: 1;
+    }
 }

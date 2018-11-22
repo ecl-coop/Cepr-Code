@@ -5,6 +5,8 @@
     flex-flow: column;
     height: 21rem;
     justify-content: space-between;
+    border-top: 1px solid $Black;
+    padding-top: $padding-horizontal-regular*2;
 
     .line-2{
         margin: 0;
@@ -33,6 +35,7 @@
     display: inline-flex;
     width: 3.5rem;
     justify-content: space-between;
+    height: 10%;
     .social-logo{
         fill: $Blue;
         width: 30%;
@@ -41,6 +44,7 @@
 
 .footer-license{
     height: 17%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

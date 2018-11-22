@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
+    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
     <script defer src="js/menu.js"></script>
+    <script defer src="js/tabs.js"></script>
     <script src="to-title-case.js"></script>
     <title>Center for Economic and Policy Research</title>
 </head> 
@@ -95,52 +97,64 @@
         </section>
         <section class="section">
             <div class="block-featured">
-                <nav class="featured-menu-container">
-                    <label class="tag tag-type" for="featured-1">latin america and the caribbean</label>
-                    <label class="tag tag-type" for="featured-2">goverment</label>
-                    <label class="tag tag-type" for="featured-3">europe</label>
-                    <label class="tag tag-type" for="featured-4">Growth</label>
+                <nav class="featured-tabs-container">
+                    <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
+                        <svg width="8" height="8">
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+                        </svg>
+                        <span class="is-sr-only">Previous featured topic</span>
+                    </button>
+                    <div class="featured-tabs tabs">
+                        <a class="tag tab tab-is-selected" href="#featured-1">latin america and the caribbean</a>
+                        <a class="tag tab" href="#featured-2">goverment</a>
+                        <a class="tag tab" href="#featured-3">europe</a>
+                        <a class="tag tab" href="#featured-4">Growth</a>
+                    </div>
+                    <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
+                        <svg width="8" height="8">
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+                        </svg>
+                        <span class="is-sr-only">Next featured topic</span>
+                    </button>
                 </nav>
-                <div class="featured-pictures-container">
-                    <picture id="featured-1" class="article-hero-picture" data-state="open">
-                        <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                        <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                        <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                        <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                    </picture>
-                    <picture id="featured-2" class="article-hero-picture" data-state="close">
-                        <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                        <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                        <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                        <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                    </picture>
-                </div>
                 <div class="featured-articles-container">
                     <div id="featured-1" class="featured-article-content" data-state="open">
+                        <picture class="article-hero-picture">
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
                         <main class="article-hero-text">
-                            <h1 class="article-hero-title">Presidential Election Is about a Fight for Democracy in Brazil</h1>
+                            <h1 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h1>
                             <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
                             <small class="credits"><p class="author">MARK WEISBROT</p><p class="date">OCTOBER 7, 2018</p></small>
                         </main>
                         <aside class="article-hero-related">
-                            <small>more on</small><h6 class="heading-6 heading-6-bold">Latin America and the caribbean</h6>
+                            <small class="preheading">more on</small><h6 class="heading-7">Latin America and the caribbean</h6>
                             <ul class="list">
                                 <li class="list-item">
-                                    <h5 class="heading-5">Is Latin America Still the US’s “Backyard”?</h5> 
+                                    <h5 class="heading-5"><a href="">Is Latin America Still the US’s “Backyard”?</a></h5> 
                                     <small class="credits"><p class="author">Alexander Main</p></small>
                                 </li>
                                 <li class="list-item">
-                                    <h5 class="heading-5">Latin America: The End of An Era</h5>
+                                    <h5 class="heading-5"><a href="">Latin America: The End of An Era</a></h5>
                                     <small class="credits"><p class="author">Mark Weisbrot</p></small>
                                 </li>
                                 <li class="list-item">
-                                    <h5 class="heading-5">Will Trump Be Better for Latin America than Obama?</h5>
+                                    <h5 class="heading-5"><a href="">Will Trump Be Better for Latin America than Obama?</a></h5>
                                     <small class="credits"><p class="author">Alexander Main</p></small>
                                 </li>
                             </ul>
                         </aside>
                     </div>
                     <div id="featured-2" class="featured-article-content" data-state="close">
+                        <picture class="article-hero-picture">
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
                         <main class="article-hero-text">
                             <h1 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h1>
                             <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
@@ -150,25 +164,111 @@
                             </small>
                         </main>
                         <aside class="article-hero-related">
-                            <small>more on</small>
-                            <h6 class="heading-6 heading-6_bold">Goverment</h6>
+                            <small class="preheading">more on</small>
+                            <h6 class="heading-7">Goverment</h6>
                             <ul class="list-2 list-2-dark">
                                 <li class="list-item">
-                                    <h5 class="heading-5">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</h5>
+                                    <h5 class="heading-5"><a href="">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</a></h5>
                                     <small class="credits"><p class="author">Dean Baker</p></small>
                                 </li>
                                 <li class="list-item">
-                                    <h5 class="heading-5">Trump Works to Make Federal Government Employment Less Attractive</h5>
+                                    <h5 class="heading-5"><a href="">Trump Works to Make Federal Government Employment Less Attractive</a></h5>
                                     <small class="credits"><p class="author">Dean Baker</p></small>
                                 </li>
                                 <li class="list-item">
-                                    <h5 class="heading-5">Economic Populism Doesn't Have to Involve More Government</h5>
+                                    <h5 class="heading-5"><a href="">Economic Populism Doesn't Have to Involve More Government</a></h5>
                                     <small class="credits"><p class="author">Dean Baker</p></small>
                                 </li>
                             </ul>
                         </aside>
                     </div>
+                    <div id="featured-3" class="featured-article-content" data-state="close">
+                        <picture class="article-hero-picture">
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <main class="article-hero-text">
+                            <h1 class="article-hero-title">The U.S. and Europe: Different Approaches on Work-Life Balance</h1>
+                            <sub class="article-hero-summary">Workers in the United States trail other high-income countries in the Organization for Economic Co-operation and
+                            Development (OECD) in terms of work-life balance. The U.S. tops the list in terms of yearly hours worked and falls
+                            significantly behind other countries when looking at efforts to improve work-life balance.</sub>
+                            <small class="credits">
+                                <p class="author">Nick Buffie and Lara Merling</p>
+                                <p class="date">Nov 06, 2016</p>
+                            </small>
+                        </main>
+                        <aside class="article-hero-related">
+                            <small class="preheading">more on</small>
+                            <h6 class="heading-7">Europe</h6>
+                            <ul class="list-2 list-2-dark">
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">The High Cost of Transforming Europe: Why Europe Stumbled</a></h5>
+                                    <small class="credits">
+                                        <p class="author">Mark Weisbrot</p>
+                                    </small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">Democracy, National Sovereignty, and Economic Policy: The Challenges Facing Europe and the United States</a></h5>
+                                    <small class="credits">
+                                        <p class="author">An Interview with Mark Weisbrot, by Nacho Berdugo</p>
+                                    </small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">The Toll of Austerity in Europe</a></h5>
+                                    <small class="credits">
+                                        <p class="author">Dean Baker</p>
+                                    </small>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div id="featured-4" class="featured-article-content" data-state="close">
+                        <picture class="article-hero-picture">
+                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                        </picture>
+                        <main class="article-hero-text">
+                            <h1 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h1>
+                            <sub class="article-hero-summary">Investment was driven largely by a surge in the mining sector, prompted by higher world energy prices.</sub>
+                            <small class="credits">
+                                <p class="author">Dean Baker</p>
+                                <p class="date">July 27, 2018</p>
+                            </small>
+                        </main>
+                        <aside class="article-hero-related">
+                            <small class="preheading">more on</small>
+                            <h6 class="heading-7">Growth</h6>
+                            <ul class="list-2 list-2-dark">
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">Slower Population Growth Could Significantly Reduce Carbon Emissions, Paper Finds</a></h5>
+                                    <small class="credits">
+                                        <p class="author">Dan Beeton</p>
+                                    </small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">Latin American Growth in the 21st Century: The 'Commodities Boom' That Wasn't</a></h5>
+                                    <small class="credits">
+                                        <p class="author">David Rosnick and Mark Weisbrot</p>
+                                    </small>
+                                </li>
+                                <li class="list-item">
+                                    <h5 class="heading-5"><a href="">Social Security Panel Projects Slow Economic Growth</a></h5>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
                 </div>
+                <footer class="featured-footer is-hidden-touch">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus aspernatur praesentium, accusantium libero
+                        laboriosam in a consequuntur laudantium voluptate earum quod? Voluptatibus, laborum error temporibus totam
+                        labore accusamus rem sit!</p>
+                    <button class="btn-1">world</button>
+                    <button class="btn-1">US</button>
+                </footer>
             </div>
         </section>
         <section class="section">
@@ -315,7 +415,6 @@
             </div>
         </div>
         <footer class="block-footer">
-            <hr class="line-2">
             <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="footer-logo">
                 <defs>
                     <style>
