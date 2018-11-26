@@ -22,24 +22,66 @@ $picture-heigth: 240px;
     width: 100vw;
     height: $tabs-heigth+$selected-height;
 
-    a.tab {
+    .featured__toggle{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: $selected-height;
+        width: 40px;
+        height: 32px;
+        background-color: transparent;
+        fill: $Grey-lilac;
+        border: none;
+        transform-origin: center;
+        text-decoration: none;
+        transform: rotate(90deg);
+        &:hover{
+            fill:$Orange-light;
+            filter: drop-shadow(0px 0px 1px $Orange-dark);
+        }
+        &:last-child{
+            transform: rotate(270deg);
+        }
+    }
+}
+
+.featured-tabs{
+    padding: 0 $padding-vertical-normal;
+    display: flex;
+    //overflow: hidden;
+    flex: 0 1 auto;
+    justify-content: space-between;
+    position: relative;
+        clear: both;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-points-x: repeat(100%);
+        scroll-snap-type: mandatory;
+
+    li.tab{
         cursor: pointer;
         border-top: $selected-height solid transparent;
         order: 2;
-        color: $Grey-lilac;
-        font-weight: $Regular;
         padding: $padding-vertical-small;
         z-index: 3;
         transition: all 0.25s;
-            &:hover {
-                color: $Orange-light;
-            }
-             &:active {
-                 color: $Orange-dark;
-             }
+        a{
+            color: $Grey-lilac;
+            font-weight: $Regular;
         }
-    
-    a.tab-is-selected { 
+
+        &:hover {
+            color: $Orange-light;
+        }
+
+        &:active {
+            color: $Orange-dark;
+        }
+    }
+
+    li.tab-is-selected{
         order: 1;
         border: 1px solid $Orange;
         border-bottom: none;
@@ -49,23 +91,26 @@ $picture-heigth: 240px;
         margin-bottom: 1em;
         margin-left: $margin-vertical-large;
         position: relative;
-        color: $Orange-dark;
-        font-weight: $Bold;
-        cursor: default;
-        &:hover, &:active {
+        a{ 
+            color: $Orange-dark;
+            font-weight: $Bold;
+            cursor: default;
+        }
+        &:hover,
+        &:active {
             color: $Orange-dark;
         }
 
-        &:before{
+        &:before {
             content: "\0025E2";
             color: $Black;
             font-size: $selected-height + $tabs-heigth;
             text-shadow: -1px -1px 0px $Orange-dark;
-            text-align: left;
+            text-align: right;
             position: absolute;
-            top: -6px;
-            left: -31px;
-            padding-right: -1px;
+            top: -7px;
+            margin-right: -5px;
+            right: 100%;
             height: 100%;
             z-index: 2;
             line-height: 1;
@@ -73,91 +118,115 @@ $picture-heigth: 240px;
     }
 }
 
-.featured-tabs{
-    padding: 0 $padding-vertical-normal;
-    display: flex;
-    overflow: hidden;
-    flex: 0 1 auto;
-    justify-content: space-between;
-    position: relative;
-}
-
 //////////////////////////////////
 //////////FEATURED CONTENT
 
 .featured-articles-container {
     display: flex;
-    flex-wrap: nowrap;
+    //flex-wrap: nowrap;
     clear: both;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-points-x: repeat(100%);
-    scroll-snap-type: mandatory;
-
+    
 }
 
 .featured-article-content{
-
     flex: 0 0 100%;
-    display: flex;
-    flex-direction: column;
-    /*display: grid;
+    display: grid;
     grid-template-areas: 
+        "picture picture"
         "title title"
         "related related";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;*/
-    //clear: both;
-    //height: 100%;
-    //width: 100%;
+    grid-template-rows: auto;
+    clear: both;
 }
 
 .article-hero-picture {
     grid-area: picture;
     display: flex;
     height: $picture-heigth;
-    //width: 100%;
+    width: 100%;
     margin-bottom: $tabs-heigth;
+    img {
+        object-fit: cover;
+    }
 }
 
-.article-hero-text,
-.article-hero-related{
-    padding: 0 $padding-vertical-large;
-}
+//////////////////////////////////////////////////////////
+/////////////////QUERY TABLET
 
-.article-hero-text{
-    //grid-area: title;
-}
-
-.article-hero-related{
-    //grid-area: related;
-}
-
-#featured-2{
-    //display: none;
-}
-
-
-@include media(">=desktop"){
+@include media(">=tablet"){
+    .block-featured{
+        background-color: transparent;
+        padding: 0 $padding-vertical-large;
+    }
     .featured-tabs-container {
+        position: relative;
+        top: 0;
         margin-top: 0;
+        margin-left: $margin-vertical-large*4;
+        align-items: flex-end;
+    }
+    .featured-tabs{
+        padding: 0;
+        li.tab{
+            background-color: $Black;
+            border-right: 1px solid $Grey-lilac;
+            border-top: none;
+            height: 50%;
+            padding-bottom: 0;
+        }
+        li.tab-is-selected {
+            margin-bottom: 0;
+            border-right: 1px solid $Orange-dark;
+            border-top: 1px solid $Orange-dark;
+            height: 100%;
+        }
     }
 
     .featured-article-content{
+        background-color: $Black;
+        grid-template-columns: $margin-vertical-large*4 1fr 1fr;
+        grid-template-rows: auto;
         grid-template-areas: 
-            "title picture"
-            "related related";
+            ". title picture"
+            ". related related";
+        overflow: hidden;
     }
 
     .article-hero-picture {
-        position: relative;
-        top: 0;
+        overflow:hidden;
+        height: 100%;
     }
 
     .featured-footer{
         background-color: $Green;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding-left: $margin-vertical-large*4;
+        border-radius: 0 0 60px 60px;
+        align-items: center;
+        min-height: 94px;
+        width: 100%;
+        position: relative;
+
+        p{
+            flex: 0 1 50%;
+            justify-self: flex-start;
+        }
+
+        .btn-1{
+            background-color: $Black;
+            color: $White;
+            font-weight: $ExtraBold;
+            border: none;
+        }
+        &:after{
+            content: "";
+            background: url("/img/featFooter_header.svg") right no-repeat;
+            background-position-y: 15px;
+            margin-right: -8px;
+            height: 100%;
+            flex: 0 0 20%;
+        }
     }
 }

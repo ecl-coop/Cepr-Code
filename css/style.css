@@ -258,20 +258,21 @@ hr, .line-2 {
       background-size: 100%; }
 
 .article-hero-text {
+  grid-area: title;
   clear: both;
   margin-top: 1em;
   padding: 1em 0; }
-  .article-hero-text h1.article-hero-title {
-    font-size: calc(39.11507px + 0.23725vw);
+  .article-hero-text h2.article-hero-title {
+    font-size: calc(30.23013px + 0.4745vw);
     font-family: var(--font-Display);
     color: var(--color-Secondary);
     letter-spacing: -.025em;
     font-weight: 700;
     line-height: 1.25;
     display: inline; }
-    .article-hero-text h1.article-hero-title:hover {
+    .article-hero-text h2.article-hero-title:hover {
       border-bottom: 1px solid var(--color-Secondary); }
-    .article-hero-text h1.article-hero-title:active {
+    .article-hero-text h2.article-hero-title:active {
       color: var(--color-Accent); }
 
 .article-hero-summary {
@@ -280,7 +281,12 @@ hr, .line-2 {
   color: var(--color-Grey);
   font-size: 15px; }
 
+.article-hero-text,
 .article-hero-related {
+  padding: 0 2em; }
+
+.article-hero-related {
+  grid-area: related;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; }
@@ -297,6 +303,25 @@ hr, .line-2 {
     text-align: center;
     color: var(--color-Secondary);
     line-height: 1; }
+  .article-hero-related ul.list-2 {
+    display: flex;
+    flex-direction: column; }
+
+@media (min-width: 769px) {
+  .article-hero-text,
+  .article-hero-related {
+    padding: 0; }
+  .article-hero-text {
+    padding-right: 1.5em; }
+  .article-hero-related .heading-7,
+  .article-hero-related .preheading {
+    align-self: flex-start;
+    text-align: left; }
+  .article-hero-related ul.list-2 {
+    flex-direction: row; }
+  .article-hero-related .list-item {
+    flex: 0 0 50%;
+    padding-right: 2em; } }
 
 /*This is a three level menu that turns into a Mega Menu of one level on Desktop.
 The structure is: Container > Item > Target on each level.
@@ -361,8 +386,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   align-self: center; }
 
 .nav {
-  display: block;
-  max-height: auto; }
+  display: block; }
 
 #menubar-container {
   margin-top: calc(calc(32.92929px + 4.0404vw)* -7);
@@ -399,6 +423,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .menu-container[data-state=open],
   .submenu-container[data-state=open] {
     display: flex;
+    background-color: red;
     flex: 0 0 100%;
     width: 100vw; }
 
@@ -715,20 +740,53 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   overflow-x: auto;
   width: 100vw;
   height: 40px; }
-  .featured-tabs-container a.tab {
+  .featured-tabs-container .featured__toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    width: 40px;
+    height: 32px;
+    background-color: transparent;
+    fill: var(--color-lilac);
+    border: none;
+    transform-origin: center;
+    text-decoration: none;
+    transform: rotate(90deg); }
+    .featured-tabs-container .featured__toggle:hover {
+      fill: var(--color-Accent-light);
+      filter: drop-shadow(0px 0px 1px var(--color-Accent-dark)); }
+    .featured-tabs-container .featured__toggle:last-child {
+      transform: rotate(270deg); }
+
+.featured-tabs {
+  padding: 0 1.5em;
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  position: relative;
+  clear: both;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: mandatory; }
+  .featured-tabs li.tab {
     cursor: pointer;
     border-top: 8px solid transparent;
     order: 2;
-    color: var(--color-lilac);
-    font-weight: 400;
     padding: 1em;
     z-index: 3;
     transition: all 0.25s; }
-    .featured-tabs-container a.tab:hover {
+    .featured-tabs li.tab a {
+      color: var(--color-lilac);
+      font-weight: 400; }
+    .featured-tabs li.tab:hover {
       color: var(--color-Accent-light); }
-    .featured-tabs-container a.tab:active {
+    .featured-tabs li.tab:active {
       color: var(--color-Accent-dark); }
-  .featured-tabs-container a.tab-is-selected {
+  .featured-tabs li.tab-is-selected {
     order: 1;
     border: 1px solid var(--color-Accent);
     border-bottom: none;
@@ -737,77 +795,105 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     background-color: var(--color-Black);
     margin-bottom: 1em;
     margin-left: 1.5rem;
-    position: relative;
-    color: var(--color-Accent-dark);
-    font-weight: 700;
-    cursor: default; }
-    .featured-tabs-container a.tab-is-selected:hover, .featured-tabs-container a.tab-is-selected:active {
+    position: relative; }
+    .featured-tabs li.tab-is-selected a {
+      color: var(--color-Accent-dark);
+      font-weight: 700;
+      cursor: default; }
+    .featured-tabs li.tab-is-selected:hover, .featured-tabs li.tab-is-selected:active {
       color: var(--color-Accent-dark); }
-    .featured-tabs-container a.tab-is-selected:before {
+    .featured-tabs li.tab-is-selected:before {
       content: "\0025E2";
       color: var(--color-Black);
       font-size: 40px;
       text-shadow: -1px -1px 0px var(--color-Accent-dark);
-      text-align: left;
+      text-align: right;
       position: absolute;
-      top: -6px;
-      left: -31px;
-      padding-right: -1px;
+      top: -7px;
+      margin-right: -5px;
+      right: 100%;
       height: 100%;
       z-index: 2;
       line-height: 1; }
 
-.featured-tabs {
-  padding: 0 1.5em;
-  display: flex;
-  overflow: hidden;
-  flex: 0 1 auto;
-  justify-content: space-between;
-  position: relative; }
-
 .featured-articles-container {
   display: flex;
-  flex-wrap: nowrap;
-  clear: both;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-points-x: repeat(100%);
-  scroll-snap-type: mandatory; }
+  clear: both; }
 
 .featured-article-content {
   flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  /*display: grid;
-    grid-template-areas: 
-        "title title"
-        "related related";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;*/ }
+  display: grid;
+  grid-template-areas: "picture picture" "title title" "related related";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  clear: both; }
 
 .article-hero-picture {
   grid-area: picture;
   display: flex;
   height: 240px;
+  width: 100%;
   margin-bottom: 32px; }
+  .article-hero-picture img {
+    object-fit: cover; }
 
-.article-hero-text,
-.article-hero-related {
-  padding: 0 2em; }
-
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
+  .block-featured {
+    background-color: transparent;
+    padding: 0 2em; }
   .featured-tabs-container {
-    margin-top: 0; }
-  .featured-article-content {
-    grid-template-areas: "title picture" "related related"; }
-  .article-hero-picture {
     position: relative;
-    top: 0; }
+    top: 0;
+    margin-top: 0;
+    margin-left: 6rem;
+    align-items: flex-end; }
+  .featured-tabs {
+    padding: 0; }
+    .featured-tabs li.tab {
+      background-color: var(--color-Black);
+      border-right: 1px solid var(--color-lilac);
+      border-top: none;
+      height: 50%;
+      padding-bottom: 0; }
+    .featured-tabs li.tab-is-selected {
+      margin-bottom: 0;
+      border-right: 1px solid var(--color-Accent-dark);
+      border-top: 1px solid var(--color-Accent-dark);
+      height: 100%; }
+  .featured-article-content {
+    background-color: var(--color-Black);
+    grid-template-columns: 6rem 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". title picture" ". related related";
+    overflow: hidden; }
+  .article-hero-picture {
+    overflow: hidden;
+    height: 100%; }
   .featured-footer {
     background-color: var(--color-Secondary);
     display: flex;
-    justify-content: space-evenly; } }
+    justify-content: space-between;
+    padding-left: 6rem;
+    border-radius: 0 0 60px 60px;
+    align-items: center;
+    min-height: 94px;
+    width: 100%;
+    position: relative; }
+    .featured-footer p {
+      flex: 0 1 50%;
+      justify-self: flex-start; }
+    .featured-footer .btn-1 {
+      background-color: var(--color-Black);
+      color: var(--color-White);
+      font-weight: 800;
+      border: none; }
+    .featured-footer:after {
+      content: "";
+      background: url("/img/featFooter_header.svg") right no-repeat;
+      background-position-y: 15px;
+      margin-right: -8px;
+      height: 100%;
+      flex: 0 0 20%; } }
 
 .block-BeatThePress {
   background-color: var(--color-Black);

@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
-    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script defer src="js/menu.js"></script>
     <script defer src="js/tabs.js"></script>
     <script src="to-title-case.js"></script>
@@ -99,26 +100,26 @@
             <div class="block-featured">
                 <nav class="featured-tabs-container">
                     <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
-                        <svg width="8" height="8">
+                        <svg width="16" height="16">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
                         </svg>
                         <span class="is-sr-only">Previous featured topic</span>
                     </button>
-                    <div class="featured-tabs tabs">
-                        <a class="tag tab tab-is-selected" href="#featured-1">latin america and the caribbean</a>
-                        <a class="tag tab" href="#featured-2">goverment</a>
-                        <a class="tag tab" href="#featured-3">europe</a>
-                        <a class="tag tab" href="#featured-4">Growth</a>
-                    </div>
+                    <ul id="tabs" class="featured-tabs">
+                        <li class="tab tag"><a href="#featured-1">latin america and the caribbean</a></li>
+                        <li class="tab tag"><a href="#featured-2">goverment</a></li>
+                        <li class="tab tag"><a href="#featured-3">europe</a></li>
+                        <li class="tab tag"><a href="#featured-4">Growth</a></li>
+                    </ul>
                     <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
-                        <svg width="8" height="8">
+                        <svg width="16" height="16">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
                         </svg>
                         <span class="is-sr-only">Next featured topic</span>
                     </button>
                 </nav>
                 <div class="featured-articles-container">
-                    <div id="featured-1" class="featured-article-content" data-state="open">
+                    <div id="featured-1" class="featured-article-content">
                         <picture class="article-hero-picture">
                             <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
                             <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
@@ -126,13 +127,13 @@
                             <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                         </picture>
                         <main class="article-hero-text">
-                            <h1 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h1>
+                            <h2 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h2>
                             <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
                             <small class="credits"><p class="author">MARK WEISBROT</p><p class="date">OCTOBER 7, 2018</p></small>
                         </main>
                         <aside class="article-hero-related">
                             <small class="preheading">more on</small><h6 class="heading-7">Latin America and the caribbean</h6>
-                            <ul class="list">
+                            <ul class="list-2 list-2-dark">
                                 <li class="list-item">
                                     <h5 class="heading-5"><a href="">Is Latin America Still the US’s “Backyard”?</a></h5> 
                                     <small class="credits"><p class="author">Alexander Main</p></small>
@@ -141,14 +142,10 @@
                                     <h5 class="heading-5"><a href="">Latin America: The End of An Era</a></h5>
                                     <small class="credits"><p class="author">Mark Weisbrot</p></small>
                                 </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Will Trump Be Better for Latin America than Obama?</a></h5>
-                                    <small class="credits"><p class="author">Alexander Main</p></small>
-                                </li>
                             </ul>
                         </aside>
                     </div>
-                    <div id="featured-2" class="featured-article-content" data-state="close">
+                    <div id="featured-2" class="featured-article-content">
                         <picture class="article-hero-picture">
                             <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
                             <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
@@ -156,7 +153,7 @@
                             <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                         </picture>
                         <main class="article-hero-text">
-                            <h1 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h1>
+                            <h2 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h2>
                             <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
                             <small class="credits">
                                 <p class="author">Dean Baker</p>
@@ -175,14 +172,10 @@
                                     <h5 class="heading-5"><a href="">Trump Works to Make Federal Government Employment Less Attractive</a></h5>
                                     <small class="credits"><p class="author">Dean Baker</p></small>
                                 </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Economic Populism Doesn't Have to Involve More Government</a></h5>
-                                    <small class="credits"><p class="author">Dean Baker</p></small>
-                                </li>
                             </ul>
                         </aside>
                     </div>
-                    <div id="featured-3" class="featured-article-content" data-state="close">
+                    <div id="featured-3" class="featured-article-content">
                         <picture class="article-hero-picture">
                             <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
                             <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
@@ -190,7 +183,7 @@
                             <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                         </picture>
                         <main class="article-hero-text">
-                            <h1 class="article-hero-title">The U.S. and Europe: Different Approaches on Work-Life Balance</h1>
+                            <h2 class="article-hero-title">The U.S. and Europe: Different Approaches on Work-Life Balance</h2>
                             <sub class="article-hero-summary">Workers in the United States trail other high-income countries in the Organization for Economic Co-operation and
                             Development (OECD) in terms of work-life balance. The U.S. tops the list in terms of yearly hours worked and falls
                             significantly behind other countries when looking at efforts to improve work-life balance.</sub>
@@ -215,16 +208,10 @@
                                         <p class="author">An Interview with Mark Weisbrot, by Nacho Berdugo</p>
                                     </small>
                                 </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">The Toll of Austerity in Europe</a></h5>
-                                    <small class="credits">
-                                        <p class="author">Dean Baker</p>
-                                    </small>
-                                </li>
                             </ul>
                         </aside>
                     </div>
-                    <div id="featured-4" class="featured-article-content" data-state="close">
+                    <div id="featured-4" class="featured-article-content">
                         <picture class="article-hero-picture">
                             <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
                             <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
@@ -232,7 +219,7 @@
                             <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                         </picture>
                         <main class="article-hero-text">
-                            <h1 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h1>
+                            <h2 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h2>
                             <sub class="article-hero-summary">Investment was driven largely by a surge in the mining sector, prompted by higher world energy prices.</sub>
                             <small class="credits">
                                 <p class="author">Dean Baker</p>
@@ -255,17 +242,12 @@
                                         <p class="author">David Rosnick and Mark Weisbrot</p>
                                     </small>
                                 </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Social Security Panel Projects Slow Economic Growth</a></h5>
-                                </li>
                             </ul>
                         </aside>
                     </div>
                 </div>
                 <footer class="featured-footer is-hidden-touch">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus aspernatur praesentium, accusantium libero
-                        laboriosam in a consequuntur laudantium voluptate earum quod? Voluptatibus, laborum error temporibus totam
-                        labore accusamus rem sit!</p>
+                    <p>CEPR examines how government policies affect growth, employment, prices, poverty and health in the world and U.S.</p>
                     <button class="btn-1">world</button>
                     <button class="btn-1">US</button>
                 </footer>
@@ -442,6 +424,5 @@
             </div>
         </footer>
     </div>
-
 </body>
 </html>

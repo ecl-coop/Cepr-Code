@@ -1,7 +1,16 @@
-var $tabs = $('.tabs .tab');
+// show first content by default
+$('#tabs li:first-child').addClass('tab-is-selected');
+$('.featured-articles-container').hide();
+$('.featured-articles-container:first').show();
 
-$tabs.click(function (event) {
-    var selectedClass = 'tab-is-selected';
-    $tabs.removeClass(selectedClass);
-    $(event.target).addClass(selectedClass);
+// click function
+$('#tabs li').click(function () {
+    $('#tabs li').removeClass('tab-is-selected');
+    $(this).addClass('tab-is-selected');
+    $('.featured-article-content').hide();
+
+    var activeTab = $(this).find('a').attr('href');
+    $(activeTab).toggle("slide", {direction: "right"});
+    return false;
+
 });

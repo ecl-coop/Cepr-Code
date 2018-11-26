@@ -78,7 +78,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 //////////Menu Styles
 .nav{
     display: block;
-    max-height: auto;
+    //max-height: auto;
 }
 #menubar-container {
     margin-top: $menu-margin-top;
@@ -122,6 +122,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
          
         &[data-state=open] {
             display: flex;
+            background-color: red;
             flex: 0 0 100%;
             width: 100vw;
     }

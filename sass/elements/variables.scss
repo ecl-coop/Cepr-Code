@@ -61,6 +61,7 @@ $size-h7-max: 16px;
 $size-smallest-fluid: calc-interpolation($phone, $size-smallest-min, $widescreen, $size-smallest-max);
 $size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
+$size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
 $size-h6-fluid: calc-interpolation($phone, $size-h6-min, $widescreen, $size-h6-max);
 $size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-max);

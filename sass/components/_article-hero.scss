@@ -1,10 +1,11 @@
 .article-hero-text {
+    grid-area: title;
     clear: both;
     margin-top: 1em;
     padding: $padding-vertical-small 0;
 
-    h1.article-hero-title {
-        font-size: $size-h1-fluid;
+    h2.article-hero-title {
+        font-size: $size-h2-fluid;
         font-family: $Serif;
         color: $Green;
         letter-spacing: -.025em;
@@ -27,7 +28,13 @@
     font-size: 15px;
 }
 
+    .article-hero-text,
+    .article-hero-related {
+        padding: 0 $padding-vertical-large;
+    }
+
 .article-hero-related {
+    grid-area: related;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -53,5 +60,34 @@
         text-align: center;
         color: $Green;
         line-height: 1;
+    }
+    ul.list-2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@include media(">=tablet"){
+    
+        .article-hero-text,
+        .article-hero-related {
+            padding: 0;
+        }
+        .article-hero-text{
+            padding-right: $padding-vertical-normal;
+        }
+    .article-hero-related{
+        .heading-7,
+        .preheading {
+            align-self: flex-start;
+            text-align: left;
+        }
+        ul.list-2{
+            flex-direction: row;
+        }
+        .list-item{
+            flex: 0 0 50%;
+            padding-right: $padding-vertical-large;
+        }
     }
 }
