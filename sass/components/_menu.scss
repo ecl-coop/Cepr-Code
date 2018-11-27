@@ -4,6 +4,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 */
 ////////////////////////////////////////////
 /////MENU HEADER STYLES
+
 .logo-cepr, .icon-cepr {
     position: absolute;
     height: 100%;
@@ -74,20 +75,40 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     align-self: center;
 }
 
+////////////////////////////////////////////////////////
+///////////Base Functionality
+#accordian ul ul {
+    display: none;
+}
+
+#accordian li.active>ul {
+    display: block;
+}
+
 /////////////////////////////////////////////////////////
 //////////Menu Styles
 .nav{
     display: block;
-    //max-height: auto;
 }
+
+#accordian ul ul {
+    margin-left: $margin-vertical-normal;
+    box-shadow: $margin-vertical-normal*-1 0 $Blue-light;
+}
+
+#accordian ul ul ul {
+    margin-left: $margin-vertical-large;
+    box-shadow: $margin-vertical-large*-1 0 $Blue-light;
+}
+
 #menubar-container {
     margin-top: $menu-margin-top;
+    height: 0%;
     transition: all .35s;
     background-color: $Black;
     list-style: none;
     margin-left: 0;
     margin-right: 0;
-    //padding-top: 4rem;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -96,24 +117,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
     &[data-state=open] {
         margin-top: 0;
-        height: auto;
-    }
-    &[data-state=inside-1] {
-        //transform: translateX(-100vw);
-        margin-left: -100vw;
-        margin-right: 4rem;
-        margin-top: 0;
-    }
-    &[data-state=inside-2] {
-        margin-top: 0;
-        margin-left: -200vw;
-        //transform: translateX(-200vw);
+        height: 100%;
     }
 }
     .menu-container,
     .submenu-container {
         display: flex;
-        width: 100vw;
         flex-direction: column;
         align-self: flex-start;
         justify-content: center;
@@ -124,7 +133,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             display: flex;
             background-color: red;
             flex: 0 0 100%;
-            width: 100vw;
     }
 }
 
@@ -135,7 +143,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .backto-menubar, .backto-menu {
         padding-left: 2rem;
         min-width: 100%;
-        width: 100vw;
+        //width: 100vw;
         flex-grow: 1;
         flex-wrap: nowrap;
         height: 3rem;
@@ -143,6 +151,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         display: flex;
         align-items: flex-start;
         transition: all 0.10s;
+        position: relative;
 }
 
 .menubar-item{
@@ -224,9 +233,24 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     transition: all 0.15s;
 }
 
-.submenu__toggle{
-    content: "=";
+.menu__toggle, .submenu__toggle{
+    display: flex;
+    &:after{
+        padding-right: $padding-vertical-large;
+        margin-left: auto;
+        content: "\276F";
+        font-size: 14px;
+        transform-origin: left;
+        transition: all 0.4s;
+    }
+    &[data-state=open]{
+        color: $Orange;
+        &:after {
+            transform: rotate(90deg);
+        }
+    }
 }
+
 
 ///////////////////////////////////////////////////////////
 
@@ -288,9 +312,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             padding: 0 0;
             z-index: 888;
             height: 50px;
-        }
-        &[data-state=inside-1], &[data-state=inside-2] {
-            margin-left: 0;
         }
     }
 

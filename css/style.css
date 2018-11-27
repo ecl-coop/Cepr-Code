@@ -385,11 +385,26 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   fill: var(--color-Black);
   align-self: center; }
 
+#accordian ul ul {
+  display: none; }
+
+#accordian li.active > ul {
+  display: block; }
+
 .nav {
   display: block; }
 
+#accordian ul ul {
+  margin-left: 1rem;
+  box-shadow: -1rem 0 var(--color-Primary-light); }
+
+#accordian ul ul ul {
+  margin-left: 1.5rem;
+  box-shadow: -1.5rem 0 var(--color-Primary-light); }
+
 #menubar-container {
   margin-top: calc(calc(32.92929px + 4.0404vw)* -7);
+  height: 0%;
   transition: all .35s;
   background-color: var(--color-Black);
   list-style: none;
@@ -402,19 +417,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   justify-content: center; }
   #menubar-container[data-state=open] {
     margin-top: 0;
-    height: auto; }
-  #menubar-container[data-state=inside-1] {
-    margin-left: -100vw;
-    margin-right: 4rem;
-    margin-top: 0; }
-  #menubar-container[data-state=inside-2] {
-    margin-top: 0;
-    margin-left: -200vw; }
+    height: 100%; }
 
 .menu-container,
 .submenu-container {
   display: flex;
-  width: 100vw;
   flex-direction: column;
   align-self: flex-start;
   justify-content: center;
@@ -424,8 +431,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .submenu-container[data-state=open] {
     display: flex;
     background-color: red;
-    flex: 0 0 100%;
-    width: 100vw; }
+    flex: 0 0 100%; }
 
 .menubar-item,
 .menu-item,
@@ -434,14 +440,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 .backto-menubar, .backto-menu {
   padding-left: 2rem;
   min-width: 100%;
-  width: 100vw;
   flex-grow: 1;
   flex-wrap: nowrap;
   height: 3rem;
   border-bottom: 0.5px solid var(--color-Primary-light);
   display: flex;
   align-items: flex-start;
-  transition: all 0.10s; }
+  transition: all 0.10s;
+  position: relative; }
 
 .menubar-item:active {
   background-color: var(--color-Primary-light);
@@ -503,8 +509,19 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   font-weight: 700;
   transition: all 0.15s; }
 
-.submenu__toggle {
-  content: "="; }
+.menu__toggle, .submenu__toggle {
+  display: flex; }
+  .menu__toggle:after, .submenu__toggle:after {
+    padding-right: 2em;
+    margin-left: auto;
+    content: "\276F";
+    font-size: 14px;
+    transform-origin: left;
+    transition: all 0.4s; }
+  .menu__toggle[data-state=open], .submenu__toggle[data-state=open] {
+    color: var(--color-Accent); }
+    .menu__toggle[data-state=open]:after, .submenu__toggle[data-state=open]:after {
+      transform: rotate(90deg); }
 
 @media (min-width: 376px) and (max-width: 768px) {
   .menubar__header {
@@ -542,8 +559,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     padding: 0 0;
     z-index: 888;
     height: 50px; }
-  #menubar-container[data-state=inside-1], #menubar-container[data-state=inside-2] {
-    margin-left: 0; }
   .menubar-item:first-child {
     margin-left: 2rem; }
   .menu-container {
@@ -729,7 +744,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   display: flex;
   flex-flow: column;
   background-color: var(--color-Black);
-  position: relative; }
+  position: relative;
+  padding-bottom: 3rem; }
 
 .featured-tabs-container {
   display: inline-flex;
