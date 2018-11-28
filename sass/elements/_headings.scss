@@ -37,6 +37,7 @@ h4.column-header{
     &:before,
     &:after {
         border-top: $line-base;
+        border-top-width: 2px;
         width: 45%;
         content: "";
         display: table-cell;
@@ -53,15 +54,8 @@ h4.column-header{
     }
 }
 
-.heading-4{
-    font-size: $size-h4-fluid;
-    color: $Black;
-    margin: 1rem 0;
-    line-height: 1.25;
-
-    &.-extraBold{
-        font-weight: $ExtraBold;
-    }
+.heading-3{
+    @include heading-3;
 }
 
 .heading-5{
@@ -81,7 +75,7 @@ h4.column-header{
     text-transform: capitalize;
     letter-spacing: 0;
 
-    &._bold{
+    &_bold{
         font-weight: $Bold;
         letter-spacing: 50;
         text-transform: uppercase;
@@ -90,7 +84,8 @@ h4.column-header{
 
 .heading-7{
     @include heading-7;
-    margin-bottom: .75em;
+    margin-bottom: $margin-horizontal-small;
+    position: relative;
 }
 
 @include media ('>=tablet') {

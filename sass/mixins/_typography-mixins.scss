@@ -18,11 +18,20 @@
 /////////////////////////////////
 //////////////////HEADINGS
 
+@mixin heading-3 {
+    font-size: $size-h4-fluid;
+    color: $Black;
+    margin: $margin-horizontal-regular 0;
+    margin-top: $margin-horizontal-small;
+    line-height: 1.25;
+}
+
 @mixin heading-4 {
     text-transform: uppercase;
     font-size: $size-h4-fluid;
     letter-spacing: .15em;
     font-weight: $Light;
+    line-height: 1;
 }
 
 @mixin heading-7 {
@@ -37,6 +46,6 @@
 
 @mixin paragraph-small {
     font-family: $Sans;
-    font-size: 12px;
+    font-size: $size-p-fluid;
     line-height: 1.25;
 }

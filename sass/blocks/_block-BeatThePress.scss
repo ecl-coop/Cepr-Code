@@ -1,10 +1,21 @@
+$btpHeader-size: 56px;
+
 .block-BeatThePress{
     background-color: $Black;
     display: flex;
     flex-flow: column;
-    margin: $margin-horizontal-large $margin-vertical-large;
+    margin: $margin-horizontal-large auto;
     padding: 0 $padding-vertical-small;
-
+    width: 90%;
+    padding-bottom: $padding-horizontal-large;
+    .heading-4{
+        @include heading-4;
+            padding-top: $btpHeader-size;
+            padding-left: $padding-vertical-small;
+        &-extraBold {
+            font-weight: $Bold;
+        }
+    }
     .heading-4, .heading-6{
         color: $Green-dark;
     }
@@ -12,30 +23,47 @@
     p{
         @include paragraph-small;
         color: $White;
+        margin-top: $margin-horizontal-regular;
+        padding: 0 $padding-vertical-normal;
+    }
+
+    .list-3{
+        margin-top: $margin-horizontal-large*2;
+        padding: 0 $padding-vertical-small;
+    }
+    .list-3-item {
+        border-bottom-color: $Green-dark;
     }
 }
 
 .BeatThePress-Header{
     display: flex;
     flex-flow: column;
-    padding: $padding-vertical-normal;
+    padding: 0 $padding-vertical-normal;
     position: relative;
+    margin: 0 $padding-vertical-small*-1;
 
     &:before{
         width: 100%;
-        height: 56px;
+        height: $btpHeader-size;
         position: absolute;
         right: 0;
         top: -16px;
         content: "";
         background: url("/img/btp_header.svg") right no-repeat;
-        margin: 0 $padding-vertical-small*-1;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: $btpHeader-size - 16px;
         border-bottom: 1px solid $Green-dark;
     }
 }
 
 .buttons-container{
-    margin: 0 calc(#{$padding-vertical-normal}*-1);
     margin-top: $margin-horizontal-large;
     display: flex;
     justify-content: space-between;
@@ -57,6 +85,16 @@
     }
 }
 
-.list-3-item{
-    border-bottom-color: $Green-dark;
+@include media(">=tablet"){
+    .buttons-container {
+        justify-content: space-evenly;
+    }
+}
+
+@include media(">=desktop"){
+    .block-BeatThePress{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

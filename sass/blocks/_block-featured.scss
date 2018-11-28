@@ -32,17 +32,13 @@ $picture-heigth: 240px;
         width: 40px;
         height: 32px;
         background-color: transparent;
-        fill: $Grey-lilac;
+        color: $Grey-lilac;
         border: none;
-        transform-origin: center;
         text-decoration: none;
-        transform: rotate(90deg);
+        
         &:hover{
-            fill:$Orange-light;
+            color:$Orange-light;
             filter: drop-shadow(0px 0px 1px $Orange-dark);
-        }
-        &:last-child{
-            transform: rotate(270deg);
         }
     }
 }
@@ -126,7 +122,27 @@ $picture-heigth: 240px;
     display: flex;
     //flex-wrap: nowrap;
     clear: both;
-    
+    .heading-7{
+        padding: 0 $padding-vertical-large;
+        padding-bottom: $padding-horizontal-small/2;
+         border-bottom: 1px solid $Green;
+
+         &:before,
+         &:after {
+             @include bullet-small;
+             background-color: $Green;
+             position: absolute;
+             bottom: ($bullet-size/4)*-1;
+         }
+
+         &::before {
+             left: 0;
+         }
+
+         &:after {
+             right: 0;
+         }
+    }
 }
 
 .featured-article-content{
@@ -158,7 +174,8 @@ $picture-heigth: 240px;
 @include media(">=tablet"){
     .block-featured{
         background-color: transparent;
-        padding: 0 $padding-vertical-large;
+        padding-right: 0;
+        padding-left: $padding-vertical-large;
     }
     .featured-tabs-container {
         position: relative;
@@ -198,6 +215,10 @@ $picture-heigth: 240px;
         overflow:hidden;
         height: 100%;
     }
+
+
+//////////////////////////////////////////
+///////////Green Box only visible on >Tablet
 
     .featured-footer{
         background-color: $Green;

@@ -28,7 +28,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
         &[data-state=open]{
             background-color: $Black;
-            .menubar__logo{
+            #menubar__logo{
                 height: 80%;
             }
             .menubar__btn,
@@ -61,7 +61,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     padding: 0;
     height: 3rem;
 }
-.menubar__logo,
+#menubar__logo,
 .menubar__btn,
 .menubar__search {
     transform: rotateX(0deg);
@@ -253,6 +253,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 
 ///////////////////////////////////////////////////////////
+///////////////////transition @media Query
 
 @include media ('>phone', '<tablet') {
         .menubar__header {
@@ -273,26 +274,69 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 @include media ('>=tablet') {
 
+    #nav{
+        display: grid;
+        grid-template-columns: minmax(33%, 50%) 1fr;
+        grid-template-rows: 47% 53%;
+        padding: 0 $padding-vertical-large;
+        /*display: flex;
+        justify-content: space-between;*/
+        width: 100%;
+        background-color: $White;
+        border-bottom: 0.8px solid $Black;
+        height: 120px;
+        align-items: center;
+
+        .level{
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            height: 100%;
+            align-self: center;
+        }
+    }
+    #accordian{
+        grid-column: 2;
+        grid-row: 2;
+    }
     .menubar__header {
-        height: 5rem;
-        color: $Black;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        grid-column: 1;
+        grid-row: 1 / 2;
+        padding-left: 0;
+        padding-right: 0;
         border-bottom: 0;
+        position: relative;
+        height: 100%;
         &[data-state=open],
         &[data-state=closed] {
-            background-color: $White;
+            background-color: transparent;
         }
     }
 
-    .menubar__logo {
-        height: 100%;
-        //color: $Black;
-        margin: 0 auto;
+    #menubar__logo {
+        height: 70%;
+        margin-right: 0;
+    }
+    .logo-cepr{
+        width: auto;
     }
 
     .menubar__toggle {
         display: none;
+    }
+    
+    #navbar-tablet{
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        justify-content: flex-end;
+        height: 50%;
+        flex: 0 1 50%;
+        fill: $Blue;
+        color: $Blue;
+        width: 100%;
+        svg{
+            width: 20px;
+        }
     }
 
 //////////////////////////////////////////////////
@@ -305,17 +349,16 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             flex-direction: row;
             justify-content: space-between;
             background-color: $White;
-            border-top: 0.8px solid $Black;
-            border-bottom: 0.8px solid $Black;
+            border-top: 0.8px solid $Grey-light;
             width: 100%;
             position: relative;
             padding: 0 0;
             z-index: 888;
-            height: 50px;
+            height: 100%;
         }
     }
 
-    .menubar-item:first-child{
+    .menubar-item:not(:first-of-type){
         margin-left: 2rem;
         //padding-left: -2rem;
     }
@@ -353,10 +396,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         margin-left: 0rem;
         margin-right: 0rem;
         border-bottom: none;
-        flex-grow: 1;
-        flex-shrink: 1;
-        display: flex;
-        width: auto;
+        flex: 0 0 auto;
         flex-direction: column;
         min-width: 4rem;
         height: 100%;
@@ -384,25 +424,18 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 
     .menu-item{
-        //width: 4rem;
         max-width: 25%;
     }
-    .menubar-item-donate{
-        background-color: transparent;
-        border-left: 0.8px solid $Black;
-        border-right: 0.8px solid $Black;
-        width: 58px;
-        background-size: 400%;
-        display: flex;
-        margin-right: 2rem;
+    .menu__toggle:after{
+        padding-right: 0;
+        font-size: 8px;
+        transform: translateX(5px)
+         rotate(90deg);
+        transform-origin: center;
     }
+
      .menubar-target{
         color: $Black;
-     }
-
-     .menubar-target-donate {
-         text-align: center;
-         width: 100%;
      }
 
     .menubar-item:first-child {
@@ -412,22 +445,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar-target,
     .menu-target,
     .submenu-target {
-        font-size: .5625rem;
-        padding: 1rem auto;
-        align-self: flex-start;
+        font-size: $size-small-fluid;
+        padding: 1rem 0;
+        letter-spacing: .025em;
     }
-
-        .menubar-target,
-        .menu-target,
-        .menubar-target-donate,
-        .submenu-target {
-            $tablet: 769px;
-            $desktop: 1024px;
-            $widescreen: 1216px;
-            font-size: $size-small-fluid;
-            padding: 1rem 0;
-            letter-spacing: .025em;
-        } 
 }
 
 

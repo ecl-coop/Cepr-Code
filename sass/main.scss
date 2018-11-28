@@ -24,6 +24,11 @@
 @import "blocks/block-BeatThePress.scss";
 @import "blocks/block-inTheNews.scss";
 @import "blocks/block-Footer.scss";
+@import "blocks/block-lists.scss";
+
+//layouts
+@import "layouts/home-grid.scss";
+
 
 @import "node_modules/normalize.css/normalize.css";
 @import "node_modules/bulma/sass/utilities/_all.sass";

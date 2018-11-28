@@ -1,0 +1,29 @@
+.block-list-2{
+    margin-bottom: $margin-horizontal-large;
+}
+
+ul.list-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: $padding-horizontal-small;
+}
+
+.list-3{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+@include media(">=tablet"){
+    .list-2-container {
+        width: 66.66%;
+        margin: 0 auto;
+    }
+}
+
+@include media(">=desktop") {
+    .list-2-container{
+        width: 100%;
+    }
+}

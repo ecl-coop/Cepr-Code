@@ -40,6 +40,8 @@ $size-smallest-min: 8px;
 $size-smallest-max: 10px;
 $size-small-min: 10px;
 $size-small-max: 11px;
+$size-p-min: 12px;
+$size-p-max: 16px;
 
 $size-h1-min: 40px;
 $size-h1-max: 42px;
@@ -60,6 +62,7 @@ $size-h7-max: 16px;
 //fluid scale functions
 $size-smallest-fluid: calc-interpolation($phone, $size-smallest-min, $widescreen, $size-smallest-max);
 $size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
+$size-p-fluid: calc-interpolation($phone, $size-p-min, $widescreen, $size-p-max);
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
 $size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
@@ -72,6 +75,7 @@ $size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-m
 $menu-header-height: between(64px, 80px, $phone, $tablet);
 $menu-items-height: between(48px, 64px, $phone, $tablet);
 $menu-margin-top: calc(#{$menu-items-height}* -7);
+
 //$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
 
 
@@ -80,16 +84,19 @@ $menu-margin-top: calc(#{$menu-items-height}* -7);
 $margin-vertical-small: .5rem;
 $margin-vertical-normal: 1rem;
 $margin-vertical-large: 1.5rem;
+$margin-vertical-extraLarge: 3.5rem;
+$margin-horizontal-small: .5rem;
+$margin-horizontal-regular: .8rem;
 $margin-horizontal-medium: 1.5rem;
-$margin-horizontal-regular: 1rem;
 $margin-horizontal-large: 2rem;
 
 
 /////////////////PADDINGS
-$padding-vertical-small: 1em;
-$padding-vertical-normal: 1.5em;
-$padding-vertical-large: 2em;
-$padding-horizontal-regular: 1rem;
+$padding-vertical-small: 1rem;
+$padding-vertical-normal: 1.5rem;
+$padding-vertical-large: 2rem;
+$padding-horizontal-small: 0.5rem;
+$padding-horizontal-regular: 1.25rem;
 $padding-horizontal-large: 3rem;
 
 //////////////////LINE WEIGHTS

@@ -9,8 +9,8 @@
     <script defer src="node_modules/svgxuse/svgxuse.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script defer src="js/menu.js"></script>
-    <script defer src="js/tabs.js"></script>
+    <script defer src="/js/menu.js"></script>
+    <script defer src="/js/tabs.js"></script>
     <script src="to-title-case.js"></script>
     <title>Center for Economic and Policy Research</title>
 </head> 
@@ -26,7 +26,7 @@
                         <span class="is-sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a class="menubar__logo level-item"  href="/" title="Center for Economic and Policy Research">
+                <a id="menubar__logo" class="level-item"  href="/" title="Center for Economic and Policy Research">
                     <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-cepr">
                         <defs>
                             <style>
@@ -43,7 +43,7 @@
                         <use xlink:href="/img/symbol-defs.svg?v=1.0#cepr-icon"></use>
                     </svg>
                 </a>
-                <div class="menubar__search level-right">
+                <div class="menubar__search level-right is-hidden-tablet">
                     <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse">
                         <svg width="36" height="36">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
@@ -52,6 +52,16 @@
                     </button>
                 </div>
             </header>
+            <div id="navbar-tablet" class="is-hidden-mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo">
+                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo">
+                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                </svg>
+                <button>ES</button>
+                <button>donate</button>
+            </div>
             <nav id="accordian" class="nav" role="navigation"> 
                 <ul id="menubar-container" data-state="closed">
                     <li class=""><h3 class="menubar-item"><a class="menubar-target menu__toggle" data-state="closed" href="#">Our Work</a></h3>
@@ -87,11 +97,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menubar-item"><a href="#" class="menubar-target">Experts and Staff</a></li>
-                    <li class="menubar-item"><a href="#" class="menubar-target">Publications and events</a></li>
-                    <li class="menubar-item"><a href="#" class="menubar-target">Projects and Resources</a></li>
+                    <li><h3 class="menubar-item"><a href="#" class="menubar-target">Experts and Staff</a></h3></li>
+                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Publications and events</a></li>
+                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Projects and Resources</a></li>
                     <li><h3 class="menubar-item"><a href="#" class="menubar-target menu__toggle" data-state="closed">About Us</a></h3>
-                        <ul id="menubar-OurWork" class="menu-container">
+                        <ul id="menubar-AboutUs" class="menu-container">
                             <li class="">
                                 <h3 class="menu-item is-hidden-tablet"><a class="menu-target" data-state="closed" href="#">Newsroom</a></h3>
                             </li>
@@ -109,310 +119,373 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menubar-item"><a href="#" class="menubar-target">Beat the Press</a></li>
-                    <li class="menubar-item-donate"><a href="#" class="menubar-target-donate">donate</a></li>
+                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Beat the Press</a></li>
+                    <li class="menubar-item-donate is-hidden-tablet"><a href="#" class="menubar-target-donate">donate</a></li>
+                    <li>
+                        <button type="button" class="menubar-item search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
+                            <svg width="24" height="24">
+                                <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
+                            </svg>
+                            <span class="is-sr-only">Toggle navigation</span>
+                        </button>
+                    </li> 
                 </ul>
             </nav>
         </section>
-        <section class="section">
-            <div class="block-featured">
-                <nav class="featured-tabs-container">
-                    <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
-                        <svg width="16" height="16">
-                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
-                        </svg>
-                        <span class="is-sr-only">Previous featured topic</span>
-                    </button>
-                    <ul id="tabs" class="featured-tabs">
-                        <li class="tab tag"><a href="#featured-1">latin america and the caribbean</a></li>
-                        <li class="tab tag"><a href="#featured-2">goverment</a></li>
-                        <li class="tab tag"><a href="#featured-3">europe</a></li>
-                        <li class="tab tag"><a href="#featured-4">Growth</a></li>
-                    </ul>
-                    <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
-                        <svg width="16" height="16">
-                            <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
-                        </svg>
-                        <span class="is-sr-only">Next featured topic</span>
-                    </button>
-                </nav>
-                <div class="featured-articles-container">
-                    <div id="featured-1" class="featured-article-content">
-                        <picture class="article-hero-picture">
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <main class="article-hero-text">
-                            <h2 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h2>
-                            <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
-                            <small class="credits"><p class="author">MARK WEISBROT</p><p class="date">OCTOBER 7, 2018</p></small>
-                        </main>
-                        <aside class="article-hero-related">
-                            <small class="preheading">more on</small><h6 class="heading-7">Latin America and the caribbean</h6>
-                            <ul class="list-2 list-2-dark">
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Is Latin America Still the US’s “Backyard”?</a></h5> 
-                                    <small class="credits"><p class="author">Alexander Main</p></small>
-                                </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Latin America: The End of An Era</a></h5>
-                                    <small class="credits"><p class="author">Mark Weisbrot</p></small>
-                                </li>
-                            </ul>
-                        </aside>
+        <div class="grid-container" id="home-grid">
+            <section class="section" id="block-featured">
+                <div class="block-featured">
+                    <nav class="featured-tabs-container">
+                        <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
+                            &#10094;
+                            <span class="is-sr-only">Previous featured topic</span>
+                        </button>
+                        <ul id="tabs" class="featured-tabs">
+                            <li class="tab tag"><a href="#featured-1">latin america and the caribbean</a></li>
+                            <li class="tab tag"><a href="#featured-2">goverment</a></li>
+                            <li class="tab tag"><a href="#featured-3">europe</a></li>
+                            <li class="tab tag"><a href="#featured-4">Growth</a></li>
+                        </ul>
+                        <button type="button" id="featured-toggle" class="featured__toggle is-hidden-tablet">
+                            &#10095;
+                        </button>
+                    </nav>
+                    <div class="featured-articles-container">
+                        <div id="featured-1" class="featured-article-content">
+                            <picture class="article-hero-picture">
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <main class="article-hero-text">
+                                <h2 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h2>
+                                <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
+                                <small class="credits credits-dark">
+                                    <p class="author">MARK WEISBROT</p>
+                                    <p class="date date-dark">OCTOBER 7, 2018</p>
+                                </small>
+                            </main>
+                            <aside class="article-hero-related">
+                                <small class="preheading">more on</small><h6 class="heading-7">Latin America and the caribbean</h6>
+                                <ul class="list-2 list-2-dark">
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Is Latin America Still the US’s “Backyard”?</a></h5> 
+                                        <small class="credits"><p class="author">Alexander Main</p></small>
+                                    </li>
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Latin America: The End of An Era</a></h5>
+                                        <small class="credits"><p class="author">Mark Weisbrot</p></small>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div id="featured-2" class="featured-article-content">
+                            <picture class="article-hero-picture">
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <main class="article-hero-text">
+                                <h2 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h2>
+                                <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
+                                <small class="credits credits-dark">
+                                    <p class="author">Dean Baker</p>
+                                    <p class="date date-dark">May 29, 2017</p>
+                                </small>
+                            </main>
+                            <aside class="article-hero-related">
+                                <small class="preheading">more on</small>
+                                <h6 class="heading-7">Goverment</h6>
+                                <ul class="list-2 list-2-dark">
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</a></h5>
+                                        <small class="credits"><p class="author">Dean Baker</p></small>
+                                    </li>
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Trump Works to Make Federal Government Employment Less Attractive</a></h5>
+                                        <small class="credits"><p class="author">Dean Baker</p></small>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div id="featured-3" class="featured-article-content">
+                            <picture class="article-hero-picture">
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <main class="article-hero-text">
+                                <h2 class="article-hero-title">The U.S. and Europe: Different Approaches on Work-Life Balance</h2>
+                                <sub class="article-hero-summary">Workers in the United States trail other high-income countries in the Organization for Economic Co-operation and
+                                Development (OECD) in terms of work-life balance. The U.S. tops the list in terms of yearly hours worked and falls
+                                significantly behind other countries when looking at efforts to improve work-life balance.</sub>
+                                <small class="credits credits-dark">
+                                    <p class="author">Nick Buffie and Lara Merling</p>
+                                    <p class="date date-dark">Nov 06, 2016</p>
+                                </small>
+                            </main>
+                            <aside class="article-hero-related">
+                                <small class="preheading">more on</small>
+                                <h6 class="heading-7">Europe</h6>
+                                <ul class="list-2 list-2-dark">
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">The High Cost of Transforming Europe: Why Europe Stumbled</a></h5>
+                                        <small class="credits">
+                                            <p class="author">Mark Weisbrot</p>
+                                        </small>
+                                    </li>
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Democracy, National Sovereignty, and Economic Policy: The Challenges Facing Europe and the United States</a></h5>
+                                        <small class="credits">
+                                            <p class="author">An Interview with Mark Weisbrot, by Nacho Berdugo</p>
+                                        </small>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div id="featured-4" class="featured-article-content">
+                            <picture class="article-hero-picture">
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <main class="article-hero-text">
+                                <h2 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h2>
+                                <sub class="article-hero-summary">Investment was driven largely by a surge in the mining sector, prompted by higher world energy prices.</sub>
+                                <small class="credits credits-dark">
+                                    <p class="author">Dean Baker</p>
+                                    <p class="date date-dark">July 27, 2018</p>
+                                </small>
+                            </main>
+                            <aside class="article-hero-related">
+                                <small class="preheading">more on</small>
+                                <h6 class="heading-7">Growth</h6>
+                                <ul class="list-2 list-2-dark">
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Slower Population Growth Could Significantly Reduce Carbon Emissions, Paper Finds</a></h5>
+                                        <small class="credits">
+                                            <p class="author">Dan Beeton</p>
+                                        </small>
+                                    </li>
+                                    <li class="list-item">
+                                        <h5 class="heading-5"><a href="">Latin American Growth in the 21st Century: The 'Commodities Boom' That Wasn't</a></h5>
+                                        <small class="credits">
+                                            <p class="author">David Rosnick and Mark Weisbrot</p>
+                                        </small>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
                     </div>
-                    <div id="featured-2" class="featured-article-content">
-                        <picture class="article-hero-picture">
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <main class="article-hero-text">
-                            <h2 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h2>
-                            <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
-                            <small class="credits">
-                                <p class="author">Dean Baker</p>
-                                <p class="date">May 29, 2017</p>
-                            </small>
-                        </main>
-                        <aside class="article-hero-related">
-                            <small class="preheading">more on</small>
-                            <h6 class="heading-7">Goverment</h6>
-                            <ul class="list-2 list-2-dark">
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</a></h5>
-                                    <small class="credits"><p class="author">Dean Baker</p></small>
-                                </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Trump Works to Make Federal Government Employment Less Attractive</a></h5>
-                                    <small class="credits"><p class="author">Dean Baker</p></small>
-                                </li>
-                            </ul>
-                        </aside>
-                    </div>
-                    <div id="featured-3" class="featured-article-content">
-                        <picture class="article-hero-picture">
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <main class="article-hero-text">
-                            <h2 class="article-hero-title">The U.S. and Europe: Different Approaches on Work-Life Balance</h2>
-                            <sub class="article-hero-summary">Workers in the United States trail other high-income countries in the Organization for Economic Co-operation and
-                            Development (OECD) in terms of work-life balance. The U.S. tops the list in terms of yearly hours worked and falls
-                            significantly behind other countries when looking at efforts to improve work-life balance.</sub>
-                            <small class="credits">
-                                <p class="author">Nick Buffie and Lara Merling</p>
-                                <p class="date">Nov 06, 2016</p>
-                            </small>
-                        </main>
-                        <aside class="article-hero-related">
-                            <small class="preheading">more on</small>
-                            <h6 class="heading-7">Europe</h6>
-                            <ul class="list-2 list-2-dark">
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">The High Cost of Transforming Europe: Why Europe Stumbled</a></h5>
-                                    <small class="credits">
-                                        <p class="author">Mark Weisbrot</p>
-                                    </small>
-                                </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Democracy, National Sovereignty, and Economic Policy: The Challenges Facing Europe and the United States</a></h5>
-                                    <small class="credits">
-                                        <p class="author">An Interview with Mark Weisbrot, by Nacho Berdugo</p>
-                                    </small>
-                                </li>
-                            </ul>
-                        </aside>
-                    </div>
-                    <div id="featured-4" class="featured-article-content">
-                        <picture class="article-hero-picture">
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <main class="article-hero-text">
-                            <h2 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h2>
-                            <sub class="article-hero-summary">Investment was driven largely by a surge in the mining sector, prompted by higher world energy prices.</sub>
-                            <small class="credits">
-                                <p class="author">Dean Baker</p>
-                                <p class="date">July 27, 2018</p>
-                            </small>
-                        </main>
-                        <aside class="article-hero-related">
-                            <small class="preheading">more on</small>
-                            <h6 class="heading-7">Growth</h6>
-                            <ul class="list-2 list-2-dark">
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Slower Population Growth Could Significantly Reduce Carbon Emissions, Paper Finds</a></h5>
-                                    <small class="credits">
-                                        <p class="author">Dan Beeton</p>
-                                    </small>
-                                </li>
-                                <li class="list-item">
-                                    <h5 class="heading-5"><a href="">Latin American Growth in the 21st Century: The 'Commodities Boom' That Wasn't</a></h5>
-                                    <small class="credits">
-                                        <p class="author">David Rosnick and Mark Weisbrot</p>
-                                    </small>
-                                </li>
-                            </ul>
-                        </aside>
+                    <footer class="featured-footer is-hidden-touch">
+                        <p>CEPR examines how government policies affect growth, employment, prices, poverty and health in the world and U.S.</p>
+                        <button class="btn-1">world</button>
+                        <button class="btn-1">US</button>
+                    </footer>
+                </div>
+            </section>
+            <section class="section" id="block-latest">
+                <div class="block-list-2">
+                    <header class="column-header-container"><h4 class="column-header">latest</h4></header>
+                    <dl class="list-2-container">
+                        <dt class="list-2-item">
+                            <picture>
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <div class="article-text-container">
+                                <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Intellectual Property</a></small>
+                                <h3 class="heading-3">
+                                    Working Paper: Is Intellectual Property the Root of All Evil? Patents, Copyrights, and Inequality
+                                </h3>
+                                <summary class="is-hidden-mobile">
+                                    This paper raises three issues on the relationship between intellectual property and inequality. The first is a simple
+                                    logical point. Patents, copyrights, and other forms of intellectual property are public policy. They are not facts
+                                    given to us by the world or the structure of technology somehow.
+                                </summary>
+                                <small class="credits"><p class="author">Dean Baker</p><p class="date">october 25, 2018</p></small>
+                            </div>
+                        </dt>
+                        <dt class="list-2-item">
+                            <picture>
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <div class="article-text-container">
+                                <small class="tag"><a class="tag-type">article</a><a class="tag-theme">Goverment</a></small>
+                                <h3 class="heading-3">
+                                    Amazon’s $15 an Hour Minimum Wage and the Federal Reserve Board
+                                </h3>
+                                <summary class="is-hidden-mobile">
+                                    Last week Amazon announced that it would impose a $15 an hour minimum wage for its workforce, including those hired
+                                    through staffing agencies. This was a huge victory for the labor and community activists in the Fight for $15 campaign…
+                                </summary>
+                                <small class="credits">
+                                    <p class="author">Dean Baker</p>
+                                    <p class="date"><em class="publication-name">TRUTHOUT,</em>OCTOBER 8, 2018</p>
+                                </small>
+                            </div>
+                        </dt>
+                        <dt class="list-2-item">
+                            <picture>
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <div class="article-text-container">
+                                <small class="tag"><a class="tag-type">presentation</a><a class="tag-theme">workers</a></small>
+                                <h3 class="heading-3">
+                                    Fissuring of Labor Markets, Wage Stagnation, and Rising Wage Inequality
+                                </h3>
+                                <summary class="is-hidden-mobile">
+                                    When Puerto Rico was hit by Hurricane Maria, the island was ill-equipped to handle the storm that claimed thousands of
+                                    lives and devastated most of the island's infrastructure, leaving it in the dark for months.
+                                </summary>
+                                <small class="credits">
+                                    <p class="author">EILEEN APPELBAUM</p>
+                                    <p class="date">SEPTEMBER 13, 2018</p>
+                                </small>
+                            </div>
+                        </dt>
+                        <dt class="list-2-item">
+                            <picture>
+                                <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
+                                <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
+                                <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
+                                <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
+                            </picture>
+                            <div class="article-text-container">
+                                <small class="tag"><a class="tag-type">article</a><a class="tag-theme">US Foreign Policy</a></small>
+                                <h3 class="heading-3">
+                                    Puerto Rico’s Colonial Legacy and its Continuing Economic Troubles
+                                </h3>
+                                <summary class="is-hidden-mobile">
+                                    This paper raises three issues on the relationship between intellectual property and inequality. The first is a simple
+                                    logical point. Patents, copyrights, and other forms of intellectual property are public policy. They are not facts
+                                    given to us by the world or the structure of technology somehow.
+                                </summary>
+                                <small class="credits">
+                                    <p class="author">LARA MERLING</p>
+                                    <p class="date"><em class="publication-name">UNCTAD,</em>SEPTEMBER 26, 2018</p>
+                                </small>
+                            </div>
+                        </dt>
+                    </dl>
+                </div>
+            </section>
+            <section class="section" id="block-BeatThePress">
+                <div class="block-BeatThePress">
+                    <header class="BeatThePress-Header">
+                        <h4 class="heading-4 heading-4-extraBold">DEAN BAKER'S<br><em>BEAT THE PRESS</em></h4>
+                        <p>Beat the Press is Dean Baker's commentary on economic reporting. He is a Senior Economist at the Center for Economic and Policy Research (CEPR).</p>
+                        <div class="buttons-container">
+                            <button class="btn-2 btn-2-texture-green btn-2-shadow-green">SUBSCRIBE</button>
+                            <button class="btn-1">patreon</button>
+                        </div>
+                    </header>
+                    <dl class="list-3 list-3-dark">
+                        <dt class="list-3-item">
+                            <h6 class="heading-6">Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</h6>
+                            <small class="date">AUGUST 28, 2018</small>
+                        </dt>
+                        <dt class="list-3-item">
+                            <h6 class="heading-6">Mixed Up Math in NYT on Health Care</h6>
+                            <small class="date">AUGUST 26, 2018</small>
+                        </dt>
+                        <dt class="list-3-item">
+                            <h6 class="heading-6">Quick Thoughts on the Collapse of Lehman</h6>
+                            <small class="date">AUGUST 25, 2018</small>
+                        </dt>
+                    </dl>
+                </div>
+            </section>
+            <div class="block-banner block-banner-left" id="banner-subscribe">
+                <div class="banner-subscribe">
+                    <h6 class="heading-7">keep up with our latest news</h6>
+                    <div class="sign-up">
+                        <input class="input" type="email" name="email" id="email" placeholder="Enter mail here">
+                        <button class="btn-2 btn-2-texture-blueLight" for="email">Sing up</button>
                     </div>
                 </div>
-                <footer class="featured-footer is-hidden-touch">
-                    <p>CEPR examines how government policies affect growth, employment, prices, poverty and health in the world and U.S.</p>
-                    <button class="btn-1">world</button>
-                    <button class="btn-1">US</button>
-                </footer>
             </div>
-        </section>
-        <section class="section">
-            <div class="block-list-2">
-                <header class="column-header-container"><h4 class="column-header">latest</h4></header>
-                <dl class="list-2-container">
-                    <dt class="list-2-item">
-                        <picture>
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <div class="article-text-container">
-                            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Intellectual Property</a></small>
-                            <h4 class="heading-4">
-                                Working Paper: Is Intellectual Property the Root of All Evil? Patents, Copyrights, and Inequality
-                            </h4>
-                            <small class="credits"><p class="author">Dean Baker</p><p class="date">october 25, 2018</p></small>
-                        </div>
-                    </dt>
-                    <hr>
-                    <dt class="list-2-item">
-                        <picture>
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <div class="article-text-container">
-                            <small class="tag"><a class="tag-type">article</a><a class="tag-theme">Goverment</a></small>
-                            <h4 class="heading-4">
-                                Amazon’s $15 an Hour Minimum Wage and the Federal Reserve Board
-                            </h4>
-                            <small class="credits">
-                                <p class="author">Dean Baker</p>
-                                <p class="date"><em class="publication-name">TRUTHOUT,</em>OCTOBER 8, 2018</p>
-                            </small>
-                        </div>
-                    </dt>
-                    <hr>
-                    <dt class="list-2-item">
-                        <picture>
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <div class="article-text-container">
-                            <small class="tag"><a class="tag-type">presentation</a><a class="tag-theme">workers</a></small>
-                            <h4 class="heading-4">
-                                Fissuring of Labor Markets, Wage Stagnation, and Rising Wage Inequality
-                            </h4>
-                            <small class="credits">
-                                <p class="author">EILEEN APPELBAUM</p>
-                                <p class="date">SEPTEMBER 13, 2018</p>
-                            </small>
-                        </div>
-                    </dt>
-                    <dt class="list-2-item">
-                        <picture>
-                            <source media="(max-width: 579px)" srcset="http://via.placeholder.com/820x525">
-                            <source media="(max-width: 989px)" srcset="http://via.placeholder.com/960x440">
-                            <source media="(min-width: 990px)" srcset="http://via.placeholder.com/1156x324">
-                            <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
-                        </picture>
-                        <div class="article-text-container">
-                            <small class="tag"><a class="tag-type">article</a><a class="tag-theme">US Foreign Policy</a></small>
-                            <h4 class="heading-4">
-                                Puerto Rico’s Colonial Legacy and its Continuing Economic Troubles
-                            </h4>
-                            <small class="credits">
-                                <p class="author">LARA MERLING</p>
-                                <p class="date"><em class="publication-name">UNCTAD,</em>SEPTEMBER 26, 2018</p>
-                            </small>
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-        </section>
-        <section class="section">
-            <div class="block-BeatThePress">
-                <header class="BeatThePress-Header">
-                    <h4 class="heading-4 heading-4-extraBold">DEAN BAKER'S<br><em>BEAT THE PRESS</em></h4>
-                    <p>Beat the Press is Dean Baker's commentary on economic reporting. He is a Senior Economist at the Center for Economic and Policy Research (CEPR).</p>
-                    <div class="buttons-container">
-                        <button class="btn-2 btn-2-texture-green btn-2-shadow-green">SUBSCRIBE</button>
-                        <button class="btn-1">patreon</button>
+            <section class="section" id="block-inTheNews">
+                <div class="block-inTheNews">
+                    <header class="column-header-container">
+                        <h4 class="column-header">cepr<br>in the news</h4>
+                    </header>
+                    <dl class="list-3">
+                        <dt class="list-3-item list-3-item-news">
+                            <h6 class="heading-6">Donald Trump’s Loco Attack on the Federal Reserve</h6>
+                            <small class="date"><em class="publication-name">The New Yorker.</em>OCTOBER 5, 2018</small>
+                        </dt>
+                        <dt class="list-3-item list-3-item-news">
+                            <h6 class="heading-6">When the Next Recession Hits</h6>
+                            <small class="date"><em class="publication-name">The New Republic.</em>OCTOBER 10, 2018</small>
+                        </dt>
+                        <dt class="list-3-item list-3-item-news">
+                            <h6 class="heading-6">Google to Shut Down Google+ after Failing to Disclose User Data Breach</h6>
+                            <small class="date"><em class="publication-name">The Guardian.</em>OCTOBER 09, 2018</small>
+                        </dt>
+                    </dl>
+                </div>
+            </section>
+            <div class="block-banner block-banner-right" id="banner-donate">
+                <div class="banner-donate">
+                    <div class="banner-donate-text">
+                        <h6 class="heading-7">support cepr</h6>
+                        <p>If you value CEPR´s work, support us by making a financial contribution.</p>
                     </div>
-                </header>
-                <dl class="list-3 list-3-dark">
-                    <dt class="list-3-item">
-                        <h6 class="heading-6">Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</h6>
-                        <small class="date">AUGUST 28, 2018</small>
-                    </dt>
-                    <dt class="list-3-item">
-                        <h6 class="heading-6">Mixed Up Math in NYT on Health Care</h6>
-                        <small class="date">AUGUST 26, 2018</small>
-                    </dt>
-                    <dt class="list-3-item">
-                        <h6 class="heading-6">Quick Thoughts on the Collapse of Lehman</h6>
-                        <small class="date">AUGUST 25, 2018</small>
-                    </dt>
-                </dl>
-            </div>
-        </section>
-        <div class="block-banner block-banner-left">
-            <div class="banner-subscribe">
-                <h6 class="heading-7">keep up with our latest news</h6>
-                <div class="sign-up">
-                    <input class="input" type="email" name="email" id="email" placeholder="Enter mail here">
-                    <button class="btn-2 btn-2-texture-blueLight" for="email">Sing up</button>
+                    <button class="btn-2 btn-2-texture-orange btn-2-shadow-black ">donate</button>
                 </div>
             </div>
-        </div>
-        <section class="section">
-            <div class="block-inTheNews">
-                <header class="column-header-container">
-                    <h4 class="column-header">cepr<br>in the news</h4>
-                </header>
-                <dl class="list-3">
-                    <dt class="list-3-item list-3-item-news">
-                        <h6 class="heading-6">Donald Trump’s Loco Attack on the Federal Reserve</h6>
-                        <small class="date"><em class="publication-name">The New Yorker.</em>OCTOBER 5, 2018</small>
+            <aside id="side-social" class="is-hidden-mobile">
+                <header><h5>Follow Us</h5></header>
+                <dl>
+                    <dt>Mark Weisbrot</dt>
+                    <dt>Eileen Appelbaum
+                    Co-Director</dt>
+                    <dt>David Rosnick
+                    Economist</dt>
+                </dl>
+            </aside>
+            <aside id="side-publications" class="is-hidden-mobile">
+                <h5 class="heading-5">featured publications</h5>
+                <dl>
+                    <dt>
+                        <h6>the americas blog</h6>
+                        <p>One Year after Hurricane Maria, Employment in Puerto Rico is Down by 26,000</p>
+                        <small class="credits credits-dark">
+                            <span class="author">KEVIN CASHMAN</span>
+                            <span class="date date-dark">SEPTEMBER 25, 2018</span>
+                        </small>
                     </dt>
-                    <dt class="list-3-item list-3-item-news">
-                        <h6 class="heading-6">When the Next Recession Hits</h6>
-                        <small class="date"><em class="publication-name">The New Republic.</em>OCTOBER 10, 2018</small>
+                    <dt>
+                        <h6>haiti watch</h6>
+                        <p>Petrocaribe Protests: What You Need to Know Before October 17</p>
+                        <small class="credits credits-dark">
+                            <span class="author">JAKE JOHNSTON</span>
+                            <span class="date date-dark">OCTOBER 16, 2018</span>
+                        </small>
                     </dt>
-                    <dt class="list-3-item list-3-item-news">
-                        <h6 class="heading-6">Google to Shut Down Google+ after Failing to Disclose User Data Breach</h6>
-                        <small class="date"><em class="publication-name">The Guardian.</em>OCTOBER 09, 2018</small>
+                    <dt>
+                        <h6>data bytes</h6>
+                        <p>Jump in Energy Prices Leads to 2.5 Percent Inflation Over Last Year</p>
+                        <small class="credits credits-dark">
+                            <span class="author">DEAN BAKER</span>
+                            <span class="date date-dark">NOVEMBER 14, 2018</span>
+                        </small>
                     </dt>
                 </dl>
-            </div>
-        </section>
-        <div class="block-banner block-banner-left">
-            <div class="banner-donate">
-                <div class="banner-donate-text">
-                    <h6 class="heading-7">support cepr</h6>
-                    <p>If you value CEPR´s work, support us by making a financial contribution.</p>
-                </div>
-                <button class="btn-2 btn-2-texture-orange btn-2-shadow-black ">donate</button>
-            </div>
+            </aside>
         </div>
         <footer class="block-footer">
             <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="footer-logo">

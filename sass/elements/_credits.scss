@@ -1,6 +1,10 @@
 .credits, .date{
     @include small-text;
     color: $Grey;
+
+    &-dark{
+        color: $Grey-light;
+    }
 }
 .author{
     font-weight: 700;

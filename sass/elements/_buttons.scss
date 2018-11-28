@@ -7,7 +7,7 @@ $btn-radius: $btn-height/2;
     @include small-text;
     border-radius: $btn-height;
     margin: .5rem;
-    padding: 1rem $btn-radius;
+    padding: 0 $btn-radius;
     display: flex;
     align-items: center;
     justify-content: center;

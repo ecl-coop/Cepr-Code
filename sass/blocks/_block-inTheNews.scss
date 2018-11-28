@@ -4,7 +4,31 @@
         margin: $margin-horizontal-large 0;
 
         .list-3{
-                margin: 0 $margin-vertical-large;
-                padding: 0 $padding-vertical-small;
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: $margin-horizontal-regular;
+                margin-bottom: $margin-horizontal-large;
+        }
+}
+
+@include media(">=tablet") {
+        .block-inTheNews{
+                max-width: 50%;
+                min-width: 33.33%;
+        }
+}
+
+@include media(">=desktop") {
+        .block-inTheNews{
+                order: 1;
+                flex: 1 1 auto;
+                width: 100%;
+                max-width: 100%;
+                .list-3{
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right: 0;
+                }
         }
 }
