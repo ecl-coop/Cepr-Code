@@ -2,6 +2,7 @@ $btn-height: 40px;
 $btn-radius: $btn-height/2;
 
 %btn-base{
+    cursor: pointer;
     height: $btn-height;
     @include border-heavy;
     @include small-text;
@@ -11,6 +12,7 @@ $btn-radius: $btn-height/2;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 %shadow-base{
@@ -68,5 +70,23 @@ $btn-radius: $btn-height/2;
             background: url("/img/btn-2_shadowGreen.png") center no-repeat;
             background-size: 100%;
         }
+    }
+}
+
+.btn-5{
+    width: 72px;
+    height: 24px;
+    @extend %btn-base;
+    border-width: 1px;
+    font-size: $size-smallest-fluid;
+    font-weight: $ExtraBold;
+
+    &-yellow{
+        background-color: $Yellow;
+    }
+
+    &-small{
+        width: 32px;
+        height: 16px;
     }
 }

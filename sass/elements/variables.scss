@@ -2,6 +2,7 @@ $phone: 373px;
 $tablet: 769px;
 $desktop: 1024px;
 $widescreen: 1216px;
+$fullhd: 1408px;
 
 //////////COLORS
 
@@ -71,10 +72,23 @@ $size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-m
 
 
 //////////HEIGHTS & WIDTHS
+/////MOBILE FIXED
+$tabs-heigth: 32px;
+$selected-height: 8px;
+$picture-heigth: 240px;
+
 
 $menu-header-height: between(64px, 80px, $phone, $tablet);
 $menu-items-height: between(48px, 64px, $phone, $tablet);
 $menu-margin-top: calc(#{$menu-items-height}* -7);
+$menu-height-tablet: 120px;
+
+$height-1-min: 32px;
+$height-1-max: 40px;
+$height-1-fluid: between($height-1-min, $height-1-max, $tablet, $widescreen);
+
+$picture-heigth: 240px;
+
 
 //$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
 

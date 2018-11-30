@@ -279,13 +279,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         grid-template-columns: minmax(33%, 50%) 1fr;
         grid-template-rows: 47% 53%;
         padding: 0 $padding-vertical-large;
-        /*display: flex;
-        justify-content: space-between;*/
         width: 100%;
         background-color: $White;
         border-bottom: 0.8px solid $Black;
-        height: 120px;
+        height: $menu-height-tablet;
         align-items: center;
+        position: relative;
 
         .level{
             grid-column: 1;
@@ -299,6 +298,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         grid-row: 2;
     }
     .menubar__header {
+        z-index: 3;
         grid-column: 1;
         grid-row: 1 / 2;
         padding-left: 0;
@@ -323,19 +323,52 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar__toggle {
         display: none;
     }
+
+    .menubar__search{
+        display: flex;
+        align-items: center;
+        margin-right: $margin-vertical-small;
+    }
     
     #navbar-tablet{
         grid-column: 2;
         grid-row: 1;
         display: flex;
         justify-content: flex-end;
-        height: 50%;
-        flex: 0 1 50%;
+        align-items: center;
+        height: 100%;
+        flex: 0 0 100%;
         fill: $Blue;
         color: $Blue;
-        width: 100%;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: $padding-vertical-large*-1;
+            width: calc-interpolation($tablet, 600px, $widescreen, 1024px);
+            height: 100%;
+            background: url(/img/header-desktop_background.svg), linear-gradient(to right, $White, rgba(248,248,248,0)) right no-repeat;
+            background-blend-mode: screen;
+            border: 0px;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, rgba(248, 248, 248, 0), $Grey-light);
+            border-image-slice: 1;
+        }
+
+        :not(:last-child){
+            margin-right: $margin-vertical-normal;
+        }
+        :last-child{
+            margin-right: 0;
+        }
         svg{
             width: 20px;
+            z-index: 5;
+        }
+        .btn-5{
+            margin-left: 0;
         }
     }
 
@@ -349,7 +382,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             flex-direction: row;
             justify-content: space-between;
             background-color: $White;
-            border-top: 0.8px solid $Grey-light;
             width: 100%;
             position: relative;
             padding: 0 0;
@@ -418,10 +450,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             }
         }
     }
-    .menu-item,
-    .submenu-item {
-        align-items: flex-start;
-    }
 
     .menu-item{
         max-width: 25%;
@@ -454,9 +482,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 
 @include media ('>=desktop') {
-    #menubar-container{
+    /*#menubar-container{
         padding: 0 auto;
-    }
+    }*/
     
     .menubar__header {
         height: 6rem;
@@ -467,7 +495,26 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 
     @include media ('>=widescreen') {
-        .menu-container{
+        #nav {
+            padding: 0 $padding-vertical-large*2;
+        }
+        #navbar-tablet{
+            &:before{
+                right: $padding-vertical-large*-2;
+            }
+        }
+        /*.menu-container{
             width: 1216px;
+        }*/
+    }
+
+    @include media ('>=fullhd') {
+        #nav {
+            padding: 0 10%;
+        }
+        #navbar-tablet {
+            &:before {
+                right: -10vw;
+            }
         }
     }

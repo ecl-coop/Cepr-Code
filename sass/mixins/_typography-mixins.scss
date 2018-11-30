@@ -1,18 +1,24 @@
 /////////////////////////////////
 //////////////////SMALL-TEXTS
-
-@mixin smallest-text {
-    font-size: $size-smallest-fluid;
+%small-text-base{
     font-family: $Sans;
+    font-size: $size-small-fluid;
     text-transform: uppercase;
     letter-spacing: .1em;
 }
 
+@mixin smallest-text {
+    font-size: $size-smallest-fluid;
+    @extend %small-text-base;
+}
+
 @mixin small-text {
-    font-size: $size-small-fluid;
-    font-family: $Sans;
-    text-transform: uppercase;
-    letter-spacing: .1em;
+    @extend %small-text-base;
+}
+
+@mixin small-text-1 {
+    @extend %small-text-base;
+    font-family: $Serif;
 }
 
 /////////////////////////////////

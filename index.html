@@ -59,8 +59,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo">
                     <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
                 </svg>
-                <button>ES</button>
-                <button>donate</button>
+                <button class="btn-5 btn-5-small">ES</button>
+                <button class="btn-5 btn-5-yellow">donate</button>
             </div>
             <nav id="accordian" class="nav" role="navigation"> 
                 <ul id="menubar-container" data-state="closed">
@@ -121,8 +121,8 @@
                     </li>
                     <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Beat the Press</a></li>
                     <li class="menubar-item-donate is-hidden-tablet"><a href="#" class="menubar-target-donate">donate</a></li>
-                    <li>
-                        <button type="button" class="menubar-item search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
+                    <li class="menubar__search">
+                        <button type="button" class="search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
                             <svg width="24" height="24">
                                 <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
                             </svg>
@@ -133,6 +133,10 @@
             </nav>
         </section>
         <div class="grid-container" id="home-grid">
+            <div id="banner-top" class="banner-btp is-hidden-mobile">
+                <h3>dean baker's beat the press</h3>
+                <p>Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</p>
+            </div>
             <section class="section" id="block-featured">
                 <div class="block-featured">
                     <nav class="featured-tabs-container">
@@ -160,7 +164,11 @@
                             </picture>
                             <main class="article-hero-text">
                                 <h2 class="article-hero-title">Presidential Election is about a Fight for Democracy in Brazil</h2>
-                                <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before.</sub>
+                                <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before. 
+                                    <span class="is-hidden-mobile">The world is watching Brazil’s elections, probably as never before. “Latin America’s latest menace: Bolsonaro
+                                Presidente,” screams the headline on the cover of The Economist. This conservative UK magazine would love to see the
+                                Workers’ Party (PT) disappear from Brazilian politics, but even they cannot stomach Bolsonaro.</span>
+                                </sub>
                                 <small class="credits credits-dark">
                                     <p class="author">MARK WEISBROT</p>
                                     <p class="date date-dark">OCTOBER 7, 2018</p>
@@ -188,8 +196,11 @@
                                 <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                             </picture>
                             <main class="article-hero-text">
-                                <h2 class="article-hero-title">Trump Versus Ryan: The Race to Eliminate the Federal Government</h2>
-                                <sub class="article-hero-summary">The budget proposal put forward by the Trump administration has been widely attacked on a variety of grounds.</sub>
+                                <h2 class="article-hero-title">Congress Should End US Military Participation in the Saudis' War in Yemen</h2>
+                                <sub class="article-hero-summary">Each day since October 2, new evidence has emerged that the killing of Washington Post journalist Jamal Khashoggi, a
+                                resident of Virginia, was a premeditated murder. 
+                                <span class="is-hidden-mobile"> At the same time, it is also increasingly clear that the murder was approved at the highest levels of the Saudi Arabian
+                                governmen.</span></sub>
                                 <small class="credits credits-dark">
                                     <p class="author">Dean Baker</p>
                                     <p class="date date-dark">May 29, 2017</p>
@@ -386,12 +397,18 @@
                 <div class="block-BeatThePress">
                     <header class="BeatThePress-Header">
                         <h4 class="heading-4 heading-4-extraBold">DEAN BAKER'S<br><em>BEAT THE PRESS</em></h4>
-                        <p>Beat the Press is Dean Baker's commentary on economic reporting. He is a Senior Economist at the Center for Economic and Policy Research (CEPR).</p>
-                        <div class="buttons-container">
+                        <p class="is-hidden-desktop">Beat the Press is Dean Baker's commentary on economic reporting. He is a Senior Economist at the Center for Economic and Policy Research (CEPR).</p>
+                        <div class="buttons-container is-hidden-desktop">
                             <button class="btn-2 btn-2-texture-green btn-2-shadow-green">SUBSCRIBE</button>
                             <button class="btn-1">patreon</button>
                         </div>
+                        <picture class="is-hidden-mobile">
+                            <img src="/" alt="Beat the Press Monogram">
+                        </picture>
                     </header>
+
+                    <small class="preheading">more on</small>
+                    <h6 class="heading-7">Beat the press</h6>
                     <dl class="list-3 list-3-dark">
                         <dt class="list-3-item">
                             <h6 class="heading-6">Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</h6>
@@ -405,16 +422,23 @@
                             <h6 class="heading-6">Quick Thoughts on the Collapse of Lehman</h6>
                             <small class="date">AUGUST 25, 2018</small>
                         </dt>
+                        <dt class="list-3-item is-hidden-mobile">
+                            <h6 class="heading-6">Federal Jobs Training Program Costing 0.04 Percent of the Budget is Alleged to Be Failing Students</h6>
+                            <small class="date">AUGUST 26, 2018</small>
+                        </dt>
                     </dl>
                 </div>
             </section>
-            <div class="block-banner block-banner-left" id="banner-subscribe">
-                <div class="banner-subscribe">
+            <div class="block-banner" id="banner-subscribe">
+                <div class="banner-subscribe block-banner-left">
                     <h6 class="heading-7">keep up with our latest news</h6>
                     <div class="sign-up">
                         <input class="input" type="email" name="email" id="email" placeholder="Enter mail here">
                         <button class="btn-2 btn-2-texture-blueLight" for="email">Sing up</button>
                     </div>
+                    <picture class="banner-picture is-hidden-mobile">
+                        <img src="/img/mailbox.svg" alt="mailbox illustration">
+                    </picture>
                 </div>
             </div>
             <section class="section" id="block-inTheNews">
@@ -435,16 +459,27 @@
                             <h6 class="heading-6">Google to Shut Down Google+ after Failing to Disclose User Data Breach</h6>
                             <small class="date"><em class="publication-name">The Guardian.</em>OCTOBER 09, 2018</small>
                         </dt>
+                        <dt class="list-3-item list-3-item-news is-hidden-mobile">
+                            <h6 class="heading-6">Despite Rapid Growth in Wages, Trump Should be Concerned</h6>
+                            <small class="date"><em class="publication-name">The Guardian.</em>OCTOBER 04, 2018</small>
+                        </dt>
+                        <dt class="list-3-item list-3-item-news is-hidden-mobile">
+                            <h6 class="heading-6">Bala, Buey y Biblia</h6>
+                            <small class="date"><em class="publication-name">El Nuevo Día.</em>OCTOBER 04, 2018</small>
+                        </dt>
                     </dl>
                 </div>
             </section>
-            <div class="block-banner block-banner-right" id="banner-donate">
-                <div class="banner-donate">
+            <div class="block-banner" id="banner-donate">
+                <div class="banner-donate block-banner-right">
                     <div class="banner-donate-text">
                         <h6 class="heading-7">support cepr</h6>
                         <p>If you value CEPR´s work, support us by making a financial contribution.</p>
                     </div>
                     <button class="btn-2 btn-2-texture-orange btn-2-shadow-black ">donate</button>
+                    <picture class="banner-picture is-hidden-mobile">
+                        <img src="/img/heart.svg" alt="mailbox illustration">
+                    </picture>
                 </div>
             </div>
             <aside id="side-social" class="is-hidden-mobile">
@@ -457,28 +492,28 @@
                     Economist</dt>
                 </dl>
             </aside>
-            <aside id="side-publications" class="is-hidden-mobile">
+            <aside id="side-blogs" class="side-blogs is-hidden-mobile">
                 <h5 class="heading-5">featured publications</h5>
                 <dl>
                     <dt>
-                        <h6>the americas blog</h6>
-                        <p>One Year after Hurricane Maria, Employment in Puerto Rico is Down by 26,000</p>
+                        <h6 class="heading-7">the americas blog</h6>
+                        <h6 class="heading-6">One Year after Hurricane Maria, Employment in Puerto Rico is Down by 26,000</h6>
                         <small class="credits credits-dark">
                             <span class="author">KEVIN CASHMAN</span>
                             <span class="date date-dark">SEPTEMBER 25, 2018</span>
                         </small>
                     </dt>
                     <dt>
-                        <h6>haiti watch</h6>
-                        <p>Petrocaribe Protests: What You Need to Know Before October 17</p>
+                        <h6 class="heading-7">haiti watch</h6>
+                        <h6 class="heading-6">Petrocaribe Protests: What You Need to Know Before October 17</h6>
                         <small class="credits credits-dark">
                             <span class="author">JAKE JOHNSTON</span>
                             <span class="date date-dark">OCTOBER 16, 2018</span>
                         </small>
                     </dt>
                     <dt>
-                        <h6>data bytes</h6>
-                        <p>Jump in Energy Prices Leads to 2.5 Percent Inflation Over Last Year</p>
+                        <h6 class="heading-7">data bytes</h6>
+                        <h6 class="heading-6">Jump in Energy Prices Leads to 2.5 Percent Inflation Over Last Year</h6>
                         <small class="credits credits-dark">
                             <span class="author">DEAN BAKER</span>
                             <span class="date date-dark">NOVEMBER 14, 2018</span>

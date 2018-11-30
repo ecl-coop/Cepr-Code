@@ -27,6 +27,7 @@
     "jquery": "^3.3.1",
     "jshint": "^2.9.6",
     "normalize.css": "^8.0.0",
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "waypoints": "^4.0.1"
   }
 }

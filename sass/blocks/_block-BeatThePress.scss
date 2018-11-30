@@ -93,8 +93,15 @@ $btpHeader-size: 56px;
 
 @include media(">=desktop"){
     .block-BeatThePress{
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        width: 150%;
+        margin-left: -50%;
+        padding-left: 50%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .BeatThePress-Header{
+        &::before{
+            content: none;
+        }
     }
 }

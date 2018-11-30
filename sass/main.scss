@@ -1,11 +1,11 @@
 @import "node_modules/include-media/dist/include-media.scss";
 @import "utilities/functions.scss";
 @import "utilities/mixins.scss";
-@import "mixins/typography-mixins.scss";
 @import "base.scss";
+@import "elements/variables.scss";
+@import "mixins/typography-mixins.scss";
 
 //elements
-@import "elements/variables.scss";
 @import "elements/circle.scss";
 @import "elements/headings.scss";
 @import "elements/tag.scss";
