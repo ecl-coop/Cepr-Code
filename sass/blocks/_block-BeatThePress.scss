@@ -1,5 +1,3 @@
-$btpHeader-size: 56px;
-
 .block-BeatThePress{
     background-color: $Black;
     display: flex;
@@ -12,6 +10,9 @@ $btpHeader-size: 56px;
         @include heading-4;
             padding-top: $btpHeader-size;
             padding-left: $padding-vertical-small;
+            em{
+                display: block;
+            }
         &-extraBold {
             font-weight: $Bold;
         }
@@ -98,10 +99,50 @@ $btpHeader-size: 56px;
         padding-left: 50%;
         margin-top: 0;
         margin-bottom: 0;
+            .heading-3 {
+                color: $Green;
+            }
+            .list-3-container{
+                margin: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 0;
+                justify-content: space-between;
+                :nth-child(3) {
+                    border: none;
+                }
+                .list-3-item {
+                    flex: 0 0 45%;
+                }
+            }
+            .heading-6{
+                color: $White;
+            }
     }
     .BeatThePress-Header{
+        height: $btpHeader-size-fluid;
+        justify-content: space-between;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+
+        .heading-4{
+            padding: 0;
+            z-index: 5;
+            em {
+                display: inline;
+            }
+        }
         &::before{
             content: none;
+        }
+        &:after{
+            margin-top: 0;
+            background: url("/img/Beat_The_Press.svg") right no-repeat;
+            margin-right: 0;
+            height: 100%;
+            z-index: 4;
         }
     }
 }

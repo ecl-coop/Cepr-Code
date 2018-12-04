@@ -41,8 +41,8 @@ $size-smallest-min: 8px;
 $size-smallest-max: 10px;
 $size-small-min: 10px;
 $size-small-max: 11px;
-$size-p-min: 12px;
-$size-p-max: 16px;
+$size-p2-min: 11px;
+$size-p2-max: 14px;
 
 $size-h1-min: 40px;
 $size-h1-max: 42px;
@@ -63,7 +63,7 @@ $size-h7-max: 16px;
 //fluid scale functions
 $size-smallest-fluid: calc-interpolation($phone, $size-smallest-min, $widescreen, $size-smallest-max);
 $size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
-$size-p-fluid: calc-interpolation($phone, $size-p-min, $widescreen, $size-p-max);
+$size-p2-fluid: calc-interpolation($phone, $size-p2-min, $widescreen, $size-p2-max);
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
 $size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
@@ -76,7 +76,13 @@ $size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-m
 $tabs-heigth: 32px;
 $selected-height: 8px;
 $picture-heigth: 240px;
+$btpHeader-size: 56px;
+$btn-height: 40px;
 
+
+////////////>Tablet fluid
+$columns-gap: calc-interpolation($desktop, 10px, $widescreen, 16px);
+$rows-gap: calc-interpolation($desktop, 32px, $fullhd, 64px);
 
 $menu-header-height: between(64px, 80px, $phone, $tablet);
 $menu-items-height: between(48px, 64px, $phone, $tablet);
@@ -88,6 +94,8 @@ $height-1-max: 40px;
 $height-1-fluid: between($height-1-min, $height-1-max, $tablet, $widescreen);
 
 $picture-heigth: 240px;
+$profile-picture-large: 120px;
+$btpHeader-size-fluid: calc-interpolation($phone, 56px, $widescreen, 120px); ///keeps growing beyond the media query!!!
 
 
 //$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
@@ -109,6 +117,7 @@ $margin-horizontal-large: 2rem;
 $padding-vertical-small: 1rem;
 $padding-vertical-normal: 1.5rem;
 $padding-vertical-large: 2rem;
+$padding-vertical-extraLarge: 4rem;
 $padding-horizontal-small: 0.5rem;
 $padding-horizontal-regular: 1.25rem;
 $padding-horizontal-large: 3rem;

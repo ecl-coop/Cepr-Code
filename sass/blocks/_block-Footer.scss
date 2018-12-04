@@ -56,3 +56,25 @@
         text-transform: none;
     }
 }
+
+@include media(">=desktop") {
+    .block-footer{
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 10%;
+
+        .footer-list{
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .footer-item{
+            flex: 1 0 50%;
+        }
+        .footer-license{
+            flex: 1 0 100%;
+            text-align: center;
+            width: 120%;
+        }
+    }
+}

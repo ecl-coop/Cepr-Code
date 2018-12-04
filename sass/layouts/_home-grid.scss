@@ -5,11 +5,10 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(6%, 8%));
         grid-template-rows: auto;
-        //grid-template-columns: auto;
-        grid-gap: calc-interpolation($desktop, 10px, $widescreen, 16px);
+        grid-gap: $columns-gap;
         grid-auto-flow: row;
         padding: 0 $padding-vertical-large;
-        grid-row-gap: calc-interpolation($desktop, 20px, $fullhd, 40px);
+        grid-row-gap: $rows-gap;
         padding-bottom: $padding-horizontal-large;
     }
 
@@ -17,11 +16,10 @@
         grid-area: featured;
         grid-column: 1 / span 9;
         grid-row: 2;
-        //align-self: center;
     }
     #block-latest{
         grid-area: latest;
-        grid-column: 3 / span 7;
+        grid-column: 3 / span 9;
         grid-row: 4;
     }
     #block-BeatThePress{
@@ -40,7 +38,6 @@
         grid-area: news;
         grid-column: 10 / span 3;
         grid-row: 2;
-       // align-self: center;
     }
     #banner-top{
         grid-row: 1;
@@ -57,8 +54,8 @@
         grid-row: 7;
         align-self: center;
     }
-    #side-social{
-        grid-column: 10 / span 3;
+    #side-directors{
+        grid-column: 3 / span 9;
         grid-row: 5;
     }
 }

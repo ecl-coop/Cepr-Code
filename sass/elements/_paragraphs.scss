@@ -1,0 +1,12 @@
+%paragraph-2-base{
+    font-family: $Sans;
+    font-size: $size-p2-fluid;
+    line-height: 1.42;
+    text-transform: normal;
+    letter-spacing: 0;
+}
+
+.paragraph-2-light{
+    @extend %paragraph-2-base;
+    font-weight: $Light;
+}

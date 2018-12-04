@@ -1,0 +1,40 @@
+
+%smallest-sans-base {
+    font-family: $Sans;
+    font-size: $size-smallest-fluid;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
+%smallest-serif-base{
+    font-family: $Serif;
+    font-size: $size-smallest-fluid;
+    letter-spacing: 10;
+    line-height: 1.25;
+} 
+
+.small-text-sans-4{
+    @extend %smallest-sans-base;
+    font-style: italic;
+    font-weight: $Regular !important;
+    text-transform: capitalize;
+}
+
+.small-text-serif-2 {
+    @extend %smallest-serif-base;
+    font-weight: $Regular;
+    text-transform: capitalize;
+}
+
+.small-text-serif-3 {
+    @extend %smallest-serif-base;
+    font-weight: $Bold;
+    text-transform: uppercase;
+}
+
+.small-text-serif-4 {
+    @extend %smallest-serif-base;
+    font-weight: $Light;
+    font-style: italic;
+    text-transform: capitalize;
+}

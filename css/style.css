@@ -74,11 +74,6 @@ body {
 
 h4.column-header {
   width: 95%;
-  text-transform: uppercase;
-  font-size: calc(21.3452px + 0.71174vw);
-  letter-spacing: .15em;
-  font-weight: 300;
-  line-height: 1;
   display: flex;
   white-space: nowrap;
   align-items: center;
@@ -113,6 +108,15 @@ h4.column-header {
   margin: 0.8rem 0;
   margin-top: 0.5rem;
   line-height: 1.25; }
+  .heading-3-bold {
+    font-weight: 700; }
+
+.heading-4 {
+  text-transform: uppercase;
+  font-size: calc(21.3452px + 0.71174vw);
+  letter-spacing: .15em;
+  font-weight: 300;
+  line-height: 1; }
 
 .heading-5 {
   font-family: var(--font-Primary);
@@ -141,11 +145,62 @@ h4.column-header {
   font-weight: 800;
   margin-bottom: 0.5rem;
   position: relative; }
+  .heading-7-underline {
+    padding: 0 2rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-Secondary); }
+    .heading-7-underline:before, .heading-7-underline:after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      clip-path: circle();
+      background-color: var(--color-Black);
+      background-color: var(--color-Secondary);
+      position: absolute;
+      bottom: -3px; }
+    .heading-7-underline::before {
+      left: 0; }
+    .heading-7-underline:after {
+      right: 0; }
 
 @media (min-width: 769px) {
   h2.column-header,
   .h4.note-title {
-    font-size: calc(21.3452px + 0.71174vw); } }
+    font-size: calc(21.3452px + 0.71174vw); }
+  .heading-7-underline {
+    padding-left: 0; }
+    .heading-7-underline:before {
+      content: none; } }
+
+.small-text-sans-4 {
+  font-family: var(--font-Primary);
+  font-size: calc(0.23725vw + 7.11507px);
+  letter-spacing: 0;
+  line-height: 1.25; }
+
+.small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
+  font-family: var(--font-Display);
+  font-size: calc(0.23725vw + 7.11507px);
+  letter-spacing: 10;
+  line-height: 1.25; }
+
+.small-text-sans-4 {
+  font-style: italic;
+  font-weight: 400 !important;
+  text-transform: capitalize; }
+
+.small-text-serif-2 {
+  font-weight: 400;
+  text-transform: capitalize; }
+
+.small-text-serif-3 {
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.small-text-serif-4 {
+  font-weight: 300;
+  font-style: italic;
+  text-transform: capitalize; }
 
 .tag {
   display: flex;
@@ -257,7 +312,7 @@ hr, .line-2 {
       background-size: 100%; }
 
 .btn-5 {
-  width: 72px;
+  min-width: 40px;
   height: 24px;
   border-width: 1px;
   font-size: calc(0.23725vw + 7.11507px);
@@ -267,6 +322,50 @@ hr, .line-2 {
   .btn-5-small {
     width: 32px;
     height: 16px; }
+
+.picture-round-large {
+  clip-path: circle();
+  height: 120px;
+  width: 120px;
+  object-fit: cover; }
+
+.logo-cepr-color {
+  --logo-lightBlue: #004fa7;
+  --logo-darkBlue: #000155;
+  --logo-grey: #7f7f7f; }
+
+.logo-cepr-white {
+  --logo-lightBlue: #f8f8f8;
+  --logo-darkBlue: #f8f8f8;
+  --logo-grey: #f8f8f8; }
+
+.logo-cepr-blue {
+  --logo-lightBlue: #000155;
+  --logo-darkBlue: #000155;
+  --logo-grey: #000155; }
+
+.logo-cepr-black {
+  --logo-lightBlue: #000033;
+  --logo-darkBlue: #000033;
+  --logo-grey: #000033; }
+
+.social-logo {
+  width: 20px;
+  fill: var(--color-Black); }
+  .social-logo-white {
+    fill: var(--color-White); }
+  .social-logo-blue {
+    fill: var(--color-Primary); }
+
+.paragraph-2-light {
+  font-family: var(--font-Primary);
+  font-size: calc(0.35587vw + 9.6726px);
+  line-height: 1.42;
+  text-transform: normal;
+  letter-spacing: 0; }
+
+.paragraph-2-light {
+  font-weight: 300; }
 
 .article-hero-text {
   grid-area: title;
@@ -294,49 +393,54 @@ hr, .line-2 {
   font-size: 15px; }
 
 .article-hero-text,
-.article-hero-related {
+.article-related {
   width: 85%;
   margin: 0 auto; }
 
-.article-hero-related {
+@media (min-width: 769px) {
+  .article-hero-text,
+  .article-related {
+    padding: 0;
+    width: 100%; }
+  .article-hero-text {
+    padding-right: 1.5rem; } }
+
+.article-related {
   grid-area: related;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding-top: 1.25rem; }
-  .article-hero-related .heading-5 a {
+  .article-related .heading-5 a {
     color: var(--color-White);
     transition: all .2s; }
-  .article-hero-related .heading-5 :hover {
+  .article-related .heading-5 :hover {
     color: var(--color-Secondary); }
-  .article-hero-related .heading-5 :active {
+  .article-related .heading-5 :active {
     color: var(--color-Secondary-dark); }
-  .article-hero-related .heading-7,
-  .article-hero-related .preheading {
+  .article-related .heading-7,
+  .article-related .preheading {
     align-self: center;
     text-align: center;
     color: var(--color-Secondary);
     line-height: 1; }
-  .article-hero-related .credits {
+  .article-related .credits {
     font-size: calc(0.23725vw + 7.11507px);
     color: var(--color-Grey-light); }
 
 @media (min-width: 769px) {
-  .article-hero-text,
-  .article-hero-related {
-    padding: 0;
-    width: 100%; }
-  .article-hero-text {
-    padding-right: 1.5rem; }
-  .article-hero-related .heading-7,
-  .article-hero-related .preheading {
-    align-self: flex-start;
-    text-align: left; }
-  .article-hero-related ul.list-2 {
-    flex-direction: row; }
-  .article-hero-related .list-item {
-    flex: 0 0 50%;
-    padding-right: 2rem; } }
+  .article-related {
+    padding-top: 0.5rem;
+    padding-bottom: 3rem; }
+    .article-related .heading-7,
+    .article-related .preheading {
+      align-self: flex-start;
+      text-align: left; }
+    .article-related ul.list-2 {
+      flex-direction: row; }
+    .article-related .list-item {
+      flex: 0 0 50%;
+      padding-right: 2rem; } }
 
 /*This is a three level menu that turns into a Mega Menu of one level on Desktop.
 The structure is: Container > Item > Target on each level.
@@ -618,7 +722,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     #navbar-tablet :last-child {
       margin-right: 0; }
     #navbar-tablet svg {
-      width: 20px;
       z-index: 5; }
     #navbar-tablet .btn-5 {
       margin-left: 0; }
@@ -736,7 +839,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .list-2-item .tag {
     margin-top: 0.8rem; }
   .list-2-item small.credits {
-    padding-bottom: 1.25rem; }
+    padding-top: 0.5rem; }
   .list-2-item:not(:last-child) {
     margin-bottom: 0.8rem;
     padding-bottom: 1.25rem; }
@@ -792,6 +895,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       border-bottom: none; } }
 
 @media (min-width: 1024px) {
+  .list-3-item:not(:last-child) {
+    border-bottom-width: 1px; }
   .list-3-item-news .heading-6, .list-3-item-news .date {
     margin-left: 1.75rem; }
   .list-3-item-news .heading-6 {
@@ -824,9 +929,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     font-family: var(--font-Display); }
   .banner-btp p {
     font-family: var(--font-Primary);
-    font-size: calc(0.4745vw + 10.23013px);
+    font-size: calc(0.35587vw + 9.6726px);
     line-height: 1.25;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
     color: var(--color-Grey-light); }
 
@@ -882,7 +987,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   color: var(--color-Primary-dark); }
   .banner-donate-text p {
     font-family: var(--font-Primary);
-    font-size: calc(0.4745vw + 10.23013px);
+    font-size: calc(0.35587vw + 9.6726px);
     line-height: 1.25;
     font-weight: 300; }
 
@@ -905,27 +1010,144 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     align-items: center;
     position: relative;
     justify-content: space-between; }
-    .banner-subscribe .heading-7, .banner-donate .heading-7 {
-      position: absolute;
-      top: 13.33333px;
-      margin-bottom: 0;
-      left: 0;
-      width: 50%; }
     .banner-subscribe .sign-up, .banner-subscribe p, .banner-donate .sign-up, .banner-donate p {
       margin-top: 13.33333px; }
   .banner-subscribe .heading-7 {
-    margin-left: 45%; }
+    margin-left: 45%;
+    position: absolute;
+    top: 13.33333px;
+    margin-bottom: 0;
+    left: 0;
+    width: 50%; }
   .banner-subscribe .sign-up {
     flex: 0 0 50%;
     margin-left: auto; }
   .banner-donate .heading-7, .banner-donate p {
-    margin-left: 7rem; }
-  .banner-donate p {
-    flex: 1 1 100%; }
+    margin-left: 7rem;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .banner-donate .banner-donate-text {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .banner-donate .btn-2 {
+    background-image: none; }
+    .banner-donate .btn-2:after {
+      content: none; }
   .banner-picture {
     flex: 0 0 20%;
     padding-bottom: 1.25rem;
-    margin-left: auto; } }
+    margin-left: auto; }
+  .banner-followUs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-White);
+    height: 350px;
+    border-radius: 50px 0 100px 0;
+    background: url("/img/followUs-background.svg") var(--color-Black) center no-repeat;
+    background-size: cover;
+    padding-right: 4rem;
+    padding-bottom: 3rem; }
+  .banner-followUs-header, .banner-followUs-content {
+    background-color: var(--color-Black); }
+  .banner-followUs-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
+    border-radius: 50px 0 0 0; }
+  .banner-followUs-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 75%;
+    padding-bottom: 0.5rem;
+    border-radius: 0 0 50px 0; }
+    .banner-followUs-content dt:first-of-type {
+      border-right: 1px solid var(--color-Primary-light); }
+    .banner-followUs-content .profile {
+      display: flex;
+      align-self: stretch;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 0 auto;
+      text-align: center;
+      height: 100%; }
+      .banner-followUs-content .profile .logo-cepr {
+        position: relative;
+        flex: 0 0 60%; }
+      .banner-followUs-content .profile-social {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 1 auto;
+        align-items: center;
+        width: 40%; }
+        .banner-followUs-content .profile-social:before {
+          content: "";
+          height: 30px;
+          flex: 0 1 1px;
+          background-color: var(--color-Primary-light);
+          order: 1; }
+        .banner-followUs-content .profile-social svg:last-child {
+          order: 2; }
+      .banner-followUs-content .profile .btn-5 {
+        margin: 0;
+        background-color: var(--color-Primary-light);
+        border: none;
+        flex: 0 0 auto; } }
+
+.side-blogs {
+  background-color: var(--color-White);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 100px 0 0;
+  overflow: visible;
+  position: relative;
+  margin-left: calc(calc(3.125vw - 22px)*-1);
+  padding-left: calc(3.125vw - 22px);
+  padding-bottom: 3rem; }
+  .side-blogs:before {
+    content: "";
+    background: url("/img/texture-diagonal.svg") left no-repeat;
+    opacity: 0.25;
+    filter: alpha(opacity=25);
+    width: 100%;
+    height: 100%;
+    background-clip: cover;
+    position: absolute;
+    left: 0; }
+  .side-blogs .side-blogs-header {
+    height: calc(7.59193vw + 27.68209px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2; }
+  .side-blogs .side-blogs-header,
+  .side-blogs .side-blogs-content {
+    padding-left: 1.5rem; }
+  .side-blogs .side-blogs-content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 2rem; }
+    .side-blogs .side-blogs-content .heading-7 {
+      color: var(--color-Accent);
+      border: 2px solid var(--color-Accent);
+      margin-right: auto;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 0 20px 0 0;
+      padding-right: 1rem; }
 
 .block-featured {
   display: flex;
@@ -1018,23 +1240,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 .featured-articles-container {
   display: flex;
   clear: both; }
-  .featured-articles-container .heading-7 {
-    padding: 0 2rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--color-Secondary); }
-    .featured-articles-container .heading-7:before, .featured-articles-container .heading-7:after {
-      content: "";
-      width: 6px;
-      height: 6px;
-      clip-path: circle();
-      background-color: var(--color-Black);
-      background-color: var(--color-Secondary);
-      position: absolute;
-      bottom: -3px; }
-    .featured-articles-container .heading-7::before {
-      left: 0; }
-    .featured-articles-container .heading-7:after {
-      right: 0; }
 
 .featured-article-content {
   flex: 0 0 100%;
@@ -1124,18 +1329,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     grid-template-rows: auto;
     grid-template-areas: ". title picture" ". related related";
     overflow: hidden; }
-  .featured-articles-container .heading-7 {
-    padding-left: 0; }
-    .featured-articles-container .heading-7:before {
-      content: none; }
   .article-hero-text {
     padding-top: 1.25rem; }
   .article-hero-picture {
     overflow: hidden;
     height: 100%; }
-  .article-hero-related {
-    padding-top: 3rem;
-    padding-bottom: 1.25rem; }
   .featured-footer {
     background-color: var(--color-Secondary);
     display: flex;
@@ -1178,13 +1376,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     line-height: 1;
     padding-top: 56px;
     padding-left: 1rem; }
+    .block-BeatThePress .heading-4 em {
+      display: block; }
     .block-BeatThePress .heading-4-extraBold {
       font-weight: 700; }
   .block-BeatThePress .heading-4, .block-BeatThePress .heading-6 {
     color: var(--color-Secondary-dark); }
   .block-BeatThePress p {
     font-family: var(--font-Primary);
-    font-size: calc(0.4745vw + 10.23013px);
+    font-size: calc(0.35587vw + 9.6726px);
     line-height: 1.25;
     color: var(--color-White);
     margin-top: 0.8rem;
@@ -1245,8 +1445,40 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     padding-left: 50%;
     margin-top: 0;
     margin-bottom: 0; }
-  .BeatThePress-Header::before {
-    content: none; } }
+    .block-BeatThePress .heading-3 {
+      color: var(--color-Secondary); }
+    .block-BeatThePress .list-3-container {
+      margin: 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0;
+      justify-content: space-between; }
+      .block-BeatThePress .list-3-container :nth-child(3) {
+        border: none; }
+      .block-BeatThePress .list-3-container .list-3-item {
+        flex: 0 0 45%; }
+    .block-BeatThePress .heading-6 {
+      color: var(--color-White); }
+  .BeatThePress-Header {
+    height: calc(7.59193vw + 27.68209px);
+    justify-content: space-between;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    margin: 0; }
+    .BeatThePress-Header .heading-4 {
+      padding: 0;
+      z-index: 5; }
+      .BeatThePress-Header .heading-4 em {
+        display: inline; }
+    .BeatThePress-Header::before {
+      content: none; }
+    .BeatThePress-Header:after {
+      margin-top: 0;
+      background: url("/img/Beat_The_Press.svg") right no-repeat;
+      margin-right: 0;
+      height: 100%;
+      z-index: 4; } }
 
 .block-inTheNews {
   display: flex;
@@ -1333,8 +1565,33 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-Primary-light);
     text-transform: none; }
 
+@media (min-width: 1024px) {
+  .block-footer {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 10%; }
+    .block-footer .footer-list {
+      flex-direction: row;
+      flex-wrap: wrap; }
+    .block-footer .footer-item {
+      flex: 1 0 50%; }
+    .block-footer .footer-license {
+      flex: 1 0 100%;
+      text-align: center;
+      width: 120%; } }
+
 .block-list-2 {
   margin-bottom: 2rem; }
+  .block-list-2 .list-3-container {
+    padding-top: 3rem; }
+  .block-list-2 .list-3-item-fixHeight {
+    min-height: 150px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-left: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem; }
 
 ul.list-2 {
   display: flex;
@@ -1342,7 +1599,7 @@ ul.list-2 {
   justify-content: space-between;
   padding-top: 0.5rem; }
 
-.list-3 {
+.list-3-container {
   display: flex;
   justify-content: space-around;
   flex-direction: column; }
@@ -1366,7 +1623,7 @@ ul.list-2 {
     grid-gap: calc(3.125vw - 22px);
     grid-auto-flow: row;
     padding: 0 2rem;
-    grid-row-gap: calc(5.20833vw - 33.33333px);
+    grid-row-gap: calc(8.33333vw - 53.33333px);
     padding-bottom: 3rem; }
   #block-featured {
     grid-area: featured;
@@ -1374,7 +1631,7 @@ ul.list-2 {
     grid-row: 2; }
   #block-latest {
     grid-area: latest;
-    grid-column: 3 / span 7;
+    grid-column: 3 / span 9;
     grid-row: 4; }
   #block-BeatThePress {
     grid-area: btp;
@@ -1399,8 +1656,8 @@ ul.list-2 {
     grid-column: 8 / span 4;
     grid-row: 7;
     align-self: center; }
-  #side-social {
-    grid-column: 10 / span 3;
+  #side-directors {
+    grid-column: 3 / span 9;
     grid-row: 5; } }
 
 @media (min-width: 1216px) {

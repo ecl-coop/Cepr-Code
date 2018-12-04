@@ -118,27 +118,6 @@
     display: flex;
     //flex-wrap: nowrap;
     clear: both;
-    .heading-7{
-        padding: 0 $padding-vertical-large;
-        padding-bottom: $padding-horizontal-small/2;
-         border-bottom: 1px solid $Green;
-
-         &:before,
-         &:after {
-             @include bullet-small;
-             background-color: $Green;
-             position: absolute;
-             bottom: ($bullet-size/4)*-1;
-         }
-
-         &::before {
-             left: 0;
-         }
-
-         &:after {
-             right: 0;
-         }
-    }
 }
 
 .featured-article-content{
@@ -253,14 +232,6 @@
         overflow: hidden;
     }
 
-    .featured-articles-container{
-        .heading-7 {
-            padding-left: 0;
-            &:before {
-                content: none;
-            }
-        }
-    }
     .article-hero-text{
         padding-top: $padding-horizontal-regular;
     }
@@ -268,12 +239,6 @@
         overflow:hidden;
         height: 100%;
     }
-
-    .article-hero-related{
-        padding-top: $padding-horizontal-large;
-        padding-bottom: $padding-horizontal-regular;
-    }
-
 
 //////////////////////////////////////////
 ///////////Green Box only visible on >Tablet

@@ -8,16 +8,22 @@
 //elements
 @import "elements/circle.scss";
 @import "elements/headings.scss";
+@import "elements/small-texts.scss";
 @import "elements/tag.scss";
 @import "elements/lines.scss";
 @import "elements/credits.scss";
 @import "elements/buttons.scss";
+@import "elements/pictures.scss";
+@import "elements/logo.scss";
+@import "elements/paragraphs.scss";
 
 //components
 @import "components/article-hero.scss";
+@import "components/article-related.scss";
 @import "components/menu.scss";
 @import "components/lists.scss";
 @import "components/banners.scss";
+@import "components/side-blogs";
 
 //blocks
 @import "blocks/block-featured.scss";
@@ -35,5 +41,3 @@
 @import "node_modules/bulma/sass/grid/columns.sass";
 @import "node_modules/bulma/sass/base/_all.sass";
 @import "node_modules/bulma/sass/components/level.sass";
-//@import "components";
-//@import "elements";

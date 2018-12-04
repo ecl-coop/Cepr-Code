@@ -1,0 +1,6 @@
+.picture-round-large{
+    clip-path: circle();
+    height: $profile-picture-large;
+    width: $profile-picture-large;
+    object-fit: cover;
+}

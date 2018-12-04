@@ -16,7 +16,7 @@
         margin-top: $margin-horizontal-regular; 
     }
     small.credits{
-        padding-bottom: $padding-horizontal-regular;
+        padding-top: $padding-horizontal-small;
     }
     &:not(:last-child) {
         margin-bottom: $margin-horizontal-regular;
@@ -97,7 +97,11 @@
 }
 
 @include media(">=desktop") {
-    
+    .list-3-item {
+        &:not(:last-child) {
+            border-bottom-width: 1px;
+        }
+    }
     .list-3-item-news{
         .heading-6,
         .date {

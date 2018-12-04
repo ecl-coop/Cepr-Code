@@ -1,5 +1,16 @@
 .block-list-2{
     margin-bottom: $margin-horizontal-large;
+    .list-3-container{
+        padding-top: $padding-horizontal-large;
+    }
+    .list-3-item-fixHeight{
+        min-height: 150px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        padding-left: $padding-vertical-extraLarge;
+        padding-top: $padding-horizontal-small;
+        padding-bottom: $padding-horizontal-regular;
+    }
 }
 
 ul.list-2 {
@@ -9,7 +20,7 @@ ul.list-2 {
     padding-top: $padding-horizontal-small;
 }
 
-.list-3{
+.list-3-container{
     display: flex;
     justify-content: space-around;
     flex-direction: column;

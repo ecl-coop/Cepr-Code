@@ -23,7 +23,6 @@
 h4.column-header{
     @include responsive-property("width", 95%, 98%, $phone, $widescreen); ///<<<<<<<<<<<<<<<<<is not working
     //width: 98%;
-    @include heading-4;
     display: flex;
     white-space: nowrap;
     align-items: center;
@@ -56,6 +55,13 @@ h4.column-header{
 
 .heading-3{
     @include heading-3;
+    &-bold{
+        font-weight: $Bold;
+    }
+}
+
+.heading-4{
+    @include heading-4;
 }
 
 .heading-5{
@@ -86,11 +92,41 @@ h4.column-header{
     @include heading-7;
     margin-bottom: $margin-horizontal-small;
     position: relative;
-}
+
+    &-underline{
+                padding: 0 $padding-vertical-large;
+                padding-bottom: $padding-horizontal-small/2;
+                border-bottom: 1px solid $Green;
+
+                &:before,
+                &:after {
+                    @include bullet-small;
+                    background-color: $Green;
+                    position: absolute;
+                    bottom: ($bullet-size/4)*-1;
+                }
+
+                &::before {
+                    left: 0;
+                }
+
+                &:after {
+                    right: 0;
+                }
+            }
+    }
+
 
 @include media ('>=tablet') {
     h2.column-header,
     .h4.note-title {
-    font-size: $size-h4-fluid;
+        font-size: $size-h4-fluid;
+    }
+    .heading-7-underline {
+        padding-left: 0;
+
+        &:before {
+            content: none;
+        }
     }
 }

@@ -1,0 +1,36 @@
+.logo-cepr-color{
+    --logo-lightBlue: #004fa7;
+    --logo-darkBlue: #000155;
+    --logo-grey: #7f7f7f;
+}
+
+.logo-cepr-white{
+    --logo-lightBlue: #f8f8f8;
+    --logo-darkBlue: #f8f8f8;
+    --logo-grey: #f8f8f8;
+}
+
+.logo-cepr-blue {
+    --logo-lightBlue: #000155;
+    --logo-darkBlue: #000155;
+    --logo-grey: #000155;
+}
+
+.logo-cepr-black {
+    --logo-lightBlue: #000033;
+    --logo-darkBlue: #000033;
+    --logo-grey: #000033;
+}
+
+.social-logo{
+    width: 20px;
+    fill: $Black;
+
+    &-white{
+        fill: $White;
+    }
+
+    &-blue{
+        fill: $Blue;
+    }
+}

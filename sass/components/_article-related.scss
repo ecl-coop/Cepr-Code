@@ -1,0 +1,56 @@
+.article-related {
+    grid-area: related;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: $padding-horizontal-regular;
+
+    .heading-5 {
+        a {
+            color: $White;
+            transition: all .2s;
+        }
+
+        :hover {
+            color: $Green;
+        }
+
+        :active {
+            color: $Green-dark;
+        }
+    }
+
+    .heading-7,
+    .preheading {
+        align-self: center;
+        text-align: center;
+        color: $Green;
+        line-height: 1;
+    }
+
+    .credits {
+        font-size: $size-smallest-fluid;
+        color: $Grey-light;
+    }
+}
+
+@include media(">=tablet") {
+    .article-related {
+            padding-top: $padding-horizontal-small;
+            padding-bottom: $padding-horizontal-large;
+        .heading-7,
+        .preheading {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        ul.list-2 {
+            flex-direction: row;
+        }
+
+        .list-item {
+            flex: 0 0 50%;
+            padding-right: $padding-vertical-large;
+        }
+    }
+}
