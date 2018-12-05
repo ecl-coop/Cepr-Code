@@ -37,7 +37,6 @@
     justify-content: space-between;
     height: 10%;
     .social-logo{
-        fill: $Blue;
         width: 30%;
     }
 }
@@ -59,14 +58,33 @@
 
 @include media(">=desktop") {
     .block-footer{
-        align-items: flex-start;
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 10%;
+        max-width: 1920px;
+        position: relative;
+        margin: 0 auto;
+        color: $Blue;
 
+        .footer-logo{
+            fill: $Blue;
+            position: relative;
+            &:after{
+                content: "";
+                height: 100px;
+                width: 100px;
+                left: 0;
+                bottom: 0;
+                //background: url("/img/symbol-defs.svg#cepr-name") left no-repeat;
+                //background-image: url("/img/symbol-defs.svg#cepr-name");
+                background-color: red;
+                position: absolute;
+            }
+        }
         .footer-list{
             flex-direction: row;
             flex-wrap: wrap;
+            order: 2;
         }
         .footer-item{
             flex: 1 0 50%;
@@ -75,6 +93,18 @@
             flex: 1 0 100%;
             text-align: center;
             width: 120%;
+            height: 15%;
+            order: 5;
+            display: flex;
+            align-self: flex-end;
+        }
+        .footer-social{
+            //order: 1;
+            position: absolute;
+            display: flex;
+            bottom: 20%;
+            left: 10%;
+            width: 10%;
         }
     }
 }

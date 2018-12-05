@@ -48,3 +48,9 @@
                 }
         }
 }
+
+@include media(">=fullhd"){
+        .block-inTheNews {
+                margin-top: 0;
+        }
+}

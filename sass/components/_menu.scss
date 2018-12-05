@@ -491,6 +491,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         .menubar-target, .menu-target, .submenu-target, .menubar-target-donate {
             font-size: .75rem;
         }
+        #menubar__logo {
+            height: 75%;
+        }
     }
 
     @include media ('>=widescreen') {
@@ -502,18 +505,24 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
                 right: $padding-vertical-large*-2;
             }
         }
-        /*.menu-container{
-            width: 1216px;
-        }*/
+        #menubar__logo {
+            height: 80%;
+        }
     }
 
     @include media ('>=fullhd') {
         #nav {
             padding: 0 10%;
+            max-width: 1920px;
+            margin: 0 auto;
         }
         #navbar-tablet {
             &:before {
                 right: -10vw;
             }
         }
+        #menubar__logo {
+            height: 90%;
+        }
+        
     }

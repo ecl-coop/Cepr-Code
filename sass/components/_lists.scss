@@ -97,6 +97,10 @@
 }
 
 @include media(">=desktop") {
+    .list-2-item:not(:last-child){
+        padding-bottom: $padding-horizontal-large;
+        margin-bottom: $margin-horizontal-large;
+    }
     .list-3-item {
         &:not(:last-child) {
             border-bottom-width: 1px;

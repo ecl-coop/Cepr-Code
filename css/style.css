@@ -172,6 +172,20 @@ h4.column-header {
     .heading-7-underline:before {
       content: none; } }
 
+@media (min-width: 1024px) {
+  .column-header-container {
+    overflow: visible;
+    margin-left: -10%; }
+    .column-header-container::after {
+      content: none; }
+  h4.column-header {
+    justify-content: flex-start;
+    margin-right: -100%; }
+    h4.column-header:before {
+      width: 5%; }
+    h4.column-header:after {
+      width: 200%; } }
+
 .small-text-sans-4 {
   font-family: var(--font-Primary);
   font-size: calc(0.23725vw + 7.11507px);
@@ -351,11 +365,20 @@ hr, .line-2 {
 
 .social-logo {
   width: 20px;
-  fill: var(--color-Black); }
+  fill: var(--color-Black);
+  transition: all .15s; }
+  .social-logo:hover {
+    cursor: pointer;
+    fill: var(--color-Accent-dark);
+    transform: scale(1.1); }
   .social-logo-white {
     fill: var(--color-White); }
   .social-logo-blue {
     fill: var(--color-Primary); }
+
+@media (min-width: 1024px) {
+  .social-logo {
+    width: 22px; } }
 
 .paragraph-2-light {
   font-family: var(--font-Primary);
@@ -430,7 +453,7 @@ hr, .line-2 {
 
 @media (min-width: 769px) {
   .article-related {
-    padding-top: 0.5rem;
+    padding-top: 1.25rem;
     padding-bottom: 3rem; }
     .article-related .heading-7,
     .article-related .preheading {
@@ -807,22 +830,27 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .menubar__header {
     height: 6rem; }
   .menubar-target, .menu-target, .submenu-target, .menubar-target-donate {
-    font-size: .75rem; } }
+    font-size: .75rem; }
+  #menubar__logo {
+    height: 75%; } }
 
 @media (min-width: 1216px) {
   #nav {
     padding: 0 4rem; }
   #navbar-tablet:before {
     right: -4rem; }
-  /*.menu-container{
-            width: 1216px;
-        }*/ }
+  #menubar__logo {
+    height: 80%; } }
 
 @media (min-width: 1408px) {
   #nav {
-    padding: 0 10%; }
+    padding: 0 10%;
+    max-width: 1920px;
+    margin: 0 auto; }
   #navbar-tablet:before {
-    right: -10vw; } }
+    right: -10vw; }
+  #menubar__logo {
+    height: 90%; } }
 
 .list-item:not(:last-child) {
   padding-bottom: 1.25rem; }
@@ -895,6 +923,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       border-bottom: none; } }
 
 @media (min-width: 1024px) {
+  .list-2-item:not(:last-child) {
+    padding-bottom: 3rem;
+    margin-bottom: 2rem; }
   .list-3-item:not(:last-child) {
     border-bottom-width: 1px; }
   .list-3-item-news .heading-6, .list-3-item-news .date {
@@ -912,7 +943,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   height: 7.5rem; }
 
 .banner-btp {
-  display: flex;
+  display: none;
   justify-content: space-between;
   background: url("/img/header-btp_background.svg") left no-repeat;
   background-color: var(--color-Black);
@@ -991,7 +1022,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     line-height: 1.25;
     font-weight: 300; }
 
+@media (min-width: 769px) {
+  .banner-subscribe {
+    padding-bottom: 0;
+    align-items: center; } }
+
 @media (min-width: 1024px) {
+  .banner-btp {
+    display: flex; }
   .block-banner-left {
     border-radius: 0 100px 100px 0;
     margin-left: -50%;
@@ -1262,7 +1300,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .block-featured {
     background-color: transparent;
     padding-right: 0;
-    padding-left: 2rem;
+    padding-left: 0;
     padding-bottom: 0; }
   .featured-tabs-container {
     position: relative;
@@ -1389,9 +1427,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-White);
     margin-top: 0.8rem;
     padding: 0 1.5rem; }
-  .block-BeatThePress .list-3 {
-    margin-top: 4rem;
-    padding: 0 1rem; }
+  .block-BeatThePress .list-3-container {
+    margin-top: 2rem; }
   .block-BeatThePress .list-3-item {
     border-bottom-color: var(--color-Secondary-dark); }
 
@@ -1435,6 +1472,18 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-White); }
 
 @media (min-width: 769px) {
+  .block-BeatThePress {
+    padding: 0 4rem; }
+  .BeatThePress-Header {
+    margin: 0 -4rem; }
+    .BeatThePress-Header .heading-4, .BeatThePress-Header p {
+      padding-left: 4rem;
+      padding-right: 4rem; }
+    .BeatThePress-Header:before {
+      height: 72px;
+      top: -20px; }
+    .BeatThePress-Header:after {
+      margin-top: 52px; }
   .buttons-container {
     justify-content: space-evenly; } }
 
@@ -1516,6 +1565,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .block-inTheNews .column-header:before, .block-inTheNews .column-header:after {
       content: none; } }
 
+@media (min-width: 1408px) {
+  .block-inTheNews {
+    margin-top: 0; } }
+
 .block-footer {
   background-color: var(--color-White);
   display: flex;
@@ -1549,7 +1602,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   justify-content: space-between;
   height: 10%; }
   .footer-social .social-logo {
-    fill: var(--color-Primary);
     width: 30%; }
 
 .footer-license {
@@ -1567,24 +1619,50 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 @media (min-width: 1024px) {
   .block-footer {
-    align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0 10%; }
+    padding: 0 10%;
+    max-width: 1920px;
+    position: relative;
+    margin: 0 auto;
+    color: var(--color-Primary); }
+    .block-footer .footer-logo {
+      fill: var(--color-Primary);
+      position: relative; }
+      .block-footer .footer-logo:after {
+        content: "";
+        height: 100px;
+        width: 100px;
+        left: 0;
+        bottom: 0;
+        background-color: red;
+        position: absolute; }
     .block-footer .footer-list {
       flex-direction: row;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      order: 2; }
     .block-footer .footer-item {
       flex: 1 0 50%; }
     .block-footer .footer-license {
       flex: 1 0 100%;
       text-align: center;
-      width: 120%; } }
+      width: 120%;
+      height: 15%;
+      order: 5;
+      display: flex;
+      align-self: flex-end; }
+    .block-footer .footer-social {
+      position: absolute;
+      display: flex;
+      bottom: 20%;
+      left: 10%;
+      width: 10%; } }
 
 .block-list-2 {
   margin-bottom: 2rem; }
   .block-list-2 .list-3-container {
-    padding-top: 3rem; }
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
   .block-list-2 .list-3-item-fixHeight {
     min-height: 150px;
     padding-bottom: 0;
@@ -1610,8 +1688,36 @@ ul.list-2 {
     margin: 0 auto; } }
 
 @media (min-width: 1024px) {
+  .block-list-2 {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column; }
+    .block-list-2:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      clip-path: circle();
+      background-color: var(--color-Black);
+      order: 2;
+      background-color: var(--color-Primary-light);
+      align-self: flex-end;
+      margin-top: -6px; }
+    .block-list-2:after {
+      content: "";
+      flex: 1 1 auto;
+      border-top-color: var(--color-Primary-light);
+      align-self: center;
+      border-top: 1px solid var(--color-Primary-light);
+      border-top-width: 2px;
+      width: 200%;
+      margin-left: -100%; }
   .list-2-container {
+    padding-top: 1.25rem;
     width: 100%; } }
+
+@media (min-width: 769px) {
+  .grid-container {
+    padding-top: 1.25rem; } }
 
 @media (min-width: 1024px) {
   .grid-container {
@@ -1663,12 +1769,26 @@ ul.list-2 {
 @media (min-width: 1216px) {
   .grid-container {
     padding: 0 4rem;
-    padding-bottom: 6rem; } }
+    padding-bottom: 6rem; }
+  #block-BeatThePress {
+    grid-column: 2 / span 6; } }
 
 @media (min-width: 1408px) {
   .grid-container {
     padding: 0 10%;
-    padding-bottom: 10vh; } }
+    padding-bottom: 10vh;
+    max-width: 1920px;
+    margin: 0 auto; }
+  #banner-top {
+    grid-column: 6 / -1; }
+  #block-featured {
+    grid-column: 1 / span 8;
+    margin-top: calc(calc(18.23714px + 1.78971vw)*-1); }
+  #block-inTheNews {
+    grid-column: 9 / span 3; }
+  #block-latest,
+  #side-directors {
+    grid-column: 3 / span 8; } }
 
 @keyframes spinAround {
   from {

@@ -25,6 +25,12 @@
 .social-logo{
     width: 20px;
     fill: $Black;
+    transition: all .15s;
+    &:hover{
+        cursor: pointer;
+        fill: $Orange-dark;
+        transform: scale(1.1);
+    }
 
     &-white{
         fill: $White;
@@ -32,5 +38,11 @@
 
     &-blue{
         fill: $Blue;
+    }
+}
+
+@include media(">=desktop"){
+    .social-logo {
+        width: 22px;
     }
 }

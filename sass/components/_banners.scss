@@ -8,7 +8,7 @@
 ////////////////////////////////////////
 ///////////BEAT THE PRESS BANNER
     .banner-btp{
-        display: flex;
+        display: none;
         justify-content: space-between;
         background: url("/img/header-btp_background.svg") left no-repeat;
         background-color: $Black;
@@ -110,7 +110,23 @@ $input-heigth: $height-1-max;
     }
 }
 
+///////////////////////////////////////////////////////////////
+////////////////////MEDIA QUERY TABLET
+
+@include media(">=tablet"){
+    .banner-subscribe {
+        padding-bottom: 0;
+        align-items: center;
+    }
+}
+
+///////////////////////////////////////////////////////////////
+////////////////////MEDIA QUERY DESKTOP
+
 @include media(">=desktop") {
+    .banner-btp {
+        display: flex;
+    }
     .block-banner-left {
         border-radius: 0 100px 100px 0;
         margin-left: -50%;

@@ -22,7 +22,6 @@
 
 h4.column-header{
     @include responsive-property("width", 95%, 98%, $phone, $widescreen); ///<<<<<<<<<<<<<<<<<is not working
-    //width: 98%;
     display: flex;
     white-space: nowrap;
     align-items: center;
@@ -105,11 +104,9 @@ h4.column-header{
                     position: absolute;
                     bottom: ($bullet-size/4)*-1;
                 }
-
                 &::before {
                     left: 0;
                 }
-
                 &:after {
                     right: 0;
                 }
@@ -127,6 +124,26 @@ h4.column-header{
 
         &:before {
             content: none;
+        }
+    }
+}
+
+@include media (">=desktop"){
+    .column-header-container{
+        overflow: visible;
+        margin-left: -10%;
+        &::after{
+            content: none;
+        }
+    }
+    h4.column-header{
+        justify-content: flex-start;
+        margin-right: -100%;
+        &:before {
+            width: 5%;
+        }
+        &:after{
+            width: 200%;
         }
     }
 }
