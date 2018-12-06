@@ -134,6 +134,9 @@
             .heading-6{
                 color: $White;
             }
+            .BeatThePress-Featured{
+                padding-top: $padding-horizontal-regular;
+            }
     }
     .BeatThePress-Header{
         height: $btpHeader-size-fluid;
@@ -141,24 +144,41 @@
         padding: 0;
         flex-direction: row;
         align-items: center;
-        margin: 0;
+        position: relative;
 
         .heading-4{
-            padding: 0;
+            padding-right: 0;
+            padding-top: 0;
             z-index: 5;
+            font-size: $size-h4-min;
+        }
+        &::before{
+            content: "";
+            background-image: none;
+            height: $btpHeader-size-fluid;
+            width: 200%;
+            border-bottom: 1px solid $Green;
+            top: 0;
+        }
+        &:after{
+            position: absolute;
+            background: url("/img/Beat_The_Press.svg") right no-repeat;
+            background-size: 23%;
+            background-position-x: 97%;
+            top: -40px;
+            height: 100%;
+            z-index: 4;
+            border-bottom: none;
+            overflow: visible;
+        }
+    }
+}
+@include media(">=widescreen") {
+     .BeatThePress-Header{
+        .heading-4 {
             em {
                 display: inline;
             }
         }
-        &::before{
-            content: none;
-        }
-        &:after{
-            margin-top: 0;
-            background: url("/img/Beat_The_Press.svg") right no-repeat;
-            margin-right: 0;
-            height: 100%;
-            z-index: 4;
-        }
-    }
+     }
 }

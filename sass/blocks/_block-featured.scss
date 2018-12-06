@@ -116,7 +116,7 @@
 
 .featured-articles-container {
     display: flex;
-    //flex-wrap: nowrap;
+    overflow: hidden;
     clear: both;
 }
 
@@ -221,7 +221,6 @@
             right: 0;
         }
     }
-
     .featured-article-content{
         background-color: $Black;
         grid-template-columns: $margin-vertical-large*4 1fr 1fr;

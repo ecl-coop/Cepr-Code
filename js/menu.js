@@ -12,8 +12,6 @@ var setStatesTablet = function (elem, state) {
     elem.setAttribute('data-state', elem.getAttribute('data-state'));
 };
 
-
-if (screen.width <= 768) {
     menubar.onclick = function (e) {
         toggleState('#menubar-container', 'closed', 'open');
         toggleState('.menubar__header', 'closed', 'open');
@@ -50,10 +48,9 @@ if (screen.width <= 768) {
             }
         });
     });
-
-} else {
-    menu.onclick = function (e) {
-        toggleState('.menu-container', 'closed', 'open');
-        e.preventDefault();
-    };
-}
+if (window.innerWidth > 768) {
+    submenuToggle.onload = function (e) {
+            toggleState('.submenu__toggle', 'closed', 'open');
+            e.preventDefault();
+        };
+    }

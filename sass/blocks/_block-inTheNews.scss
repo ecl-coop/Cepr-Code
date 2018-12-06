@@ -31,7 +31,8 @@
                 margin: 0;
                 margin-top: $height-1-fluid;
 
-                .list-3{
+                .list-3,
+                .column-header-container {
                         width: 100%;
                         margin-left: 0;
                         margin-right: 0;
@@ -42,9 +43,14 @@
                         }
                 }
                 .column-header{
+                        justify-content: center;
+                        margin-right: 0;
                         &:before, &:after {
                                 content: none;
                         }
+                }
+                .heading-4{
+                        font-size: $size-h4-min;
                 }
         }
 }

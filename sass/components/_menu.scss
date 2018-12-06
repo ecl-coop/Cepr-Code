@@ -5,18 +5,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 ////////////////////////////////////////////
 /////MENU HEADER STYLES
 
-.logo-cepr, .icon-cepr {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    }
-
-    .icon-cepr, .logo-med {
+.icon-cepr, .logo-med {
         display: none;
     }
-
 .menubar__header {
         transition: all .35s;
         height: 4rem;
@@ -89,6 +80,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 //////////Menu Styles
 .nav{
     display: block;
+    position: relative;
 }
 
 #accordian ul ul {
@@ -293,9 +285,67 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             align-self: center;
         }
     }
+////////////////////////////////////////////////////////////////
+/////////////////////STICKY MENU STYLE
+
+    @keyframes slide-down {
+        0% {
+            transform: translateY(-64px);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+
+    .nav-sticky {
+        &::before {
+            content: "";
+            width: 20%;
+            height: 100%;
+            //background-image: url("/img/symbol-defs.svg#logo-small");
+            background: url("/img/09_logo_H_small_diapo.svg") left no-repeat $Black;
+            background-size: 120px;
+        }
+        display: flex;
+        position: fixed;
+        height: 64px;
+        width: 100%;
+        z-index: 100;
+        border-bottom: 1px solid $Grey-lilac;
+        align-items: center;
+        top: 0;
+        padding: 0 20%;
+        background-color: $Black;
+        animation: slide-down 0.3s ease-in;
+        * {
+            background-color: $Black !important;
+            color: $White !important;
+            justify-content: space-evenly !important;
+            align-items: center !important;
+            fill: $White;
+        }
+    }
+
+////////////////////////////////////////////////////
     #accordian{
         grid-column: 2;
         grid-row: 2;
+    }
+    #accordian li.active>ul {
+        display: flex !important;
+        height: 330px;
+    }
+    #accordian li.active ul > li {
+        height: 24px;
+    }
+    #accordian ul ul {
+        margin-left: 0;
+        box-shadow: 0;
+    }
+
+    #accordian ul ul ul {
+        margin-left: 0;
+        box-shadow: 0;
     }
     .menubar__header {
         z-index: 3;
@@ -313,7 +363,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 
     #menubar__logo {
-        height: 70%;
+        height: 80%;
         margin-right: 0;
     }
     .logo-cepr{
@@ -391,17 +441,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
     .menubar-item:not(:first-of-type){
         margin-left: 2rem;
-        //padding-left: -2rem;
     }
     
         .menu-container {
-            display: none;
             position: absolute;
-            left: 0;
-            top:0;
+            flex-direction: row;
+            left: -50vw;
+            top:6px;
             width: 100vw;
-            margin-left: -2rem;
-            padding-left: 2rem;
+            padding-left: 40%;
             transform: translateY(50px);
             z-index: 777;
 
@@ -416,8 +464,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            //transform: translateY(3rem);
-            width: 100%;
+            //width: 100%;
         }
     .menubar-item,
     .menu-item,
@@ -478,12 +525,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 }
 
-
+////////////////////////////////////////////////////////////////
+/////////////////MENU DESKTOP
 
 @include media ('>=desktop') {
-    /*#menubar-container{
-        padding: 0 auto;
-    }*/
     
     .menubar__header {
         height: 6rem;
@@ -492,7 +537,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             font-size: .75rem;
         }
         #menubar__logo {
-            height: 75%;
+            height: 80%;
         }
     }
 
@@ -506,7 +551,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             }
         }
         #menubar__logo {
-            height: 80%;
+            height: 85%;
         }
     }
 
@@ -514,7 +559,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         #nav {
             padding: 0 10%;
             max-width: 1920px;
-            margin: 0 auto;
+            //margin: 0 auto;
+            //align-self: center;
         }
         #navbar-tablet {
             &:before {

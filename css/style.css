@@ -376,6 +376,14 @@ hr, .line-2 {
   .social-logo-blue {
     fill: var(--color-Primary); }
 
+.logo-cepr,
+.icon-cepr {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0; }
+
 @media (min-width: 1024px) {
   .social-logo {
     width: 22px; } }
@@ -469,13 +477,6 @@ hr, .line-2 {
 The structure is: Container > Item > Target on each level.
 The accompaining Js is a very rudimentary implementaion just to show the basic functionality, it have to be rebuild by the Development Team.
 */
-.logo-cepr, .icon-cepr {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0; }
-
 .icon-cepr, .logo-med {
   display: none; }
 
@@ -534,7 +535,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   display: block; }
 
 .nav {
-  display: block; }
+  display: block;
+  position: relative; }
 
 #accordian ul ul {
   margin-left: 1rem;
@@ -691,9 +693,49 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       grid-row: 1 / span 2;
       height: 100%;
       align-self: center; }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-64px); }
+    100% {
+      transform: translateY(0); } }
+  .nav-sticky {
+    display: flex;
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-lilac);
+    align-items: center;
+    top: 0;
+    padding: 0 20%;
+    background-color: var(--color-Black);
+    animation: slide-down 0.3s ease-in; }
+    .nav-sticky::before {
+      content: "";
+      width: 20%;
+      height: 100%;
+      background: url("/img/09_logo_H_small_diapo.svg") left no-repeat var(--color-Black);
+      background-size: 120px; }
+    .nav-sticky * {
+      background-color: var(--color-Black) !important;
+      color: var(--color-White) !important;
+      justify-content: space-evenly !important;
+      align-items: center !important;
+      fill: var(--color-White); }
   #accordian {
     grid-column: 2;
     grid-row: 2; }
+  #accordian li.active > ul {
+    display: flex !important;
+    height: 330px; }
+  #accordian li.active ul > li {
+    height: 24px; }
+  #accordian ul ul {
+    margin-left: 0;
+    box-shadow: 0; }
+  #accordian ul ul ul {
+    margin-left: 0;
+    box-shadow: 0; }
   .menubar__header {
     z-index: 3;
     grid-column: 1;
@@ -706,7 +748,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar__header[data-state=open], .menubar__header[data-state=closed] {
       background-color: transparent; }
   #menubar__logo {
-    height: 70%;
+    height: 80%;
     margin-right: 0; }
   .logo-cepr {
     width: auto; }
@@ -762,13 +804,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .menubar-item:not(:first-of-type) {
     margin-left: 2rem; }
   .menu-container {
-    display: none;
     position: absolute;
-    left: 0;
-    top: 0;
+    flex-direction: row;
+    left: -50vw;
+    top: 6px;
     width: 100vw;
-    margin-left: -2rem;
-    padding-left: 2rem;
+    padding-left: 40%;
     transform: translateY(50px);
     z-index: 777; }
     .menu-container[data-state=open] {
@@ -778,8 +819,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .submenu-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 100%; }
+    justify-content: space-around; }
   .menubar-item,
   .menu-item,
   .submenu-item,
@@ -824,15 +864,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     letter-spacing: .025em; } }
 
 @media (min-width: 1024px) {
-  /*#menubar-container{
-        padding: 0 auto;
-    }*/
   .menubar__header {
     height: 6rem; }
   .menubar-target, .menu-target, .submenu-target, .menubar-target-donate {
     font-size: .75rem; }
   #menubar__logo {
-    height: 75%; } }
+    height: 80%; } }
 
 @media (min-width: 1216px) {
   #nav {
@@ -840,13 +877,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   #navbar-tablet:before {
     right: -4rem; }
   #menubar__logo {
-    height: 80%; } }
+    height: 85%; } }
 
 @media (min-width: 1408px) {
   #nav {
     padding: 0 10%;
-    max-width: 1920px;
-    margin: 0 auto; }
+    max-width: 1920px; }
   #navbar-tablet:before {
     right: -10vw; }
   #menubar__logo {
@@ -1070,7 +1106,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     flex-direction: column;
     justify-content: center; }
   .banner-donate .btn-2 {
-    background-image: none; }
+    background-image: none;
+    margin-left: auto;
+    margin-right: auto; }
     .banner-donate .btn-2:after {
       content: none; }
   .banner-picture {
@@ -1141,6 +1179,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         border: none;
         flex: 0 0 auto; } }
 
+@media (min-width: 1216px) {
+  .banner-donate .banner-donate-text {
+    width: auto; }
+  .banner-donate .btn-2 {
+    border-width: 4px;
+    width: 130px;
+    height: 40%; } }
+
 .side-blogs {
   background-color: var(--color-White);
   height: 100%;
@@ -1153,6 +1199,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   margin-left: calc(calc(3.125vw - 22px)*-1);
   padding-left: calc(3.125vw - 22px);
   padding-bottom: 3rem; }
+  .side-blogs .heading-4 {
+    font-size: 24px; }
   .side-blogs:before {
     content: "";
     background: url("/img/texture-diagonal.svg") left no-repeat;
@@ -1277,6 +1325,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 .featured-articles-container {
   display: flex;
+  overflow: hidden;
   clear: both; }
 
 .featured-article-content {
@@ -1508,26 +1557,41 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         flex: 0 0 45%; }
     .block-BeatThePress .heading-6 {
       color: var(--color-White); }
+    .block-BeatThePress .BeatThePress-Featured {
+      padding-top: 1.25rem; }
   .BeatThePress-Header {
     height: calc(7.59193vw + 27.68209px);
     justify-content: space-between;
     padding: 0;
     flex-direction: row;
     align-items: center;
-    margin: 0; }
+    position: relative; }
     .BeatThePress-Header .heading-4 {
-      padding: 0;
-      z-index: 5; }
-      .BeatThePress-Header .heading-4 em {
-        display: inline; }
+      padding-right: 0;
+      padding-top: 0;
+      z-index: 5;
+      font-size: 24px; }
     .BeatThePress-Header::before {
-      content: none; }
+      content: "";
+      background-image: none;
+      height: calc(7.59193vw + 27.68209px);
+      width: 200%;
+      border-bottom: 1px solid var(--color-Secondary);
+      top: 0; }
     .BeatThePress-Header:after {
-      margin-top: 0;
+      position: absolute;
       background: url("/img/Beat_The_Press.svg") right no-repeat;
-      margin-right: 0;
+      background-size: 23%;
+      background-position-x: 97%;
+      top: -40px;
       height: 100%;
-      z-index: 4; } }
+      z-index: 4;
+      border-bottom: none;
+      overflow: visible; } }
+
+@media (min-width: 1216px) {
+  .BeatThePress-Header .heading-4 em {
+    display: inline; } }
 
 .block-inTheNews {
   display: flex;
@@ -1556,14 +1620,20 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     padding: 1.25rem 1rem;
     margin: 0;
     margin-top: calc(18.23714px + 1.78971vw); }
-    .block-inTheNews .list-3 {
+    .block-inTheNews .list-3,
+    .block-inTheNews .column-header-container {
       width: 100%;
       margin-left: 0;
       margin-right: 0; }
     .block-inTheNews .column-header-container:before, .block-inTheNews .column-header-container:after {
       content: none; }
-    .block-inTheNews .column-header:before, .block-inTheNews .column-header:after {
-      content: none; } }
+    .block-inTheNews .column-header {
+      justify-content: center;
+      margin-right: 0; }
+      .block-inTheNews .column-header:before, .block-inTheNews .column-header:after {
+        content: none; }
+    .block-inTheNews .heading-4 {
+      font-size: 24px; } }
 
 @media (min-width: 1408px) {
   .block-inTheNews {
@@ -1576,7 +1646,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   flex-flow: column;
   height: 21rem;
   justify-content: space-between;
-  border-top: 1px solid var(--color-Black);
+  border-top: 1px solid var(--color-Primary);
   padding-top: 2.5rem; }
   .block-footer .line-2 {
     margin: 0; }
@@ -1627,16 +1697,19 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     margin: 0 auto;
     color: var(--color-Primary); }
     .block-footer .footer-logo {
-      fill: var(--color-Primary);
-      position: relative; }
-      .block-footer .footer-logo:after {
-        content: "";
-        height: 100px;
-        width: 100px;
-        left: 0;
-        bottom: 0;
-        background-color: red;
-        position: absolute; }
+      fill: var(--color-Primary-light);
+      position: relative;
+      /*&:after{
+                content: "";
+                height: 100px;
+                width: 100px;
+                left: 0;
+                bottom: 0;
+                //background: url("/img/symbol-defs.svg#cepr-name") left no-repeat;
+                //background-image: url("/img/symbol-defs.svg#cepr-name");
+                background-color: red;
+                position: absolute;
+            }*/ }
     .block-footer .footer-list {
       flex-direction: row;
       flex-wrap: wrap;
@@ -1651,6 +1724,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       order: 5;
       display: flex;
       align-self: flex-end; }
+      .block-footer .footer-license em a {
+        color: var(--color-Accent-dark);
+        font-weight: 400;
+        text-decoration: underline; }
     .block-footer .footer-social {
       position: absolute;
       display: flex;

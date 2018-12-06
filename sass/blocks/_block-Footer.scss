@@ -5,7 +5,7 @@
     flex-flow: column;
     height: 21rem;
     justify-content: space-between;
-    border-top: 1px solid $Black;
+    border-top: 1px solid $Blue;
     padding-top: $padding-horizontal-regular*2;
 
     .line-2{
@@ -67,9 +67,9 @@
         color: $Blue;
 
         .footer-logo{
-            fill: $Blue;
+            fill: $Blue-light;
             position: relative;
-            &:after{
+            /*&:after{
                 content: "";
                 height: 100px;
                 width: 100px;
@@ -79,7 +79,7 @@
                 //background-image: url("/img/symbol-defs.svg#cepr-name");
                 background-color: red;
                 position: absolute;
-            }
+            }*/
         }
         .footer-list{
             flex-direction: row;
@@ -97,6 +97,11 @@
             order: 5;
             display: flex;
             align-self: flex-end;
+            em a{
+                color: $Orange-dark;
+                font-weight: $Regular;
+                text-decoration: underline;
+            }
         }
         .footer-social{
             //order: 1;
