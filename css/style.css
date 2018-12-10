@@ -1,3 +1,7 @@
+/*
+div {
+    @include fluid-type(font-size, 600px, 1200px, 16px, 32px);
+}*/
 @import url(node_modules/normalize.css/normalize.css);
 :root {
   --color-Primary: #001C7A;
@@ -192,16 +196,59 @@ h4.column-header {
   letter-spacing: 0;
   line-height: 1.25; }
 
-.small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
+.small-text-serif-1,
+.small-text-serif-1-ligth,
+.small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
+  font-size: 8px;
   font-family: var(--font-Display);
   font-size: calc(0.23725vw + 7.11507px);
   letter-spacing: 10;
   line-height: 1.25; }
+  @media screen and (min-width: 373px) {
+    .small-text-serif-1,
+    .small-text-serif-1-ligth,
+    .small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
+      font-size: calc(8px + 2 * (100vw - 373px) / 843); } }
+  @media screen and (min-width: 1216px) {
+    .small-text-serif-1,
+    .small-text-serif-1-ligth,
+    .small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
+      font-size: 10px; } }
 
 .small-text-sans-4 {
   font-style: italic;
   font-weight: 400 !important;
   text-transform: capitalize; }
+
+.small-text-serif-1,
+.small-text-serif-1-ligth,
+.small-text-serif-1-title {
+  font-size: 13px;
+  letter-spacing: .075em;
+  text-transform: uppercase; }
+  @media screen and (min-width: 373px) {
+    .small-text-serif-1,
+    .small-text-serif-1-ligth,
+    .small-text-serif-1-title {
+      font-size: calc(13px + 3 * (100vw - 373px) / 1035); } }
+  @media screen and (min-width: 1408px) {
+    .small-text-serif-1,
+    .small-text-serif-1-ligth,
+    .small-text-serif-1-title {
+      font-size: 16px; } }
+
+.small-text-serif-1-ligth {
+  font-weight: 300; }
+
+.small-text-serif-1-title {
+  text-transform: capitalize;
+  font-size: 13px; }
+  @media screen and (min-width: 373px) {
+    .small-text-serif-1-title {
+      font-size: calc(13px + 1 * (100vw - 373px) / 1035); } }
+  @media screen and (min-width: 1408px) {
+    .small-text-serif-1-title {
+      font-size: 14px; } }
 
 .small-text-serif-2 {
   font-weight: 400;
@@ -531,7 +578,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 #accordian ul ul {
   display: none; }
 
-#accordian li.active > ul {
+#accordian li.active > ul, #accordian ul ul li > ul {
   display: block; }
 
 .nav {
@@ -616,10 +663,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   flex-wrap: nowrap;
   align-self: center;
   color: var(--color-White);
-  font-family: var(--font-Display);
-  font-weight: 500;
-  font-size: 0.875rem;
-  letter-spacing: .075em;
   transition: all 0.25s; }
 
 .menubar-target, .menubar-target-donate {
@@ -707,35 +750,48 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     border-bottom: 1px solid var(--color-lilac);
     align-items: center;
     top: 0;
-    padding: 0 20%;
+    padding: 0 10%;
     background-color: var(--color-Black);
     animation: slide-down 0.3s ease-in; }
     .nav-sticky::before {
       content: "";
-      width: 20%;
-      height: 100%;
+      min-width: 25%;
+      flex: 0 1 auto;
+      height: 80%;
       background: url("/img/09_logo_H_small_diapo.svg") left no-repeat var(--color-Black);
-      background-size: 120px; }
+      background-size: contain;
+      display: flex; }
+    .nav-sticky #menubar-container {
+      background-color: transparent;
+      align-items: center; }
+      .nav-sticky #menubar-container .menubar-target {
+        color: var(--color-White); }
+        .nav-sticky #menubar-container .menubar-target[data-state=open] {
+          color: var(--color-Primary-light); }
+    .nav-sticky .menu-container {
+      left: -35vw;
+      top: 12px; }
     .nav-sticky * {
-      background-color: var(--color-Black) !important;
-      color: var(--color-White) !important;
       justify-content: space-evenly !important;
-      align-items: center !important;
       fill: var(--color-White); }
   #accordian {
     grid-column: 2;
     grid-row: 2; }
-  #accordian li.active > ul {
+  #accordian li.active > ul, #accordian ul ul li > ul {
     display: flex !important;
-    height: 330px; }
-  #accordian li.active ul > li {
-    height: 24px; }
+    align-items: flex-start;
+    justify-content: flex-end; }
+  #accordian li.active ul > li, #accordian ul ul li ul > li {
+    height: auto;
+    flex: 0 1 25%;
+    padding: 0.5rem 0; }
   #accordian ul ul {
     margin-left: 0;
-    box-shadow: 0; }
+    box-shadow: none; }
   #accordian ul ul ul {
     margin-left: 0;
-    box-shadow: 0; }
+    box-shadow: none;
+    border-left: 1px solid var(--color-Primary-light); }
   .menubar__header {
     z-index: 3;
     grid-column: 1;
@@ -795,12 +851,13 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--color-White);
+    background-color: transparent;
     width: 100%;
     position: relative;
     padding: 0 0;
     z-index: 888;
-    height: 100%; }
+    height: 100%;
+    align-items: center; }
   .menubar-item:not(:first-of-type) {
     margin-left: 2rem; }
   .menu-container {
@@ -809,9 +866,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     left: -50vw;
     top: 6px;
     width: 100vw;
-    padding-left: 40%;
     transform: translateY(50px);
-    z-index: 777; }
+    z-index: 777;
+    border-bottom: 2px solid var(--color-Primary-light);
+    height: 330px;
+    padding-top: 1.25rem; }
     .menu-container[data-state=open] {
       display: flex;
       flex-direction: row;
@@ -819,7 +878,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .submenu-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; }
+    justify-content: space-around;
+    padding-left: 1rem;
+    margin-top: 2rem; }
   .menubar-item,
   .menu-item,
   .submenu-item,
@@ -830,9 +891,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     border-bottom: none;
     flex: 0 0 auto;
     flex-direction: column;
-    min-width: 4rem;
-    height: 100%;
-    padding-left: 0; }
+    padding-left: 0;
+    height: auto; }
     .menubar-item:hover,
     .menu-item:hover,
     .submenu-item:hover,
@@ -843,11 +903,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .submenu-item a:hover,
     .menubar-item-donate a:hover {
       color: var(--color-Action-light); }
-  .menubar-item:hover .menubar-target {
-    color: var(--color-Black);
-    letter-spacing: 0.07em; }
-  .menu-item {
-    max-width: 25%; }
+  .menubar-item {
+    height: 100%; }
+    .menubar-item:hover .menubar-target {
+      color: var(--color-Black);
+      letter-spacing: 0.07em; }
   .menu__toggle:after {
     padding-right: 0;
     font-size: 8px;
@@ -855,25 +915,43 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     transform-origin: center; }
   .menubar-target {
     color: var(--color-Black); }
+    .menubar-target[data-state=open] {
+      color: var(--color-Primary-light); }
+  .submenu-target {
+    color: var(--color-Accent); }
+  .menu-target {
+    padding-left: 1rem;
+    position: relative;
+    cursor: default; }
+    .menu-target:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      clip-path: circle();
+      background-color: var(--color-Black);
+      background-color: var(--color-Primary-light);
+      position: absolute;
+      left: -6px;
+      top: 3px; }
+    .menu-target:after {
+      content: none; }
   .menubar-item:first-child {
     padding: 0 0;
     justify-self: flex-start; }
   .menubar-target, .menu-target, .submenu-target {
-    font-size: calc(0.11862vw + 9.55753px);
-    padding: 1rem 0;
-    letter-spacing: .025em; } }
+    align-self: flex-start; } }
 
 @media (min-width: 1024px) {
   .menubar__header {
     height: 6rem; }
-  .menubar-target, .menu-target, .submenu-target, .menubar-target-donate {
-    font-size: .75rem; }
   #menubar__logo {
     height: 80%; } }
 
 @media (min-width: 1216px) {
   #nav {
     padding: 0 4rem; }
+  .nav-sticky {
+    padding: 0 20%; }
   #navbar-tablet:before {
     right: -4rem; }
   #menubar__logo {
@@ -888,8 +966,15 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   #menubar__logo {
     height: 90%; } }
 
-.list-item:not(:last-child) {
-  padding-bottom: 1.25rem; }
+.list-item {
+  display: flex;
+  flex-direction: column; }
+  .list-item:not(:last-child) {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-Secondary-dark); }
+  .list-item .credits {
+    padding-top: 0.5rem; }
 
 .list-2-item {
   position: relative;
@@ -936,6 +1021,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       margin-right: 1.5rem; }
 
 @media (min-width: 769px) {
+  .list-item:not(:last-child) {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
   .list-2-item:first-child picture {
     margin: 0 auto;
     flex: 0 1 auto;
@@ -1606,8 +1695,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 @media (min-width: 769px) {
   .block-inTheNews {
-    max-width: 50%;
-    min-width: 33.33%; } }
+    max-width: 80%;
+    min-width: 33.33%;
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media (min-width: 1024px) {
   .block-inTheNews {
@@ -1698,18 +1789,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-Primary); }
     .block-footer .footer-logo {
       fill: var(--color-Primary-light);
-      position: relative;
-      /*&:after{
-                content: "";
-                height: 100px;
-                width: 100px;
-                left: 0;
-                bottom: 0;
-                //background: url("/img/symbol-defs.svg#cepr-name") left no-repeat;
-                //background-image: url("/img/symbol-defs.svg#cepr-name");
-                background-color: red;
-                position: absolute;
-            }*/ }
+      position: relative; }
     .block-footer .footer-list {
       flex-direction: row;
       flex-wrap: wrap;
@@ -1717,9 +1797,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .block-footer .footer-item {
       flex: 1 0 50%; }
     .block-footer .footer-license {
-      flex: 1 0 100%;
+      flex: 1 0 200%;
       text-align: center;
-      width: 120%;
+      margin-left: -50%;
+      margin-right: -50%;
       height: 15%;
       order: 5;
       display: flex;
@@ -1733,7 +1814,18 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       display: flex;
       bottom: 20%;
       left: 10%;
-      width: 10%; } }
+      width: 10%; }
+    .block-footer .paragraph-2-light > strong {
+      color: var(--color-Primary); }
+    .block-footer:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      background: url("/img/footer_illustration.png") right no-repeat;
+      background-size: cover;
+      width: 20%;
+      top: -15%;
+      height: 100%; } }
 
 .block-list-2 {
   margin-bottom: 2rem; }

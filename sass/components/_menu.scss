@@ -50,7 +50,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     border: none;
     border-radius: 0;
     padding: 0;
-    height: 3rem;
+    height: $menu-btn-height-mobile;
 }
 #menubar__logo,
 .menubar__btn,
@@ -92,6 +92,10 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     margin-left: $margin-vertical-large;
     box-shadow: $margin-vertical-large*-1 0 $Blue-light;
 }
+//////////////////////////////////////////////////////TEMPORAL SOLUTION, IT WORKS ON >TABLET BUT BREAKS MOBILE
+    #accordian ul ul li {
+        @extend .active;
+    }
 
 #menubar-container {
     margin-top: $menu-margin-top;
@@ -135,10 +139,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .backto-menubar, .backto-menu {
         padding-left: 2rem;
         min-width: 100%;
-        //width: 100vw;
         flex-grow: 1;
         flex-wrap: nowrap;
-        height: 3rem;
+        height: $menu-btn-height-mobile;
         border-bottom: 0.5px solid $Blue-light;
         display: flex;
         align-items: flex-start;
@@ -180,10 +183,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         flex-wrap: nowrap;
         align-self: center;
         color: $White;
-        font-family: var(--font-Display);
-        font-weight: 500;
-        font-size: 0.875rem;
-        letter-spacing: .075em;
         transition: all 0.25s;
     }
 
@@ -211,7 +210,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     &:active{
         background-color: var(--color-Accent-dark);
-            .menubar-target-donate {
+        .menubar-target-donate {
             color: $White;
             transform: scale(.90);
         }
@@ -243,7 +242,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 }
 
-
 ///////////////////////////////////////////////////////////
 ///////////////////transition @media Query
 
@@ -260,8 +258,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         }
     }
 
-
-//////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////MENU HEADER TABLET
 
 @include media ('>=tablet') {
@@ -287,41 +284,52 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 ////////////////////////////////////////////////////////////////
 /////////////////////STICKY MENU STYLE
-
-    @keyframes slide-down {
-        0% {
-            transform: translateY(-64px);
-        }
-        100%{
-            transform: translateY(0);
-        }
+@keyframes slide-down {
+    0% {
+        transform: translateY(-64px);
     }
+    100%{
+        transform: translateY(0);
+    }
+}
 
     .nav-sticky {
         &::before {
             content: "";
-            width: 20%;
-            height: 100%;
-            //background-image: url("/img/symbol-defs.svg#logo-small");
+            min-width: 25%;
+            flex: 0 1 auto;
+            height: 80%;
             background: url("/img/09_logo_H_small_diapo.svg") left no-repeat $Black;
-            background-size: 120px;
+            background-size: contain;
+            display: flex;
         }
         display: flex;
         position: fixed;
-        height: 64px;
+        height: $nav-sticky-height;
         width: 100%;
         z-index: 100;
         border-bottom: 1px solid $Grey-lilac;
         align-items: center;
         top: 0;
-        padding: 0 20%;
+        padding: 0 10%;
         background-color: $Black;
         animation: slide-down 0.3s ease-in;
+        #menubar-container{
+            background-color: transparent;
+            align-items: center;
+            .menubar-target{
+                color: $White;
+                &[data-state=open] {
+                    color: $Blue-light;
+                }
+            }
+        }
+        .menu-container{
+            left: -35vw;
+            top: 12px;
+        }
         * {
-            background-color: $Black !important;
-            color: $White !important;
             justify-content: space-evenly !important;
-            align-items: center !important;
             fill: $White;
         }
     }
@@ -333,19 +341,23 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     #accordian li.active>ul {
         display: flex !important;
-        height: 330px;
+        align-items: flex-start;
+        justify-content: flex-end;
     }
     #accordian li.active ul > li {
-        height: 24px;
+        height: auto;
+        flex: 0 1 25%;
+        padding: $padding-horizontal-small 0;
     }
     #accordian ul ul {
         margin-left: 0;
-        box-shadow: 0;
+        box-shadow: none;
     }
 
     #accordian ul ul ul {
         margin-left: 0;
-        box-shadow: 0;
+        box-shadow: none;
+        border-left: 1px solid $Blue-light;
     }
     .menubar__header {
         z-index: 3;
@@ -430,12 +442,13 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            background-color: $White;
+            background-color: transparent;
             width: 100%;
             position: relative;
             padding: 0 0;
             z-index: 888;
             height: 100%;
+            align-items: center;
         }
     }
 
@@ -443,29 +456,32 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         margin-left: 2rem;
     }
     
-        .menu-container {
-            position: absolute;
-            flex-direction: row;
-            left: -50vw;
-            top:6px;
-            width: 100vw;
-            padding-left: 40%;
-            transform: translateY(50px);
-            z-index: 777;
+    .menu-container {
+        position: absolute;
+        flex-direction: row;
+        left: -50vw;
+        top:6px;
+        width: 100vw;
+        transform: translateY(50px);
+        z-index: 777;
+        border-bottom: 2px solid $Blue-light;
+        height: $menu-desktop-height;
+        padding-top: $padding-horizontal-regular;
 
-            &[data-state=open]{
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-        }
-
-        .submenu-container {
+        &[data-state=open]{
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            //width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
         }
+    }
+
+    .submenu-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: $padding-vertical-small;
+        margin-top: $margin-horizontal-large;
+    }
     .menubar-item,
     .menu-item,
     .submenu-item,
@@ -476,9 +492,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         border-bottom: none;
         flex: 0 0 auto;
         flex-direction: column;
-        min-width: 4rem;
-        height: 100%;
         padding-left: 0;
+        height: auto;
         &:hover {
             border-bottom: 0;
         }
@@ -489,6 +504,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         }
     }
     .menubar-item{
+        height: 100%;
         &:hover{
             .menubar-target {
                 color: $Black;
@@ -497,9 +513,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         }
     }
 
-    .menu-item{
-        max-width: 25%;
-    }
     .menu__toggle:after{
         padding-right: 0;
         font-size: 8px;
@@ -508,9 +521,31 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         transform-origin: center;
     }
 
-     .menubar-target{
+    .menubar-target{
         color: $Black;
-     }
+        &[data-state=open]{
+            color: $Blue-light;
+        }
+    }
+    .submenu-target {
+        color: $Orange;
+    }
+
+    .menu-target{
+        padding-left: $padding-vertical-small;
+        position: relative;
+        cursor: default;
+        &:before{
+            @include bullet;
+            background-color: $Blue-light;
+            position: absolute;
+            left: -6px;
+            top: 3px;
+        }
+        &:after {
+            content: none;
+        }
+    }
 
     .menubar-item:first-child {
         padding: 0 0;
@@ -519,13 +554,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar-target,
     .menu-target,
     .submenu-target {
-        font-size: $size-small-fluid;
-        padding: 1rem 0;
-        letter-spacing: .025em;
+        align-self: flex-start;
     }
 }
 
-////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////MENU DESKTOP
 
 @include media ('>=desktop') {
@@ -533,42 +566,39 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .menubar__header {
         height: 6rem;
         }
-        .menubar-target, .menu-target, .submenu-target, .menubar-target-donate {
-            font-size: .75rem;
-        }
-        #menubar__logo {
-            height: 80%;
+    #menubar__logo {
+        height: 80%;
+    }
+    }
+@include media ('>=widescreen') {
+    #nav {
+        padding: 0 $padding-vertical-large*2;
+    }
+    .nav-sticky {
+        padding: 0 20%;
+    }
+    #navbar-tablet{
+        &:before{
+            right: $padding-vertical-large*-2;
         }
     }
+    #menubar__logo {
+        height: 85%;
+    }
+}
 
-    @include media ('>=widescreen') {
-        #nav {
-            padding: 0 $padding-vertical-large*2;
-        }
-        #navbar-tablet{
-            &:before{
-                right: $padding-vertical-large*-2;
-            }
-        }
-        #menubar__logo {
-            height: 85%;
+@include media ('>=fullhd') {
+    #nav {
+        padding: 0 10%;
+        max-width: 1920px;
+    }
+    #navbar-tablet {
+        &:before {
+            right: -10vw;
         }
     }
-
-    @include media ('>=fullhd') {
-        #nav {
-            padding: 0 10%;
-            max-width: 1920px;
-            //margin: 0 auto;
-            //align-self: center;
-        }
-        #navbar-tablet {
-            &:before {
-                right: -10vw;
-            }
-        }
-        #menubar__logo {
-            height: 90%;
-        }
-        
+    #menubar__logo {
+        height: 90%;
     }
+    
+}

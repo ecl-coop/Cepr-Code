@@ -14,8 +14,10 @@
 
 @include media(">=tablet") {
         .block-inTheNews{
-                max-width: 50%;
+                max-width: 80%;
                 min-width: 33.33%;
+                margin-left: auto;
+                margin-right: auto;
         }
 }
 

@@ -69,17 +69,6 @@
         .footer-logo{
             fill: $Blue-light;
             position: relative;
-            /*&:after{
-                content: "";
-                height: 100px;
-                width: 100px;
-                left: 0;
-                bottom: 0;
-                //background: url("/img/symbol-defs.svg#cepr-name") left no-repeat;
-                //background-image: url("/img/symbol-defs.svg#cepr-name");
-                background-color: red;
-                position: absolute;
-            }*/
         }
         .footer-list{
             flex-direction: row;
@@ -90,9 +79,10 @@
             flex: 1 0 50%;
         }
         .footer-license{
-            flex: 1 0 100%;
+            flex: 1 0 200%;
             text-align: center;
-            width: 120%;
+            margin-left: -50%;
+            margin-right: -50%;
             height: 15%;
             order: 5;
             display: flex;
@@ -104,12 +94,24 @@
             }
         }
         .footer-social{
-            //order: 1;
             position: absolute;
             display: flex;
             bottom: 20%;
             left: 10%;
             width: 10%;
+        }
+        .paragraph-2-light > strong{
+            color: $Blue;
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            right: 0;
+            background: url("/img/footer_illustration.png") right no-repeat;
+            background-size: cover;
+            width: 20%;
+            top: -15%;
+            height: 100%;
         }
     }
 }

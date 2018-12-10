@@ -1,7 +1,7 @@
 var menubar = document.querySelector('.menubar__toggle');
 var menuToggle = document.querySelector('.menu__toggle');
 var submenuToggle = document.querySelector('.submenu__toggle');
-
+//var submenu = submenuToggle.parentElement.nodeName;
 
 var toggleState = function (elem, one, two) {
     var elem = document.querySelector(elem);
@@ -27,6 +27,8 @@ var setStatesTablet = function (elem, state) {
         toggleState('.submenu__toggle', 'closed', 'open');
         e.preventDefault();
     };
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////Multilevel Accordion taken from: https://codepen.io/geo2arc/pen/pJvEaK
 
     $(document).ready(function () {
         $("#accordian a").click(function () {
@@ -48,9 +50,3 @@ var setStatesTablet = function (elem, state) {
             }
         });
     });
-if (window.innerWidth > 768) {
-    submenuToggle.onload = function (e) {
-            toggleState('.submenu__toggle', 'closed', 'open');
-            e.preventDefault();
-        };
-    }

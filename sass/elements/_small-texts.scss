@@ -7,11 +7,12 @@
 }
 
 %smallest-serif-base{
+    @include fluid-type(font-size, $phone, $widescreen, $size-smallest-min, $size-smallest-max);
     font-family: $Serif;
     font-size: $size-smallest-fluid;
     letter-spacing: 10;
     line-height: 1.25;
-} 
+}
 
 .small-text-sans-4{
     @extend %smallest-sans-base;
@@ -19,6 +20,23 @@
     font-weight: $Regular !important;
     text-transform: capitalize;
 }
+
+.small-text-serif-1,
+.small-text-serif-1-ligth,
+.small-text-serif-1-title {
+    @extend %smallest-serif-base;
+    @include fluid-type(font-size, $phone, $fullhd, $size-smallish-min, $size-smallish-max);
+    letter-spacing: .075em;
+    text-transform: uppercase;
+}
+.small-text-serif-1-ligth {
+        font-weight: $Light;
+    }
+
+.small-text-serif-1-title {
+        text-transform: capitalize;
+        @include fluid-type(font-size, $phone, $fullhd, $size-smallish-min, 14px);
+    }
 
 .small-text-serif-2 {
     @extend %smallest-serif-base;

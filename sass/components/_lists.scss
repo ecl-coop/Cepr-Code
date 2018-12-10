@@ -1,5 +1,14 @@
-.list-item:not(:last-child) {
-    padding-bottom: $padding-horizontal-regular;
+.list-item{
+    display: flex;
+    flex-direction: column;
+        &:not(:last-child) {
+        padding-bottom: $padding-horizontal-regular;
+        margin-bottom: $margin-horizontal-medium;
+        border-bottom: 1px solid $Green-dark;
+    }
+        .credits {
+            padding-top: $padding-horizontal-small;
+        }
 }
 
 .list-2-item{
@@ -61,7 +70,11 @@
 }
 
 @include media(">=tablet") {
-
+    .list-item:not(:last-child){
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     .list-2-item:first-child{
         picture{
             margin: 0 auto;
