@@ -1736,21 +1736,28 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   align-items: center;
   flex-flow: column;
   height: 21rem;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-top: 1px solid var(--color-Primary);
-  padding-top: 2.5rem; }
+  padding-top: 2.5rem;
+  position: relative; }
   .block-footer .line-2 {
     margin: 0; }
 
+.footer-ident {
+  flex: 0 0 auto; }
+
 .footer-logo {
-  height: 3.5rem; }
+  height: 4rem;
+  flex: 1 0 auto; }
 
 .footer-list {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: space-between;
-  height: 30%; }
+  justify-content: space-evenly;
+  margin: auto 0;
+  flex: .80 0 auto;
+  padding-bottom: 3rem; }
 
 .footer-item a {
   font-size: .75rem;
@@ -1758,12 +1765,21 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   font-weight: 800; }
 
 .footer-social {
-  display: inline-flex;
-  width: 3.5rem;
-  justify-content: space-between;
-  height: 10%; }
+  display: flex;
+  width: auto;
+  justify-content: center;
+  height: 8%;
+  position: absolute;
+  flex: 0 1 auto;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
   .footer-social .social-logo {
-    width: 30%; }
+    width: auto;
+    height: 100%; }
+    .footer-social .social-logo:not(:first-of-type) {
+      padding-left: 1rem; }
 
 .footer-license {
   height: 17%;
@@ -1782,11 +1798,24 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   .block-footer {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0 10%;
+    padding-left: 10%;
+    padding-right: 5%;
     max-width: 1920px;
-    position: relative;
     margin: 0 auto;
-    color: var(--color-Primary); }
+    color: var(--color-Primary);
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 3rem; } }
+  @media screen and (min-width: 1024px) and (min-width: 1024px) {
+    .block-footer {
+      padding-right: calc(5% + 15 * (100vw - 1024px) / 384); } }
+  @media screen and (min-width: 1024px) and (min-width: 1408px) {
+    .block-footer {
+      padding-right: 20%; } }
+
+@media (min-width: 1024px) {
+    .block-footer .footer-ident {
+      position: relative; }
     .block-footer .footer-logo {
       fill: var(--color-Primary-light);
       position: relative; }
@@ -1796,7 +1825,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .block-footer .footer-list {
       flex-direction: row;
       flex-wrap: wrap;
-      order: 2; }
+      order: 2;
+      margin-top: 56px;
+      flex: 0 1 60%; }
     .block-footer .footer-item {
       flex: 1 0 50%; }
     .block-footer .footer-license {
@@ -1804,7 +1835,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       text-align: center;
       margin-left: -50%;
       margin-right: -50%;
-      height: 15%;
+      height: 42px;
       order: 5;
       display: flex;
       align-self: flex-end; }
@@ -1813,11 +1844,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         font-weight: 400;
         text-decoration: underline; }
     .block-footer .footer-social {
-      position: absolute;
-      display: flex;
-      bottom: 20%;
-      left: 10%;
-      width: 10%; }
+      justify-content: flex-start;
+      bottom: -30%;
+      left: 0;
+      height: 25%;
+      flex: 1 0 100%; }
     .block-footer .paragraph-2-light > strong {
       color: var(--color-Primary); }
     .block-footer:after {
@@ -1827,7 +1858,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       background: url("/img/footer_illustration.png") right no-repeat;
       background-size: cover;
       width: 20%;
-      top: -15%;
+      bottom: 42px;
       height: 100%; } }
 
 .block-list-2 {

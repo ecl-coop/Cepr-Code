@@ -84,7 +84,8 @@ $btpHeader-size-tablet: 72px;
 $menu-btn-height-mobile: 3rem;
 $menu-desktop-height: 330px;
 $nav-sticky-height: 64px;
-
+$footer-height: 21rem;
+$footer-license-height-desktop: 42px;
 
 ////////////>Tablet fluid
 $columns-gap: calc-interpolation($desktop, 10px, $widescreen, 16px);

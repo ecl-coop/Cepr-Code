@@ -3,25 +3,33 @@
     display: flex;
     align-items: center;
     flex-flow: column;
-    height: 21rem;
-    justify-content: space-between;
+    height: $footer-height;
+    justify-content: flex-start;
     border-top: 1px solid $Blue;
     padding-top: $padding-horizontal-regular*2;
+    position: relative;
 
     .line-2{
         margin: 0;
     }
 }
+
+.footer-ident{
+    flex: 0 0 auto;
+}
 .footer-logo{
-    height: 3.5rem;
+    height: 4rem;
+    flex: 1 0 auto;
 }
 
 .footer-list{
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-between;
-    height: 30%;
+    justify-content: space-evenly;
+    margin: auto 0;
+    flex: .80 0 auto;
+    padding-bottom: $padding-horizontal-large;
 }
 
 .footer-item a{
@@ -32,12 +40,22 @@
 }
 
 .footer-social{
-    display: inline-flex;
-    width: 3.5rem;
-    justify-content: space-between;
-    height: 10%;
-    .social-logo{
-        width: 30%;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    height: 8%;
+    position: absolute;
+    flex: 0 1 auto;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    .social-logo {
+        width: auto;
+        height: 100%;
+        &:not(:first-of-type) {
+            padding-left: $padding-vertical-small;
+        }
     }
 }
 
@@ -60,16 +78,24 @@
     .block-footer{
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 0 10%;
+        padding-left: 10%;
+        @include fluid-type(padding-right, $desktop, $fullhd, 5%, 20%);
         max-width: 1920px;
-        position: relative;
         margin: 0 auto;
         color: $Blue;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: $padding-horizontal-large;
 
+        .footer-ident{
+            position: relative;
+        }
         .footer-logo{
             fill: $Blue-light;
             position: relative;
         }
+        ////////////////////////////////
+        //////This is a <img> elment fix due to I was uncapable to make the svg version to show
         img.footer-logo{
             height: 46px;
             margin-bottom: 4px;
@@ -78,6 +104,8 @@
             flex-direction: row;
             flex-wrap: wrap;
             order: 2;
+            margin-top: 56px;
+            flex: 0 1 60%;
         }
         .footer-item{
             flex: 1 0 50%;
@@ -87,7 +115,7 @@
             text-align: center;
             margin-left: -50%;
             margin-right: -50%;
-            height: 15%;
+            height: $footer-license-height-desktop;
             order: 5;
             display: flex;
             align-self: flex-end;
@@ -98,11 +126,11 @@
             }
         }
         .footer-social{
-            position: absolute;
-            display: flex;
-            bottom: 20%;
-            left: 10%;
-            width: 10%;
+            justify-content: flex-start;
+            bottom: -30%;
+            left: 0;
+            height: 25%;
+            flex: 1 0 100%;
         }
         .paragraph-2-light > strong{
             color: $Blue;
@@ -114,7 +142,7 @@
             background: url("/img/footer_illustration.png") right no-repeat;
             background-size: cover;
             width: 20%;
-            top: -15%;
+            bottom: $footer-license-height-desktop;
             height: 100%;
         }
     }
