@@ -1790,6 +1790,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .block-footer .footer-logo {
       fill: var(--color-Primary-light);
       position: relative; }
+    .block-footer img.footer-logo {
+      height: 46px;
+      margin-bottom: 4px; }
     .block-footer .footer-list {
       flex-direction: row;
       flex-wrap: wrap;

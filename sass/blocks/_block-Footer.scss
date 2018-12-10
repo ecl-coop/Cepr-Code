@@ -70,6 +70,10 @@
             fill: $Blue-light;
             position: relative;
         }
+        img.footer-logo{
+            height: 46px;
+            margin-bottom: 4px;
+        }
         .footer-list{
             flex-direction: row;
             flex-wrap: wrap;
