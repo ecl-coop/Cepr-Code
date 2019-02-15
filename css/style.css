@@ -107,7 +107,9 @@ h4.column-header {
     margin-left: 0.5rem; }
 
 .heading-3 {
-  font-size: calc(21.3452px + 0.71174vw);
+  font-family: var(--font-Primary);
+  font-weight: 400;
+  font-size: calc(20.46026px + 0.94899vw);
   color: var(--color-Black);
   margin: 0.8rem 0;
   margin-top: 0.5rem;
@@ -435,7 +437,14 @@ hr, .line-2 {
   .social-logo {
     width: 22px; } }
 
-.paragraph-2-light {
+.report-content p, .report-content blockquote, .report-content ul, .report-content ol {
+  font-family: var(--font-Primary);
+  font-size: calc(0.46083vw + 14.28111px);
+  line-height: 1.57;
+  font-weight: 300;
+  letter-spacing: 0; }
+
+.paragraph-2, .paragraph-2-light {
   font-family: var(--font-Primary);
   font-size: calc(0.35587vw + 9.6726px);
   line-height: 1.42;
@@ -445,13 +454,64 @@ hr, .line-2 {
 .paragraph-2-light {
   font-weight: 300; }
 
+[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  /* 1 */
+  text-decoration: none;
+  /* 2 */
+  color: inherit;
+  /* 2 */
+  cursor: default;
+  /* 2 */
+  outline: none;
+  /* 2 */ }
+
+/**
+   * Actual numbered references
+   * 1. Display the current state of the counter (e.g. `[1]`)
+   * 2. Align text as superscript
+   * 3. Make the number smaller (since it's superscript)
+   * 4. Slightly offset the number from the text
+   * 5. Reset link styles on the number to show it's usable
+   */
+[aria-describedby="footnote-label"]::after {
+  content: "[" counter(footnotes) "]";
+  /* 1 */
+  vertical-align: super;
+  /* 2 */
+  font-size: 0.5em;
+  /* 3 */
+  margin-left: 2px;
+  /* 4 */
+  color: var(--color-Accent);
+  text-decoration: underline;
+  /* 5 */
+  cursor: pointer;
+  /* 5 */ }
+
+/**
+   * Resetting the default focused styles on the number
+   */
+[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px; }
+
+[aria-label="Back to content"] {
+  font-size: 0.8em; }
+
+/**
+   * Highlight target note
+   */
+footer :target {
+  background: yellow; }
+
 .article-hero-text {
   grid-area: title;
   clear: both;
   margin-top: 1em;
   padding: 1rem 0; }
   .article-hero-text h2.article-hero-title {
-    font-size: calc(30.23013px + 0.4745vw);
+    font-size: calc(28.46026px + 0.94899vw);
     font-family: var(--font-Display);
     color: var(--color-Secondary);
     letter-spacing: -.025em;
@@ -730,7 +790,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     border-bottom: 0.8px solid var(--color-Black);
     height: 120px;
     align-items: center;
-    position: relative; }
+    position: relative;
+    margin: 0 auto; }
     #nav .level {
       grid-column: 1;
       grid-row: 1 / span 2;
@@ -942,14 +1003,25 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     align-self: flex-start; } }
 
 @media (min-width: 1024px) {
+  #nav {
+    padding-left: 10%;
+    padding-right: 10%; } }
+  @media screen and (min-width: 1024px) and (min-width: 1216px) {
+    #nav {
+      padding-left: calc(10% + 10 * (100vw - 1216px) / 1344);
+      padding-right: calc(10% + 10 * (100vw - 1216px) / 1344); } }
+  @media screen and (min-width: 1024px) and (min-width: 2560px) {
+    #nav {
+      padding-left: 20%;
+      padding-right: 20%; } }
+
+@media (min-width: 1024px) {
   .menubar__header {
     height: 6rem; }
   #menubar__logo {
     height: 80%; } }
 
 @media (min-width: 1216px) {
-  #nav {
-    padding: 0 4rem; }
   .nav-sticky {
     padding: 0 20%; }
   #navbar-tablet:before {
@@ -958,9 +1030,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     height: 85%; } }
 
 @media (min-width: 1408px) {
-  #nav {
-    padding: 0 10%;
-    max-width: 1920px; }
   #navbar-tablet:before {
     right: -10vw; }
   #menubar__logo {
@@ -1323,6 +1392,88 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       border-left: 0;
       border-radius: 0 20px 0 0;
       padding-right: 1rem; }
+
+.report-header h1 {
+  font-family: var(--font-Display);
+  font-weight: 700;
+  font-size: calc(28.46026px + 0.94899vw);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-Primary); }
+
+.report-content p {
+  margin-bottom: 1em; }
+
+.report-content blockquote {
+  font-family: var(--font-Display);
+  letter-spacing: 16;
+  margin-bottom: 1.5rem; }
+
+.report-content ul, .report-content ol {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: var(--color-Grey);
+  margin-left: 3.5rem; }
+
+.report-content ul {
+  list-style-type: none; }
+
+.report-content ol {
+  list-style: none; }
+
+.report-content ul li::before {
+  content: "\2022";
+  color: var(--color-Secondary-light);
+  display: inline-block;
+  font-size: 2em;
+  line-height: 1em;
+  width: 1em;
+  margin-left: -1em; }
+
+.report-content ol li {
+  counter-increment: li; }
+  .report-content ol li::before {
+    content: counter(li);
+    font-weight: 700;
+    font-size: calc(0.35587vw + 11.6726px);
+    color: var(--color-Primary-light);
+    display: inline-block;
+    margin-right: 1em; }
+
+.report-content li {
+  margin-bottom: .5em; }
+
+.report-content summary {
+  font-family: var(--font-Primary);
+  font-weight: 400;
+  font-size: calc(20.46026px + 0.94899vw);
+  color: var(--color-Black);
+  margin: 0.8rem 0;
+  margin-top: 0.5rem;
+  line-height: 1.25;
+  color: var(--color-Primary-light); }
+
+.report-content h3 {
+  font-size: calc(17.3452px + 0.71174vw);
+  color: var(--color-Primary-light); }
+
+.report-content h4 {
+  text-transform: uppercase;
+  font-size: calc(21.3452px + 0.71174vw);
+  letter-spacing: .15em;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-Secondary);
+  margin-right: 3em;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem; }
+
+@media (min-width: 1024px) {
+  .report-content h3 {
+    text-align: center; } }
 
 .block-featured {
   display: flex;
@@ -1847,7 +1998,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       justify-content: flex-start;
       bottom: -30%;
       left: 0;
-      height: 25%;
+      height: 20%;
       flex: 1 0 100%; }
     .block-footer .paragraph-2-light > strong {
       color: var(--color-Primary); }
@@ -1959,6 +2110,108 @@ ul.list-2 {
     grid-column: 5 / -1; }
   #banner-donate {
     grid-area: donate;
+    grid-column: 2 / -1;
+    grid-row: 6; }
+  #side-blogs {
+    grid-column: 8 / span 4;
+    grid-row: 7;
+    align-self: center; }
+  #side-directors {
+    grid-column: 3 / span 9;
+    grid-row: 5; } }
+
+@media (min-width: 1216px) {
+  .grid-container {
+    padding: 0 4rem;
+    padding-bottom: 6rem; }
+  #block-BeatThePress {
+    grid-column: 2 / span 6; } }
+
+@media (min-width: 1408px) {
+  .grid-container {
+    padding: 0 10%;
+    padding-bottom: 10vh;
+    max-width: 1920px;
+    margin: 0 auto; }
+  #banner-top {
+    grid-column: 6 / -1; }
+  #block-featured {
+    grid-column: 1 / span 8;
+    margin-top: calc(calc(18.23714px + 1.78971vw)*-1); }
+  #block-inTheNews {
+    grid-column: 9 / span 3; }
+  #block-latest,
+  #side-directors {
+    grid-column: 3 / span 8; } }
+
+.report-header, .report-content {
+  padding-left: 4vw; }
+
+.report-content {
+  padding-right: 6vw; }
+
+#report-grid header {
+  display: flex;
+  flex-direction: column;
+  margin-left: -4vw; }
+  #report-grid header figure {
+    order: 1; }
+  #report-grid header .report-title-container {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(25.39394px + 6.06061vw);
+    width: 94%;
+    margin-top: -3rem;
+    z-index: 10;
+    background-color: white;
+    border-radius: 0 2rem 0 0;
+    margin-bottom: 3rem; }
+    #report-grid header .report-title-container h1, #report-grid header .report-title-container small {
+      padding-left: 4vw; }
+
+@media (min-width: 769px) {
+  .grid-container {
+    padding-top: 1.25rem; } }
+
+@media (min-width: 1024px) {
+  #report-grid header {
+    display: flex;
+    flex-direction: column; }
+    #report-grid header figure {
+      order: 1; }
+  #report-grid .report-title-container {
+    order: 2; }
+  .grid-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(6%, 8%));
+    grid-template-rows: auto;
+    grid-gap: calc(3.125vw - 22px);
+    grid-auto-flow: row;
+    padding: 0 2rem;
+    grid-row-gap: calc(8.33333vw - 53.33333px);
+    padding-bottom: 3rem; }
+  #report-header {
+    grid-column: 1 / -1;
+    grid-row: 2; }
+  #report-index {
+    grid-column: 2 / span 2;
+    grid-row: 3; }
+  #report-content {
+    grid-column: 5 /span 7;
+    grid-row: 3; }
+  #banner-subscribe {
+    grid-column: 1 / span 11;
+    grid-row: 3; }
+  #block-inTheNews {
+    grid-column: 10 / span 3;
+    grid-row: 2; }
+  #banner-top {
+    grid-row: 1;
+    grid-column: 5 / -1; }
+  #banner-donate {
     grid-column: 2 / -1;
     grid-row: 6; }
   #side-blogs {

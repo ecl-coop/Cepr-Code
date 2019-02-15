@@ -1,0 +1,78 @@
+.report-header {
+    h1{
+        @include heading-2;
+        color: $Blue;
+    }
+}
+
+.report-content {
+    p{
+        @include paragraph;
+        margin-bottom: 1em;
+    }
+    blockquote{
+        @include paragraph-serif;
+        margin-bottom: $margin-horizontal-medium;
+    }
+    ul, ol{
+        margin-bottom: $margin-horizontal-medium;
+        @include paragraph;
+        line-height: 1.5;
+        color: $Grey;
+        margin-left: $margin-vertical-extraLarge;
+    }
+    ul{
+        list-style-type: none;
+    }
+    ol{
+        list-style: none;
+    }
+
+    ul li::before{
+        content: "\2022";
+        color: $Green-light;
+        display: inline-block;
+        font-size: 2em;
+        line-height: 1em;
+        width: 1em;
+        margin-left: -1em;
+    }
+    ol li{
+        counter-increment: li;
+        &::before{
+            content: counter(li);
+            font-weight: $Bold;
+            font-size: $size-smallish-fluid;
+            color: $Blue-light;
+            display: inline-block;
+            margin-right: 1em;
+        }
+    }
+    li{
+        margin-bottom: .5em;
+    }
+    summary{
+        @include heading-3;
+        color: $Blue-light;
+    }
+    
+    h3{
+        @include heading-5;
+        color: $Blue-light;
+    }
+    h4{
+        @include heading-4;
+        color: $Green;
+        margin-right: 3em;
+        margin-top: $margin-horizontal-medium;
+        margin-bottom: $margin-horizontal-large;
+        &:before{
+
+        }
+    }
+    @include media(">=desktop") {
+        h3{
+            text-align: center;
+        }
+    }
+}

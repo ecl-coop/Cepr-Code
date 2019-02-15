@@ -16,6 +16,7 @@
 @import "elements/pictures.scss";
 @import "elements/logo.scss";
 @import "elements/paragraphs.scss";
+@import "elements/footnote.scss";
 
 //components
 @import "components/article-hero.scss";
@@ -24,6 +25,7 @@
 @import "components/lists.scss";
 @import "components/banners.scss";
 @import "components/side-blogs";
+@import "components/report-texts";
 
 //blocks
 @import "blocks/block-featured.scss";
@@ -34,6 +36,7 @@
 
 //layouts
 @import "layouts/home-grid.scss";
+@import "layouts/report-grid.scss";
 
 
 @import "node_modules/normalize.css/normalize.css";

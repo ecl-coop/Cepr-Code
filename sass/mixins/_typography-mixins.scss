@@ -24,8 +24,21 @@
 /////////////////////////////////
 //////////////////HEADINGS
 
+@mixin heading-2 {
+    font-family: $Serif;
+    font-weight: $Bold;
+    font-size: $size-h2-fluid;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-transform: capitalize;
+    margin-top: $margin-horizontal-small;
+    margin-bottom: $margin-horizontal-regular;
+}
+
 @mixin heading-3 {
-    font-size: $size-h4-fluid;
+    font-family: $Sans;
+    font-weight: $Regular;
+    font-size: $size-h3-fluid;
     color: $Black;
     margin: $margin-horizontal-regular 0;
     margin-top: $margin-horizontal-small;
@@ -38,6 +51,10 @@
     letter-spacing: .15em;
     font-weight: $Light;
     line-height: 1;
+}
+
+@mixin heading-5 {
+    font-size: $size-h5-fluid;
 }
 
 @mixin heading-7 {
