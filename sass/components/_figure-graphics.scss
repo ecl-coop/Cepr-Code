@@ -1,0 +1,42 @@
+.figure-graphic{
+    counter-increment: figures-tit;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+        &:before{
+            content: "figure "counter(figures-tit);
+            font-size: $size-smallish-fluid;
+            font-weight: $Bold;
+            color: $Orange-dark;
+            text-transform: capitalize;
+            padding-left: $padding-vertical-normal;
+        }
+    
+        h5{
+            background-color: $Blue;
+            color: $White;
+            display: flex;
+            height: 1.5rem;
+            margin-bottom: $margin-horizontal-small;
+            padding-left: $padding-vertical-normal;
+        }
+        capfigure{
+            &:before{
+                content: "Source and notes: ";
+                color: $Blue;
+                display: inline-block;
+            }
+            @include small-text-serif-3-underline;
+            color: $Orange-dark;
+        }
+  }
+
+  [aria-describedby="figure-label"]{
+      counter-increment: figures-cap;
+  }
+
+  [aria-describedby="figure-label"]::before {
+    content: '[' "Fig." counter(figures-cap) ']';
+            font-weight: $Bold;
+            color: $Orange-dark;
+  }

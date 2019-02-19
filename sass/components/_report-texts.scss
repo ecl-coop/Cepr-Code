@@ -63,13 +63,15 @@
     h4{
         @include heading-4;
         color: $Green;
-        margin-right: 3em;
+        font-size: $size-h2-fluid;
+        letter-spacing: .01em;
+        line-height: 1.15;
+        font-weight: $Regular;
+        //margin-right: 1em;
         margin-top: $margin-horizontal-medium;
         margin-bottom: $margin-horizontal-large;
-        &:before{
-
-        }
     }
+    
     @include media(">=desktop") {
         h3{
             text-align: center;

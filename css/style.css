@@ -56,6 +56,12 @@ body {
   text-transform: uppercase;
   letter-spacing: .1em; }
 
+.small-text-sans-4 {
+  font-family: var(--font-Primary);
+  font-size: calc(0.23725vw + 7.11507px);
+  letter-spacing: 0;
+  line-height: 1.25; }
+
 .column-header-container {
   display: flex;
   align-items: center;
@@ -193,31 +199,6 @@ h4.column-header {
       width: 200%; } }
 
 .small-text-sans-4 {
-  font-family: var(--font-Primary);
-  font-size: calc(0.23725vw + 7.11507px);
-  letter-spacing: 0;
-  line-height: 1.25; }
-
-.small-text-serif-1,
-.small-text-serif-1-ligth,
-.small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
-  font-size: 8px;
-  font-family: var(--font-Display);
-  font-size: calc(0.23725vw + 7.11507px);
-  letter-spacing: 10;
-  line-height: 1.25; }
-  @media screen and (min-width: 373px) {
-    .small-text-serif-1,
-    .small-text-serif-1-ligth,
-    .small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
-      font-size: calc(8px + 2 * (100vw - 373px) / 843); } }
-  @media screen and (min-width: 1216px) {
-    .small-text-serif-1,
-    .small-text-serif-1-ligth,
-    .small-text-serif-1-title, .small-text-serif-2, .small-text-serif-3, .small-text-serif-4 {
-      font-size: 10px; } }
-
-.small-text-sans-4 {
   font-style: italic;
   font-weight: 400 !important;
   text-transform: capitalize; }
@@ -225,6 +206,10 @@ h4.column-header {
 .small-text-serif-1,
 .small-text-serif-1-ligth,
 .small-text-serif-1-title {
+  font-family: var(--font-Display);
+  font-size: calc(0.11862vw + 9.55753px);
+  letter-spacing: 10;
+  line-height: 1.25;
   font-size: 13px;
   letter-spacing: .075em;
   text-transform: uppercase; }
@@ -253,17 +238,30 @@ h4.column-header {
       font-size: 14px; } }
 
 .small-text-serif-2 {
+  font-family: var(--font-Display);
+  font-size: calc(0.11862vw + 9.55753px);
+  letter-spacing: 10;
+  line-height: 1.25;
   font-weight: 400;
   text-transform: capitalize; }
 
 .small-text-serif-3 {
-  font-weight: 700;
-  text-transform: uppercase; }
+  font-family: var(--font-Display);
+  font-size: calc(0.11862vw + 9.55753px);
+  letter-spacing: 10;
+  line-height: 1.25;
+  font-weight: 300;
+  font-style: italic; }
 
-.small-text-serif-4 {
+.small-text-serif-3_underline {
+  font-family: var(--font-Display);
+  font-size: calc(0.11862vw + 9.55753px);
+  letter-spacing: 10;
+  line-height: 1.25;
   font-weight: 300;
   font-style: italic;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  text-decoration: underline; }
 
 .tag {
   display: flex;
@@ -454,6 +452,9 @@ hr, .line-2 {
 .paragraph-2-light {
   font-weight: 300; }
 
+article {
+  counter-reset: footnotes figures-cap figures-tit; }
+
 [aria-describedby="footnote-label"] {
   counter-increment: footnotes;
   /* 1 */
@@ -475,17 +476,22 @@ hr, .line-2 {
    * 5. Reset link styles on the number to show it's usable
    */
 [aria-describedby="footnote-label"]::after {
-  content: "[" counter(footnotes) "]";
+  content: counter(footnotes);
   /* 1 */
-  vertical-align: super;
-  /* 2 */
-  font-size: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.85em;
   /* 3 */
+  letter-spacing: -.1em;
+  border: 2px solid var(--color-Accent);
+  border-radius: 50px;
+  font-weight: 700;
   margin-left: 2px;
   /* 4 */
   color: var(--color-Accent);
-  text-decoration: underline;
-  /* 5 */
   cursor: pointer;
   /* 5 */ }
 
@@ -503,7 +509,7 @@ hr, .line-2 {
    * Highlight target note
    */
 footer :target {
-  background: yellow; }
+  background: var(--color-Action-dark); }
 
 .article-hero-text {
   grid-area: title;
@@ -1467,13 +1473,57 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   font-weight: 300;
   line-height: 1;
   color: var(--color-Secondary);
-  margin-right: 3em;
+  font-size: calc(28.46026px + 0.94899vw);
+  letter-spacing: .01em;
+  line-height: 1.15;
+  font-weight: 400;
   margin-top: 1.5rem;
   margin-bottom: 2rem; }
 
 @media (min-width: 1024px) {
   .report-content h3 {
     text-align: center; } }
+
+.figure-graphic {
+  counter-increment: figures-tit;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem; }
+  .figure-graphic:before {
+    content: "figure " counter(figures-tit);
+    font-size: calc(0.35587vw + 11.6726px);
+    font-weight: 700;
+    color: var(--color-Accent-dark);
+    text-transform: capitalize;
+    padding-left: 1.5rem; }
+  .figure-graphic h5 {
+    background-color: var(--color-Primary);
+    color: var(--color-White);
+    display: flex;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem; }
+  .figure-graphic capfigure {
+    font-family: var(--font-Display);
+    font-size: calc(0.11862vw + 9.55753px);
+    letter-spacing: 10;
+    line-height: 1.25;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: underline;
+    color: var(--color-Accent-dark); }
+    .figure-graphic capfigure:before {
+      content: "Source and notes: ";
+      color: var(--color-Primary);
+      display: inline-block; }
+
+[aria-describedby="figure-label"] {
+  counter-increment: figures-cap; }
+
+[aria-describedby="figure-label"]::before {
+  content: "[" "Fig." counter(figures-cap) "]";
+  font-weight: 700;
+  color: var(--color-Accent-dark); }
 
 .block-featured {
   display: flex;
@@ -2149,6 +2199,9 @@ ul.list-2 {
 
 .report-content {
   padding-right: 6vw; }
+  .report-content figure h5, .report-content figure:before {
+    margin-right: -6vw;
+    margin-left: -4vw; }
 
 #report-grid header {
   display: flex;

@@ -1,3 +1,9 @@
+///Grabbed from here: https://codepen.io/SitePoint/pen/QbMgvY
+
+article {
+  counter-reset: footnotes figures-cap figures-tit;
+}
+
 [aria-describedby="footnote-label"] {
     counter-increment: footnotes; /* 1 */
     text-decoration: none; /* 2 */
@@ -5,7 +11,7 @@
     cursor: default; /* 2 */
     outline: none; /* 2 */
   }
-  
+
   /**
    * Actual numbered references
    * 1. Display the current state of the counter (e.g. `[1]`)
@@ -15,12 +21,21 @@
    * 5. Reset link styles on the number to show it's usable
    */
   [aria-describedby="footnote-label"]::after {
-    content: '[' counter(footnotes) ']'; /* 1 */
-    vertical-align: super; /* 2 */
-    font-size: 0.5em; /* 3 */
+    content: counter(footnotes); /* 1 */
+    //vertical-align: super; /* 2 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.85em; /* 3 */
+    letter-spacing: -.1em;
+    border: 2px solid $Orange;
+    border-radius: 50px;
+    font-weight: $Bold;
     margin-left: 2px; /* 4 */
     color: $Orange;
-    text-decoration: underline; /* 5 */
+    //text-decoration: underline; /* 5 */
     cursor: pointer; /* 5 */
   }
   
@@ -40,5 +55,5 @@
    * Highlight target note
    */
   footer :target {
-    background: yellow;
+    background: $Yellow-dark;
   }

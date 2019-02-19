@@ -3,6 +3,12 @@
 }
 .report-content{
     padding-right: 6vw;
+    figure{
+        h5, &:before{
+            margin-right: -6vw;
+            margin-left: -4vw;
+        }
+    }
     summary{
         //display: flex;
     }

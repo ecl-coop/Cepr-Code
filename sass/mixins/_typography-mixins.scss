@@ -7,6 +7,22 @@
     letter-spacing: .1em;
 }
 
+%smallest-sans-base {
+    font-family: $Sans;
+    font-size: $size-smallest-fluid;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
+
+@mixin smallest-serif-base{
+    //@include fluid-type(font-size, $phone, $widescreen, $size-smallest-min, $size-smallest-max);
+    font-family: $Serif;
+    font-size: $size-small-fluid;
+    letter-spacing: 10;
+    line-height: 1.25;
+}
+
 @mixin smallest-text {
     font-size: $size-smallest-fluid;
     @extend %small-text-base;
@@ -19,6 +35,40 @@
 @mixin small-text-1 {
     @extend %small-text-base;
     font-family: $Serif;
+}
+
+@mixin small-text-sans-4 {
+    @extend %smallest-sans-base;
+    font-style: italic;
+    font-weight: $Regular !important;
+    text-transform: capitalize;
+}
+
+@mixin small-text-serif-1 {
+    @include smallest-serif-base;
+    @include fluid-type(font-size, $phone, $fullhd, $size-smallish-min, $size-smallish-max);
+    letter-spacing: .075em;
+    text-transform: uppercase;
+}
+
+@mixin small-text-serif-2 {
+    @include smallest-serif-base;
+    font-weight: $Regular;
+    text-transform: capitalize;
+}
+
+@mixin small-text-serif-3 {
+    @include smallest-serif-base;
+    font-weight: $Light;
+    font-style: italic;
+} 
+
+@mixin small-text-serif-3_underline {
+    @include smallest-serif-base;
+    font-weight: $Light;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: underline;
 }
 
 /////////////////////////////////
