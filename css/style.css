@@ -453,47 +453,31 @@ hr, .line-2 {
   font-weight: 300; }
 
 article {
-  counter-reset: footnotes figures-cap figures-tit; }
+  counter-reset: footnotes-label figures-cap figures-tit; }
 
 [aria-describedby="footnote-label"] {
-  counter-increment: footnotes;
-  /* 1 */
+  counter-increment: footnotes-label;
   text-decoration: none;
-  /* 2 */
   color: inherit;
-  /* 2 */
   cursor: default;
-  /* 2 */
-  outline: none;
-  /* 2 */ }
+  outline: none; }
 
-/**
-   * Actual numbered references
-   * 1. Display the current state of the counter (e.g. `[1]`)
-   * 2. Align text as superscript
-   * 3. Make the number smaller (since it's superscript)
-   * 4. Slightly offset the number from the text
-   * 5. Reset link styles on the number to show it's usable
-   */
 [aria-describedby="footnote-label"]::after {
-  content: counter(footnotes);
+  content: counter(footnotes-label);
   /* 1 */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 1rem;
   height: 1rem;
-  font-size: 0.85em;
-  /* 3 */
+  font-size: 0.75em;
   letter-spacing: -.1em;
   border: 2px solid var(--color-Accent);
   border-radius: 50px;
   font-weight: 700;
   margin-left: 2px;
-  /* 4 */
   color: var(--color-Accent);
-  cursor: pointer;
-  /* 5 */ }
+  cursor: pointer; }
 
 /**
    * Resetting the default focused styles on the number
@@ -509,7 +493,29 @@ article {
    * Highlight target note
    */
 footer :target {
-  background: var(--color-Action-dark); }
+  background: var(--color-Action);
+  color: var(--color-Primary-dark); }
+
+.start-count {
+  counter-reset: footnotes; }
+
+footer ol.footnotes {
+  list-style-type: none; }
+
+footer ol.footnotes li {
+  font-size: calc(0.35587vw + 11.6726px);
+  line-height: 1.8; }
+  footer ol.footnotes li:before {
+    counter-increment: footnotes;
+    content: counter(footnotes);
+    font-weight: 700;
+    font-size: calc(0.35587vw + 11.6726px);
+    color: var(--color-Accent-dark);
+    display: inline-block;
+    margin-left: calc(3.5rem*-1);
+    width: 3.5rem;
+    border-bottom: 1px solid var(--color-Grey);
+    margin-right: 0; }
 
 .article-hero-text {
   grid-area: title;

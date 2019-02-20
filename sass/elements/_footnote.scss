@@ -1,42 +1,33 @@
 ///Grabbed from here: https://codepen.io/SitePoint/pen/QbMgvY
+///There is a issue regarding the use of <detail> in the html that changes the result of the footnotes counter each time its parent <detail> element open or closes.
 
 article {
-  counter-reset: footnotes figures-cap figures-tit;
+  counter-reset: footnotes-label figures-cap figures-tit;
 }
 
 [aria-describedby="footnote-label"] {
-    counter-increment: footnotes; /* 1 */
-    text-decoration: none; /* 2 */
-    color: inherit; /* 2 */
-    cursor: default; /* 2 */
-    outline: none; /* 2 */
+    counter-increment: footnotes-label;
+    text-decoration: none;
+    color: inherit;
+    cursor: default; 
+    outline: none;
   }
 
-  /**
-   * Actual numbered references
-   * 1. Display the current state of the counter (e.g. `[1]`)
-   * 2. Align text as superscript
-   * 3. Make the number smaller (since it's superscript)
-   * 4. Slightly offset the number from the text
-   * 5. Reset link styles on the number to show it's usable
-   */
   [aria-describedby="footnote-label"]::after {
-    content: counter(footnotes); /* 1 */
-    //vertical-align: super; /* 2 */
+    content: counter(footnotes-label); /* 1 */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 1rem;
     height: 1rem;
-    font-size: 0.85em; /* 3 */
+    font-size: 0.75em;
     letter-spacing: -.1em;
     border: 2px solid $Orange;
     border-radius: 50px;
     font-weight: $Bold;
-    margin-left: 2px; /* 4 */
+    margin-left: 2px;
     color: $Orange;
-    //text-decoration: underline; /* 5 */
-    cursor: pointer; /* 5 */
+    cursor: pointer;
   }
   
   /**
@@ -55,5 +46,28 @@ article {
    * Highlight target note
    */
   footer :target {
-    background: $Yellow-dark;
+    background: $Yellow;
+    color: $Blue-dark;
   }
+  .start-count{
+    counter-reset: footnotes;
+  }
+  footer{
+  ol.footnotes{list-style-type: none;}
+  ol.footnotes li{
+        font-size: $size-smallish-fluid;
+        line-height: 1.8;
+        &:before{
+            counter-increment: footnotes;
+            content: counter(footnotes);
+            font-weight: $Bold;
+            font-size: $size-smallish-fluid;
+            color: $Orange-dark;
+            display: inline-block;
+            margin-left: calc(#{$margin-vertical-extraLarge}*-1);
+            width: $margin-vertical-extraLarge;
+            border-bottom: 1px solid $Grey;
+            margin-right: 0;
+        }
+    }
+}
