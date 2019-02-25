@@ -38,7 +38,9 @@
             }
         }
     }
-    
+    .article-related{
+        margin: $margin-horizontal-large 0;
+    }
 }
 
 @include media(">=tablet"){

@@ -39,7 +39,7 @@
 $input-heigth: $height-1-max;
 
 .banner-subscribe{
-    background-color: $Blue-light;
+    background-color: $Black;
     @extend %banner-base;
     flex-flow: column;
     text-decoration: none;
@@ -47,19 +47,23 @@ $input-heigth: $height-1-max;
     padding-bottom: 3%;
 
     .heading-7{
-        color: $Orange;
+        color: $White;
     }
     .btn-2{
         margin: 0;
-        @include outline-regular;
+        @include outline-regular-white;
         border-radius: 0 $input-heigth $input-heigth 0;
         color: $Orange-dark;
-        border-color: $Black;
+        border-color: $White;
         border-left: none;
         padding: 0;
         width: 25%;
         font-size: $size-smallest-fluid;
         background-color: $Black;
+        &:active{
+            background-color: $Blue-dark;
+            color: $Blue-light;
+        }
     }
 }
 
@@ -70,14 +74,16 @@ $input-heigth: $height-1-max;
 }
 
 .input{
-    @include outline-regular;
+    @include outline-regular-white;
     height: 100%;
     width: 80%;
     border-radius: $input-heigth 0 0 $input-heigth;
     border-right: none;
     padding-left: $padding-vertical-normal;
 
-
+    &:focus{
+        background-color: $Yellow-light;
+    }
     &::placeholder {
         color: $Grey-lilac;
     }

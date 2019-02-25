@@ -13,22 +13,28 @@ article {
     outline: none;
   }
 
-  [aria-describedby="footnote-label"]::after {
-    content: counter(footnotes-label); /* 1 */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1rem;
-    height: 1rem;
-    font-size: 0.75em;
-    letter-spacing: -.1em;
-    border: 2px solid $Orange;
-    border-radius: 50px;
-    font-weight: $Bold;
-    margin-left: 2px;
-    color: $Orange;
-    cursor: pointer;
-  }
+  [aria-describedby="footnote-label"]{
+      &::after {
+      content: counter(footnotes-label); /* 1 */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
+      font-size: 0.75em;
+      letter-spacing: -.1em;
+      border: 2px solid $Orange;
+      border-radius: 50px;
+      font-weight: $Bold;
+      margin-left: 2px;
+      color: $Orange;
+      cursor: pointer;
+    }
+    &:active::after{
+        background-color: $Orange;
+        color: $White;
+      }
+    }
   
   /**
    * Resetting the default focused styles on the number
@@ -53,7 +59,21 @@ article {
     counter-reset: footnotes;
   }
   footer{
-  ol.footnotes{list-style-type: none;}
+    position: relative;
+  ol.footnotes{
+    list-style-type: none;
+    &::before{
+      content: "";
+      @include line-base;
+    }
+    &::after{
+      content: "";
+      @include bullet;
+      position: absolute;
+      top: 0;
+      margin: 0 auto;
+    }
+  }
   ol.footnotes li{
         font-size: $size-smallish-fluid;
         line-height: 1.8;

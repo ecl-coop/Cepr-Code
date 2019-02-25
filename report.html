@@ -16,6 +16,7 @@
     <script defer src="/js/tabs.js"></script>
     <script defer src="/js/sticky.js"></script>
     <script defer src="/js/TableOfContents.js"></script>
+    <script defer src="/js/reading-position.js"></script>
     <script src="to-title-case.js"></script>
     <title>Center for Economic and Policy Research</title>
 </head> 
@@ -130,6 +131,11 @@
                 </ul>
             </nav>
         </section>
+        <progress value="0">
+            <div class="progress-container">
+                <span class="progress-bar"></span>
+            </div>
+        </progress>
         <article class="grid-container" id="report-grid">
             <header class="report-header">
                 <div class="report-title-container">
@@ -525,7 +531,6 @@
                             more dangerous proportions<a href="#note-10" aria-describedby="footnote-label" id="note-10-ref">.</a>
                             </p>
                     <footer>
-                            <h4>Notes</h4>
                             <ol class="footnotes">
                                 <li id="note-1">This is the vacancy rate for all housing units. Many people Have wrongly focused on the vacancy 
                                     rate for sale units, which tends to be much lower than the vacancy rate for rental units. While 
@@ -674,7 +679,6 @@
                                 any, economists lost a job or even missed a scheduled promotion because they didn’t see and warn
                                 about the dangers of the housing bubble. And as we all know, economists respond to incentives.</p>
                         <footer>
-                            <h4>Notes</h4>
                             <ol class="footnotes">
                                 <li id="note-11">Greenspan (2002)<a href="#note-11-ref" aria-label="Back to content">↩</a> 
                                 </li>
@@ -841,7 +845,6 @@
                                 seeing potential crises in areas where they clearly do not exist. It suggests that we have yet to learn the
                                 lessons of the 2008-09 crisis.</p>
                         <footer>
-                            <h4>Notes</h4>
                             <ol class="footnotes">
                                 <li id="note-19">Data on corporate debt can be found in Federal Reserve (2018c).<a href="#note-19-ref" aria-label="Back to content">↩</a></li>
                                 <li id="note-20">This takes the value of corporate equities from the Federal Reserve (2018d), Table L.223, Line 2, and after-tax corporate profits
@@ -856,73 +859,62 @@
                 <section id="references">
                     <details>
                         <summary>References</summary>
-                        <dl>
-                            <dt>Baker, Dean. 2002. “The Run-Up in House Prices: Is It Real or Is It Another Bubble?” Washington,
-                                    DC: Center for Economic and Policy Research. http://cepr.net/publications/reports/therun-up-in-home-prices-is-it-real-or-is-it-another-bubble. </dt>
-                            <dt>Baker, Dean and Daniella Zessoules. 2017. “The Housing Bubble: Is It Coming Back II?”
-                                    Washington, DC: Center for Economic and Policy Research. http://cepr.net/blogs/ceprblog/the-housing-bubble-is-it-coming-back-ii.</dt>
-                            <dt>Bernanke, Ben S. 2004. “Monetary Policy and the Economic Outlook: 2004.” Federal Reserve,
+                        <dl class="bibliography">
+                            <dt>Baker, Dean. 2002. <a href="http://cepr.net/publications/reports/therun-up-in-home-prices-is-it-real-or-is-it-another-bubble.">“The Run-Up in House Prices: Is It Real or Is It Another Bubble?”</a> Washington,
+                                    DC: Center for Economic and Policy Research.</dt>
+                            <dt>Baker, Dean and Daniella Zessoules. 2017. <a href="http://cepr.net/blogs/ceprblog/the-housing-bubble-is-it-coming-back-ii.">“The Housing Bubble: Is It Coming Back II?”</a> 
+                                    Washington, DC: Center for Economic and Policy Research.</dt>
+                            <dt>Bernanke, Ben S. 2004. <a href="https://www.federalreserve.gov/boarddocs/speeches/2004/20040104/default.htm.">“Monetary Policy and the Economic Outlook: 2004.”</a>  Federal Reserve,
                                     remarks at the Meetings of the American Economic Association, San Diego, California,
-                                    January 4.
-                                    https://www.federalreserve.gov/boarddocs/speeches/2004/20040104/default.htm.</dt>
-                            <dt>Bureau of Economic Analysis. 2006. “News Release.” Suitland, MD: Bureau of Economic Analysis.
-                                    http://beagov.prod.acquiasites.com/sites/default/files/newsreleases/national/gdp/2006/pdf/gdp306p.pdf. </dt>
-                            <dt>______. 2018. “National Income and Product Accounts.” Suitland, MD: Bureau of Economic
-                                    Analysis.
-                                    https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2#reqid=19&step=2&isuri=1&19
-                                    21=survey. </dt>
-                            <dt>Bureau of Labor Statistics. 2018a. “Labor Force Statistics from the Current Population Survey.”
-                                    Washington, DC: Bureau of Labor Statistics. https://www.bls.gov/cps/. </dt>
-                            <dt>______. 2018b. “Consumer Price Index.” Washington, DC: Bureau of Labor Statistics.
-                                    https://www.bls.gov/cpi/. </dt>
-                            <dt>Census Bureau. 2018. “Table 8. Quarterly Estimates of the Total Housing Inventory for the United
-                                    States: 1965 to Present.” Suitland, MD: Census Bureau.
-                                    https://www.census.gov/housing/hvs/data/histtab8.xlsx.</dt>
-                            <dt>Federal Reserve. 2018a. “Foreign Exchange Rates - H.10.” Washington, DC: Federal Reserve.
-                                    https://www.federalreserve.gov/releases/h10/summary/indexbc_m.htm.</dt>
+                                    January 4.</dt>
+                            <dt>Bureau of Economic Analysis. 2006. <a href="http://beagov.prod.acquiasites.com/sites/default/files/newsreleases/national/gdp/2006/pdf/gdp306p.pdf">“News Release.” Suitland, MD: Bureau of Economic Analysis.</a> 
+                                     </dt>
+                            <dt>______. 2018. <a href="https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2#reqid=19&step=2&isuri=1&19
+                                21=survey">“National Income and Product Accounts.”</a>  Suitland, MD: Bureau of Economic
+                                    Analysis.</dt>
+                            <dt>Bureau of Labor Statistics. 2018a. <a href="https://www.bls.gov/cps/">“Labor Force Statistics from the Current Population Survey.”</a>
+                                    Washington, DC: Bureau of Labor Statistics. </dt>
+                            <dt>______. 2018b. <a href="https://www.bls.gov/cpi/">“Consumer Price Index.”</a> Washington, DC: Bureau of Labor Statistics.
+                                    </dt>
+                            <dt>Census Bureau. 2018. <a href="https://www.census.gov/housing/hvs/data/histtab8.xlsx">“Table 8. Quarterly Estimates of the Total Housing Inventory for the United
+                                    States: 1965 to Present.”</a>  Suitland, MD: Census Bureau.</dt>
+                            <dt>Federal Reserve. 2018a. <a href="https://www.federalreserve.gov/releases/h10/summary/indexbc_m.htm">“Foreign Exchange Rates - H.10.”</a> Washington, DC: Federal Reserve.</dt>
                             <dt>______. 2018b. “Financial Accounts of the United States - Z.1.” Washington, DC: Federal Reserve.
                                     https://www.federalreserve.gov/releases/z1/20180607/html/b101.htm.</dt>
-                            <dt>______. 2018c. “Financial Accounts of the United States, Balance Sheet Tables, Annex 7.”
-                                    Washington, DC: Federal Reserve.
-                                    https://www.federalreserve.gov/datadownload/Review.aspx?rel=Z1&series=d1562bdceda6
-                                    505a05050fe02d81fde1&lastobs=5&from=&to=&filetype=csv&label=include&layout=seri
-                                    esrow&type=package.</dt>
-                            <dt>______. 2018d. “Financial Accounts Guide.” Washington, DC: Federal Reserve.
-                                    https://www.federalreserve.gov/apps/fof/FOFTables.aspx.</dt>
-                            <dt>______. 2018e. “Household Debt Service and Financial Obligations Ratios.” Washington, DC:
-                                    Federal Reserve. https://www.federalreserve.gov/releases/housedebt/default.htm.</dt>
-                            <dt>Frieden, Terry. 2004. “FBI warns of mortgage fraud ‘epidemic’.” CNN, September 17.
-                                    http://www.cnn.com/2004/LAW/09/17/mortgage.fraud/.</dt>
-                            <dt>Green Street Advisors. 2018. “Green Street’s Commercial Property Price Index.” Newport Beach,
-                                    CA: Green Street Advisors. https://www.greenstreetadvisors.com/insights/CPPI.</dt>
-                            <dt>Greenspan, Alan. 2002. “Monetary policy and the economic outlook.” Federal Reserve, testimony
-                                    before the Joint Economic Committee, US Congress, April 17.
-                                    www.federalreserve.gov/boarddocs/testimony/2002/20020417/default.htm.</dt>
-                            <dt>______. 2004. “Risk and Uncertainty in Monetary Policy.” Federal Reserve, remarks at the Meetings
-                                    of the American Economic Association, San Diego, California, January 3.
-                                    https://www.federalreserve.gov/boarddocs/speeches/2004/20040103/default.htm</dt>
-                            <dt>Greenspan, Alan and James Kennedy. 2007. “Sources and Uses of Equity Extracted from Homes.”
-                                    Washington, DC: Federal Reserve.
-                                    https://www.federalreserve.gov/pubs/feds/2007/200720/200720pap.pdf.
-                                    </dt>
-                            <dt>Klein, Alec and Zachary A. Goldfarb. 2008. “The Bubble.” Washington Post, June 15.
-                                    http://www.washingtonpost.com/wpdyn/content/article/2008/06/14/AR2008061401479.html?sid=ST2008061401569.</dt>
-                            <dt>Kawa, Lucas. 2012. “The Federal Housing Authority Might Be Fueling The Next Housing Bubble.”
-                                    Business Insider, December 13. https://www.businessinsider.com/fha-and-the-nexthousing-bubble-2012-12. </dt>
-                            <dt>Knox, Noelle. 2006. “43% of first-time home buyers put no money down.” USA Today, January 17.
-                                    http://usatoday30.usatoday.com/money/perfi/housing/2006-01-17-real-estate-usat_x.htm.</dt>
-                            <dt>OECD. 2018. “Employment rate.” Paris, France: OECD. https://data.oecd.org/emp/employmentrate.htm#indicator-chart.</dt>
-                            <dt>Shiller, Robert J. 2018. “Updated data from Irrational Exuberance, 3rd. Edition.” Princeton, NJ:
-                                    Princeton University. http://www.econ.yale.edu/~shiller/data/Fig3-1.xls.</dt>
-                            <dt>Mian, Atif and Amir Sufi. House of Debt: How They (and You) Caused the Great Recession, and How We Can
-                                    Prevent It from Happening Again. Chicago: University of Chicago Press.
-                                    https://www.press.uchicago.edu/ucp/books/book/chicago/H/bo20832545.html. </dt>
-                            <dt>S&P Dow Jones Indices. 2018. “S&P CoreLogic Case-Shiller 20-City Composite Home Price NSA
-                                    Index.” New York, NY: S&P. https://my.spindices.com/indices/real-estate/sp-corelogiccase-shiller-20-city-composite-home-price-nsa-index. </dt>
+                            <dt>______. 2018c. <a href="https://www.federalreserve.gov/datadownload/Review.aspx?rel=Z1&series=d1562bdceda6
+                                505a05050fe02d81fde1&lastobs=5&from=&to=&filetype=csv&label=include&layout=seri
+                                esrow&type=package">“Financial Accounts of the United States, Balance Sheet Tables, Annex 7.”</a> 
+                                    Washington, DC: Federal Reserve.</dt>
+                            <dt>______. 2018d. <a href="https://www.federalreserve.gov/apps/fof/FOFTables.aspx">“Financial Accounts Guide.”</a> 
+                                Washington, DC: Federal Reserve.</dt>
+                            <dt>______. 2018e. <a href="https://www.federalreserve.gov/releases/housedebt/default.htm">“Household Debt Service and Financial Obligations Ratios.”</a>  Washington, DC:
+                                    Federal Reserve.</dt>
+                            <dt>Frieden, Terry. 2004. <a href="http://www.cnn.com/2004/LAW/09/17/mortgage.fraud/">“FBI warns of mortgage fraud ‘epidemic’.”</a>  
+                                CNN, September 17.</dt>
+                            <dt>Green Street Advisors. 2018. <a href="https://www.greenstreetadvisors.com/insights/CPPI">“Green Street’s Commercial Property Price Index.”</a>  Newport Beach,
+                                    CA: Green Street Advisors.</dt>
+                            <dt>Greenspan, Alan. 2002. <a href="www.federalreserve.gov/boarddocs/testimony/2002/20020417/default.htm">“Monetary policy and the economic outlook.”</a>  Federal Reserve, testimony
+                                    before the Joint Economic Committee, US Congress, April 17.</dt>
+                            <dt>______. 2004. <a href="https://www.federalreserve.gov/boarddocs/speeches/2004/20040103/default.htm">“Risk and Uncertainty in Monetary Policy.”</a>  Federal Reserve, remarks at the Meetings
+                                    of the American Economic Association, San Diego, California, January 3.</dt>
+                            <dt>Greenspan, Alan and James Kennedy. 2007. <a href="https://www.federalreserve.gov/pubs/feds/2007/200720/200720pap.pdf">“Sources and Uses of Equity Extracted from Homes.”</a> 
+                                    Washington, DC: Federal Reserve.</dt>
+                            <dt>Klein, Alec and Zachary A. Goldfarb. 2008. <a href="http://www.washingtonpost.com/wpdyn/content/article/2008/06/14/AR2008061401479.html?sid=ST2008061401569">“The Bubble.”</a>  Washington Post, June 15.</dt>
+                            <dt>Kawa, Lucas. 2012. <a href="https://www.businessinsider.com/fha-and-the-nexthousing-bubble-2012-12">“The Federal Housing Authority Might Be Fueling The Next Housing Bubble.”</a> 
+                                    Business Insider, December 13.</dt>
+                            <dt>Knox, Noelle. 2006. <a href="http://usatoday30.usatoday.com/money/perfi/housing/2006-01-17-real-estate-usat_x.htm">“43% of first-time home buyers put no money down.”</a>
+                                USA Today, January 17.</dt>
+                            <dt>OECD. 2018. <a href="https://data.oecd.org/emp/employmentrate.htm#indicator-chart">“Employment rate.”</a>  Paris, France: OECD.</dt>
+                            <dt>Shiller, Robert J. 2018. <a href="http://www.econ.yale.edu/~shiller/data/Fig3-1.xls">“Updated data from Irrational Exuberance, 3rd. Edition.”</a>  Princeton, NJ:
+                                    Princeton University.</dt>
+                            <dt>Mian, Atif and Amir Sufi. <a href="https://www.press.uchicago.edu/ucp/books/book/chicago/H/bo20832545.html">House of Debt: How They (and You) Caused the Great Recession, and How We Can
+                                    Prevent It from Happening Again.</a>  Chicago: University of Chicago Press.</dt>
+                            <dt>S&P Dow Jones Indices. 2018. <a href="https://my.spindices.com/indices/real-estate/sp-corelogiccase-shiller-20-city-composite-home-price-nsa-index">“S&P CoreLogic Case-Shiller 20-City Composite Home Price NSA
+                                    Index.”</a>  New York, NY: S&P.</dt>
                         </dl>
                     </details>
                 </section>
-                <footer class="footnotes">
+                <footer class="footnotes is-hidden-touch">
                     <div>
                         <h4>Notes</h4>
                         <ol>
@@ -943,44 +935,74 @@
                         </ol>
                     </div>
                 </footer>
+                
             </div>
-        </article>
-        <aside class="article-related">
-            <small class="preheading">more on</small>
-            <h6 class="heading-7 heading-7-underline">Europe</h6>
-            <ul class="list-2">
-                <li class="list-item">
-                    <h5 class="heading-5"><a href="">The High Cost of Transforming Europe: Why Europe Stumbled</a></h5>
-                    <small class="credits">
-                        <p class="author">Mark Weisbrot</p>
-                    </small>
-                </li>
-                <li class="list-item">
-                    <h5 class="heading-5"><a href="">Democracy, National Sovereignty, and Economic Policy: The Challenges Facing Europe and the United States</a></h5>
-                    <small class="credits">
-                        <p class="author">An Interview with Mark Weisbrot, by Nacho Berdugo</p>
-                    </small>
-                </li>
-                <li class="list-item is-hidden-desktop">
-                    <h5 class="heading-5"><a href="">The Toll of Austerity in Europe</a></h5>
-                    <small class="credits">
-                        <p class="author">Dean Baker</p>
-                    </small>
-                </li>
-            </ul>
-        </aside>
-        <div class="block-banner" id="banner-donate">
-                <div class="banner-donate block-banner-right">
-                    <div class="banner-donate-text">
-                        <h6 class="heading-7">support cepr</h6>
-                        <p>If you value CEPR´s work, support us by making a financial contribution.</p>
+            <dt class="profile-card">
+                <div class="profile-header">
+                    <img class="picture-round-large profile-picture-open" src="/img/Dean_Baker.jpg" alt="Dean Baker portrait">
+                    <div class="profile-data">
+                        <h5 class="profile-name">Dean Baker</h5>
+                        <h5 class="profile-job">Senior economist</h5>
+                        <div class="profile-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                            </svg>
+                        </div>
                     </div>
-                    <button class="btn-2 btn-2-texture-orange btn-2-shadow-black ">donate</button>
-                    <picture class="banner-picture is-hidden-mobile">
-                        <img src="/img/heart.svg" alt="mailbox illustration">
-                    </picture>
                 </div>
+                <p class="profile-summary">
+                    Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                </p>
+            </dt>
+        </article>
+        <div class="block-banner" id="banner-subscribe">
+            <div class="banner-subscribe block-banner-left">
+                <h6 class="heading-7">keep up with our latest news</h6>
+                <div class="sign-up">
+                    <input class="input" type="email" name="email" id="email" placeholder="Enter mail here">
+                    <button class="btn-2 btn-2-texture-blueLight" for="email">Sing up</button>
+                </div>
+                <picture class="banner-picture is-hidden-mobile">
+                    <img src="/img/mailbox.svg" alt="mailbox illustration">
+                </picture>
+            </div>
         </div>
+        <aside class="report-related">
+            <small class="preheading">more on</small>
+            <h6 class="heading-7 heading-7-underline">Goverment</h6>
+            <dl class="list-2-container">
+                <dt class="list-2-item">
+                    <div class="article-text-container">
+                        <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Intellectual Property</a></small>
+                        <h3 class="heading-3 heading-3-light">What’s Behind the Claims that Men Aren’t Working?</h3>
+                        <small class="credits"><p class="author">Dean Baker</p><p class="date">october 25, 2018</p></small>
+                    </div>
+                </dt>
+                <dt class="list-2-item">
+                    <div class="article-text-container">
+                        <small class="tag"><a class="tag-type">article</a><a class="tag-theme">Goverment</a></small>
+                        <h3 class="heading-3 heading-3-light">New Health Care Plan: Open Source Drugs, Immigrant Doctors, and a Public Option</h3>
+                        <small class="credits">
+                            <p class="author">Dean Baker</p>
+                            <p class="date">June 11, 2017</p>
+                        </small>
+                    </div>
+                </dt>
+                <dt class="list-2-item">
+                    <div class="article-text-container">
+                        <small class="tag"><a class="tag-type">presentation</a><a class="tag-theme">workers</a></small>
+                        <h3 class="heading-3 heading-3-light">Puerto Rico’s Colonial Legacy and its Continuing Economic Troubles</h3>
+                        <small class="credits">
+                            <p class="author">EILEEN APPELBAUM</p>
+                            <p class="date">SEPTEMBER 13, 2016</p>
+                        </small>
+                    </div>
+                </dt>
+            </dl>
+        </aside>
         <footer class="block-footer">
             <div class="footer-ident">
                 <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

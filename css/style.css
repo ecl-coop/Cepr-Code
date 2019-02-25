@@ -122,6 +122,8 @@ h4.column-header {
   line-height: 1.25; }
   .heading-3-bold {
     font-weight: 700; }
+  .heading-3-light {
+    font-weight: 300; }
 
 .heading-4 {
   text-transform: uppercase;
@@ -288,7 +290,7 @@ h4.column-header {
   border-radius: 50px;
   padding: .2em 1em; }
 
-hr, .line-2 {
+hr {
   display: block;
   height: 1px;
   width: 100%;
@@ -297,19 +299,63 @@ hr, .line-2 {
   margin: 1em 0;
   padding: 0; }
 
-.line-2:before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  clip-path: circle();
-  background-color: var(--color-Black); }
+.line-2 {
+  display: block;
+  height: 1px;
+  width: 100%;
+  border: 0;
+  border-top: 2px solid var(--color-Black);
+  margin: 1em 0;
+  padding: 0; }
+  .line-2:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    clip-path: circle();
+    background-color: var(--color-Black); }
+  .line-2:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    clip-path: circle();
+    background-color: var(--color-Black); }
 
-.line-2:after {
-  content: "";
-  width: 12px;
-  height: 12px;
-  clip-path: circle();
-  background-color: var(--color-Black); }
+progress {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* Dimensions */
+  width: 100%;
+  height: .25em;
+  /* Reset the apperance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+  /* For Firefox/IE10+ */
+  background-color: transparent;
+  /* For IE10+, color of the progress bar */
+  color: var(--color-Accent); }
+
+progress::-webkit-progress-bar {
+  background-color: transparent; }
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  display: block; }
+
+.progress-bar {
+  background-color: var(--color-Accent);
+  width: 0%;
+  display: block;
+  height: inherit; }
 
 .credits, .date {
   color: var(--color-Grey); }
@@ -468,8 +514,8 @@ article {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5em;
+  height: 1.5em;
   font-size: 0.75em;
   letter-spacing: -.1em;
   border: 2px solid var(--color-Accent);
@@ -478,6 +524,10 @@ article {
   margin-left: 2px;
   color: var(--color-Accent);
   cursor: pointer; }
+
+[aria-describedby="footnote-label"]:active::after {
+  background-color: var(--color-Accent);
+  color: var(--color-White); }
 
 /**
    * Resetting the default focused styles on the number
@@ -499,23 +549,43 @@ footer :target {
 .start-count {
   counter-reset: footnotes; }
 
-footer ol.footnotes {
-  list-style-type: none; }
-
-footer ol.footnotes li {
-  font-size: calc(0.35587vw + 11.6726px);
-  line-height: 1.8; }
-  footer ol.footnotes li:before {
-    counter-increment: footnotes;
-    content: counter(footnotes);
-    font-weight: 700;
+footer {
+  position: relative; }
+  footer ol.footnotes {
+    list-style-type: none; }
+    footer ol.footnotes::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      border: 0;
+      border-top: 2px solid var(--color-Black);
+      margin: 1em 0;
+      padding: 0; }
+    footer ol.footnotes::after {
+      content: "";
+      content: "";
+      width: 12px;
+      height: 12px;
+      clip-path: circle();
+      background-color: var(--color-Black);
+      position: absolute;
+      top: 0;
+      margin: 0 auto; }
+  footer ol.footnotes li {
     font-size: calc(0.35587vw + 11.6726px);
-    color: var(--color-Accent-dark);
-    display: inline-block;
-    margin-left: calc(3.5rem*-1);
-    width: 3.5rem;
-    border-bottom: 1px solid var(--color-Grey);
-    margin-right: 0; }
+    line-height: 1.8; }
+    footer ol.footnotes li:before {
+      counter-increment: footnotes;
+      content: counter(footnotes);
+      font-weight: 700;
+      font-size: calc(0.35587vw + 11.6726px);
+      color: var(--color-Accent-dark);
+      display: inline-block;
+      margin-left: calc(3.5rem*-1);
+      width: 3.5rem;
+      border-bottom: 1px solid var(--color-Grey);
+      margin-right: 0; }
 
 .article-hero-text {
   grid-area: title;
@@ -577,6 +647,51 @@ footer ol.footnotes li {
   .article-related .credits {
     font-size: calc(0.23725vw + 7.11507px);
     color: var(--color-Grey-light); }
+
+@media (min-width: 769px) {
+  .article-related {
+    padding-top: 1.25rem;
+    padding-bottom: 3rem; }
+    .article-related .heading-7,
+    .article-related .preheading {
+      align-self: flex-start;
+      text-align: left; }
+    .article-related ul.list-2 {
+      flex-direction: row; }
+    .article-related .list-item {
+      flex: 0 0 50%;
+      padding-right: 2rem; } }
+
+.report-related {
+  grid-area: related;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 1.25rem;
+  margin: 2rem 0;
+  margin-bottom: calc(2rem*3); }
+  .report-related .heading-5 a {
+    color: var(--color-White);
+    transition: all .2s; }
+  .report-related .heading-5 :hover {
+    color: var(--color-Secondary); }
+  .report-related .heading-5 :active {
+    color: var(--color-Secondary-dark); }
+  .report-related .heading-7,
+  .report-related .preheading {
+    align-self: center;
+    text-align: center;
+    color: var(--color-Secondary);
+    line-height: 1; }
+  .report-related .credits {
+    font-size: calc(0.23725vw + 7.11507px);
+    color: var(--color-Grey-light); }
+  .report-related .list-2-item:last-child:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(transparent, white);
+    position: absolute; }
 
 @media (min-width: 769px) {
   .article-related {
@@ -1173,25 +1288,28 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-Grey-light); }
 
 .banner-subscribe {
-  background-color: var(--color-Primary-light);
+  background-color: var(--color-Black);
   flex-flow: column;
   text-decoration: none;
   justify-content: center;
   padding-bottom: 3%; }
   .banner-subscribe .heading-7 {
-    color: var(--color-Accent); }
+    color: var(--color-White); }
   .banner-subscribe .btn-2 {
     margin: 0;
     border-width: 0;
-    box-shadow: 0 0 0 2pt var(--color-Black);
+    box-shadow: 0 0 0 2pt var(--color-White);
     border-radius: 0 40px 40px 0;
     color: var(--color-Accent-dark);
-    border-color: var(--color-Black);
+    border-color: var(--color-White);
     border-left: none;
     padding: 0;
     width: 25%;
     font-size: calc(0.23725vw + 7.11507px);
     background-color: var(--color-Black); }
+    .banner-subscribe .btn-2:active {
+      background-color: var(--color-Primary-dark);
+      color: var(--color-Primary-light); }
 
 .sign-up {
   width: 80%;
@@ -1200,12 +1318,14 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 .input {
   border-width: 0;
-  box-shadow: 0 0 0 2pt var(--color-Black);
+  box-shadow: 0 0 0 2pt var(--color-White);
   height: 100%;
   width: 80%;
   border-radius: 40px 0 0 40px;
   border-right: none;
   padding-left: 1.5rem; }
+  .input:focus {
+    background-color: var(--color-Action-light); }
   .input::placeholder {
     color: var(--color-lilac); }
 
@@ -1418,6 +1538,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 .report-content p {
   margin-bottom: 1em; }
+  .report-content p:last-of-type {
+    margin-bottom: 2em; }
 
 .report-content blockquote {
   font-family: var(--font-Display);
@@ -1530,6 +1652,38 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   content: "[" "Fig." counter(figures-cap) "]";
   font-weight: 700;
   color: var(--color-Accent-dark); }
+
+.profile-card {
+  display: flex;
+  flex-flow: column;
+  width: 83%;
+  margin: 2rem auto; }
+
+.profile-header {
+  display: flex;
+  align-items: center; }
+
+.profile-data {
+  display: flex;
+  flex-flow: column;
+  padding-left: 1rem; }
+
+.profile-name, .profile-job {
+  font-size: calc(17.3452px + 0.71174vw);
+  font-family: var(--font-Display);
+  color: var(--color-Primary-dark); }
+
+.profile-name {
+  font-weight: 700; }
+
+.profile-summary {
+  margin: 0.8rem 0;
+  padding: 0 1.5rem;
+  font-family: var(--font-Primary);
+  font-weight: 300;
+  line-height: 1.46;
+  font-size: calc(0.46083vw + 14.28111px);
+  color: var(--color-Grey); }
 
 .block-featured {
   display: flex;
@@ -2228,6 +2382,9 @@ ul.list-2 {
     margin-bottom: 3rem; }
     #report-grid header .report-title-container h1, #report-grid header .report-title-container small {
       padding-left: 4vw; }
+
+#report-grid .article-related {
+  margin: 2rem 0; }
 
 @media (min-width: 769px) {
   .grid-container {

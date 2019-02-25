@@ -9,7 +9,11 @@
     p{
         @include paragraph;
         margin-bottom: 1em;
+        &:last-of-type{
+            margin-bottom: 2em;
+        }
     }
+    
     blockquote{
         @include paragraph-serif;
         margin-bottom: $margin-horizontal-medium;

@@ -1,4 +1,4 @@
-%line-base{
+@mixin line-base{
     display: block;
     height: $line-heigth;
     width: 100%;
@@ -9,11 +9,12 @@
 }
 
 hr {
-    @extend %line-base;
+    @include line-base;
 }
 
+
 .line-2 {
-    @extend %line-base;
+    @include line-base;
     &:before{
     @include bullet();
     }
@@ -21,3 +22,48 @@ hr {
     @include bullet();
     }
 }
+
+///fixed top progress bar
+progress {
+    /* Positioning */
+    position: fixed;
+    left: 0;
+    top: 0;
+  
+    /* Dimensions */
+    width: 100%;
+    height: .25em;
+  
+    /* Reset the apperance */  
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  
+    /* Get rid of the default border in Firefox/Opera. */
+    border: none;
+  
+    /* For Firefox/IE10+ */
+    background-color: transparent;
+  
+    /* For IE10+, color of the progress bar */
+    color: $Orange;
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+.progress-container {
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    display: block;
+  }
+  .progress-bar {
+    background-color: $Orange;
+    width: 0%;
+    display: block;
+    height: inherit;
+  }

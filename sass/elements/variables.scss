@@ -148,3 +148,13 @@ $line-base: $line-heigth solid $Blue-light;
     border-width: 0;
     box-shadow: 0 0 0 2pt $Black;
 }
+
+@mixin outline-regular-white {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $White;
+}
+
+@mixin outline-regular-active {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $Yellow;
+}

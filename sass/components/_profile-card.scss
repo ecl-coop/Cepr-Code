@@ -1,0 +1,32 @@
+.profile-card{
+    display: flex;
+    flex-flow: column;
+    width: 83%;
+    margin: $margin-horizontal-large auto;
+}
+.profile-header{
+    display: flex;
+    align-items: center;
+}
+.profile-data{
+    display: flex;
+    flex-flow: column;
+    padding-left: $padding-vertical-small;
+}
+.profile-name, .profile-job{
+    font-size: $size-h5-fluid;
+    font-family: $Serif;
+    color: $Blue-dark;
+}
+.profile-name{
+    font-weight: $Bold;
+}
+.profile-summary{
+    margin: $margin-horizontal-regular 0;
+    padding: 0 $padding-vertical-normal;
+    font-family: $Sans;
+    font-weight: $Light;
+    line-height: 1.46;
+    font-size: $size-p-fluid;
+    color: $Grey;
+}
