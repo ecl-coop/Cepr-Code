@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     padding-top: $padding-horizontal-regular;
     margin: $margin-horizontal-large 0;
-    margin-bottom: calc(#{$margin-horizontal-large}*3);
+    margin-bottom: calc(#{$margin-horizontal-large}*4);
     .heading-5 {
         a {
             color: $White;
@@ -27,6 +27,9 @@
         text-align: center;
         color: $Green;
         line-height: 1;
+    }
+    .heading-7{
+        margin-bottom: $margin-vertical-large;
     }
 
     .credits {

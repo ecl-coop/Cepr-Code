@@ -62,21 +62,29 @@ article {
     position: relative;
   ol.footnotes{
     list-style-type: none;
+    margin-top: calc(#{$bullet-outline-tick}*2);
+
     &::before{
       content: "";
       @include line-base;
+      width: 100vw;
+      position: absolute;
+      left: 0;
+      margin-left: calc(4vw*-1);
+      margin-top: 0;
+      top: -2rem;
+      border-color: $Blue-light;
     }
     &::after{
-      content: "";
-      @include bullet;
-      position: absolute;
-      top: 0;
-      margin: 0 auto;
+      @include bullet-center;
+      background-color: $Blue-light;
     }
   }
   ol.footnotes li{
         font-size: $size-smallish-fluid;
         line-height: 1.8;
+        z-index: 10;
+        position: relative;
         &:before{
             counter-increment: footnotes;
             content: counter(footnotes);
@@ -86,8 +94,16 @@ article {
             display: inline-block;
             margin-left: calc(#{$margin-vertical-extraLarge}*-1);
             width: $margin-vertical-extraLarge;
-            border-bottom: 1px solid $Grey;
             margin-right: 0;
+        }
+        &::after{
+          content: "";
+          border-bottom: 1px solid $Grey-light;
+          width: calc(#{$margin-vertical-extraLarge}*.7);
+          position: absolute;
+          left: calc(#{$margin-vertical-extraLarge}*-1);
+          top: 1.25em;
+          margin-left: 1.25em;
         }
     }
 }

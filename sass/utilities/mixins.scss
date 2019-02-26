@@ -1,3 +1,26 @@
+@mixin absolute-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+}
+
+@mixin absolute-center-vert {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+@mixin absolute-center-hor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
 @mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value) {
     & {
         @each $property in $properties {

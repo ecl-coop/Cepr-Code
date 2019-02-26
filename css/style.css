@@ -306,19 +306,30 @@ hr {
   border: 0;
   border-top: 2px solid var(--color-Black);
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .line-2:before {
     content: "";
     width: 12px;
     height: 12px;
     clip-path: circle();
-    background-color: var(--color-Black); }
+    background-color: var(--color-Black);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 0; }
   .line-2:after {
     content: "";
     width: 12px;
     height: 12px;
     clip-path: circle();
-    background-color: var(--color-Black); }
+    background-color: var(--color-Black);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 0; }
 
 progress {
   /* Positioning */
@@ -389,6 +400,18 @@ progress::-webkit-progress-bar {
   top: 0px;
   left: -3px; }
 
+button, button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  background: none;
+  background-color: transparent;
+  -webkit-appearance: button;
+  -webkit-user-select: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
 .btn-1 {
   background-color: var(--color-White); }
 
@@ -429,6 +452,37 @@ progress::-webkit-progress-bar {
   .btn-5-small {
     width: 32px;
     height: 16px; }
+
+.btn-plus {
+  fill: var(--color-Primary-dark);
+  filter: drop-shadow(0 2px 3px var(--color-Grey-light));
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer; }
+  .btn-plus svg {
+    z-index: 10; }
+  .btn-plus:hover {
+    fill: var(--color-Accent); }
+  .btn-plus:active {
+    fill: var(--color-White); }
+    .btn-plus:active::after {
+      content: "";
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-Grey);
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
 
 .picture-round-large {
   clip-path: circle();
@@ -552,7 +606,8 @@ footer :target {
 footer {
   position: relative; }
   footer ol.footnotes {
-    list-style-type: none; }
+    list-style-type: none;
+    margin-top: calc(44px*2); }
     footer ol.footnotes::before {
       content: "";
       display: block;
@@ -561,20 +616,32 @@ footer {
       border: 0;
       border-top: 2px solid var(--color-Black);
       margin: 1em 0;
-      padding: 0; }
+      padding: 0;
+      width: 100vw;
+      position: absolute;
+      left: 0;
+      margin-left: calc(4vw*-1);
+      margin-top: 0;
+      top: -2rem;
+      border-color: var(--color-Primary-light); }
     footer ol.footnotes::after {
-      content: "";
       content: "";
       width: 12px;
       height: 12px;
-      clip-path: circle();
-      background-color: var(--color-Black);
+      background-color: var(--color-Primary-dark);
       position: absolute;
-      top: 0;
-      margin: 0 auto; }
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: -36px;
+      outline: 44px solid white;
+      border-radius: 50%;
+      background-color: var(--color-Primary-light); }
   footer ol.footnotes li {
     font-size: calc(0.35587vw + 11.6726px);
-    line-height: 1.8; }
+    line-height: 1.8;
+    z-index: 10;
+    position: relative; }
     footer ol.footnotes li:before {
       counter-increment: footnotes;
       content: counter(footnotes);
@@ -584,8 +651,15 @@ footer {
       display: inline-block;
       margin-left: calc(3.5rem*-1);
       width: 3.5rem;
-      border-bottom: 1px solid var(--color-Grey);
       margin-right: 0; }
+    footer ol.footnotes li::after {
+      content: "";
+      border-bottom: 1px solid var(--color-Grey-light);
+      width: calc(3.5rem*.7);
+      position: absolute;
+      left: calc(3.5rem*-1);
+      top: 1.25em;
+      margin-left: 1.25em; }
 
 .article-hero-text {
   grid-area: title;
@@ -647,51 +721,6 @@ footer {
   .article-related .credits {
     font-size: calc(0.23725vw + 7.11507px);
     color: var(--color-Grey-light); }
-
-@media (min-width: 769px) {
-  .article-related {
-    padding-top: 1.25rem;
-    padding-bottom: 3rem; }
-    .article-related .heading-7,
-    .article-related .preheading {
-      align-self: flex-start;
-      text-align: left; }
-    .article-related ul.list-2 {
-      flex-direction: row; }
-    .article-related .list-item {
-      flex: 0 0 50%;
-      padding-right: 2rem; } }
-
-.report-related {
-  grid-area: related;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-top: 1.25rem;
-  margin: 2rem 0;
-  margin-bottom: calc(2rem*3); }
-  .report-related .heading-5 a {
-    color: var(--color-White);
-    transition: all .2s; }
-  .report-related .heading-5 :hover {
-    color: var(--color-Secondary); }
-  .report-related .heading-5 :active {
-    color: var(--color-Secondary-dark); }
-  .report-related .heading-7,
-  .report-related .preheading {
-    align-self: center;
-    text-align: center;
-    color: var(--color-Secondary);
-    line-height: 1; }
-  .report-related .credits {
-    font-size: calc(0.23725vw + 7.11507px);
-    color: var(--color-Grey-light); }
-  .report-related .list-2-item:last-child:before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(transparent, white);
-    position: absolute; }
 
 @media (min-width: 769px) {
   .article-related {
@@ -1183,13 +1212,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     flex-direction: column; }
   .list-2-item .tag {
     margin-top: 0.8rem; }
-  .list-2-item small.credits {
-    padding-top: 0.5rem; }
   .list-2-item:not(:last-child) {
-    margin-bottom: 0.8rem;
     padding-bottom: 1.25rem; }
     .list-2-item:not(:last-child) .article-text-container {
-      border-bottom: 3px dotted var(--color-Primary-light); }
+      border-bottom: 1px solid var(--color-Grey-light);
+      padding-bottom: 1.25rem; }
 
 .list-3-item {
   display: flex;
@@ -1536,81 +1563,76 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   margin-bottom: 0.8rem;
   color: var(--color-Primary); }
 
-.report-content p {
-  margin-bottom: 1em; }
-  .report-content p:last-of-type {
-    margin-bottom: 2em; }
-
-.report-content blockquote {
-  font-family: var(--font-Display);
-  letter-spacing: 16;
-  margin-bottom: 1.5rem; }
-
-.report-content ul, .report-content ol {
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  color: var(--color-Grey);
-  margin-left: 3.5rem; }
-
-.report-content ul {
-  list-style-type: none; }
-
-.report-content ol {
-  list-style: none; }
-
-.report-content ul li::before {
-  content: "\2022";
-  color: var(--color-Secondary-light);
-  display: inline-block;
-  font-size: 2em;
-  line-height: 1em;
-  width: 1em;
-  margin-left: -1em; }
-
-.report-content ol li {
-  counter-increment: li; }
-  .report-content ol li::before {
-    content: counter(li);
-    font-weight: 700;
-    font-size: calc(0.35587vw + 11.6726px);
-    color: var(--color-Primary-light);
+.report-content {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 5vh;
+  overflow-y: scroll; }
+  .report-content section {
+    scroll-snap-align: start; }
+  .report-content p {
+    margin-bottom: 1em; }
+    .report-content p:last-of-type {
+      margin-bottom: 2em; }
+  .report-content blockquote {
+    font-family: var(--font-Display);
+    letter-spacing: 16;
+    margin-bottom: 1.5rem; }
+  .report-content ul, .report-content ol {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: var(--color-Grey);
+    margin-left: 3.5rem; }
+  .report-content ul {
+    list-style-type: none; }
+  .report-content ol {
+    list-style: none; }
+  .report-content ul li::before {
+    content: "\2022";
+    color: var(--color-Secondary-light);
     display: inline-block;
-    margin-right: 1em; }
-
-.report-content li {
-  margin-bottom: .5em; }
-
-.report-content summary {
-  font-family: var(--font-Primary);
-  font-weight: 400;
-  font-size: calc(20.46026px + 0.94899vw);
-  color: var(--color-Black);
-  margin: 0.8rem 0;
-  margin-top: 0.5rem;
-  line-height: 1.25;
-  color: var(--color-Primary-light); }
-
-.report-content h3 {
-  font-size: calc(17.3452px + 0.71174vw);
-  color: var(--color-Primary-light); }
-
-.report-content h4 {
-  text-transform: uppercase;
-  font-size: calc(21.3452px + 0.71174vw);
-  letter-spacing: .15em;
-  font-weight: 300;
-  line-height: 1;
-  color: var(--color-Secondary);
-  font-size: calc(28.46026px + 0.94899vw);
-  letter-spacing: .01em;
-  line-height: 1.15;
-  font-weight: 400;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem; }
-
-@media (min-width: 1024px) {
+    font-size: 2em;
+    line-height: 1em;
+    width: 1em;
+    margin-left: -1em; }
+  .report-content ol li {
+    counter-increment: li; }
+    .report-content ol li::before {
+      content: counter(li);
+      font-weight: 700;
+      font-size: calc(0.35587vw + 11.6726px);
+      color: var(--color-Primary-light);
+      display: inline-block;
+      margin-right: 1em; }
+  .report-content li {
+    margin-bottom: .5em; }
+  .report-content summary {
+    font-family: var(--font-Primary);
+    font-weight: 400;
+    font-size: calc(20.46026px + 0.94899vw);
+    color: var(--color-Black);
+    margin: 0.8rem 0;
+    margin-top: 0.5rem;
+    line-height: 1.25;
+    color: var(--color-Primary-light); }
   .report-content h3 {
-    text-align: center; } }
+    font-size: calc(17.3452px + 0.71174vw);
+    color: var(--color-Primary-light); }
+  .report-content h4 {
+    text-transform: uppercase;
+    font-size: calc(21.3452px + 0.71174vw);
+    letter-spacing: .15em;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-Secondary);
+    font-size: calc(28.46026px + 0.94899vw);
+    letter-spacing: .01em;
+    line-height: 1.15;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem; }
+  @media (min-width: 1024px) {
+    .report-content h3 {
+      text-align: center; } }
 
 .figure-graphic {
   counter-increment: figures-tit;
@@ -2278,6 +2300,53 @@ ul.list-2 {
   .list-2-container {
     padding-top: 1.25rem;
     width: 100%; } }
+
+.report-related {
+  grid-area: related;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 1.25rem;
+  margin: 2rem 0;
+  margin-bottom: calc(2rem*4); }
+  .report-related .heading-5 a {
+    color: var(--color-White);
+    transition: all .2s; }
+  .report-related .heading-5 :hover {
+    color: var(--color-Secondary); }
+  .report-related .heading-5 :active {
+    color: var(--color-Secondary-dark); }
+  .report-related .heading-7,
+  .report-related .preheading {
+    align-self: center;
+    text-align: center;
+    color: var(--color-Secondary);
+    line-height: 1; }
+  .report-related .heading-7 {
+    margin-bottom: 1.5rem; }
+  .report-related .credits {
+    font-size: calc(0.23725vw + 7.11507px);
+    color: var(--color-Grey-light); }
+  .report-related .list-2-item:last-child:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(transparent, white);
+    position: absolute; }
+
+@media (min-width: 769px) {
+  .article-related {
+    padding-top: 1.25rem;
+    padding-bottom: 3rem; }
+    .article-related .heading-7,
+    .article-related .preheading {
+      align-self: flex-start;
+      text-align: left; }
+    .article-related ul.list-2 {
+      flex-direction: row; }
+    .article-related .list-item {
+      flex: 0 0 50%;
+      padding-right: 2rem; } }
 
 @media (min-width: 769px) {
   .grid-container {

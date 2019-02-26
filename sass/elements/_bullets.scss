@@ -1,5 +1,3 @@
-$bullet-size: 12px;
-
 @mixin bullet {
       content: "";
       width: $bullet-size;
@@ -14,4 +12,15 @@ $bullet-size: 12px;
       height: $bullet-size/2;
       clip-path: circle();
       background-color: $Black;
+}
+
+@mixin bullet-center {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      background-color: $Blue-dark;
+      @include absolute-center-vert;
+      top: -36px;
+      outline: $bullet-outline-tick solid white;
+      border-radius: 50%;
 }

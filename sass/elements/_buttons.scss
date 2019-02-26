@@ -23,6 +23,20 @@ $btn-radius: $btn-height/2;
      left: -3px;
 }
 
+button, button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  background: none;
+  background-color: transparent;
+  -webkit-appearance: button;
+  -webkit-user-select: none;
+  -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+
 .btn-1{
     @extend %btn-base;
     background-color: $White;
@@ -87,5 +101,38 @@ $btn-radius: $btn-height/2;
     &-small{
         width: 32px;
         height: 16px;
+    }
+}
+
+.btn-plus{
+    fill: $Blue-dark;
+    filter: drop-shadow(0 2px 3px $Grey-light);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    svg{z-index: 10;}
+    
+    
+    cursor: pointer;
+    &:hover{
+        fill: $Orange;
+    }
+    &:active{
+        fill: $White;
+        &::after{
+        content: "";
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $Grey;
+        @include absolute-center-vert;
+        }
     }
 }

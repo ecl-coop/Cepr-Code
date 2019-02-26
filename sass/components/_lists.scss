@@ -24,14 +24,12 @@
     .tag{
         margin-top: $margin-horizontal-regular; 
     }
-    small.credits{
-        padding-top: $padding-horizontal-small;
-    }
+
     &:not(:last-child) {
-        margin-bottom: $margin-horizontal-regular;
         padding-bottom: $padding-horizontal-regular;
         .article-text-container{
-            border-bottom: 3px dotted $Blue-light;
+            border-bottom: 1px solid $Grey-light;
+            padding-bottom: $padding-horizontal-regular;
         }
     }
 }

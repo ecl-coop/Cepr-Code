@@ -15,11 +15,16 @@ hr {
 
 .line-2 {
     @include line-base;
+    position: relative;
     &:before{
     @include bullet();
+    @include absolute-center-hor;
+    left: 0;
     }
     &:after{
     @include bullet();
+    @include absolute-center-hor;
+    right: 0;
     }
 }
 
