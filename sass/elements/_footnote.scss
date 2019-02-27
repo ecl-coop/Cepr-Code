@@ -24,7 +24,7 @@ article {
       font-size: 0.75em;
       letter-spacing: -.1em;
       border: 2px solid $Orange;
-      border-radius: 50px;
+      border-radius: 50%;
       font-weight: $Bold;
       margin-left: 2px;
       color: $Orange;
@@ -45,7 +45,24 @@ article {
   }
   
   [aria-label="Back to content"] {
-    font-size: 0.8em;
+    //font-size: 0.8em;
+    &::after{
+      content: "";
+      display: inline-flex;
+      width: 1rem;
+      height: 1rem;
+      position: relative;
+      bottom: -2px;
+      -webkit-mask: url("/img/ios-arrow-dropup-circle.svg") no-repeat;
+      mask: url("/img/ios-arrow-dropup-circle.svg") no-repeat;
+      background-color: $Orange;
+      cursor: pointer;
+    }
+    &:active{
+      &::after{
+        background-color: $Grey;
+      }
+    }
   }
   
   /**
@@ -54,6 +71,12 @@ article {
   footer :target {
     background: $Yellow;
     color: $Blue-dark;
+    border-radius: 0 0 50px 0;
+    [aria-label="Back to content"]{
+      &::after{
+        background-color: $Blue;
+      }
+    }
   }
   .start-count{
     counter-reset: footnotes;
@@ -85,6 +108,9 @@ article {
         line-height: 1.8;
         z-index: 10;
         position: relative;
+        &:target{
+          box-shadow: 0 0 0 6px $Yellow;
+        }
         &:before{
             counter-increment: footnotes;
             content: counter(footnotes);
