@@ -1,0 +1,182 @@
+//////////COLORS
+
+$Black: var(--color-Black);
+$White: var(--color-White);
+$Blue: var(--color-Primary);
+$Blue-dark: var(--color-Primary-dark);
+$Blue-light: var(--color-Primary-light);
+$Orange: var(--color-Accent);
+$Orange-dark: var(--color-Accent-dark);
+$Orange-light: var(--color-Accent-light);
+$Green: var(--color-Secondary);
+$Green-dark: var(--color-Secondary-dark);
+$Green-light: var(--color-Secondary-light);
+$Yellow: var(--color-Action);
+$Yellow-dark: var(--color-Action-dark);
+$Yellow-light: var(--color-Action-light);
+
+$Grey: var(--color-Grey);
+$Grey-light: var(--color-Grey-light);
+$Grey-lilac: var(--color-lilac);
+
+///reset bulma defaults (I had to repeat the hex codes as Bulma doesn't work with css variables)
+$blue: #004fa7;
+$orange: #ff5f00;
+$grey: #7f7f7f;
+$black: #000033;
+$yellow: #ffdc40;
+
+///////////////TYPOGRAPHY
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$Sans: var(--font-Primary);
+$Serif: var(--font-Display);
+$family-sans-serif: var(--font-Primary);
+
+$Light: 300;
+$Regular: 400;
+$Bold: 700;
+$ExtraBold: 800;
+
+$size-smallest-min: 8px;
+$size-smallest-max: 10px;
+$size-small-min: 10px;
+$size-small-max: 11px;
+$size-smallish-min: 12px;
+$size-smallish-max: 14px;
+$size-p-min: 16px;
+$size-p-max: 19px;
+$size-p2-min: 12px;
+$size-p2-max: 14px;
+
+$size-h1-min: 40px;
+$size-h1-max: 42px;
+$size-h2-min: 32px;
+$size-h2-max: 40px;
+$size-h3-min: 24px;
+$size-h3-max: 32px;
+$size-h4-min: 24px;
+$size-h4-max: 30px;
+$size-h5-min: 20px;
+$size-h5-max: 26px;
+$size-h6-min: 16px;
+$size-h6-max: 18px;
+$size-h7-min: 14px;
+$size-h7-max: 16px;
+
+
+//fluid scale functions
+$size-smallest-fluid: calc-interpolation($phone, $size-smallest-min, $widescreen, $size-smallest-max);
+$size-small-fluid: calc-interpolation($phone, $size-small-min, $widescreen, $size-small-max);
+$size-smallish-fluid: calc-interpolation($phone, $size-smallish-min, $widescreen, $size-smallish-max);
+$size-p-fluid: calc-interpolation($phone, $size-p-min, $desktop, $size-p-max);
+$size-p2-fluid: calc-interpolation($phone, $size-p2-min, $widescreen, $size-p2-max);
+$size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
+$size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $widescreen);
+$size-h3-fluid: between($size-h3-min, $size-h3-max, $phone, $widescreen);
+$size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
+$size-h5-fluid: between($size-h5-min, $size-h5-max, $phone, $widescreen);
+$size-h6-fluid: calc-interpolation($phone, $size-h6-min, $widescreen, $size-h6-max);
+$size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-max);
+
+
+//////////HEIGHTS & WIDTHS
+/////MOBILE FIXED
+$tabs-heigth: 32px;
+$selected-height: 8px;
+$picture-heigth: 240px;
+$btpHeader-size: 56px;
+$btn-height: 40px;
+$btpHeader-size-tablet: 72px;
+$menu-btn-height-mobile: 3rem;
+$menu-desktop-height: 330px;
+$nav-sticky-height: 64px;
+$breadcrump-height: 3rem;
+$share-bar-height: 3rem;
+$share-bar-height-desktop: 4.5rem;
+
+$footer-height: 21rem;
+
+///////////////DESKTOP FIXED
+$report-header-min-height: 392px;
+$report-header-max-height: 512px;
+$report-author-height: 4.5rem;
+$profile-header-height: 7.5rem;
+$footer-license-height-desktop: 42px;
+
+////////////>Tablet fluid
+$columns-gap: 1vw;
+$rows-gap: 5vh;
+
+$menu-header-height: between(64px, 80px, $phone, $tablet);
+$menu-items-height: between(48px, 64px, $phone, $tablet);
+$menu-margin-top: calc(#{$menu-items-height}* -7);
+$menu-height-tablet: 120px;
+
+$height-1-min: 32px;
+$height-1-max: 40px;
+$height-1-fluid: between($height-1-min, $height-1-max, $tablet, $widescreen);
+
+$picture-heigth: 240px;
+$profile-picture-large: 120px;
+$btpHeader-size-fluid: calc-interpolation($phone, 56px, $widescreen, 120px); ///keeps growing beyond the media query!!!
+
+
+//$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
+
+
+////////////////MARGINS
+
+$margin-vertical-small: .5rem;
+$margin-vertical-normal: 1rem;
+$margin-vertical-large: 1.5rem;
+$margin-vertical-extraLarge: 3.5rem;
+$margin-horizontal-small: .5rem;
+$margin-horizontal-regular: .8rem;
+$margin-horizontal-medium: 1.5rem;
+$margin-horizontal-large: 2rem;
+$margin-horizontal-extraLarge: 3rem;
+
+
+/////////////////PADDINGS
+$padding-vertical-small: 1rem;
+$padding-vertical-normal: 1.5rem;
+$padding-vertical-large: 2rem;
+$padding-vertical-extraLarge: 4rem;
+$padding-horizontal-small: 0.5rem;
+$padding-horizontal-regular: 1.25rem;
+$padding-horizontal-large: 3rem;
+
+$padding-report-content: 6vw;
+@mixin padding-master-desktop{
+     @include fluid-type(padding-left padding-right, $fullhd, 2560px, 32px, 72px);
+}
+
+//////////////////LINE WEIGHTS
+$line-heigth: 1px;
+$line-base: $line-heigth solid $Blue-light;
+
+///////////////////BORDERS
+@mixin border-heavy {
+    border: 3px solid;
+}
+
+@mixin outline-regular {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $Black;
+}
+
+@mixin outline-regular-white {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $White;
+}
+
+@mixin outline-regular-active {
+    border-width: 0;
+    box-shadow: 0 0 0 2pt $Yellow;
+}
+
+//////////////////////BULLETS
+$bullet-size: 12px;
+$bullet-outline-tick: 44px;

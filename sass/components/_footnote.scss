@@ -1,0 +1,139 @@
+///Grabbed from here: https://codepen.io/SitePoint/pen/QbMgvY
+///There is a issue regarding the use of <detail> in the html that changes the result of the footnotes counter each time its parent <detail> element open or closes.
+
+article {
+  counter-reset: footnotes-label figures-cap figures-tit;
+}
+
+[aria-describedby="footnote-label"] {
+    counter-increment: footnotes-label;
+    text-decoration: none;
+    color: inherit;
+    cursor: default; 
+    outline: none;
+  }
+
+  [aria-describedby="footnote-label"]{
+      &::after {
+      content: counter(footnotes-label); /* 1 */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
+      font-size: 0.75em;
+      letter-spacing: -.1em;
+      border: 2px solid $Orange;
+      border-radius: 50%;
+      font-weight: $Bold;
+      margin-left: 2px;
+      color: $Orange;
+      cursor: pointer;
+    }
+    &:active::after{
+        background-color: $Orange;
+        color: $White;
+      }
+    }
+  
+  /**
+   * Resetting the default focused styles on the number
+   */
+  [aria-describedby="footnote-label"]:focus::after {
+    outline: thin dotted;
+    outline-offset: 2px;
+  }
+  
+  [aria-label="Back to content"] {
+    //font-size: 0.8em;
+    &::after{
+      content: "";
+      display: inline-flex;
+      width: 1rem;
+      height: 1rem;
+      position: relative;
+      bottom: -2px;
+      -webkit-mask: url("/img/ios-arrow-dropup-circle.svg") no-repeat;
+      mask: url("/img/ios-arrow-dropup-circle.svg") no-repeat;
+      background-color: $Orange;
+      cursor: pointer;
+    }
+    &:active{
+      &::after{
+        background-color: $Grey;
+      }
+    }
+  }
+  
+  /**
+   * Highlight target note
+   */
+  footer :target {
+    background: $Yellow;
+    color: $Blue-dark;
+    border-radius: 0 0 50px 0;
+    [aria-label="Back to content"]{
+      &::after{
+        background-color: $Blue;
+      }
+    }
+  }
+  .start-count{
+    counter-reset: footnotes;
+  }
+  footer{
+    position: relative;
+  ol.footnotes{
+    list-style-type: none;
+    margin-top: $bullet-outline-tick*2;
+    margin-bottom: $bullet-outline-tick*2;
+
+    &::before{
+      content: "";
+      @include line-base;
+      width: 100vw;
+      position: absolute;
+      left: 0;
+      margin-left: $padding-report-content*-1;
+      margin-top: 0;
+      top: -2rem;
+      border-color: $Blue-light;
+    }
+    &::after{
+      @include bullet-center;
+      background-color: $Blue-light;
+    }
+    @include media(">=fullhd"){
+      padding-right: $padding-vertical-extraLarge*2;
+    }
+  }
+  ol.footnotes li{
+        font-size: $size-smallish-fluid;
+        line-height: 1.8;
+        z-index: 10;
+        position: relative;
+        &:target{
+          box-shadow: 0 0 0 6px $Yellow;
+        }
+        &:before{
+            counter-increment: footnotes;
+            content: counter(footnotes);
+            font-weight: $Bold;
+            font-size: $size-smallish-fluid;
+            color: $Orange-dark;
+            display: inline-block;
+            margin-left: $margin-vertical-extraLarge*-1;
+            width: $margin-vertical-extraLarge;
+            margin-right: 0;
+        }
+        &::after{
+          content: "";
+          border-bottom: 1px solid $Grey-light;
+          width: $margin-vertical-extraLarge*.7;
+          position: absolute;
+          left: $margin-vertical-extraLarge*-1;
+          top: 1.25em;
+          margin-left: 1.25em;
+        }
+    }
+}

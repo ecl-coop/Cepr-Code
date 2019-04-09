@@ -1,0 +1,62 @@
+.report-header{
+    padding-left: 4vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: -4vw;
+    figure{
+        order: 1;
+    }
+    .report-title-container{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        padding-top: between(48px, 72px, $phone, $tablet);
+        width: 94%;
+        margin-top: $margin-horizontal-extraLarge*-1;
+        z-index: 10;
+        background-color: white;
+        border-radius: 0 2rem 0 0;
+        margin-bottom: $margin-horizontal-extraLarge;
+        h1, .report-author, .tag{
+            padding-left: 4vw;
+        }
+    }
+    @include media(">=desktop"){
+        flex-direction: row;
+        min-height: $report-header-min-height;
+        padding-left: 0;
+        margin-left: 0;
+            figure{
+                order: 2;
+                flex: 1 1 auto;
+            }
+            .report-title-container{
+                justify-content: space-around;
+                order: 1;
+                padding-top: $padding-horizontal-large;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                flex: 1 1 auto;
+                h1, .report-author, .tag{
+                    padding-left: 0;
+            }
+        }
+        .report-author{
+            display: flex;
+            align-items: center;
+            @include fluid-type(height, $widescreen, 2560px, $report-author-height, $report-author-height*1.25);
+            //height: $report-author-height;
+            margin-top: auto;
+            justify-self: flex-end;
+            .credits{
+                padding-left: $padding-vertical-small;
+            }
+        }
+    }
+    @include media(">=widescreen"){
+        figure{
+            flex: 1 0 70%;
+        }
+    }
+}

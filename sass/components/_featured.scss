@@ -1,0 +1,55 @@
+.block-featured{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    background-color: $Black;
+}
+
+.featured-menu-container{
+    display: inline-flex;
+    order: 2;
+}
+
+.featured-article-container {
+    display: flex;
+    flex-flow: column;
+    flex-basis: 1 0 100%;
+    width: 100vw;
+    position: relative;
+    clear: both;
+    //float: left;
+}
+
+.featured-article-content{
+    //position: relative;
+    clear: both;
+    
+    h1.featured-title {
+        font-size: $size-h1-fluid;
+        font-family: $Serif;
+        color: $Green;
+        letter-spacing: -.025em;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-top: 1.5em;
+    }
+}
+
+.featured-picture{
+    position: relative;
+    top: 0;
+}
+
+.featured-summary{
+    font-family: $Sans;
+    color: $Grey;
+    font-size: 15px;
+}
+
+//////////////////////////////////////////
+////////////////////////////////
+
+.article-text-container{
+    padding: 1rem 2.5rem;
+}
+

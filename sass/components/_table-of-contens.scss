@@ -1,0 +1,100 @@
+@keyframes slide-down {
+    0% {
+        transform: translateY(-128px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.table-of-contents{
+    display: inline-flex;
+    padding: 0 $margin-vertical-large;
+    background-color: $White;
+    width: 70%;
+    details{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    summary{
+        height: $breadcrump-height;
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+        align-items: center;
+        @include small-text-sans-2;
+        line-height: 0;
+        color: $Blue-dark;
+        list-style-image: none;
+        &::-webkit-details-marker{
+            display: none;
+        }
+        &::before{
+            content: "";
+            height: 20px;
+            border-left: 2px solid $Grey-light;
+            margin-right: $margin-vertical-large;
+        }
+        &::after{
+            content: "";
+            -webkit-mask: url("/img/ios-arrow-down.svg") no-repeat;
+            mask: url("/img/ios-arrow-down.svg") no-repeat;
+            background-color: $Blue-dark;
+            width: 20px;
+            height: 20px;
+            margin-left: $margin-vertical-small;
+        }
+    }
+    dt{
+        padding: $padding-horizontal-small 0;
+        border-top: 1px dotted $Grey-light;
+        text-align: right;
+    }
+    dt a{
+        @include small-text-sans-2;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        color: $Grey;
+    }
+    @include media(">=desktop"){
+        width: 100%;
+        background-color: transparent;
+        dt{
+            padding-bottom: $padding-horizontal-small;
+            padding-top: $padding-horizontal-regular;
+        }
+        summary, dl{
+            background-color: $White;
+            box-shadow: $margin-vertical-large 0 0 $White,
+                        $margin-vertical-large*-1 0 0 $White;
+        }
+        summary{
+            justify-content: center;
+            &::before{
+                content: none;
+            }
+        }
+        .toc-sticky{
+            position: fixed;
+            top: 64px;
+            width: 25vw;
+            left: 0;
+            z-index: 99;
+            padding-left: $padding-report-content;
+            margin-left: $padding-report-content*-.5;
+            background-color: white;
+            animation: slide-down 0.5s ease-out;
+            *{
+                background-color: white;
+                box-shadow: none;
+            }
+        }
+        dt{
+            text-align: left;
+        }
+    }
+    [open] summary{
+        color: $Blue-light;
+    }
+}

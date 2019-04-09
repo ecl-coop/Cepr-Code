@@ -1,0 +1,16 @@
+.bibliography{
+    font-size: $size-smallish-fluid;
+    line-height: 1.7;
+    margin-left: $margin-vertical-extraLarge;
+    text-indent: $margin-vertical-extraLarge*-1;
+    dt{
+        margin-bottom: .5em;
+        &:last-of-type{
+            margin-bottom: 2em;
+        }
+    }
+    
+    @include media(">=fullhd"){
+        padding-right: $padding-vertical-extraLarge*2;
+    }
+}

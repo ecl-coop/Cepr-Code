@@ -1,0 +1,44 @@
+@mixin bullet {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      clip-path: circle();
+      background-color: inherit;
+}
+
+@mixin bullet-small {
+      content: "";
+      width: $bullet-size/2;
+      height: $bullet-size/2;
+      clip-path: circle();
+      background-color: inherit;
+}
+
+@mixin bullet-center {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      background-color: $Blue-dark;
+      @include absolute-center-vert;
+      top: -36px;
+      outline: $bullet-outline-tick solid white;
+      border-radius: 50%;
+}
+
+@mixin arrow-fordward {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      @include absolute-center-hor;
+      -webkit-mask: url("/img/ios-arrow-forward.svg") no-repeat;
+      mask: url("/img/ios-arrow-forward.svg") no-repeat;
+}
+
+@mixin arrow-back {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      @include absolute-center-hor;
+      -webkit-mask: url("/img/ios-arrow-back.svg") no-repeat;
+      mask: url("/img/ios-arrow-back.svg") no-repeat;
+}

@@ -1,0 +1,155 @@
+.column-header-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 100%;
+    margin: $margin-horizontal-medium 0;
+    //position: relative;
+    &:before,
+    &:after {
+        @include bullet;
+        background-color: $Blue-light;
+        align-self: center;
+    }
+    &:before{
+        margin-left: -5px;
+    }
+    &:after {
+        margin-right: -5px;
+    }
+}
+
+h4.column-header{
+    @include responsive-property("width", 95%, 98%, $phone, $widescreen); ///<<<<<<<<<<<<<<<<<is not working
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    color: $Blue-light;
+    flex: 1 0 auto;
+    text-align: center;
+    line-height: 1;
+    font-weight: $Regular;
+
+    &:before,
+    &:after {
+        border-top: $line-base;
+        border-top-width: 2px;
+        width: 45%;
+        content: "";
+        display: table-cell;
+    }
+
+    &:before {
+        right: 1.5%;
+        margin-right: $padding-vertical-small/2;
+    }
+
+    &:after {
+        left: 1.5%;
+        margin-left: $padding-vertical-small/2
+    }
+}
+
+.heading-3{
+    @include heading-3;
+    &-bold{
+        font-weight: $Bold;
+    }
+    &-light{
+        font-weight: $Light;
+    }
+}
+
+.heading-4{
+    @include heading-4;
+}
+.heading-4-bold{
+    @include heading-4;
+    font-weight: $Bold;
+}
+
+.heading-5{
+    font-family: $Sans;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: $Light;
+    text-transform: capitalize;
+    letter-spacing: 0;
+}
+
+.heading-6{
+    font-family: $Sans;
+    font-size: $size-h6-fluid;
+    line-height: 1.25;
+    font-weight: $Light;
+    text-transform: capitalize;
+    letter-spacing: 0;
+
+    &_bold{
+        font-weight: $Bold;
+        letter-spacing: 50;
+        text-transform: uppercase;
+    }
+}
+
+.heading-7{
+    @include heading-7;
+    margin-bottom: $margin-horizontal-small;
+    position: relative;
+
+    &-underline{
+                padding: 0 $padding-vertical-large;
+                padding-bottom: $padding-horizontal-small/2;
+                border-bottom: 1px solid $Green;
+
+                &:before,
+                &:after {
+                    @include bullet-small;
+                    background-color: $Green;
+                    position: absolute;
+                    bottom: ($bullet-size/4)*-1;
+                }
+                &::before {
+                    left: 0;
+                }
+                &:after {
+                    right: 0;
+                }
+            }
+    }
+
+@include media ('>=tablet') {
+    h2.column-header,
+    .h4.note-title {
+        font-size: $size-h4-fluid;
+    }
+    .heading-7-underline {
+        padding-left: 0;
+
+        &:before {
+            content: none;
+        }
+    }
+}
+
+@include media (">=desktop"){
+    .column-header-container{
+        overflow: visible;
+        margin-left: -10%;
+        &::after{
+            content: none;
+        }
+    }
+    h4.column-header{
+        justify-content: flex-start;
+        margin-right: -100%;
+        &:before {
+            width: 5%;
+        }
+        &:after{
+            width: 200%;
+        }
+    }
+}

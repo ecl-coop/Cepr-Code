@@ -1,0 +1,110 @@
+@mixin base-flex{
+    display: flex;
+    flex-direction: column;
+}
+@mixin base-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(6%, 8%));
+    grid-template-rows: auto;
+    grid-gap: $columns-gap;
+    grid-row-gap: $rows-gap;
+    grid-auto-flow: row;
+    @include padding-master-desktop;
+    margin: 0 auto;
+    padding-bottom: $padding-horizontal-large;
+    @include media(">=fullhd"){
+        padding-bottom: 10vh;
+    }
+}
+
+@mixin absolute-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+}
+
+@mixin absolute-center-vert {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+@mixin absolute-center-hor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value) {
+    & {
+        @each $property in $properties {
+            #{$property}: $min-value;
+        }
+
+        @media screen and (min-width: $min-screen) {
+            @each $property in $properties {
+                #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+            }
+        }
+
+        @media screen and (min-width: $max-screen) {
+            @each $property in $properties {
+                #{$property}: $max-value;
+            }
+        }
+    }
+}
+
+
+///////////////////////////////////////////
+
+@mixin responsive-property($property, $fromValue, $toValue, $fromBp: $tablet, $toBp: $widescreen) {
+
+    $fromValues: ();
+    $betweenValues: ();
+    $toValues: ();
+
+    @for $i from 1 through length($fromValue) {
+        $fv: nth($fromValue, $i);
+        $tv: nth($toValue, $i);
+
+        $bv: $fv;
+        $bvf: false;
+        $bvt: false;
+
+        @if (type-of($fv)=="number"and not unitless($fv) and unit($fv) !="%") {
+            $fv: if(unit($fv) !="px", ($fv / ($fv * 0 + 1) * 16) * 1px, $fv);
+            $bvf: $fv;
+        }
+
+        @if (type-of($tv)=="number"and not unitless($tv) and unit($tv) !="%") {
+            $tv: if(unit($tv) !="px", ($tv / ($tv * 0 + 1) * 16) * 1px, $tv);
+            $bvt: $tv;
+        }
+
+        @if ($bvf !=false and $bvt !=false) {
+            $bv: between($bvf, $bvt, $fromBp, $toBp);
+        }
+
+        $fromValues: append($fromValues, $fv);
+        $betweenValues: append($betweenValues, $bv);
+        $toValues: append($toValues, $tv);
+    }
+
+    #{$property}: $fromValues;
+
+    @media screen and (min-width: #{$fromBp}) {
+        #{$property}: $betweenValues;
+    }
+
+    @media screen and (min-width: #{$toBp}) {
+        #{$property}: $toValues;
+    }
+}

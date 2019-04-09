@@ -1,0 +1,4 @@
+.report-content > p {
+ @include paragraph;
+ margin-bottom: 1em;
+}

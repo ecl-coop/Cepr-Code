@@ -1,0 +1,85 @@
+.report-content{
+    padding: 0 $padding-report-content;
+    figure{
+        h5, &:before{
+            margin-right: $padding-report-content*-1;
+            margin-left: $padding-report-content*-1;
+        }
+    }
+}
+
+#report-grid{
+
+    @include media(">=tablet"){
+        .grid-container{
+            padding-top: 0;
+        }
+    }
+    @include media(">=desktop") {
+        @include base-grid;
+        .report-content{
+            padding: 0;
+            padding-left: $padding-vertical-normal;
+            overflow: visible;
+            position: relative;
+            top: negate($rows-gap,-1);
+            margin-bottom: negate($rows-gap,-1);
+            figure{
+                h5, &:before{
+                    margin-right: 0;
+                margin-left: $padding-vertical-normal*-1;
+                }
+            }
+        }
+        .icons-share{
+            grid-column: 6/-1;
+            grid-row: 2;
+        }
+
+        .report-header{
+            grid-column: 2 / -1;
+            grid-row: 1;
+        }
+        #report-toc{
+            position: relative;
+            top: negate($rows-gap,-1);
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+        #report-content{
+            grid-column: 4 / 12;
+            grid-row: 3;
+        }
+        #banner-subscribe{
+            grid-column: 1 / span 11;
+            grid-row: 5;
+        }
+        .block-report-related{
+            grid-column: 3 / span 7;
+            grid-row: 6;
+        }
+        .profile-card{
+            grid-column: 4 / span 7;
+            grid-row: 4;
+        }
+    }
+
+    @include media(">=fullhd") {
+        .report-header{
+            grid-column: 1 / -1;
+        }
+        #report-content{
+            //grid-column: 4 / -1;
+        }
+        .grid-container {
+            padding: 0 10%;
+        }
+        #banner-top{
+            grid-column: 6 / -1;
+        }
+        #block-featured{
+            grid-column: 1 / span 8;
+            margin-top: calc(#{$height-1-fluid}*-1);
+        }
+    }
+}

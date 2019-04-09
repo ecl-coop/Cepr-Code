@@ -1,0 +1,70 @@
+.report-related {
+    grid-area: related;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: $padding-horizontal-regular;
+    margin: $margin-horizontal-large 0;
+    margin-bottom: calc(#{$margin-horizontal-large}*4);
+    .heading-5 {
+        a {
+            color: $White;
+            transition: all .2s;
+        }
+
+        :hover {
+            color: $Green;
+        }
+
+        :active {
+            color: $Green-dark;
+        }
+    }
+
+    .heading-7,
+    .preheading {
+        align-self: center;
+        text-align: center;
+        color: $Green;
+        line-height: 1;
+    }
+    .heading-7{
+        margin-bottom: $margin-vertical-large;
+    }
+
+    .credits {
+        font-size: $size-smallest-fluid;
+        color: $Grey-light;
+    }
+    .list-2-item:last-child{
+        
+        &:before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(transparent, white);
+            position: absolute;
+        }
+    }
+}
+
+@include media(">=tablet") {
+    .article-related {
+            padding-top: $padding-horizontal-regular;
+            padding-bottom: $padding-horizontal-large;
+        .heading-7,
+        .preheading {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        ul.list-2 {
+            flex-direction: row;
+        }
+
+        .list-item {
+            flex: 0 0 50%;
+            padding-right: $padding-vertical-large;
+        }
+    }
+}

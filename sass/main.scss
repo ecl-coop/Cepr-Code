@@ -1,0 +1,55 @@
+@import "node_modules/include-media/dist/include-media.scss";
+@import "utilities/functions.scss";
+@import "utilities/mixins.scss";
+@import "base.scss";
+@import "elements/variables.scss";
+@import "mixins/typography-mixins.scss";
+
+//elements
+@import "elements/bullets.scss";
+@import "elements/headings.scss";
+@import "elements/small-texts.scss";
+@import "elements/tag.scss";
+@import "elements/lines.scss";
+@import "elements/credits.scss";
+@import "elements/buttons.scss";
+@import "elements/pictures.scss";
+@import "elements/logo.scss";
+@import "elements/paragraphs.scss";
+
+
+//components
+@import "components/article-hero.scss";
+@import "components/article-related.scss";
+@import "components/menu.scss";
+@import "components/lists.scss";
+@import "components/banners.scss";
+@import "components/side-blogs";
+@import "components/report-texts";
+@import "components/figure-graphics";
+@import "components/profile-card";
+@import "components/breadcrumps";
+@import "components/table-of-contens";
+@import "components/share-bar";
+@import "components/footnote.scss";
+@import "components/bibliography.scss";
+
+//blocks
+@import "blocks/block-featured.scss";
+@import "blocks/block-BeatThePress.scss";
+@import "blocks/block-inTheNews.scss";
+@import "blocks/block-Footer.scss";
+@import "blocks/block-lists.scss";
+@import "blocks/block-report-related.scss";
+@import "blocks/block-report-header";
+
+//layouts
+@import "layouts/home-grid.scss";
+@import "layouts/report-grid.scss";
+
+
+@import "node_modules/normalize.css/normalize.css";
+@import "node_modules/bulma/sass/utilities/_all.sass";
+@import "node_modules/bulma/sass/grid/columns.sass";
+@import "node_modules/bulma/sass/base/_all.sass";
+@import "node_modules/bulma/sass/components/level.sass";

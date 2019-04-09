@@ -1,0 +1,21 @@
+.picture-round-large{
+    clip-path: circle();
+    height: 100%;
+    flex: 0 0 auto;
+    object-fit: cover;
+}
+
+
+.report-img-hero{
+    display: flex;
+    @include fluid-type(height, $desktop, 1920px, $report-header-min-height, $report-header-max-height);
+    *{ 
+        object-fit: cover;
+    }
+    @include media(">=desktop"){
+        margin-left: $columns-gap;
+        img{
+            border-radius: 0 100px 0 0;
+        }
+    }
+}

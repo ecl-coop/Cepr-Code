@@ -1,0 +1,93 @@
+.profile-card{
+    display: flex;
+    //flex-flow: column;
+    flex-wrap: wrap;
+    width: 83%;
+    margin: $margin-horizontal-large auto;
+
+    .profile-picture{
+        display: flex;
+        align-items: center;
+        height: $profile-header-height;
+        &::after{
+            content: none;
+        }
+    }
+    .profile-data{
+        display: flex;
+        flex-flow: column;
+        padding-left: $padding-vertical-small;
+        align-self: center;
+    }
+    .profile-name, .profile-job{
+        font-size: $size-h5-fluid;
+        font-family: $Serif;
+        color: $Blue-dark;
+    }
+    .profile-name{
+        font-weight: $Bold;
+    }
+    .profile-summary{
+        margin: $margin-horizontal-regular 0;
+        padding: 0 $padding-vertical-normal;
+        font-family: $Sans;
+        font-weight: $Light;
+        line-height: 1.46;
+        font-size: $size-p-fluid;
+        color: $Grey;
+    }
+    @include media(">=desktop"){
+        display: grid;
+        width: 100%;
+        grid-template-columns: minmax(144px, 196px) 1fr;
+        grid-template-rows: auto;
+        margin: 0;
+        border-top: 1px solid $Grey-light;
+        border-bottom: 1px solid $Grey-light;
+        .profile-picture{
+            grid-column: 1;
+            grid-row: 1/-1;
+            position: relative;
+            top: 40%;
+            margin-top: -20%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding-right: $padding-vertical-large;
+            @include fluid-type(height, $desktop, 1920px, 144px, 172px);
+            &::after{
+                content: "";
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                background: url("/img/profile-picture-frame.svg") no-repeat right;
+                @include fluid-type(right, $desktop, 1920px, 28px, 20px);
+                top: 3px;
+            }
+
+        }
+        .profile-data{
+            align-self: end;
+            padding: 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .profile-job{
+            margin-left: $margin-vertical-small;
+            &::before{
+                content: "";
+                border-left: 2px solid $Grey;
+                margin-right: $margin-vertical-small;
+            }
+        }
+        .profile-social{
+            flex: 1 0 100%;
+        }
+        .profile-summary{
+            grid-column: 2;
+            align-self: start;
+            padding: 0;
+            margin-bottom: $margin-horizontal-large;
+        }
+    }
+}

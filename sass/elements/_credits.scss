@@ -1,0 +1,16 @@
+.credits, .date{
+    @include small-text;
+    color: $Grey;
+
+    &-dark{
+        color: $Grey-light;
+    }
+}
+.author{
+    font-weight: 700;
+}
+
+.publication-name{
+    text-transform: capitalize;
+    margin-right: .5em;
+}

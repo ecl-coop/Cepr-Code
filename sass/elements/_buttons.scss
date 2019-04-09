@@ -1,0 +1,161 @@
+$btn-radius: $btn-height/2;
+
+%btn-base{
+    cursor: pointer;
+    height: $btn-height;
+    @include border-heavy;
+    @include small-text;
+    border-radius: $btn-height;
+    margin: .5rem;
+    padding: 0 $btn-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+%shadow-base{
+     height: 120%;
+     width: 115%;
+     content: "";
+     position: absolute;
+     top: 0px;
+     left: -3px;
+}
+
+button, button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  background: none;
+  background-color: transparent;
+  -webkit-appearance: button;
+  -webkit-user-select: none;
+  -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+
+.btn-1{
+    @extend %btn-base;
+    background-color: $White;
+}
+
+.btn-2 {
+    @extend %btn-base;
+    font-weight: $Bold;
+    background-color: transparent;
+
+    &-texture-orange{
+        background: url("/img/btn-2_textureOr.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-black {
+        background: url("/img/btn-2_texture.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-blueLight {
+        background: url("/img/btn-2_textureBlueLight.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-texture-green {
+        background: url("/img/btn-2_textureGreen.png") center no-repeat;
+        background-size: cover;
+    }
+
+    &-shadow-black{
+        position: relative;
+        &::after{
+            @extend %shadow-base;
+            background: url("/img/btn-2_shadows.png") center no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    &-shadow-green {
+        position: relative;
+        &::after {
+            @extend %shadow-base;
+            background: url("/img/btn-2_shadowGreen.png") center no-repeat;
+            background-size: 100%;
+        }
+    }
+}
+
+.btn-5{
+    min-width: 40px;
+    height: 24px;
+    @extend %btn-base;
+    border-width: 1px;
+    font-size: $size-smallest-fluid;
+    font-weight: $ExtraBold;
+
+    &-yellow{
+        background-color: $Yellow;
+    }
+
+    &-small{
+        width: 32px;
+        height: 16px;
+    }
+}
+
+.btn-plus{
+    fill: $Blue-dark;
+    filter: drop-shadow(0 2px 3px $Grey-light);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    svg{z-index: 10;}
+    
+    
+    cursor: pointer;
+    &:hover{
+        fill: $Orange;
+    }
+    &:active{
+        fill: $White;
+        &::after{
+        content: "";
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $Grey;
+        @include absolute-center-vert;
+        }
+    }
+}
+
+#btn-toTop{
+    //display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    z-index: 500;
+    border: none;
+    outline: none;
+    transform: translateY(200px);
+    -webkit-mask: url("/img/ios-arrow-dropup.svg") no-repeat;
+      mask: url("/img/ios-arrow-dropup.svg") no-repeat;
+      width: 4rem;
+      height: 4rem;
+      background-color: $Grey-light;
+      transition: all .3s;
+      cursor: pointer;
+}
+
+.toTopActive{
+    transform: translateY(0px) !important;
+    opacity: 50;
+}

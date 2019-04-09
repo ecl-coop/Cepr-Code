@@ -1,0 +1,17 @@
+$bullet-size: 12px;
+
+@mixin bullet {
+      content: "";
+      width: $bullet-size;
+      height: $bullet-size;
+      clip-path: circle();
+      background-color: $Black;
+}
+
+@mixin bullet-small {
+      content: "";
+      width: $bullet-size/2;
+      height: $bullet-size/2;
+      clip-path: circle();
+      background-color: $Black;
+}

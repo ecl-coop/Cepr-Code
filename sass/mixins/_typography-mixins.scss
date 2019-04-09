@@ -1,0 +1,128 @@
+/////////////////////////////////
+//////////////////SMALL-TEXTS
+%small-text-base{
+    font-family: $Sans;
+    font-size: $size-small-fluid;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+%smallest-sans-base {
+    font-family: $Sans;
+    font-size: $size-smallest-fluid;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
+
+@mixin smallest-serif-base{
+    //@include fluid-type(font-size, $phone, $widescreen, $size-smallest-min, $size-smallest-max);
+    font-family: $Serif;
+    font-size: $size-small-fluid;
+    letter-spacing: 10;
+    line-height: 1.25;
+}
+
+@mixin smallest-text {
+    font-size: $size-smallest-fluid;
+    @extend %small-text-base;
+}
+
+@mixin small-text {
+    @extend %small-text-base;
+}
+@mixin small-text-sans-2 {
+    @extend %small-text-base;
+    font-size: $size-smallish-fluid;
+}
+
+@mixin small-text-serif-1 {
+    @extend %small-text-base;
+    font-family: $Serif;
+}
+
+@mixin small-text-sans-4 {
+    @extend %smallest-sans-base;
+    font-style: italic;
+    font-weight: $Regular !important;
+    text-transform: capitalize;
+}
+
+@mixin small-text-serif-1 {
+    @include smallest-serif-base;
+    @include fluid-type(font-size, $phone, $fullhd, $size-smallish-min, $size-smallish-max);
+    letter-spacing: .075em;
+    text-transform: uppercase;
+}
+
+@mixin small-text-serif-2 {
+    @include smallest-serif-base;
+    font-weight: $Regular;
+    text-transform: capitalize;
+}
+
+@mixin small-text-serif-3 {
+    @include smallest-serif-base;
+    font-weight: $Light;
+    font-style: italic;
+} 
+
+@mixin small-text-serif-3_underline {
+    @include smallest-serif-base;
+    font-weight: $Light;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+/////////////////////////////////
+//////////////////HEADINGS
+
+@mixin heading-2 {
+    font-family: $Serif;
+    font-weight: $Bold;
+    font-size: $size-h2-fluid;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-transform: capitalize;
+    margin-top: $margin-horizontal-small;
+    margin-bottom: $margin-horizontal-regular;
+}
+
+@mixin heading-3 {
+    font-family: $Sans;
+    font-weight: $Regular;
+    font-size: $size-h3-fluid;
+    color: $Black;
+    margin: $margin-horizontal-regular 0;
+    margin-top: $margin-horizontal-small;
+    line-height: 1.25;
+}
+
+@mixin heading-4 {
+    text-transform: uppercase;
+    font-size: $size-h4-fluid;
+    letter-spacing: .15em;
+    font-weight: $Light;
+    line-height: 1;
+}
+
+@mixin heading-5 {
+    font-size: $size-h5-fluid;
+}
+
+@mixin heading-7 {
+    text-transform: uppercase;
+    font-size: $size-h7-fluid;
+    letter-spacing: .15em;
+    font-weight: $ExtraBold;
+}
+
+/////////////////////////////////
+//////////////////PARAGRAPHS
+
+@mixin paragraph-small {
+    font-family: $Sans;
+    font-size: $size-p2-fluid;
+    line-height: 1.25;
+}

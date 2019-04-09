@@ -1,0 +1,74 @@
+.figure-graphic{
+    counter-increment: figures-tit;
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+
+        &:before{
+            content: "figure "counter(figures-tit);
+            font-size: $size-smallish-fluid;
+            font-weight: $Bold;
+            color: $Orange-dark;
+            text-transform: capitalize;
+            padding-left: $padding-vertical-normal;
+        }
+    
+        h5{
+            background-color: $Blue;
+            color: $White;
+            display: flex;
+            min-height: 1.5rem;
+            margin-bottom: $margin-horizontal-small;
+            padding-left: $padding-vertical-normal;
+        }
+        img{
+            flex: 0 1 auto;
+            object-fit: contain;
+            align-self: flex-start;
+        }
+        capfigure{
+            &:before{
+                content: "Source and notes: ";
+                color: $Blue;
+                display: inline-block;
+                padding-top: 2em;
+            }
+            @include small-text-serif-3-underline;
+            color: $Orange-dark;
+        }
+        @include media(">=desktop"){
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            &::before{
+                position: absolute;
+                padding-left: 0;
+                width: 20%;
+                padding-right: $padding-vertical-normal*2;
+                right: 100%;
+                text-align: right;
+            }
+            h5{
+                background-color: inherit;
+                color: $Blue-dark;
+                border-left: 1px solid $Grey;
+                padding-right: $padding-vertical-extraLarge*3;
+            }
+        }
+        @include media(">=widescreen"){
+            padding-top: 3rem;
+            margin-bottom: 3.5rem;
+        }
+  }
+
+  [aria-describedby="figure-label"]{
+      counter-increment: figures-cap;
+  }
+
+  [aria-describedby="figure-label"]::before {
+    content: '[' "Fig." counter(figures-cap) ']';
+            font-weight: $Bold;
+            color: $Orange-dark;
+            font-size: $size-smallish-fluid;
+  }

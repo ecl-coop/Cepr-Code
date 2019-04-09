@@ -1,0 +1,201 @@
+.block-BeatThePress{
+    background-color: $Black;
+    display: flex;
+    flex-flow: column;
+    margin: $margin-horizontal-large auto;
+    padding: 0 $padding-vertical-small;
+    width: 90%;
+    padding-bottom: $padding-horizontal-large;
+    .heading-4{
+            padding-top: $btpHeader-size;
+            padding-left: $padding-vertical-small;
+            em{
+                display: block;
+            }
+    }
+    .heading-4, .heading-6{
+        color: $Green-dark;
+    }
+
+    p{
+        @include paragraph-small;
+        color: $White;
+        margin-top: $margin-horizontal-regular;
+        padding: 0 $padding-vertical-normal;
+    }
+
+    .list-3-container{
+        margin-top: $margin-horizontal-large;
+    }
+    .list-3-item {
+        border-bottom-color: $Green-dark;
+    }
+}
+
+.BeatThePress-Header{
+    display: flex;
+    flex-flow: column;
+    padding: 0 $padding-vertical-normal;
+    position: relative;
+    margin: 0 $padding-vertical-small*-1;
+
+    &:before{
+        width: 100%;
+        height: $btpHeader-size;
+        position: absolute;
+        right: 0;
+        top: -16px;
+        content: "";
+        background: url("/img/btp_header.svg") right no-repeat;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: $btpHeader-size - 16px;
+        border-bottom: 1px solid $Green-dark;
+    }
+}
+
+.buttons-container{
+    margin-top: $margin-horizontal-large;
+    display: flex;
+    flex: .5 .5 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 80%;
+    align-self: center;
+    .btn-1,
+    .btn-2 {
+        border-color: $Green-dark;
+        margin: $margin-horizontal-small 0;
+        &:hover{
+            color: $Yellow-dark;
+            border-color: inherit;
+        }
+        // &:active{
+        //     color: $Orange;
+        //     background-color: $Blue-dark;
+        // }
+    }
+
+    .btn-1 {
+        background-color: transparent;
+        color: $Green-dark;
+        margin-left: $margin-vertical-small;
+    }
+
+    .btn-2 {
+        background-color: $Green-light;
+        color: $White;
+        margin-right: $margin-vertical-small;
+    }
+}
+
+@include media(">=tablet"){
+    .block-BeatThePress{
+        padding: 0 $padding-vertical-extraLarge;
+    }
+    .BeatThePress-Header {
+        margin: 0 $padding-vertical-extraLarge*-1;
+        .heading-4, p{
+            padding-left: $padding-vertical-extraLarge;
+            padding-right: $padding-vertical-extraLarge;
+        }
+        &:before {
+            height: $btpHeader-size-tablet;
+            top: -20px;
+        }
+        &:after {
+            margin-top: $btpHeader-size-tablet - 20px;
+        }
+    }
+    .buttons-container {
+        justify-content: space-evenly;
+    }
+}
+
+@include media(">=desktop"){
+    .block-BeatThePress{
+        width: 150%;
+        margin-left: -50%;
+        padding-left: 50%;
+        margin-top: 0;
+        margin-bottom: 0;
+            .heading-3 {
+                color: $Green;
+            }
+            .list-3-container{
+                margin: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 0;
+                justify-content: space-between;
+                :nth-child(3) {
+                    border: none;
+                }
+                .list-3-item {
+                    flex: 0 0 45%;
+                }
+            }
+            .heading-6{
+                color: $White;
+            }
+            .BeatThePress-Featured{
+                padding-top: $padding-horizontal-regular;
+            }
+    }
+    .BeatThePress-Header{
+        height: $btpHeader-size-fluid;
+        justify-content: space-between;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+
+        .heading-4{
+            padding-right: 0;
+            padding-top: 0;
+            z-index: 5;
+            font-size: $size-h4-min;
+        }
+        &::before{
+            content: "";
+            background-image: none;
+            height: $btpHeader-size-fluid;
+            width: 200%;
+            border-bottom: 1px solid $Green;
+            top: 0;
+        }
+        &:after{
+            position: absolute;
+            background: url("/img/Beat_The_Press.svg") right no-repeat;
+            background-size: 23%;
+            background-position-x: 97%;
+            top: 0;
+            height: 120%;
+            z-index: 4;
+            border-bottom: none;
+            @include fluid-type(margin-top, $desktop, $ultrahd, -5px, -10px);
+            overflow: visible;
+        }
+    }
+}
+@include media(">=widescreen") {
+    .block-BeatThePress{
+        div:not(:first-child){
+            padding-right: 5%;
+        }
+        
+    } 
+    .BeatThePress-Header{
+        .heading-4 {
+            em {
+                display: inline;
+            }
+        }
+     }
+}

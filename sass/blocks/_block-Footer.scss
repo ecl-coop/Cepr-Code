@@ -1,0 +1,175 @@
+.block-footer{
+    background-color: $White;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    height: $footer-height;
+    justify-content: flex-start;
+    border-top: 1px solid $Blue;
+    padding-top: $padding-horizontal-regular*2;
+    position: relative;
+
+    .line-2{
+        margin: 0;
+    }
+}
+
+.footer-ident{
+    flex: 0 0 auto;
+}
+.footer-logo{
+    height: 4rem;
+    flex: 1 0 auto;
+}
+
+.footer-list{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto 0;
+    flex: .80 0 auto;
+    padding-bottom: $padding-horizontal-large;
+}
+
+.footer-item a{
+    @include small-text;
+    font-size: .75rem;
+    color: $Blue-dark;
+    font-weight: $ExtraBold;
+}
+
+.footer-social{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    height: 8%;
+    position: absolute;
+    flex: 0 1 auto;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    .social-logo {
+        width: auto;
+        height: 100%;
+        &:not(:first-of-type) {
+            padding-left: $padding-vertical-small;
+        }
+    }
+}
+
+.footer-license{
+    height: 17%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid $Blue-light;
+    p{
+        @include smallest-text;
+        width: 85%;
+        color: $Blue-light;
+        text-transform: none;
+    }
+}
+
+@include media(">=desktop") {
+    .block-footer{
+        overflow: visible;
+        &::before{
+            content: "";
+            background-color: $White;
+            height: 100%;
+            flex: 1 0 auto;
+        }
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include padding-master-desktop;
+        color: $Blue;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: $padding-horizontal-large;
+
+        .footer-ident{
+            position: relative;
+            margin-right: $margin-vertical-extraLarge;
+            flex: 1 0 auto;
+        }
+        .footer-logo{
+            fill: $Blue-light;
+            position: relative;
+        }
+        ////////////////////////////////
+        //////This is a <img> elment fix due to I was uncapable to make the svg version to show
+        img.footer-logo{
+            height: 46px;
+            margin-bottom: 4px;
+        }
+        .footer-list{
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            order: 2;
+            margin-top: 56px;
+            flex: 1 1 auto;
+            max-width: 540px;
+            margin-bottom: 0;
+        }
+        .footer-item{
+            flex: 1 0 50%;
+        }
+        .footer-license{
+            flex: 1 0 200%;
+            text-align: center;
+            margin-left: -50%;
+            margin-right: -50%;
+            height: $footer-license-height-desktop;
+            order: 5;
+            display: flex;
+            align-self: flex-end;
+            em a{
+                color: $Orange-dark;
+                font-weight: $Regular;
+                text-decoration: underline;
+            }
+        }
+        .footer-social{
+            justify-content: flex-start;
+            bottom: -30%;
+            left: 0;
+            height: 20%;
+            flex: 1 0 100%;
+        }
+        .paragraph-2-light > strong{
+            color: $Blue;
+        }
+        &:after{
+            content: none;
+        }
+    }
+}
+
+@include media(">=widescreen"){
+    .block-footer{
+        &:after{
+            content: "";
+            background: url("/img/footer_illustration.png") right no-repeat;
+            background-size: cover;
+            position: relative;
+            bottom: 25%;
+            flex: 1 0 auto;
+            order: 3;
+            height: 125%;
+            min-width: 20%;
+            @include fluid-type(margin-right, $desktop, 2560px, -32px, -320px);
+        }
+    }
+}
+@include media(">=fullhd"){
+    .block-footer{
+        .footer-list{
+            max-width: unset;
+        }
+    }
+}

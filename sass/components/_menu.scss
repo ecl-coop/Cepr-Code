@@ -1,0 +1,604 @@
+/*This is a three level menu that turns into a Mega Menu of one level on Desktop.
+The structure is: Container > Item > Target on each level.
+The accompaining Js is a very rudimentary implementaion just to show the basic functionality, it have to be rebuild by the Development Team.
+*/
+////////////////////////////////////////////
+/////MENU HEADER STYLES
+
+.icon-cepr, .logo-med {
+        display: none;
+    }
+.menubar__header {
+        transition: all .35s;
+        height: 4rem;
+        background-color: $White;
+        padding: 0 1.5rem;
+        z-index: 999;
+        position: relative;
+        border-bottom: 1px solid $Black;
+
+        &[data-state=open]{
+            background-color: $Black;
+            #menubar__logo{
+                height: 80%;
+            }
+            .menubar__btn,
+            .menubar__search {
+                fill: $White;
+                align-self: center;
+            }
+            .menubar__btn{
+                transform: rotateX(180deg);
+            }
+            .icon-cepr {
+                display: flex;
+                fill: $White;
+                align-self: center;
+            }
+            .logo-cepr{
+                display: none;
+            }
+        }
+    }
+
+.menubar__toggle,
+.search-toggle {
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    height: $menu-btn-height-mobile;
+}
+#menubar__logo,
+.menubar__btn,
+.menubar__search {
+    transform: rotateX(0deg);
+    position: relative;
+    height: 50%;
+}
+
+.menubar__btn,
+.menubar__search {
+    fill: $Black;
+    align-self: center;
+}
+
+////////////////////////////////////////////////////////
+///////////Base Functionality
+#accordian ul ul {
+    display: none;
+}
+
+#accordian li.active>ul {
+    display: block;
+}
+
+/////////////////////////////////////////////////////////
+//////////Menu Styles
+.nav{
+    display: block;
+    position: relative;
+}
+
+#accordian ul ul {
+    margin-left: $margin-vertical-normal;
+    box-shadow: $margin-vertical-normal*-1 0 $Blue-light;
+}
+
+#accordian ul ul ul {
+    margin-left: $margin-vertical-large;
+    box-shadow: $margin-vertical-large*-1 0 $Blue-light;
+}
+//////////////////////////////////////////////////////TEMPORAL SOLUTION, IT WORKS ON >TABLET BUT BREAKS MOBILE
+    #accordian ul ul li {
+        @extend .active;
+    }
+
+#menubar-container {
+    margin-top: $menu-margin-top;
+    height: 0%;
+    transition: all .35s;
+    background-color: $Black;
+    list-style: none;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100vw;
+    justify-content: center;
+
+    &[data-state=open] {
+        margin-top: 0;
+        height: 100%;
+    }
+}
+    .menu-container,
+    .submenu-container {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        justify-content: center;
+        background-color: $Black;
+        color: $White;
+         
+        &[data-state=open] {
+            display: flex;
+            background-color: red;
+            flex: 0 0 100%;
+    }
+}
+
+    .menubar-item,
+    .menu-item,
+    .submenu-item,
+    .menubar-item-donate,
+    .backto-menubar, .backto-menu {
+        padding-left: 2rem;
+        min-width: 100%;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+        height: $menu-btn-height-mobile;
+        border-bottom: 0.5px solid $Blue-light;
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.10s;
+        position: relative;
+}
+
+.menubar-item{
+        &:active{
+            background-color: $Blue-light;
+            border-bottom: 0;
+            .menubar-target {
+                color: $Black;
+            }
+        }
+    }
+    .menu-item {
+        &:active {
+            background-color: $Blue-light;
+            border-bottom: 0;
+            .menu-target {
+                color: $Black;
+            }
+        }
+    }
+
+    .submenu-item {
+        &:active {
+            background-color: $Blue-light;
+            border-bottom: 0;
+            .submenu-target {
+                color: $Black;
+            }
+        }
+    }
+
+    .menubar-target, .menu-target, .submenu-target {
+        flex: 0 0 100%;
+        flex-wrap: nowrap;
+        align-self: center;
+        color: $White;
+        transition: all 0.25s;
+    }
+
+    .menubar-target, .menubar-target-donate{
+        text-transform: uppercase;
+    }
+    .menu-target,
+    .submenu-target {
+        text-transform: capitalize;}
+
+.menubar-item-donate{
+    background-color: var(--color-Action-light);
+    background-image: url("/img/donate-background.svg");
+    background-size: 120%;
+    background-position-x: center;
+    border-bottom: none;
+    padding-top: 0;
+
+    &:hover {
+        .menubar-target-donate {
+        font-weight: 800;
+        color: $Black;
+        letter-spacing: 0.05em;
+        }
+    }
+    &:active{
+        background-color: var(--color-Accent-dark);
+        .menubar-target-donate {
+            color: $White;
+            transform: scale(.90);
+        }
+    }
+}
+.menubar-target-donate{
+    color: var(--color-Primary-dark);
+    align-self: center;
+    font-family: var(--font-Primary);
+    font-weight: 700;
+    transition: all 0.15s;
+}
+
+.menu__toggle, .submenu__toggle{
+    display: flex;
+    &:after{
+        padding-right: $padding-vertical-large;
+        margin-left: auto;
+        content: "\276F";
+        font-size: 14px;
+        transform-origin: left;
+        transition: all 0.4s;
+    }
+    &[data-state=open]{
+        color: $Orange;
+        &:after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////
+///////////////////transition @media Query
+
+@include media ('>phone', '<tablet') {
+        .menubar__header {
+            height: $menu-header-height;
+        }
+
+        .menubar-item,
+        .menu-item,
+        .submenu-item,
+        .menubar-item-donate {
+            height: $menu-items-height;
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////MENU HEADER TABLET
+
+@include media ('>=tablet') {
+
+    #nav{
+        display: grid;
+        grid-template-columns: minmax(33%, 50%) 1fr;
+        grid-template-rows: 47% 53%;
+        padding: 0 $padding-vertical-large;
+        width: 100%;
+        background-color: $White;
+        border-bottom: 0.8px solid $Black;
+        height: $menu-height-tablet;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+
+        .level{
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            height: 100%;
+            align-self: center;
+        }
+    }
+////////////////////////////////////////////////////////////////
+/////////////////////STICKY MENU STYLE
+@keyframes slide-down {
+    0% {
+        transform: translateY(-64px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+    .nav-sticky {
+        &::before {
+            content: "";
+            min-width: 25%;
+            flex: 0 1 auto;
+            height: 80%;
+            background: url("/img/09_logo_H_small_diapo.svg") left no-repeat $Black;
+            background-size: contain;
+            display: flex;
+        }
+        display: flex;
+        position: fixed;
+        height: $nav-sticky-height;
+        width: 100%;
+        z-index: 100;
+        border-bottom: 1px solid $Grey-lilac;
+        align-items: center;
+        top: 0;
+        left: 0;
+        @include padding-master-desktop;
+        background-color: $Black;
+        animation: slide-down 0.3s ease-in;
+        #menubar-container{
+            background-color: transparent;
+            align-items: center;
+            .menubar-target{
+                color: $White;
+                &[data-state=open] {
+                    color: $Blue-light;
+                }
+            }
+        }
+        .menu-container{
+            left: -35vw;
+            top: 12px;
+        }
+        * {
+            justify-content: space-evenly !important;
+            fill: $White;
+        }
+    }
+
+////////////////////////////////////////////////////
+    #accordian{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    #accordian li.active>ul {
+        display: flex !important;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    #accordian li.active ul > li {
+        height: auto;
+        flex: 0 1 25%;
+        padding: $padding-horizontal-small 0;
+    }
+    #accordian ul ul {
+        margin-left: 0;
+        box-shadow: none;
+    }
+
+    #accordian ul ul ul {
+        margin-left: 0;
+        box-shadow: none;
+        border-left: 1px solid $Blue-light;
+    }
+    .menubar__header {
+        z-index: 3;
+        grid-column: 1;
+        grid-row: 1 / 2;
+        padding-left: 0;
+        padding-right: 0;
+        border-bottom: 0;
+        position: relative;
+        height: 100%;
+        &[data-state=open],
+        &[data-state=closed] {
+            background-color: transparent;
+        }
+    }
+
+    #menubar__logo {
+        height: 80%;
+        margin-right: 0;
+    }
+    .logo-cepr{
+        width: auto;
+    }
+
+    .menubar__toggle {
+        display: none;
+    }
+
+    .menubar__search{
+        display: flex;
+        align-items: center;
+        margin-right: $margin-vertical-small;
+    }
+    
+    #navbar-tablet{
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        flex: 0 0 100%;
+        fill: $Blue;
+        color: $Blue;
+        position: relative;
+        svg{
+            max-height: 24px;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: $padding-vertical-large*-1;
+            width: calc-interpolation($tablet, 600px, $widescreen, 1024px);
+            height: 100%;
+            background: url(/img/header-desktop_background.svg), linear-gradient(to right, $White, rgba(248,248,248,0)) right no-repeat;
+            background-blend-mode: screen;
+            border: 0px;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, rgba(248, 248, 248, 0), $Grey-light);
+            border-image-slice: 1;
+        }
+
+        :not(:last-child){
+            margin-right: $margin-vertical-normal;
+        }
+        :last-child{
+            margin-right: 0;
+        }
+        svg{
+            z-index: 5;
+        }
+        .btn-5{
+            margin-left: 0;
+        }
+    }
+
+//////////////////////////////////////////////////
+/////////////////MENU CONTENT TABLET
+    #menubar-container{
+        &[data-state=closed],
+        &[data-state=open] {
+            margin-top: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: transparent;
+            width: 100%;
+            position: relative;
+            padding: 0 0;
+            z-index: 888;
+            height: 100%;
+            align-items: center;
+        }
+    }
+
+    .menubar-item:not(:first-of-type){
+        margin-left: 2rem;
+    }
+    
+    .menu-container {
+        position: absolute;
+        flex-direction: row;
+        left: -50vw;
+        top:6px;
+        width: 100vw;
+        transform: translateY(50px);
+        z-index: 777;
+        border-bottom: 2px solid $Blue-light;
+        height: $menu-desktop-height;
+        padding-top: $padding-horizontal-regular;
+
+        &[data-state=open]{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
+    .submenu-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: $padding-vertical-small;
+        margin-top: $margin-horizontal-large;
+    }
+    .menubar-item,
+    .menu-item,
+    .submenu-item,
+    .menubar-item-donate {
+        display: flex;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        border-bottom: none;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding-left: 0;
+        height: auto;
+        &:hover {
+            border-bottom: 0;
+        }
+        a{
+            &:hover{
+                color: var(--color-Action-light);
+            }
+        }
+    }
+    .menubar-item{
+        height: 100%;
+        &:hover{
+            .menubar-target {
+                color: $Black;
+                letter-spacing: 0.07em;
+            }
+        }
+    }
+
+    .menu__toggle:after{
+        padding-right: 0;
+        font-size: 8px;
+        transform: translateX(5px)
+         rotate(90deg);
+        transform-origin: center;
+    }
+
+    .menubar-target{
+        color: $Black;
+        &[data-state=open]{
+            color: $Blue-light;
+        }
+    }
+    .submenu-target {
+        color: $Orange;
+    }
+
+    .menu-target{
+        padding-left: $padding-vertical-small;
+        position: relative;
+        cursor: default;
+        &:before{
+            @include bullet;
+            background-color: $Blue-light;
+            position: absolute;
+            left: -6px;
+            top: 3px;
+        }
+        &:after {
+            content: none;
+        }
+    }
+
+    .menubar-item:first-child {
+        padding: 0 0;
+        justify-self: flex-start;
+    }
+    .menubar-target,
+    .menu-target,
+    .submenu-target {
+        align-self: flex-start;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////MENU DESKTOP
+
+@include media ('>=desktop') {
+    #nav {
+        @include padding-master-desktop;
+    }
+    .menubar__header {
+        height: 6rem;
+        }
+    #menubar__logo {
+        height: 80%;
+    }
+    }
+@include media ('>=widescreen') {
+    .nav-sticky {
+        padding: 0 20%;
+    }
+    #navbar-tablet{
+        &:before{
+            right: $padding-vertical-large*-2;
+        }
+    }
+    #menubar__logo {
+        height: 85%;
+    }
+}
+
+@include media ('>=fullhd') {
+    #navbar-tablet {
+        &:before {
+            right: -10vw;
+        }
+    }
+    #menubar__logo {
+        height: 90%;
+    }
+    
+}

@@ -1,0 +1,75 @@
+:root {
+    --color-Primary: #001C7A;
+    --color-Primary-dark: #000155;
+    --color-Primary-light: #004fa7;
+
+    --color-Secondary: #40afa1;
+    --color-Secondary-dark: #009482;
+    --color-Secondary-light: #80c9c0;
+
+    --color-Accent: #ff8740;
+    --color-Accent-dark: #ff5f00;
+    --color-Accent-light: #ffaf80;
+
+    --color-Action: #ffdc40;
+    --color-Action-dark: #ffd100;
+    --color-Action-light: #ffe880;
+
+    --color-lilac: #7F80AA;
+
+    --color-Black: #000033;
+    --color-White: #f8f8f8;
+    --color-Grey: #7f7f7f;
+    --color-Grey-dark: #656565;
+    --color-Grey-darkest: #282828;
+    --color-Grey-light: #c6c6c6;
+
+    --font-Primary: 'Merriweather Sans', sans-serif;
+    --font-Display: 'Merriweather', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--font-Primary), sans-serif;
+    background-color: #ffff;
+}
+*::selection{
+    background-color: var(--color-Action);
+}
+
+#viewport{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.main-container{
+    width: 100%;
+    //max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-wraper{
+    @include media(">=desktop"){
+        max-width: 95vw;
+        -webkit-box-align: start;
+        box-align: start;
+        margin: 0 auto;
+    }
+    @include media(">=fullhd"){
+        max-width: 1560px;
+    }
+    @include media(">=ultrahd"){
+        max-width: 1920px;
+    }
+}

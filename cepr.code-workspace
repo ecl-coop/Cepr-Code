@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "M:\\2018_CEPR_Identidad\\producción\\website\\code-clone\\CEPR",
+			"name": "CEPR"
+		},
+		{
+			"path": "M:\\2018_CEPR_Identidad\\producción\\website\\code-clone\\CEPR\\CEPR",
+			"name": "CEPR"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Cepr-Code-master"
+	}
+}

@@ -1,0 +1,59 @@
+@keyframes slide-down {
+    0% {
+        transform: translateY(-128px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.icons-share{
+    padding-left: $padding-vertical-normal;
+    width: 30%;
+    display: inline-flex;
+    height: $share-bar-height;
+    background-color: $White;
+    float: left;
+    align-items: center;
+    
+    .social-logo-container:not(:last-child){
+        //height: auto;
+        margin-right: $margin-vertical-normal;
+        display: flex;
+        align-items: center;
+    }
+    &:active{
+        fill: $Orange;
+    }
+    .icon-text{
+        display: inline-block;
+    }
+    @include media(">=desktop"){
+        position: relative;
+        background-color: white;
+        border-bottom: 1px solid $Grey-light;
+        height: $share-bar-height-desktop;
+        width: auto;
+        top: negate($rows-gap,-1);
+        justify-content: flex-end;
+        padding-right: $columns-gap;
+        padding-left: 0;
+        // .social-logo:last-child{
+        //     display: flex;
+        //     overflow: visible;
+        // }
+    }
+    @include media(">=widescreen"){
+        //right: $padding-vertical-large*2;
+    }
+}
+.share-sticky{
+    position: fixed;
+    top: 64px;
+    right: 0;
+    z-index: 99;
+    height: 48px;
+    padding-right: 6vw;
+    width: 75vw;
+    animation: slide-down 0.5s ease-out;
+}

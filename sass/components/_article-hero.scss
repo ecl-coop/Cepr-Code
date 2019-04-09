@@ -1,0 +1,51 @@
+.article-hero-text {
+    grid-area: title;
+    clear: both;
+    margin-top: 1em;
+    padding: $padding-vertical-small 0;
+    padding-top: 2rem;
+
+    h2.article-hero-title {
+        font-size: $size-h2-fluid;
+        font-family: $Serif;
+        color: $Green;
+        letter-spacing: -.025em;
+        font-weight: 700;
+        line-height: 1.25;
+        display: inline;
+
+        &:hover{
+            border-bottom: 1px solid $Green;
+        }
+        &:active{
+            color: $Orange;
+        }
+    }
+}
+
+.article-hero-summary {
+    margin: $margin-horizontal-regular 0;
+    display: block;
+    font-family: $Sans;
+    color: $Grey-light;
+    font-size: 15px;
+}
+
+    .article-hero-text,
+    .article-related {
+        //I had to do add side padding this way in order for the carrousel to work
+        @include fluid-type(width, $phone, $tablet, 85%, 50%);
+        margin: 0 auto;
+    }
+
+@include media(">=tablet"){
+    
+        .article-hero-text,
+        .article-related {
+            padding: 0;
+            width: 100%;
+        }
+        .article-hero-text{
+            padding-right: $padding-vertical-normal;
+        }
+}

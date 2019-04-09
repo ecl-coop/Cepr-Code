@@ -1,0 +1,321 @@
+%banner-base{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    @include fluid-type(height, $tablet, $widescreen, 120px, 150px);
+}
+
+////////////////////////////////////////
+///////////BEAT THE PRESS BANNER
+    .banner-btp{
+        display: none;
+        justify-content: space-between;
+        background: url("/img/header-btp_background.svg") left no-repeat;
+        background-color: $Black;
+        padding-right: $padding-vertical-large;
+        border-radius: 0 0 0 50px;
+        color: $White;
+        height: $height-1-fluid;
+        align-items: center;
+        padding-left: 5%;
+        position: relative;
+        width: 80%;
+        margin-left: auto;
+
+        h3{
+            @include small-text-serif-1;
+        }
+        p{
+            @include paragraph-small;
+            font-size: $size-p2-min;
+            font-weight: $Regular;
+            color: $Grey-light;
+        }
+    }    
+
+////////////////////////////////////////
+/////SUBSCRIPTION BANNER
+
+$input-heigth: $height-1-max;
+
+.banner-subscribe{
+    background-color: $Black;
+    @extend %banner-base;
+    flex-flow: column;
+    text-decoration: none;
+    justify-content: center;
+    padding-bottom: 3%;
+
+    .heading-7{
+        color: $White;
+    }
+    .btn-2{
+        margin: 0;
+        @include outline-regular-white;
+        border-radius: 0 $input-heigth $input-heigth 0;
+        color: $Orange-dark;
+        border-color: $White;
+        border-left: none;
+        padding: 0;
+        width: 25%;
+        font-size: $size-smallest-fluid;
+        background-color: $Black;
+        &:active{
+            background-color: $Blue-dark;
+            color: $Blue-light;
+        }
+    }
+}
+
+.sign-up{
+    width: 80%;
+    height: $input-heigth;
+    display: inline-flex;
+}
+
+.input{
+    @include outline-regular-white;
+    height: 100%;
+    width: 80%;
+    border-radius: $input-heigth 0 0 $input-heigth;
+    border-right: none;
+    padding-left: $padding-vertical-normal;
+
+    &:focus{
+        background-color: $Yellow-light;
+    }
+    &::placeholder {
+        color: $Grey-lilac;
+    }
+}
+
+////////////////////////////////////////
+/////DONATION BANNER
+
+.banner-donate{
+    background-color: $Yellow-light;
+    @extend %banner-base;
+
+    .btn-2{
+        //width: 30%;
+        width: 104px;
+        height: 37%;
+        text-align: center;
+        margin: 0;
+        border-color: $Blue-dark;
+        color: $Blue-dark;
+    }
+}
+
+.banner-donate-text{
+    width: 45%;
+    color: $Blue-dark;
+    p{
+        @include paragraph-small;
+        font-weight: $Light;
+    }
+}
+
+////////////////////////////////////////////////////////////////
+//////////////BANNER FOLLOW US
+.banner-followUs-container{
+    display: flex;
+    flex-direction: row;
+    @include fluid-type(height, $tablet, $desktop, 112px, 150px);
+    justify-content: center;
+    align-items: center;
+    background-color: $Grey-light;
+    color: $Blue-light;
+    .heading-7{
+        margin: 0;
+        margin-right: 3vw;
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+    }
+    .profile-social{
+        display: flex;
+        align-items: center;
+        flex: 1 0 auto;
+        height: 30px;
+        margin-right: 3vw;
+        svg:last-child{
+            border-left: 1px solid $Black;
+            padding-left: 1.5vw;
+            margin-left: 1.5vw;
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////
+////////////////////MEDIA QUERY TABLET
+
+@include media(">=tablet"){
+    .banner-subscribe {
+        padding-bottom: 0;
+        align-items: center;
+    }
+}
+
+///////////////////////////////////////////////////////////////
+////////////////////MEDIA QUERY DESKTOP
+
+@include media(">=desktop") {
+    .banner-btp {
+        display: flex;
+    }
+    .block-banner-left {
+        border-radius: 0 100px 100px 0;
+        margin-left: -50%;
+        padding-left: 50%;
+    }
+    .block-banner-right {
+        border-radius: 100px 0px 0px 100px;
+        margin-right: -50%;
+        padding-right: 50%;
+    }
+
+    .banner-btp{
+        margin-right: -50%;
+        padding-right: 50%;
+        width: 150%;
+    }
+
+    .banner-subscribe, .banner-donate{
+        flex-direction: row;
+        padding-bottom: 0;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        
+        .sign-up, p{
+            margin-top: $height-1-max/3;
+        }
+    }
+
+    .banner-subscribe{
+        .heading-7{
+            margin-left: 45%;
+            position: absolute;
+            top: $height-1-max/3;
+            margin-bottom: 0;
+            left: 0;
+            width: 50%;
+        }
+        .sign-up{
+            flex: 0 0 50%;
+            margin-left: auto;
+            //margin-right: auto;
+        }
+    }
+
+    .banner-donate{
+        .heading-7, p {
+            margin-left: $margin-vertical-extraLarge*2;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .banner-donate-text{
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .btn-2{
+            background-image: none;
+            margin-left: auto;
+            margin-right: auto;
+            &:after{
+                content: none;
+            }
+        }
+    }
+
+    .banner-picture{
+        flex: 0 0 20%;
+        padding-bottom: $padding-horizontal-regular;
+        margin-left: auto;
+    }
+
+///////////////////////////////////////////////////
+///////////////BANNER FOLLOW US
+
+    .banner-followUs-header{
+        flex: 1 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90px;
+        //width: 100%;
+        border-radius: 50px 0 0 0;
+    }
+    .banner-followUs-content{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex: 1 1 auto;
+        //width: 100%;
+        height: 75%;
+        padding-bottom: $padding-horizontal-small;
+        border-radius: 0 0 50px 0;
+            dt:first-of-type {
+                border-right: 1px solid $Blue-light;
+            }
+
+        .profile {
+            display: flex;
+            align-self: stretch;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex: 0 0 auto;
+            text-align: center;
+            height: 100%;
+
+            .logo-cepr{
+                position: relative;
+                //flex: 0 0 60%;
+            }
+            &-social{
+                display: flex;
+                justify-content: space-between;
+                flex: 0 1 auto;
+                align-items: center;
+                width: 40%;
+                &:before {
+                    content: "";
+                    height: 30px;
+                    flex: 0 1 1px;
+                    background-color: $Blue-light;
+                    order: 1;
+                }
+                svg:last-child {
+                    order: 2;
+                }
+            }
+
+            .btn-5{
+                margin: 0;
+                color: $White;
+                background-color: $Blue-light;
+                border: none;
+                flex: 0 0 auto;
+            }
+        }
+    }
+}
+
+@include media(">=widescreen"){
+     .banner-donate {
+         .banner-donate-text {
+             width: auto;
+         }
+        .btn-2 {
+            border-width: 4px;
+            width: 130px;
+            height: 40%;
+        }
+    }
+}
