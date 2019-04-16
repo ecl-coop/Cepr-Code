@@ -46,6 +46,10 @@ input::-moz-focus-inner {
     @extend %btn-base;
     font-weight: $Bold;
     background-color: transparent;
+    transition: all 200ms ease-out;
+    &:hover{
+        background-color: $Orange-dark;
+    }
 
     &-texture-orange{
         background: url("/img/btn-2_textureOr.png") center no-repeat;

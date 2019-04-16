@@ -64,20 +64,7 @@ article {
       }
     }
   }
-  
-  /**
-   * Highlight target note
-   */
-  footer :target {
-    background: $Yellow;
-    color: $Blue-dark;
-    border-radius: 0 0 50px 0;
-    [aria-label="Back to content"]{
-      &::after{
-        background-color: $Blue;
-      }
-    }
-  }
+   
   .start-count{
     counter-reset: footnotes;
   }
@@ -112,8 +99,19 @@ article {
         line-height: 1.8;
         z-index: 10;
         position: relative;
+        /**
+      * Highlight target note
+      */
         &:target{
+          background: $Yellow;
+          color: $Blue-dark;
+          border-radius: 0 0 50px 0;
           box-shadow: 0 0 0 6px $Yellow;
+          [aria-label="Back to content"]{
+            &::after{
+              background-color: $Blue;
+            }
+          }
         }
         &:before{
             counter-increment: footnotes;

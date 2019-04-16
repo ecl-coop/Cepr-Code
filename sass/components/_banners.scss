@@ -124,7 +124,7 @@ $input-heigth: $height-1-max;
     @include fluid-type(height, $tablet, $desktop, 112px, 150px);
     justify-content: center;
     align-items: center;
-    background-color: $Grey-light;
+    background-color: $White;
     color: $Blue-light;
     .heading-7{
         margin: 0;
@@ -140,10 +140,19 @@ $input-heigth: $height-1-max;
         flex: 1 0 auto;
         height: 30px;
         margin-right: 3vw;
-        svg:last-child{
+        position: relative;
+        &::before{
+            content: "";
+            left: 0;
+            width: 2px;
+            height: 100%;
+            color: $Black;
             border-left: 1px solid $Black;
-            padding-left: 1.5vw;
-            margin-left: 1.5vw;
+            margin: 0 1em;
+            order: 2;
+        }
+        svg:last-child{
+            order: 3;
         }
     }
 }
@@ -172,8 +181,8 @@ $input-heigth: $height-1-max;
     }
     .block-banner-right {
         border-radius: 100px 0px 0px 100px;
-        margin-right: -50%;
-        padding-right: 50%;
+        margin-right: -50vw;
+        padding-right: 50vw;
     }
 
     .banner-btp{
@@ -239,20 +248,22 @@ $input-heigth: $height-1-max;
     }
 
 ///////////////////////////////////////////////////
-///////////////BANNER FOLLOW US
-
+///////////////BANNER FOLLOW US DESKTOP
     .banner-followUs-header{
-        flex: 1 0 auto;
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 90px;
-        //width: 100%;
+        margin-left: 4vmax;
         border-radius: 50px 0 0 0;
+        .heading-7{
+            margin-right: 0;
+        }
     }
     .banner-followUs-content{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         flex: 1 1 auto;
         //width: 100%;
@@ -261,6 +272,11 @@ $input-heigth: $height-1-max;
         border-radius: 0 0 50px 0;
             dt:first-of-type {
                 border-right: 1px solid $Blue-light;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 200px;
+                padding: 0 2rem;
+                justify-content: center;
             }
 
         .profile {
@@ -268,40 +284,54 @@ $input-heigth: $height-1-max;
             align-self: stretch;
             align-items: center;
             flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-end;
             flex: 0 0 auto;
             text-align: center;
             height: 100%;
-
+            margin: 0 .5rem;
+            &:first-of-type{
+                justify-self: flex-start;
+            }
+            .small-text-serif-1{
+                font-size: 1vmin;
+            }
             .logo-cepr{
                 position: relative;
-                //flex: 0 0 60%;
+                height: auto;
+                width: 100%;
             }
             &-social{
                 display: flex;
                 justify-content: space-between;
                 flex: 0 1 auto;
                 align-items: center;
-                width: 40%;
+                margin-right: .5em;
                 &:before {
                     content: "";
                     height: 30px;
                     flex: 0 1 1px;
                     background-color: $Blue-light;
                     order: 1;
+                    margin: .1em;
                 }
                 svg:last-child {
                     order: 2;
                 }
             }
-
+            .small-text-serif-4{
+                @include small-text-sans-4;
+            }
             .btn-5{
                 margin: 0;
+                margin-top: 1rem;
                 color: $White;
                 background-color: $Blue-light;
                 border: none;
                 flex: 0 0 auto;
+                transition: all 200ms ease-out;
+                &:hover{
+                    color: $Yellow;
+                }
             }
         }
     }

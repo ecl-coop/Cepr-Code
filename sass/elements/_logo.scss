@@ -23,7 +23,8 @@
 }
 
 .social-logo{
-    width: auto;
+    min-width: 20px;
+    max-width: 24px;
     height: 100%;
     fill: currentColor;
     transition: all .15s;
@@ -53,8 +54,13 @@
     top: 0;
 }
 
+a.icon-link{
+    line-height: 0;
+}
+
 @include media(">=desktop"){
     .social-logo {
-        width: 22px;
+        min-width: 22px;
+        max-width: 26px;
     }
 }

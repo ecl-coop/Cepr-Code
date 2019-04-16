@@ -47,7 +47,7 @@
         }
         #banner-top{
             grid-row: 1;
-            grid-column: 5 / -1;
+            grid-column: 4 / -1;
         }
         #banner-donate{
             grid-area: donate;
@@ -72,6 +72,10 @@
         }
         #block-BeatThePress {
             grid-column: 2 / span 6;
+        }
+        #banner-top{
+            grid-row: 1;
+            grid-column: 5 / -1;
         }
     }
 

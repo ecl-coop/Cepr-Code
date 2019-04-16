@@ -7,7 +7,7 @@
     letter-spacing: .1em;
 }
 
-%smallest-sans-base {
+@mixin smallest-sans-base  {
     font-family: $Sans;
     font-size: $size-smallest-fluid;
     letter-spacing: 0;
@@ -42,7 +42,7 @@
 }
 
 @mixin small-text-sans-4 {
-    @extend %smallest-sans-base;
+    @include smallest-sans-base;
     font-style: italic;
     font-weight: $Regular !important;
     text-transform: capitalize;
@@ -97,6 +97,16 @@
     margin: $margin-horizontal-regular 0;
     margin-top: $margin-horizontal-small;
     line-height: 1.25;
+    a{
+        color: inherit;
+        &:hover{
+            color: $Blue;
+            text-decoration: underline;
+        }
+        &:visited{
+            color: $Grey-lilac;
+        }
+    }
 }
 
 @mixin heading-4 {
@@ -105,10 +115,31 @@
     letter-spacing: .15em;
     font-weight: $Light;
     line-height: 1;
+    a{
+        color: inherit;
+    }
 }
 
 @mixin heading-5 {
     font-size: $size-h5-fluid;
+}
+@mixin heading-6 {
+    font-family: $Sans;
+    font-size: $size-h6-fluid;
+    line-height: 1.25;
+    font-weight: $Light;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    a{
+        color: inherit;
+        -webkit-text-stroke: 0px $Blue-light;
+        transition: all 200ms ease-out;
+        
+        &:hover{
+            color: $Blue-light;
+            -webkit-text-stroke: .5px;
+        }
+    }
 }
 
 @mixin heading-7 {

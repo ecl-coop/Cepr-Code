@@ -15,6 +15,10 @@
     }
     .heading-4, .heading-6{
         color: $Green-dark;
+        a:hover{
+            color: $Green-light;
+            text-decoration: underline;
+        }
     }
 
     p{

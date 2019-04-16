@@ -101,7 +101,7 @@ progress {
     /* Positioning */
     position: fixed;
     left: 0;
-    top: 0;
+    top: (#{$menu-header-height})+#{$nav-sticky-height};
     z-index: 1000;
   
     /* Dimensions */

@@ -36,6 +36,9 @@
         font-size: $size-p-fluid;
         color: $Grey;
     }
+    .profile-social{
+        flex: 1 0 100%;
+    }
     @include media(">=desktop"){
         display: grid;
         width: 100%;
@@ -80,9 +83,7 @@
                 margin-right: $margin-vertical-small;
             }
         }
-        .profile-social{
-            flex: 1 0 100%;
-        }
+        
         .profile-summary{
             grid-column: 2;
             align-self: start;

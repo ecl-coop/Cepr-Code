@@ -10,7 +10,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
 .menubar__header {
         transition: all .35s;
-        height: 4rem;
+        height: $menu-header-height;
         background-color: $White;
         padding: 0 1.5rem;
         z-index: 999;
@@ -39,6 +39,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
                 display: none;
             }
         }
+    }
+    .menubar-sticky{
+        position: fixed;
+        top: 0;
+        z-index: 100;
     }
 
 .menubar__toggle,
@@ -430,7 +435,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         :last-child{
             margin-right: 0;
         }
-        svg{
+        a{
             z-index: 5;
         }
         .btn-5{

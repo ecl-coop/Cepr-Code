@@ -57,6 +57,21 @@
         letter-spacing: 0;
         color: $Grey;
     }
+    .toc-sticky{
+        position: fixed;
+        top: $menu-header-height;
+        width: 80vw;
+        left: 0;
+        z-index: 99;
+        padding-left: $padding-report-content;
+        margin-left: $padding-report-content*-.5;
+        background-color: white;
+        animation: slide-down 0.5s ease-out;
+        *{
+            background-color: white;
+            box-shadow: none;
+        }
+    }
     @include media(">=desktop"){
         width: 100%;
         background-color: transparent;
@@ -76,19 +91,9 @@
             }
         }
         .toc-sticky{
-            position: fixed;
-            top: 64px;
-            width: 25vw;
-            left: 0;
-            z-index: 99;
-            padding-left: $padding-report-content;
-            margin-left: $padding-report-content*-.5;
-            background-color: white;
-            animation: slide-down 0.5s ease-out;
-            *{
-                background-color: white;
-                box-shadow: none;
-            }
+        width: 25vw;
+        padding-left: $padding-report-content;
+        margin-left: $padding-report-content*-.5;
         }
         dt{
             text-align: left;

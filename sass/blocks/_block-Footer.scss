@@ -54,7 +54,7 @@
         width: auto;
         height: 100%;
         &:not(:first-of-type) {
-            padding-left: $padding-vertical-small;
+            margin-left: $padding-vertical-small;
         }
     }
 }

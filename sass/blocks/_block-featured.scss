@@ -129,7 +129,7 @@
         "title title"
         "related related";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: min-content auto;
     clear: both;
 }
 
@@ -303,8 +303,10 @@
         &:after{
             content: "";
             background: url("/img/featFooter_header.svg") right no-repeat;
+            position: absolute;
             background-position-y: 15px;
-            margin-right: -8px;
+            width: 100%;
+            right: -8px;
             height: 100%;
             flex: 0 0 20%;
         }
