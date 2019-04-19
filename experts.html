@@ -1,48 +1,328 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <dl class="list-3-container is-hidden-touch">
-        <dt class="list-3-item list-3-item-fixHeight">
-            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Europe</a></small>
-            <h6 class="heading-6"><a href="">Fissuring of Labor Markets, Wage Stagnation, and Rising Wage Inequality</a></h6>
-            <small class="credits">
-                <p class="author">Dean Baker<span class="date">june 26, 2017</span></p>
-            </small>
-        </dt>
-        <dt class="list-3-item list-3-item-fixHeight">
-            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Europe</a></small>
-            <h6 class="heading-6"><a href="">Economic Populism Doesn't Have to Involve More Government</a></h6>
-            <small class="credits">
-                <p class="author">Dean Baker<span class="date">june 26, 2017</span></p>
-            </small>
-        </dt>
-        <dt class="list-3-item list-3-item-fixHeight">
-            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Europe</a></small>
-            <h6 class="heading-6"><a href="">The Scorecard on Development, 1960–2016: Nancy Alexander</a></h6>
-            <small class="credits">
-                <p class="author">Dean Baker<span class="date">june 26, 2017</span></p>
-            </small>
-        </dt>
-        <dt class="list-3-item list-3-item-fixHeight">
-            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Europe</a></small>
-            <h6 class="heading-6"><a href="">Patents Without Examination: A Bad Solution For The 21st Century</a></h6>
-            <small class="credits">
-                <p class="author">Dean Baker<span class="date">june 26, 2017</span></p>
-            </small>
-        </dt>
-        <dt class="list-3-item list-3-item-fixHeight">
-            <small class="tag"><a class="tag-type">report</a><a class="tag-theme">Europe</a></small>
-            <h6 class="heading-6"><a href="">The Midterm Elections in the United States</a></h6>
-            <small class="credits">
-                <p class="author">Dean Baker<span class="date">june 26, 2017</span></p>
-            </small>
-        </dt>
-    </dl>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Merriweather+Sans:300,400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/img/cepr_favicon.ico">
+    <script defer src="/js/svgxuse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script defer src="/js/menu.js"></script>
+    <script defer src="/js/tabs.js"></script>
+    <script defer src="/js/sticky.js"></script>
+    <script defer src="/js/TableOfContents.js"></script>
+    <script defer src="/js/reading-position.js"></script>
+    <script defer src="/js/btn-toTop.js"></script>
+    <script defer src="/js/profile-switch.js"></script>
+    <script src="to-title-case.js"></script>
+    <title>Experts of the Center for Economic and Policy Research</title>
+</head>
+<body>
+    <div id="viewport" class="main-container">
+        <section id="nav">
+                <header class="menubar__header level is-marginless is-mobile" data-state="closed">
+                    <div class="menubar__btn level-left">
+                        <button type="button" id="menubar-toggle" class="menubar__toggle">
+                            <svg width="36" height="36">
+                                <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+                            </svg>
+                            <span class="is-sr-only">Toggle navigation</span>
+                        </button>
+                    </div>
+                    <a id="menubar__logo" class="level-item"  href="/" title="Center for Economic and Policy Research">
+                        <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-cepr logo-cepr-color">
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-small" class="is-inline-block-mobile is-hidden-tablet"></use>
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-med" class="is-flex-tablet-only logo-med"></use>
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-large" class="is-flex-desktop is-hidden-touch"></use>
+                        </svg>
+                        <svg viewBox="0 0 50 50" class="icon-cepr"> 
+                            <use xlink:href="/img/symbol-defs.svg?v=1.0#cepr-icon"></use>
+                        </svg>
+                    </a>
+                    <div class="menubar__search level-right is-hidden-tablet">
+                        <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse">
+                            <svg width="36" height="36">
+                                <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
+                            </svg>
+                            <span class="is-sr-only">Toggle navigation</span>
+                        </button>
+                    </div>
+                </header>
+                <div id="navbar-tablet" class="is-hidden-mobile">
+                    <a class="icon-link" href="https://facebook.com/ceprDC">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                            <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="icon-link" href="https://twitter.com/ceprDC">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                            <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                        </svg>
+                    </a>
+                    <button class="btn-5 btn-5-small">ES</button>
+                    <button class="btn-5 btn-5-yellow">donate</button>
+                </div>
+                <nav id="accordian" class="nav" role="navigation"> 
+                    <ul id="menubar-container" data-state="closed">
+                        <li class=""><h3 class="menubar-item"><a class="menubar-target small-text-serif-1 menu__toggle" data-state="closed" href="#">Our Work</a></h3>
+                            <ul id="menubar-OurWork" class="menu-container">
+                                <li class="">
+                                    <h3 class="menu-item"><a class="menu-target small-text-serif-1-title submenu__toggle" data-state="closed" href="#">Us</a></h3>
+                                        <ul id="menu-US" class="submenu-container">
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Workers</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Inequality</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Growth</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Goverment</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Wall Street</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Health and Social Programs</a></li>
+                                            <li class="submenu-item"><a href="#" class="small-text-serif-1-title submenu-target">Intellectual Property</a></li>
+                                        </ul>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item"><a class="menu-target small-text-serif-1-title submenu__toggle" data-state="closed" href="#">World</a></h3>
+                                        <ul id="menu-World" class="submenu-container">
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">Europe</a></li>
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">Globalization and trade</a></li>
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">Latin America and the Caribean</a></li>
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">US Foreign Policy</a></li>
+                                        </ul>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item"><a class="menu-target small-text-serif-1-title submenu__toggle" data-state="closed" href="#">Blogs</a></h3>
+                                        <ul id="menu-Blogs" class="submenu-container">
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">Beat the Press</a></li>
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">The Americas Blog</a></li>
+                                            <li class="submenu-item"><a href="" class="small-text-serif-1-title submenu-target">Haiti Relief and Reconstruction Watch</a></li>
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><h3 class="menubar-item"><a href="#" class="menubar-target small-text-serif-1">Experts and Staff</a></h3></li>
+                        <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Publications and events</a></li>
+                        <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Projects and Resources</a></li>
+                        <li><h3 class="menubar-item"><a href="#" class="small-text-serif-1 menubar-target menu__toggle" data-state="closed">About Us</a></h3>
+                            <ul id="menubar-AboutUs" class="menu-container">
+                                <li class="">
+                                    <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Newsroom</a></h3>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">What we do</a></h3>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Why give to CEPR</a></h3>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Board of Directors and our funders</a></h3>
+                                </li>
+                                <li class="">
+                                    <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Jobs, Internships, and fellowships</a></h3>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target small-text-serif-1">Beat the Press</a></li>
+                        <li class="menubar-item-donate is-hidden-tablet"><a href="#" class="menubar-target-donate">donate</a></li>
+                        <li class="menubar__search">
+                            <button type="button" class="search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
+                                <svg width="24" height="24">
+                                    <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
+                                </svg>
+                                <span class="is-sr-only">Toggle navigation</span>
+                            </button>
+                        </li> 
+                    </ul>
+                </nav>
+        </section>
+        <div class="content-wraper">
+            <section id="profiles">
+                <dl class="profiles-grid">
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/Dean_Baker.jpg" alt="Dean Baker portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Dean Baker</h5>
+                            <h5 class="profile-job">Senior economist</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/david_rosnick.jpg" alt="David Rosnick portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">David Rosnick</h5>
+                            <h5 class="profile-job">Economist</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/eileen_max.jpg" alt="Eileen Appelbaum portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Eileen Appelbaum</h5>
+                            <h5 class="profile-job">Co-director</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/eileen_max.jpg" alt="Eileen Appelbaum portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Eileen Appelbaum</h5>
+                            <h5 class="profile-job">Co-director</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/eileen_max.jpg" alt="Eileen Appelbaum portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Eileen Appelbaum</h5>
+                            <h5 class="profile-job">Co-director</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/eileen_max.jpg" alt="Eileen Appelbaum portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Eileen Appelbaum</h5>
+                            <h5 class="profile-job">Co-director</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                    <dt class="profile-card" data-state="closed">
+                        <div class="profile-picture">
+                            <img class="picture-round-large profile-picture-open" src="/img/eileen_max.jpg" alt="Eileen Appelbaum portrait">
+                        </div>
+                        <div class="profile-data">
+                            <h5 class="profile-name">Eileen Appelbaum</h5>
+                            <h5 class="profile-job">Co-director</h5>
+                            <div class="profile-social">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="social-logo social-logo-blue">
+                                    <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="profile-summary">
+                            Dean Baker co-founded CEPR in 1999. His areas of research include housing and macroeconomics, intellectual property, Social Security, Medicare and European labor markets.
+                        </p>
+                    </dt>
+                </dl>
+            </section>
+        </div>
+        <footer class="block-footer">
+                <div class="footer-ident">
+                    <svg viewBox="0 0 220 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        class="footer-logo">
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-v-small" class="logo-cepr-color is-hidden-desktop"></use>
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#logo-small" class="is-flex-desktop is-hidden-touch"></use>
+                    </svg>
+                    <img src="/img/cepr-name.png" class="footer-logo is-hidden-touch" alt="Center for Economic and Policy Research">
+                    <p class="paragraph-2-light is-hidden-touch">
+                        1611 Connecticut Ave., NW Suite 400 <br>
+                        Washington, DC 20009 <br>
+                        (202) 293-5380 <br>
+                        <a href="mailto:info@cepr.net"><strong>info@cepr.net</strong></a>
+                    </p>
+                    <div class="footer-social">
+                        <a class="icon-link social-logo" href="https://facebook.com/ceprDC">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="social-logo-blue">
+                            <use xlink:href="/img/logos-social.svg?v=1.0#logo-facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="icon-link social-logo" href="https://twitter.com/ceprdc">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class=" social-logo-blue">
+                            <use xlink:href="/img/logos-social.svg?v=1.0#logo-twitter"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <dl class="footer-list">
+                    <dt class="footer-item"><a href="">Contact Us</a></dt>
+                    <dt class="footer-item"><a href="">About Us</a></dt>
+                    <dt class="footer-item"><a href="">Newsroom</a></dt>
+                    <dt class="footer-item is-hidden-touch"><a href="">Publications</a></dt>
+                    <dt class="footer-item is-hidden-touch"><a href="">Revolving Door Projects</a></dt>
+                    <dt class="footer-item is-hidden-touch"><a href="">Data Bytes</a></dt>
+                </dl>
+                <div class="footer-license">
+                    <p>This website is licensed under a Creative Commons Attribution 4.0 International License and governed by our <em><a href="">Privacy Policy.</a></em></p>
+                </div>
+            </footer>
+    </div>
+</body>
 </html>

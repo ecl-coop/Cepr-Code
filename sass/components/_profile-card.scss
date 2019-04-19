@@ -1,14 +1,18 @@
 .profile-card{
     display: flex;
-    //flex-flow: column;
     flex-wrap: wrap;
     width: 83%;
     margin: $margin-horizontal-large auto;
-
+    
     .profile-picture{
         display: flex;
         align-items: center;
         height: $profile-header-height;
+        width: $profile-header-height;
+        transition: all 200ms ease-out;
+        &:hover{
+            cursor: pointer;
+        }
         &::after{
             content: none;
         }
@@ -39,56 +43,128 @@
     .profile-social{
         flex: 1 0 100%;
     }
-    @include media(">=desktop"){
-        display: grid;
-        width: 100%;
-        grid-template-columns: minmax(144px, 196px) 1fr;
-        grid-template-rows: auto;
-        margin: 0;
-        border-top: 1px solid $Grey-light;
-        border-bottom: 1px solid $Grey-light;
-        .profile-picture{
-            grid-column: 1;
-            grid-row: 1/-1;
-            position: relative;
-            top: 40%;
-            margin-top: -20%;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            padding-right: $padding-vertical-large;
-            @include fluid-type(height, $desktop, 1920px, 144px, 172px);
-            &::after{
-                content: "";
-                position: absolute;
-                width: 50%;
-                height: 100%;
-                background: url("/img/profile-picture-frame.svg") no-repeat right;
-                @include fluid-type(right, $desktop, 1920px, 28px, 20px);
-                top: 3px;
-            }
+    &[data-state=open]{
+        @include media(">=desktop"){
+            display: grid;
+            width: 100%;
+            grid-template-columns: minmax(144px, 196px) 1fr;
+            grid-template-rows: auto;
+            margin: 0;
+            border-top: 1px solid $Grey-light;
+            border-bottom: 1px solid $Grey-light;
+            .profile-picture{
+                grid-column: 1;
+                grid-row: 1/-1;
+                position: relative;
+                top: 40%;
+                margin-top: -20%;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                padding-right: $padding-vertical-large;
+                @include fluid-type(height, $desktop, 1920px, 144px, 172px);
+                width: 12.5rem;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 50%;
+                    height: 100%;
+                    mask: url("/img/profile-picture-frame.svg") no-repeat right;
+                    background-color: $Green;
+                    @include fluid-type(right, $desktop, 1920px, 28px, 20px);
+                    top: 3px;
+                }
 
+            }
+            .profile-data{
+                align-self: end;
+                padding: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .profile-job{
+                margin-left: $margin-vertical-small;
+                &::before{
+                    content: "";
+                    border-left: 2px solid $Grey;
+                    margin-right: $margin-vertical-small;
+                }
+            }
+            
+            .profile-summary{
+                grid-column: 2;
+                align-self: start;
+                padding: 0;
+                margin-bottom: $margin-horizontal-large;
+            }
         }
-        .profile-data{
-            align-self: end;
-            padding: 0;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        .profile-job{
-            margin-left: $margin-vertical-small;
+    }
+    &[data-state=closed]{
+        flex-direction: column;
+        width: max-content;
+        margin: 1rem;
+        align-items: center;
+        .profile-picture{
+            position: relative;
+            img{
+                filter: grayscale(100%) contrast(1.30);
+                transition: inherit;
+            }
             &::before{
                 content: "";
-                border-left: 2px solid $Grey;
-                margin-right: $margin-vertical-small;
+                @include absolute-center;
+                height: 100%;
+                width: 100%;
+                background-color: $Black;
+                mix-blend-mode: screen;
+                z-index: 10;
+                opacity: 1;
+            }
+            
+            &:hover{
+                img{filter: grayscale(0%) contrast(1);}
+                &::before{
+                    opacity: 0;
+                }
             }
         }
-        
-        .profile-summary{
-            grid-column: 2;
-            align-self: start;
+        .profile-data{
             padding: 0;
-            margin-bottom: $margin-horizontal-large;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+            .profile-name{
+                @include small-text-serif-2;
+                font-weight: $Bold;
+            }
+            .profile-job{
+                @include small-text-serif-3;
+            }
+        }
+        .profile-summary{
+            display: none;
+        }
+        .profile-social{
+            display: none;
+        }
+        @include media(">=desktop"){
+            .profile-picture{
+                @include fluid-type(height, $desktop, 1920px, 144px, 172px);
+                width: 12.5rem;
+                &::after{
+                    content: "";
+                    @include absolute-center;
+                    width: 100%;
+                    height: 100%;
+                    mask: url("/img/profile-picture-frame.svg") no-repeat right;
+                    background-color: $Blue-dark;
+                    transform: rotate(90deg);
+                    fill: $Blue-dark;
+                    @include fluid-type(right, $desktop, 1920px, 28px, 20px);
+                    top: 0px;
+                    bottom: 19px;
+                }
+            }
         }
     }
 }

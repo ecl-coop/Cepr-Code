@@ -58,6 +58,7 @@ body{
     //max-width: 1216px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100vh;
 }
 .content-wraper{
     @include media(">=desktop"){
