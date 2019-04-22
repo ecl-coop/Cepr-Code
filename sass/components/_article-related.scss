@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding-bottom: $padding-horizontal-large;
-
+    margin-top: $margin-horizontal-regular;
     .heading-5 {
         a {
             color: $White;
@@ -19,13 +19,18 @@
             color: $Green-dark;
         }
     }
-
+    .preheading{
+        line-height: 1;
+    }
+    .article-related-header{
+        margin-bottom: $margin-horizontal-medium;
+    }
     .heading-7,
     .preheading {
         align-self: center;
         text-align: center;
         color: $Green;
-        line-height: 1;
+        display: block;
     }
 
     .credits {
@@ -36,12 +41,14 @@
 
 @include media(">=tablet") {
     .article-related {
+            margin-top: $margin-horizontal-medium;
             padding-top: $padding-horizontal-regular;
             padding-bottom: $padding-horizontal-large;
+            justify-content: flex-start;
         .heading-7,
         .preheading {
-            align-self: flex-start;
             text-align: left;
+            width: max-content;
         }
 
         ul.list-2 {
@@ -52,5 +59,11 @@
             flex: 0 0 50%;
             padding-right: $padding-vertical-large;
         }
+    }
+}
+
+@include media(">=fullhd"){
+    .article-related {
+        padding-top: $padding-horizontal-large;
     }
 }

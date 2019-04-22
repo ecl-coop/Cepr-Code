@@ -9,7 +9,7 @@
         align-items: center;
         height: $profile-header-height;
         width: $profile-header-height;
-        transition: all 200ms ease-out;
+        @include transition-basic;
         &:hover{
             cursor: pointer;
         }

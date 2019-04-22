@@ -154,7 +154,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         position: relative;
 }
 
-.menubar-item{
+.menubar-item, .menu-item, .submenu-item{
         &:active{
             background-color: $Blue-light;
             border-bottom: 0;
@@ -162,26 +162,29 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
                 color: $Black;
             }
         }
-    }
-    .menu-item {
-        &:active {
-            background-color: $Blue-light;
-            border-bottom: 0;
-            .menu-target {
-                color: $Black;
-            }
+        a:hover{
+            color: $Yellow;
         }
     }
+    // .menu-item {
+    //     &:active {
+    //         background-color: $Blue-light;
+    //         border-bottom: 0;
+    //         .menu-target {
+    //             color: $Black;
+    //         }
+    //     }
+    // }
 
-    .submenu-item {
-        &:active {
-            background-color: $Blue-light;
-            border-bottom: 0;
-            .submenu-target {
-                color: $Black;
-            }
-        }
-    }
+    // .submenu-item {
+    //     &:active {
+    //         background-color: $Blue-light;
+    //         border-bottom: 0;
+    //         .submenu-target {
+    //             color: $Black;
+    //         }
+    //     }
+    // }
 
     .menubar-target, .menu-target, .submenu-target {
         flex: 0 0 100%;
@@ -477,6 +480,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         border-bottom: 2px solid $Blue-light;
         height: $menu-desktop-height;
         padding-top: $padding-horizontal-regular;
+        padding-right: $padding-vertical-large;
 
         &[data-state=open]{
             display: flex;
@@ -491,6 +495,18 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         justify-content: space-around;
         padding-left: $padding-vertical-small;
         margin-top: $margin-horizontal-large;
+    }
+    #menubar-AboutUs{
+        flex-direction: column;
+        justify-content: flex-end;
+        //align-items: flex-end !important;
+        padding-left: 50vw;
+        .menu-target{
+            cursor: pointer;
+            &:hover{
+                color: $Yellow;
+            }
+        }
     }
     .menubar-item,
     .menu-item,
@@ -540,20 +556,24 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .submenu-target {
         color: $Orange;
     }
-
-    .menu-target{
-        padding-left: $padding-vertical-small;
-        position: relative;
-        cursor: default;
-        &:before{
-            @include bullet;
-            background-color: $Blue-light;
-            position: absolute;
-            left: -6px;
-            top: 3px;
-        }
-        &:after {
-            content: none;
+    .menu-item{
+        .menu-target{
+            padding-left: $padding-vertical-small;
+            position: relative;
+            cursor: default;
+            &:hover{
+                color: inherit;
+            }
+            &:before{
+                @include bullet;
+                background-color: $Blue-light;
+                position: absolute;
+                left: -6px;
+                top: 3px;
+            }
+            &:after {
+                content: none;
+            }
         }
     }
 

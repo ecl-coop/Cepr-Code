@@ -2,7 +2,7 @@ $btn-radius: $btn-height/2;
 
 %btn-base{
     cursor: pointer;
-    height: $btn-height;
+    @include btn-height;
     @include border-heavy;
     @include small-text;
     border-radius: $btn-height;
@@ -12,6 +12,7 @@ $btn-radius: $btn-height/2;
     align-items: center;
     justify-content: center;
     z-index: 10;
+    @include transition-basic;
 }
 
 %shadow-base{
@@ -46,7 +47,6 @@ input::-moz-focus-inner {
     @extend %btn-base;
     font-weight: $Bold;
     background-color: transparent;
-    transition: all 200ms ease-out;
     &:hover{
         background-color: $Orange-dark;
     }

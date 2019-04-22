@@ -15,7 +15,21 @@
     <script defer src="/js/menu.js"></script>
     <script defer src="/js/tabs.js"></script>
     <script defer src="/js/sticky.js"></script>
-    <script src="to-title-case.js"></script>
+    <script defer src="/js/Cutter.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+                var self = this;
+                var oElement = document.getElementById("cut-it");
+                Cutter.run(oElement, oElement, 32);
+                $(this).hide();
+                $(".more").click(function()
+                {
+                    $(self).show();
+                })
+                return false;
+        });
+    </script>
     <title>Center for Economic and Policy Research</title>
 </head> 
 <body>
@@ -99,28 +113,29 @@
                         </ul>
                     </li>
                     <li><h3 class="menubar-item"><a href="#" class="menubar-target small-text-serif-1">Experts and Staff</a></h3></li>
-                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Publications and events</a></li>
-                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target">Projects and Resources</a></li>
-                    <li><h3 class="menubar-item"><a href="#" class="small-text-serif-1 menubar-target menu__toggle" data-state="closed">About Us</a></h3>
+                    <li class="is-hidden-tablet"><h3 class="menubar-item"><a href="#" class="menubar-target small-text-serif-1">Publications</a></h3></li>
+                    <li class="is-hidden-tablet"><h3 class="menubar-item"><a href="#" class="menubar-target small-text-serif-1">Events</a></h3></li>
+                    <li class="is-hidden-tablet"><h3 class="menubar-item"><a href="#" class="menubar-target small-text-serif-1">Projects and Resources</a></h3></li>
+                    <li class=""><h3 class="menubar-item"><a href="#" class="small-text-serif-1 menubar-target menu__toggle" data-state="closed">About Us</a></h3>
                         <ul id="menubar-AboutUs" class="menu-container">
                             <li class="">
-                                <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Newsroom</a></h3>
+                                <h3 class="menu-item"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Newsroom</a></h3>
                             </li>
                             <li class="">
-                                <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">What we do</a></h3>
+                                <h3 class="menu-item"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">What we do</a></h3>
                             </li>
                             <li class="">
-                                <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Why give to CEPR</a></h3>
+                                <h3 class="menu-item"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Why give to CEPR</a></h3>
                             </li>
                             <li class="">
-                                <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Board of Directors and our funders</a></h3>
+                                <h3 class="menu-item"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Board of Directors and our funders</a></h3>
                             </li>
                             <li class="">
-                                <h3 class="menu-item is-hidden-tablet"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Jobs, Internships, and fellowships</a></h3>
+                                <h3 class="menu-item"><a class="menu-target small-text-serif-1-title" data-state="closed" href="#">Jobs, Internships, and fellowships</a></h3>
                             </li>
                         </ul>
                     </li>
-                    <li class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target small-text-serif-1">Beat the Press</a></li>
+                    <li><h3 class="menubar-item is-hidden-tablet"><a href="#" class="menubar-target small-text-serif-1">Beat the Press</a></h3></li>
                     <li class="menubar-item-donate is-hidden-tablet"><a href="#" class="menubar-target-donate">donate</a></li>
                     <li class="menubar__search">
                         <button type="button" class="search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
@@ -137,7 +152,7 @@
             <div class="grid-container" id="home-grid">
                 <div id="banner-top" class="banner-btp is-hidden-mobile">
                     <h3>dean baker's beat the press</h3>
-                    <p>Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</p>
+                    <p><a href="">Is Trump's Switch to Semi-Annual Corporate Reports a Good Idea?</a></p>
                 </div>
                 <section class="section" id="block-featured">
                     <div class="block-featured">
@@ -166,10 +181,8 @@
                                 </picture>
                                 <main class="article-hero-text">
                                     <h2 class="article-hero-title"><a href="report.html">Presidential Election is about a Fight for Democracy in Brazil</a></h2>
-                                    <sub class="article-hero-summary">The world is watching Brazil’s elections, probably as never before. 
-                                        <span class="is-hidden-mobile">The world is watching Brazil’s elections, probably as never before. “Latin America’s latest menace: Bolsonaro
-                                    Presidente,” screams the headline on the cover of The Economist. This conservative UK magazine would love to see the
-                                    Workers’ Party (PT) disappear from Brazilian politics, but even they cannot stomach Bolsonaro.</span>
+                                    <sub class="article-hero-summary" id="cut-it">The world is watching Brazil’s elections, probably as never before. 
+                                        <span class="is-hidden-mobile">“Latin America’s latest menace: Bolsonaro Presidente,” screams the headline on the cover of The Economist. This conservative UK magazine would love to see the Workers’ Party (PT) disappear from Brazilian politics, but even they cannot stomach Bolsonaro.</span>
                                     </sub>
                                     <small class="credits credits-dark">
                                         <p class="author">MARK WEISBROT</p>
@@ -177,7 +190,10 @@
                                     </small>
                                 </main>
                                 <aside class="article-related">
-                                    <small class="preheading">more on</small><h6 class="heading-7 heading-7-underline">Latin America and the caribbean</h6>
+                                    <header class="article-related-header">
+                                        <small class="preheading">more on</small>
+                                        <h6 class="heading-7 heading-7-underline">Latin America and the caribbean</h6>
+                                    </header>
                                     <ul class="list-2 list-2-dark">
                                         <li class="list-item">
                                             <h5 class="heading-5"><a href="">Is Latin America Still the US’s “Backyard”?</a></h5> 
@@ -208,15 +224,17 @@
                                     <sub class="article-hero-summary">Each day since October 2, new evidence has emerged that the killing of Washington Post journalist Jamal Khashoggi, a
                                     resident of Virginia, was a premeditated murder. 
                                     <span class="is-hidden-mobile"> At the same time, it is also increasingly clear that the murder was approved at the highest levels of the Saudi Arabian
-                                    governmen.</span></sub>
+                                    government.</span></sub>
                                     <small class="credits credits-dark">
                                         <p class="author">Dean Baker</p>
                                         <p class="date date-dark">May 29, 2017</p>
                                     </small>
                                 </main>
                                 <aside class="article-related">
-                                    <small class="preheading">more on</small>
-                                    <h6 class="heading-7 heading-7-underline">Goverment</h6>
+                                    <header class="article-related-header">
+                                        <small class="preheading">more on</small>
+                                        <h6 class="heading-7 heading-7-underline">Goverment</h6>
+                                    </header>
                                     <ul class="list-2 list-2-dark">
                                         <li class="list-item">
                                             <h5 class="heading-5"><a href="">Why the Government's $1 Trillion Deficit Is Not a Big Problem for You, but Rich People Complaining About It Might Be</a></h5>
@@ -253,8 +271,10 @@
                                     </small>
                                 </main>
                                 <aside class="article-related">
-                                    <small class="preheading">more on</small>
-                                    <h6 class="heading-7 heading-7-underline">Europe</h6>
+                                    <header class="article-related-header">
+                                        <small class="preheading">more on</small>
+                                        <h6 class="heading-7 heading-7-underline">Europe</h6>
+                                    </header>
                                     <ul class="list-2 list-2-dark">
                                         <li class="list-item">
                                             <h5 class="heading-5"><a href="">The High Cost of Transforming Europe: Why Europe Stumbled</a></h5>
@@ -285,7 +305,7 @@
                                     <img src="http://via.placeholder.com/1156x324" class="is-marginless" alt="Image">
                                 </picture>
                                 <main class="article-hero-text">
-                                    <h2 class="article-hero-title">Strong Consumption Drives GDP Growth in the Second Quarter</h2>
+                                    <h2 class="article-hero-title"><a href="">Strong Consumption Drives GDP Growth in the Second Quarter</a></h2>
                                     <sub class="article-hero-summary">Investment was driven largely by a surge in the mining sector, prompted by higher world energy prices.</sub>
                                     <small class="credits credits-dark">
                                         <p class="author">Dean Baker</p>
@@ -293,8 +313,10 @@
                                     </small>
                                 </main>
                                 <aside class="article-related">
-                                    <small class="preheading">more on</small>
-                                    <h6 class="heading-7 heading-7-underline">Growth</h6>
+                                    <header class="article-related-header">
+                                        <small class="preheading">more on</small>
+                                        <h6 class="heading-7 heading-7-underline">Growth</h6>
+                                    </header>    
                                     <ul class="list-2 list-2-dark">
                                         <li class="list-item">
                                             <h5 class="heading-5"><a href="">Slower Population Growth Could Significantly Reduce Carbon Emissions, Paper Finds</a></h5>
@@ -465,7 +487,7 @@
                             </div>
                         </header>
                         <div class="BeatThePress-Featured is-hidden-touch">
-                            <h3 class="heading-3 heading-3-bold">How Badly Is Trump's Trade War Hurting China?</h3>
+                            <h3 class="heading-3 heading-3-bold heading-3-dark"><a href="#btp-featured">How Badly Is Trump's Trade War Hurting China?</a></h3>
                             <small class="date">october 7, 2018</small>
                         </div>
                         <div class="article-related">
@@ -576,24 +598,24 @@
                         <dt class="list-3-item">
                             <h6 class="heading-7">the americas blog</h6>
                             <h6 class="heading-6"><a href="#blog-1">One Year after Hurricane Maria, Employment in Puerto Rico is Down by 26,000</a></h6>
-                            <small class="credits credits-dark">
-                                <span class="author">KEVIN CASHMAN</span>
+                            <small class="credits">
+                                <div class="author">KEVIN CASHMAN</div>
                                 <span class="date date-dark">SEPTEMBER 25, 2018</span>
                             </small>
                         </dt>
                         <dt class="list-3-item">
                             <h6 class="heading-7">haiti watch</h6>
                             <h6 class="heading-6"><a href="#blog-2">Petrocaribe Protests: What You Need to Know Before October 17</a></h6>
-                            <small class="credits credits-dark">
-                                <span class="author">JAKE JOHNSTON</span>
+                            <small class="credits">
+                                <div class="author">JAKE JOHNSTON</div>
                                 <span class="date date-dark">OCTOBER 16, 2018</span>
                             </small>
                         </dt>
                         <dt class="list-3-item">
                             <h6 class="heading-7">data bytes</h6>
                             <h6 class="heading-6"><a href="#blog-3">Jump in Energy Prices Leads to 2.5 Percent Inflation Over Last Year</a></h6>
-                            <small class="credits credits-dark">
-                                <span class="author">DEAN BAKER</span>
+                            <small class="credits">
+                                <div class="author">DEAN BAKER</div>
                                 <span class="date date-dark">NOVEMBER 14, 2018</span>
                             </small>
                         </dt>

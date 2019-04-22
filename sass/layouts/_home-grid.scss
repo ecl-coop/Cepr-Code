@@ -47,7 +47,7 @@
         }
         #banner-top{
             grid-row: 1;
-            grid-column: 4 / -1;
+            grid-column: 3 / -1;
         }
         #banner-donate{
             grid-area: donate;
@@ -88,10 +88,11 @@
         }
         #banner-top{
             grid-column: 6 / -1;
+            margin-bottom: 2rem;
         }
         #block-featured{
             grid-column: 1 / span 8;
-            margin-top: calc(#{$height-1-fluid}*-1);
+            @include fluid-type(margin-top, $phone, $widescreen, -32px, -52px);
         }
         #block-inTheNews {
             grid-column: 9 / span 3;
@@ -99,6 +100,11 @@
         #block-latest,
         #banner-follow{
             grid-column: 3 / span 8;
+        }
+    }
+    @include media(">=ultrahd"){
+        #banner-top{
+            grid-column: 7 / -1;
         }
     }
 }

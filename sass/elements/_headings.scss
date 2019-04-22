@@ -60,6 +60,11 @@ h4.column-header{
     &-light{
         font-weight: $Light;
     }
+    &-dark{
+        a:hover{
+            color: $Green-light;
+        }
+    }
 }
 
 .heading-4{

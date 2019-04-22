@@ -5,7 +5,9 @@
     margin: $margin-horizontal-large auto;
     padding: 0 $padding-vertical-small;
     width: 90%;
-    padding-bottom: $padding-horizontal-large;
+    //padding-bottom: $padding-horizontal-large;
+    margin-bottom: 0;
+
     .heading-4{
             padding-top: $btpHeader-size;
             padding-left: $padding-vertical-small;
@@ -70,8 +72,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    min-width: 80%;
+    min-width: 60%;
     align-self: center;
+    max-width: 420px;
     .btn-1,
     .btn-2 {
         border-color: $Green-dark;
@@ -89,13 +92,13 @@
     .btn-1 {
         background-color: transparent;
         color: $Green-dark;
-        margin-left: $margin-vertical-small;
+        margin-left: $margin-vertical-large;
     }
 
     .btn-2 {
         background-color: $Green-light;
         color: $White;
-        margin-right: $margin-vertical-small;
+        margin-right: $margin-vertical-large;
     }
 }
 
@@ -125,6 +128,7 @@
 @include media(">=desktop"){
     .block-BeatThePress{
         width: 150%;
+        height: 100%;
         margin-left: -50%;
         padding-left: 50%;
         margin-top: 0;
@@ -153,7 +157,7 @@
             }
     }
     .BeatThePress-Header{
-        height: $btpHeader-size-fluid;
+        @include blogs-block-header_height;
         justify-content: space-between;
         padding: 0;
         flex-direction: row;
@@ -165,11 +169,12 @@
             padding-top: 0;
             z-index: 5;
             font-size: $size-h4-min;
+            margin-right: 12rem;
         }
         &::before{
             content: "";
             background-image: none;
-            height: $btpHeader-size-fluid;
+            @include blogs-block-header_height;
             width: 200%;
             border-bottom: 1px solid $Green;
             top: 0;

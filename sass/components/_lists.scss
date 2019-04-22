@@ -20,12 +20,12 @@
         width: 85%;
         display: flex;
         flex-direction: column;
+        summary{
+            margin-bottom: 1em;
+        }
     }
     .tag{
         margin-top: $margin-horizontal-regular; 
-    }
-    .credits{
-        margin-top: 2em;
     }
 
     &:not(:last-child) {
@@ -42,7 +42,7 @@
     justify-content: space-evenly;
     &:not(:last-child){
         margin-bottom: $margin-horizontal-regular;
-        border-bottom: 3px dotted currentColor;
+        border-bottom: 1px dotted currentColor;
         padding-bottom: $padding-horizontal-regular;
     }
     .credits, .date{
@@ -61,7 +61,7 @@
         .heading-6{
             position: relative;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
 
             &::before{
                 content: "";
@@ -70,9 +70,12 @@
                 height: 31px;
                 flex: 0 0 auto;
                 margin-left: $margin-vertical-extraLarge*-1;
-                background-image: url("/img/md-paper.svg");
-                background-size: cover;
-                margin-right: $margin-vertical-large;
+                -webkit-mask-image: url("/img/md-paper.svg");
+                mask-image: url("/img/md-paper.svg");
+                mask-size: cover;
+                mask-repeat: no-repeat;
+                margin-right: $margin-vertical-normal;
+                background-color: $Blue-dark;
             }
         }
     }
@@ -96,6 +99,14 @@
     }
     .list-2-item {
         flex-direction: row;
+        &:not(:first-child){
+            padding-top: $padding-horizontal-regular;
+        }
+        &:not(:last-child){
+            .article-text-container {
+                padding-bottom: 0;
+            }
+        }
         .article-text-container {
             padding-left: $padding-vertical-normal;
         }
@@ -128,15 +139,18 @@
         }
     }
     .list-3-item-news{
-        .heading-6,
         .date {
-            margin-left: $margin-vertical-extraLarge/2;
+            margin-left: $side-icon_size;
+            padding-left: .5rem;
         }
          .heading-6{
              align-items: flex-start;
+             margin-left: 0;
             &::before {
-                 margin-left: ($margin-vertical-extraLarge/2)*-1;
-                 margin-right: 0;
+                 margin-left: 0;
+                 margin-right: .5rem;
+                 width: $side-icon_size;
+                 height: $side-icon_size;
             }
          }
     }

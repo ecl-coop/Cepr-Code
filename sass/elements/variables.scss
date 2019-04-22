@@ -55,7 +55,7 @@ $size-h1-max: 42px;
 $size-h2-min: 32px;
 $size-h2-max: 40px;
 $size-h3-min: 24px;
-$size-h3-max: 32px;
+$size-h3-max: 34px;
 $size-h4-min: 24px;
 $size-h4-max: 30px;
 $size-h5-min: 20px;
@@ -73,7 +73,7 @@ $size-smallish-fluid: calc-interpolation($phone, $size-smallish-min, $widescreen
 $size-p-fluid: calc-interpolation($phone, $size-p-min, $desktop, $size-p-max);
 $size-p2-fluid: calc-interpolation($phone, $size-p2-min, $widescreen, $size-p2-max);
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
-$size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $widescreen);
+$size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $fullhd);
 $size-h3-fluid: between($size-h3-min, $size-h3-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
 $size-h5-fluid: between($size-h5-min, $size-h5-max, $phone, $widescreen);
@@ -111,17 +111,26 @@ $rows-gap: 5vh;
 
 $menu-header-height: between(64px, 80px, $phone, $tablet);
 $menu-items-height: between(48px, 64px, $phone, $tablet);
-$menu-margin-top: calc(#{$menu-items-height}* -7);
+$menu-margin-top: calc(#{$menu-items-height}* -8);
 $menu-height-tablet: 120px;
 
 $height-1-min: 32px;
-$height-1-max: 40px;
+$height-1-max: 52px;
 $height-1-fluid: between($height-1-min, $height-1-max, $tablet, $widescreen);
+@mixin btn-height {
+    @include fluid-type(height, $phone, $widescreen, $height-1-min, $height-1-max)
+}
 
+@mixin banners-picture_width {
+    @include fluid-type(width, $desktop, $fullhd, 190px, 248px);
+}
 $picture-heigth: 240px;
+$side-icon_size: 2rem;
 $profile-picture-large: 120px;
 $btpHeader-size-fluid: calc-interpolation($phone, 56px, $widescreen, 120px); ///keeps growing beyond the media query!!!
-
+@mixin blogs-block-header_height {
+    @include fluid-type(height, $phone, $ultrahd, 56px, 150px);
+}
 
 //$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
 

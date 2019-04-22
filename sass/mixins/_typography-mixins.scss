@@ -92,7 +92,7 @@
 @mixin heading-3 {
     font-family: $Sans;
     font-weight: $Regular;
-    font-size: $size-h3-fluid;
+    @include fluid-type(font-size, $phone, $fullhd, $size-h3-min, $size-h3-max);
     color: $Black;
     margin: $margin-horizontal-regular 0;
     margin-top: $margin-horizontal-small;
@@ -122,6 +122,7 @@
 
 @mixin heading-5 {
     font-size: $size-h5-fluid;
+    color: $Black;
 }
 @mixin heading-6 {
     font-family: $Sans;
@@ -130,10 +131,10 @@
     font-weight: $Light;
     text-transform: capitalize;
     letter-spacing: 0;
+    color: $Black;
     a{
         color: inherit;
-        -webkit-text-stroke: 0px $Blue-light;
-        transition: all 200ms ease-out;
+        -webkit-text-stroke: 0px;
         
         &:hover{
             color: $Blue-light;
@@ -147,6 +148,7 @@
     font-size: $size-h7-fluid;
     letter-spacing: .15em;
     font-weight: $ExtraBold;
+    line-height: 1.2;
 }
 
 /////////////////////////////////

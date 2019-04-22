@@ -15,7 +15,7 @@
         padding-right: $padding-vertical-large;
         border-radius: 0 0 0 50px;
         color: $White;
-        height: $height-1-fluid;
+        @include btn-height;
         align-items: center;
         padding-left: 5%;
         position: relative;
@@ -69,8 +69,9 @@ $input-heigth: $height-1-max;
 
 .sign-up{
     width: 80%;
-    height: $input-heigth;
+    @include btn-height;
     display: inline-flex;
+    max-width: 420px;
 }
 
 .input{
@@ -97,9 +98,8 @@ $input-heigth: $height-1-max;
     @extend %banner-base;
 
     .btn-2{
-        //width: 30%;
         width: 104px;
-        height: 37%;
+        @include btn-height;
         text-align: center;
         margin: 0;
         border-color: $Blue-dark;
@@ -151,7 +151,7 @@ $input-heigth: $height-1-max;
             margin: 0 1em;
             order: 2;
         }
-        svg:last-child{
+        a:last-child{
             order: 3;
         }
     }
@@ -173,6 +173,16 @@ $input-heigth: $height-1-max;
 @include media(">=desktop") {
     .banner-btp {
         display: flex;
+        margin-right: -50%;
+        padding-right: 50%;
+        width: 150%;
+        p a{
+            color: inherit;
+            &:hover{
+                color: $Yellow;
+                text-decoration: underline;
+            }
+        }
     }
     .block-banner-left {
         border-radius: 0 100px 100px 0;
@@ -185,18 +195,13 @@ $input-heigth: $height-1-max;
         padding-right: 50vw;
     }
 
-    .banner-btp{
-        margin-right: -50%;
-        padding-right: 50%;
-        width: 150%;
-    }
-
     .banner-subscribe, .banner-donate{
-        flex-direction: row;
         padding-bottom: 0;
         align-items: center;
         position: relative;
-        justify-content: space-between;
+        justify-content: center;
+        margin-top: 5vmin;
+        margin-bottom: 5vmin;
         
         .sign-up, p{
             margin-top: $height-1-max/3;
@@ -205,17 +210,17 @@ $input-heigth: $height-1-max;
 
     .banner-subscribe{
         .heading-7{
-            margin-left: 45%;
-            position: absolute;
-            top: $height-1-max/3;
             margin-bottom: 0;
             left: 0;
-            width: 50%;
+            width: max-content;
         }
         .sign-up{
-            flex: 0 0 50%;
-            margin-left: auto;
-            //margin-right: auto;
+            flex: 0 0 auto;
+            margin-bottom: $margin-horizontal-regular;
+        }
+        .banner-picture{
+            position: absolute;
+            right: 0;
         }
     }
 
@@ -242,9 +247,9 @@ $input-heigth: $height-1-max;
     }
 
     .banner-picture{
-        flex: 0 0 20%;
         padding-bottom: $padding-horizontal-regular;
         margin-left: auto;
+        @include banners-picture_width;
     }
 
 ///////////////////////////////////////////////////
@@ -267,8 +272,8 @@ $input-heigth: $height-1-max;
         align-items: center;
         flex: 1 1 auto;
         //width: 100%;
-        height: 75%;
-        padding-bottom: $padding-horizontal-small;
+        height: 70%;
+       
         border-radius: 0 0 50px 0;
             dt:first-of-type {
                 border-right: 1px solid $Blue-light;
@@ -284,7 +289,7 @@ $input-heigth: $height-1-max;
             align-self: stretch;
             align-items: center;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             flex: 0 0 auto;
             text-align: center;
             height: 100%;
@@ -292,12 +297,17 @@ $input-heigth: $height-1-max;
             &:first-of-type{
                 justify-self: flex-start;
             }
+            .small-text-serif-1, .small-text-serif-2{
+                font-size: $size-smallish-min;
+                color: $Black;
+            }
             .small-text-serif-1{
-                font-size: 1vmin;
+                font-weight: $Bold;
             }
             .logo-cepr{
                 position: relative;
                 height: auto;
+                max-height: 3rem;
                 width: 100%;
             }
             &-social{
@@ -308,13 +318,13 @@ $input-heigth: $height-1-max;
                 margin-right: .5em;
                 &:before {
                     content: "";
-                    height: 30px;
+                    height: 20px;
                     flex: 0 1 1px;
                     background-color: $Blue-light;
                     order: 1;
-                    margin: .1em;
+                    margin: .2em;
                 }
-                svg:last-child {
+                a:last-child {
                     order: 2;
                 }
             }
@@ -328,7 +338,6 @@ $input-heigth: $height-1-max;
                 background-color: $Blue-light;
                 border: none;
                 flex: 0 0 auto;
-                transition: all 200ms ease-out;
                 &:hover{
                     color: $Yellow;
                 }
@@ -345,7 +354,6 @@ $input-heigth: $height-1-max;
         .btn-2 {
             border-width: 4px;
             width: 130px;
-            height: 40%;
         }
     }
 }

@@ -201,7 +201,7 @@
         align-items: flex-end;
         width: 100%;
         overflow: visible;
-        height: $height-1-fluid;
+        @include btn-height;
         &:after{
             content: "";
             position: absolute;
@@ -240,7 +240,8 @@
             border-radius: 0 30px 0 0;
             position: relative;
             &:before {
-                top: -12px;
+                @include fluid-type(top, $desktop, $widescreen, -12px, -14px);
+                //top: -12px;
                 margin-right: -9px;
                 flex: 0 0 100%;
                 width: 100%;
@@ -278,7 +279,11 @@
         overflow:hidden;
         height: 100%;
     }
-
+    .article-related{
+        ul.list-2{
+            padding-top: 0;
+        }
+    }
     .featured-footer{
         padding-left: $margin-vertical-large*4;
         border-radius: 0 0 60px 60px;
@@ -310,12 +315,17 @@
             height: 100%;
             flex: 0 0 20%;
         }
+        .featured-footer-buttons{
+            flex: 1 0 auto;
+            justify-content: space-evenly;
+        }
     }
 }
 
 @include media(">=desktop"){
     .block-featured{
         margin-top: 0;
+        margin-bottom: 0;
     }
     .featured-footer{
         height: 94px;

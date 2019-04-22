@@ -19,6 +19,10 @@
     }
 }
 
+@mixin transition-basic {
+    transition: all 200ms ease-out;
+}
+
 @mixin absolute-center {
     position: absolute;
     left: 0;

@@ -20,6 +20,11 @@
         h1, .report-author, .tag{
             padding-left: 4vw;
         }
+        .report-author{
+            img{
+                width: auto;
+            }
+        }
     }
     @include media(">=desktop"){
         flex-direction: row;
