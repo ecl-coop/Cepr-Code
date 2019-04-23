@@ -1,3 +1,11 @@
+.small-text-sans{
+    @include small-text;
+    font-weight: $Bold;
+    color: $Orange;
+    a{
+        color: inherit;
+    }
+}
 .small-text-sans-4{
     @include small-text-sans-4;
 }

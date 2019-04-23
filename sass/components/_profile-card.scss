@@ -4,19 +4,6 @@
     width: 83%;
     margin: $margin-horizontal-large auto;
     
-    .profile-picture{
-        display: flex;
-        align-items: center;
-        height: $profile-header-height;
-        width: $profile-header-height;
-        @include transition-basic;
-        &:hover{
-            cursor: pointer;
-        }
-        &::after{
-            content: none;
-        }
-    }
     .profile-data{
         display: flex;
         flex-flow: column;
@@ -37,8 +24,11 @@
         font-family: $Sans;
         font-weight: $Light;
         line-height: 1.46;
-        font-size: $size-p-fluid;
+        @include size-p-fluid;
         color: $Grey;
+    }
+    .small-text-sans{
+        padding-left: $padding-vertical-normal;
     }
     .profile-social{
         flex: 1 0 100%;
@@ -47,7 +37,7 @@
         @include media(">=desktop"){
             display: grid;
             width: 100%;
-            grid-template-columns: minmax(144px, 196px) 1fr;
+            grid-template-columns: minmax($profile-picture-large-min, 196px) 1fr;
             grid-template-rows: auto;
             margin: 0;
             border-top: 1px solid $Grey-light;
@@ -57,24 +47,12 @@
                 grid-row: 1/-1;
                 position: relative;
                 top: 40%;
-                margin-top: -20%;
+                //margin-top: -20%;
+                margin-right: $margin-vertical-normal;
                 left: 0;
                 right: 0;
-                margin: 0 auto;
-                padding-right: $padding-vertical-large;
-                @include fluid-type(height, $desktop, 1920px, 144px, 172px);
-                width: 12.5rem;
-                &::after{
-                    content: "";
-                    position: absolute;
-                    width: 50%;
-                    height: 100%;
-                    mask: url("/img/profile-picture-frame.svg") no-repeat right;
-                    background-color: $Green;
-                    @include fluid-type(right, $desktop, 1920px, 28px, 20px);
-                    top: 3px;
-                }
-
+                //margin: 0 auto;
+                //padding-right: $padding-vertical-large;
             }
             .profile-data{
                 align-self: end;
@@ -95,7 +73,12 @@
                 grid-column: 2;
                 align-self: start;
                 padding: 0;
+                margin-bottom: $margin-horizontal-regular;
+            }
+            .small-text-sans{
+                grid-column: 2;
                 margin-bottom: $margin-horizontal-large;
+                padding-left: 0;
             }
         }
     }
@@ -149,8 +132,6 @@
         }
         @include media(">=desktop"){
             .profile-picture{
-                @include fluid-type(height, $desktop, 1920px, 144px, 172px);
-                width: 12.5rem;
                 &::after{
                     content: "";
                     @include absolute-center;

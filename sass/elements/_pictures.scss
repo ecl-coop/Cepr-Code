@@ -1,9 +1,23 @@
-.picture-round-large{
-    clip-path: circle();
-    height: 100%;
-    width: 100%;
-    flex: 0 0 auto;
+@mixin picture-base {
+    flex: 1 1 auto;
     object-fit: cover;
+    clip-path: circle();
+    //align-self: center;
+    //justify-self: center;
+}
+
+.picture-small{
+    @include picture-base;
+    height: $profile-picture-small;
+}
+.picture-large{
+    @include picture-base;
+    //min-height: $profile-picture-large-min;
+    //min-width: $profile-picture-large-min;
+    //max-width: $profile-picture-large-max;
+    @include fluid-type(height, $desktop, $ultrahd, $profile-picture-large-min, $profile-picture-large-max);
+    //height: auto;
+    width: 100%;
 }
 
 
@@ -17,6 +31,35 @@
         margin-left: $columns-gap;
         img{
             border-radius: 0 100px 0 0;
+        }
+    }
+}
+.profile-picture{
+    display: flex;
+    align-items: center;
+    height: $profile-header-height;
+    width: $profile-header-height;
+    overflow: hidden;
+    @include transition-basic;
+    &:hover{
+        cursor: pointer;
+    }
+    &::after{
+        content: none;
+    }
+    @include media(">=desktop"){
+        @include fluid-type(height, $desktop, 1920px, 144px, 172px);
+        width: auto;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            -webkit-mask: url("/img/profile-picture-frame.svg") no-repeat right;
+            mask: url("/img/profile-picture-frame.svg") no-repeat right;
+            background-color: $Green;
+            right: 0;
+            top: 3px;
         }
     }
 }

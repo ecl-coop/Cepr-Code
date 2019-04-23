@@ -68,7 +68,7 @@ article {
   .start-count{
     counter-reset: footnotes;
   }
-  footer{
+footer{
     position: relative;
   ol.footnotes{
     list-style-type: none;
@@ -90,6 +90,13 @@ article {
       @include bullet-center;
       background-color: $Blue-light;
     }
+    @include media(">=desktop"){
+      margin-top: 0;
+        &::before,&::after{
+          content: none;
+        }
+      }
+    
     @include media(">=fullhd"){
       padding-right: $padding-vertical-extraLarge*2;
     }
@@ -126,7 +133,7 @@ article {
         }
         &::after{
           content: "";
-          border-bottom: 1px solid $Grey-light;
+          border-bottom: 1px solid $Orange-dark;
           width: $margin-vertical-extraLarge*.7;
           position: absolute;
           left: $margin-vertical-extraLarge*-1;
@@ -134,4 +141,26 @@ article {
           margin-left: 1.25em;
         }
     }
+  .heading-3{
+    text-align: left;
+    color: $Orange-dark;
+    margin-left: -12%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: $margin-horizontal-extraLarge;
+      &::before{
+        @include bullet;
+        background-color: $Orange-dark;
+        order: 1;
+        margin-left: $margin-vertical-large;
+      }
+      &::after{
+        @include line-base;
+        content: "";
+        border-color: $Orange-dark;
+        order: 2;
+        margin-left: $bullet-size/-2;
+      }
+  }
 }

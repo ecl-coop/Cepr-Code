@@ -1,6 +1,6 @@
 %paragraph-base{
     font-family: $Sans;
-    font-size: $size-p-fluid;
+    @include size-p-fluid;
     line-height: 1.57;
     font-weight: $Light;
     letter-spacing: 0;

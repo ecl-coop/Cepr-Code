@@ -13,6 +13,7 @@
         padding-left: $padding-vertical-small;
         position: relative;
         margin-left: $margin-vertical-small;
+        a{color: $Black;}
         &::before{
             @include arrow-fordward;
             background-color: $Grey-light;
@@ -25,6 +26,17 @@
                 background-color: $Grey-light;
                 left: -.5rem;
             }
+        }
+    }
+    .is-selected{
+        
+        a{color: $Blue-light;}
+        &::after{
+            content: "";
+            @include bullet-small;
+            @include absolute-center;
+            background-color: $Blue-light;
+            bottom: -120%; 
         }
     }
     @include media(">=desktop"){

@@ -29,6 +29,13 @@
     font-family: $Sans;
     color: $Grey-light;
     font-size: 15px;
+    a.more{
+        @include smallest-text;
+        color: $Grey-lilac;
+        &:hover{
+            color: $Grey;
+        }
+    }
 }
 
     .article-hero-text,

@@ -8,6 +8,11 @@
 .author{
     font-weight: 700;
 }
+.publication-name{
+    text-transform: capitalize;
+    margin-right: .5em;
+}
+//////General credits component style
 .author, .date{
     display: inline-block;
 }
@@ -17,8 +22,14 @@
         margin-right: $margin-vertical-small;
     }
 }
-
-.publication-name{
-    text-transform: capitalize;
-    margin-right: .5em;
+/////Credits component inside article/report
+.report-author{
+    .author, .date{
+        display: block;
+    }
+    .author+.date{
+        &::before{
+            content: none;
+        }
+    }
 }

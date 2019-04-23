@@ -51,9 +51,9 @@
             display: flex;
             align-items: center;
             @include fluid-type(height, $widescreen, 2560px, $report-author-height, $report-author-height*1.25);
-            //height: $report-author-height;
+            @include fluid-type(bottom, $widescreen, 2560px, $report-author-height*-1, $report-author-height*-1.25);
             margin-top: auto;
-            justify-self: flex-end;
+            position: relative;
             .credits{
                 padding-left: $padding-vertical-small;
             }

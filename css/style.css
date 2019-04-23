@@ -72,7 +72,7 @@ body {
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   transition: all 200ms ease-out; }
 
-.tag, .credits, .date, .btn-1, .btn-2, .btn-5, .table-of-contents summary, .table-of-contents dt a, .footer-item a, .footer-license p {
+.small-text-sans, .tag, .credits, .date, .btn-1, .btn-2, .btn-5, .article-hero-summary a.more, .table-of-contents summary, .table-of-contents dt a, .footer-item a, .footer-license p {
   font-family: var(--font-Primary);
   font-size: calc(0.10132vw + 9.62209px);
   text-transform: uppercase;
@@ -185,7 +185,7 @@ h4.column-header {
 
 .heading-6 {
   font-family: var(--font-Primary);
-  font-size: calc(0.20263vw + 15.24417px);
+  font-size: calc(0.21368vw + 13.81197px);
   line-height: 1.25;
   font-weight: 300;
   text-transform: capitalize;
@@ -250,6 +250,12 @@ h4.column-header {
       width: 5%; }
     h4.column-header:after {
       width: 200%; } }
+
+.small-text-sans {
+  font-weight: 700;
+  color: var(--color-Accent); }
+  .small-text-sans a {
+    color: inherit; }
 
 .small-text-sans-4 {
   font-family: var(--font-Primary);
@@ -523,6 +529,10 @@ progress::-webkit-progress-bar {
 .author {
   font-weight: 700; }
 
+.publication-name {
+  text-transform: capitalize;
+  margin-right: .5em; }
+
 .author, .date {
   display: inline-block; }
 
@@ -530,9 +540,11 @@ progress::-webkit-progress-bar {
   content: "/";
   margin-right: 0.5rem; }
 
-.publication-name {
-  text-transform: capitalize;
-  margin-right: .5em; }
+.report-author .author, .report-author .date {
+  display: block; }
+
+.report-author .author + .date::before {
+  content: none; }
 
 .btn-1, .btn-2, .btn-5 {
   cursor: pointer;
@@ -667,12 +679,24 @@ input::-moz-focus-inner {
   transform: translateY(0px) !important;
   opacity: 50; }
 
-.picture-round-large {
+.picture-small {
+  flex: 1 1 auto;
+  object-fit: cover;
   clip-path: circle();
-  height: 100%;
-  width: 100%;
-  flex: 0 0 auto;
-  object-fit: cover; }
+  height: 72px; }
+
+.picture-large {
+  flex: 1 1 auto;
+  object-fit: cover;
+  clip-path: circle();
+  height: 144px;
+  width: 100%; }
+  @media screen and (min-width: 1024px) {
+    .picture-large {
+      height: calc(144px + 28 * (100vw - 1024px) / 936); } }
+  @media screen and (min-width: 1960px) {
+    .picture-large {
+      height: 172px; } }
 
 .report-img-hero {
   display: flex;
@@ -690,6 +714,39 @@ input::-moz-focus-inner {
       margin-left: 1vw; }
       .report-img-hero img {
         border-radius: 0 100px 0 0; } }
+
+.profile-picture {
+  display: flex;
+  align-items: center;
+  height: 7.5rem;
+  width: 7.5rem;
+  overflow: hidden;
+  transition: all 200ms ease-out; }
+  .profile-picture:hover {
+    cursor: pointer; }
+  .profile-picture::after {
+    content: none; }
+  @media (min-width: 1024px) {
+    .profile-picture {
+      height: 144px;
+      width: auto; } }
+  @media screen and (min-width: 1024px) and (min-width: 1024px) {
+    .profile-picture {
+      height: calc(144px + 28 * (100vw - 1024px) / 896); } }
+  @media screen and (min-width: 1024px) and (min-width: 1920px) {
+    .profile-picture {
+      height: 172px; } }
+  @media (min-width: 1024px) {
+      .profile-picture::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        -webkit-mask: url("/img/profile-picture-frame.svg") no-repeat right;
+        mask: url("/img/profile-picture-frame.svg") no-repeat right;
+        background-color: var(--color-Secondary);
+        right: 0;
+        top: 3px; } }
 
 .logo-cepr-color {
   --logo-lightBlue: #004fa7;
@@ -746,10 +803,16 @@ a.icon-link {
 
 .report-content p, .report-content blockquote, .report-content ul, .report-content ol {
   font-family: var(--font-Primary);
-  font-size: calc(0.46083vw + 14.28111px);
+  font-size: 16px;
   line-height: 1.57;
   font-weight: 300;
   letter-spacing: 0; }
+  @media screen and (min-width: 373px) {
+    .report-content p, .report-content blockquote, .report-content ul, .report-content ol {
+      font-size: calc(16px + 8 * (100vw - 373px) / 1587); } }
+  @media screen and (min-width: 1960px) {
+    .report-content p, .report-content blockquote, .report-content ul, .report-content ol {
+      font-size: 24px; } }
 
 .paragraph-2, .paragraph-2-light {
   font-family: var(--font-Primary);
@@ -786,6 +849,11 @@ a.icon-link {
   font-family: var(--font-Primary);
   color: var(--color-Grey-light);
   font-size: 15px; }
+  .article-hero-summary a.more {
+    font-size: calc(0.20263vw + 7.24417px);
+    color: var(--color-lilac); }
+    .article-hero-summary a.more:hover {
+      color: var(--color-Grey); }
 
 .article-hero-text,
 .article-related {
@@ -1819,7 +1887,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       .side-blogs:before {
         content: "";
         background: url("/img/texture-diagonal.svg") left no-repeat;
-        transform: scaleX(-1);
         border-radius: 100px 0 0 0;
         opacity: 0.25;
         filter: alpha(opacity=25);
@@ -2074,16 +2141,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   flex-wrap: wrap;
   width: 83%;
   margin: 2rem auto; }
-  .profile-card .profile-picture {
-    display: flex;
-    align-items: center;
-    height: 7.5rem;
-    width: 7.5rem;
-    transition: all 200ms ease-out; }
-    .profile-card .profile-picture:hover {
-      cursor: pointer; }
-    .profile-card .profile-picture::after {
-      content: none; }
   .profile-card .profile-data {
     display: flex;
     flex-flow: column;
@@ -2101,8 +2158,16 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     font-family: var(--font-Primary);
     font-weight: 300;
     line-height: 1.46;
-    font-size: calc(0.46083vw + 14.28111px);
+    font-size: 16px;
     color: var(--color-Grey); }
+    @media screen and (min-width: 373px) {
+      .profile-card .profile-summary {
+        font-size: calc(16px + 8 * (100vw - 373px) / 1587); } }
+    @media screen and (min-width: 1960px) {
+      .profile-card .profile-summary {
+        font-size: 24px; } }
+  .profile-card .small-text-sans {
+    padding-left: 1.5rem; }
   .profile-card .profile-social {
     flex: 1 0 100%; }
   @media (min-width: 1024px) {
@@ -2119,36 +2184,9 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         grid-row: 1/-1;
         position: relative;
         top: 40%;
-        margin-top: -20%;
+        margin-right: 1rem;
         left: 0;
-        right: 0;
-        margin: 0 auto;
-        padding-right: 2rem;
-        height: 144px;
-        width: 12.5rem; } }
-    @media screen and (min-width: 1024px) and (min-width: 1024px) {
-      .profile-card[data-state=open] .profile-picture {
-        height: calc(144px + 28 * (100vw - 1024px) / 896); } }
-    @media screen and (min-width: 1024px) and (min-width: 1920px) {
-      .profile-card[data-state=open] .profile-picture {
-        height: 172px; } }
-  @media (min-width: 1024px) {
-        .profile-card[data-state=open] .profile-picture::after {
-          content: "";
-          position: absolute;
-          width: 50%;
-          height: 100%;
-          mask: url("/img/profile-picture-frame.svg") no-repeat right;
-          background-color: var(--color-Secondary);
-          right: 28px;
-          top: 3px; } }
-      @media screen and (min-width: 1024px) and (min-width: 1024px) {
-        .profile-card[data-state=open] .profile-picture::after {
-          right: calc(28px + -8 * (100vw - 1024px) / 896); } }
-      @media screen and (min-width: 1024px) and (min-width: 1920px) {
-        .profile-card[data-state=open] .profile-picture::after {
-          right: 20px; } }
-  @media (min-width: 1024px) {
+        right: 0; }
       .profile-card[data-state=open] .profile-data {
         align-self: end;
         padding: 0;
@@ -2164,7 +2202,11 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         grid-column: 2;
         align-self: start;
         padding: 0;
-        margin-bottom: 2rem; } }
+        margin-bottom: 0.8rem; }
+      .profile-card[data-state=open] .small-text-sans {
+        grid-column: 2;
+        margin-bottom: 2rem;
+        padding-left: 0; } }
   .profile-card[data-state=closed] {
     flex-direction: column;
     width: max-content;
@@ -2218,39 +2260,29 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .profile-card[data-state=closed] .profile-social {
       display: none; }
     @media (min-width: 1024px) {
-      .profile-card[data-state=closed] .profile-picture {
-        height: 144px;
-        width: 12.5rem; } }
+      .profile-card[data-state=closed] .profile-picture::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto auto;
+        width: 100%;
+        height: 100%;
+        mask: url("/img/profile-picture-frame.svg") no-repeat right;
+        background-color: var(--color-Primary-dark);
+        transform: rotate(90deg);
+        fill: var(--color-Primary-dark);
+        right: 28px;
+        top: 0px;
+        bottom: 19px; } }
   @media screen and (min-width: 1024px) and (min-width: 1024px) {
-    .profile-card[data-state=closed] .profile-picture {
-      height: calc(144px + 28 * (100vw - 1024px) / 896); } }
+    .profile-card[data-state=closed] .profile-picture::after {
+      right: calc(28px + -8 * (100vw - 1024px) / 896); } }
   @media screen and (min-width: 1024px) and (min-width: 1920px) {
-    .profile-card[data-state=closed] .profile-picture {
-      height: 172px; } }
-    @media (min-width: 1024px) {
-        .profile-card[data-state=closed] .profile-picture::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          margin: auto auto;
-          width: 100%;
-          height: 100%;
-          mask: url("/img/profile-picture-frame.svg") no-repeat right;
-          background-color: var(--color-Primary-dark);
-          transform: rotate(90deg);
-          fill: var(--color-Primary-dark);
-          right: 28px;
-          top: 0px;
-          bottom: 19px; } }
-    @media screen and (min-width: 1024px) and (min-width: 1024px) {
-      .profile-card[data-state=closed] .profile-picture::after {
-        right: calc(28px + -8 * (100vw - 1024px) / 896); } }
-    @media screen and (min-width: 1024px) and (min-width: 1920px) {
-      .profile-card[data-state=closed] .profile-picture::after {
-        right: 20px; } }
+    .profile-card[data-state=closed] .profile-picture::after {
+      right: 20px; } }
 
 .breadcrumps {
   display: flex;
@@ -2266,6 +2298,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     padding-left: 1rem;
     position: relative;
     margin-left: 0.5rem; }
+    .breadcrumps-list dt a {
+      color: var(--color-Black); }
     .breadcrumps-list dt::before {
       content: "";
       width: 12px;
@@ -2292,6 +2326,23 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         mask: url("/img/ios-arrow-forward.svg") no-repeat;
         background-color: var(--color-Grey-light);
         left: -.5rem; }
+  .breadcrumps .is-selected a {
+    color: var(--color-Primary-light); }
+  .breadcrumps .is-selected::after {
+    content: "";
+    content: "";
+    width: 6px;
+    height: 6px;
+    clip-path: circle();
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    background-color: var(--color-Primary-light);
+    bottom: -120%; }
   @media (min-width: 1024px) {
     .breadcrumps {
       margin: 0;
@@ -2535,6 +2586,11 @@ footer {
       outline: 44px solid white;
       border-radius: 50%;
       background-color: var(--color-Primary-light); }
+    @media (min-width: 1024px) {
+      footer ol.footnotes {
+        margin-top: 0; }
+        footer ol.footnotes::before, footer ol.footnotes::after {
+          content: none; } }
     @media (min-width: 1680px) {
       footer ol.footnotes {
         padding-right: 8rem; } }
@@ -2565,12 +2621,43 @@ footer {
       margin-right: 0; }
     footer ol.footnotes li::after {
       content: "";
-      border-bottom: 1px solid var(--color-Grey-light);
+      border-bottom: 1px solid var(--color-Accent-dark);
       width: 2.45rem;
       position: absolute;
       left: -3.5rem;
       top: 1.25em;
       margin-left: 1.25em; }
+  footer .heading-3 {
+    text-align: left;
+    color: var(--color-Accent-dark);
+    margin-left: -12%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 3rem; }
+    footer .heading-3::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      clip-path: circle();
+      background-color: inherit;
+      background-color: var(--color-Accent-dark);
+      order: 1;
+      margin-left: 1.5rem; }
+    footer .heading-3::after {
+      display: block;
+      height: 1px;
+      width: 100%;
+      border: 0;
+      border-top: 2px solid var(--color-Black);
+      margin: 1em 0;
+      padding: 0;
+      position: relative;
+      overflow: visible;
+      content: "";
+      border-color: var(--color-Accent-dark);
+      order: 2;
+      margin-left: -6px; }
 
 .bibliography {
   font-size: calc(0.20263vw + 11.24417px);
@@ -3430,14 +3517,21 @@ ul.list-2 {
         display: flex;
         align-items: center;
         height: 4.5rem;
+        bottom: -4.5rem;
         margin-top: auto;
-        justify-self: flex-end; } }
+        position: relative; } }
     @media screen and (min-width: 1024px) and (min-width: 1360px) {
       .report-header .report-author {
         height: calc(4.5rem + 1.125 * (100vw - 1360px) / 1200); } }
     @media screen and (min-width: 1024px) and (min-width: 2560px) {
       .report-header .report-author {
         height: 5.625rem; } }
+    @media screen and (min-width: 1024px) and (min-width: 1360px) {
+      .report-header .report-author {
+        bottom: calc(-4.5rem + -1.125 * (100vw - 1360px) / 1200); } }
+    @media screen and (min-width: 1024px) and (min-width: 2560px) {
+      .report-header .report-author {
+        bottom: -5.625rem; } }
   @media (min-width: 1024px) {
         .report-header .report-author .credits {
           padding-left: 1rem; } }
@@ -3633,8 +3727,12 @@ ul.list-2 {
       grid-column: 3 / span 7;
       grid-row: 6; }
     #report-grid .profile-card {
-      grid-column: 4 / span 7;
+      grid-column: 3 / span 8;
       grid-row: 4; } }
+
+@media (min-width: 1360px) {
+  #report-grid .profile-card {
+    grid-column: 4 / span 7; } }
 
 @media (min-width: 1680px) {
   #report-grid .report-header {

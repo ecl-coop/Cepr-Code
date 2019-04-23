@@ -59,11 +59,15 @@
             grid-row: 6;
         }
         .profile-card{
-            grid-column: 4 / span 7;
+            grid-column: 3 / span 8;
             grid-row: 4;
         }
     }
-
+    @include media(">=widescreen"){
+        .profile-card{
+            grid-column: 4 / span 7;
+        }
+    }
     @include media(">=fullhd") {
         .report-header{
             grid-column: 1 / -1;
