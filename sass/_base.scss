@@ -68,10 +68,10 @@ body{
         margin: 0 auto;
     }
     @include media(">=fullhd"){
-        max-width: 1560px;
+        max-width: $maxwith-master-hd;
     }
     @include media(">=ultrahd"){
-        max-width: 1920px;
+        max-width: $maxwith-master-uhd;
     }
 }
 h1, h2, h3, h4, h5, h6{

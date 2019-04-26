@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     margin-left: -4vw;
+    float: left;
     figure{
         order: 1;
     }
@@ -43,6 +44,7 @@
                 margin-bottom: 0;
                 margin-left: 0;
                 flex: 1 1 auto;
+                width: auto;
                 h1, .report-author, .tag{
                     padding-left: 0;
             }
@@ -56,6 +58,22 @@
             position: relative;
             .credits{
                 padding-left: $padding-vertical-small;
+            }
+        }
+        @supports (display: grid){
+            display: grid;
+            grid-template-columns: repeat(12, minmax(6%, 8%));
+            grid-gap: $columns-gap;
+            figure{
+                grid-column: 5/-1;
+                .report-img-hero{
+                    margin-left: 0;
+                }
+            }
+            .report-title-container{
+                grid-column: 1 / span 4;
+                padding-right: $columns-gap;
+                width: 100%;
             }
         }
     }

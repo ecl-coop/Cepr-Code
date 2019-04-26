@@ -121,12 +121,12 @@
 }
 
 @mixin heading-5 {
-    font-size: $size-h5-fluid;
+    @include size-h5-fluid;
     color: $Black;
 }
 @mixin heading-6 {
     font-family: $Sans;
-    font-size: $size-h6-fluid;
+    @include size-h6-fluid;
     line-height: 1.25;
     font-weight: $Light;
     text-transform: capitalize;
@@ -156,6 +156,6 @@
 
 @mixin paragraph-small {
     font-family: $Sans;
-    font-size: $size-p2-fluid;
+    @include size-p2-fluid;
     line-height: 1.25;
 }

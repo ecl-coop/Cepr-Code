@@ -73,13 +73,19 @@ $size-smallish-fluid: calc-interpolation($phone, $size-smallish-min, $widescreen
 @mixin size-p-fluid {
     @include fluid-type(font-size, $phone, $ultrahd, $size-p-min, $size-p-max);
 }
-$size-p2-fluid: calc-interpolation($phone, $size-p2-min, $widescreen, $size-p2-max);
+@mixin size-p2-fluid {
+    @include fluid-type(font-size, $phone, $widescreen, $size-p2-min, $size-p2-max);
+}
 $size-h1-fluid: between($size-h1-min, $size-h1-max, $phone, $widescreen);
 $size-h2-fluid: between($size-h2-min, $size-h2-max, $phone, $fullhd);
 $size-h3-fluid: between($size-h3-min, $size-h3-max, $phone, $widescreen);
 $size-h4-fluid: between($size-h4-min, $size-h4-max, $phone, $widescreen);
-$size-h5-fluid: between($size-h5-min, $size-h5-max, $phone, $widescreen);
-$size-h6-fluid: calc-interpolation($desktop, $size-h6-min, $ultrahd, $size-h6-max);
+@mixin size-h5-fluid{
+    @include fluid-type(font-size, $phone, $widescreen, $size-h5-min, $size-h5-max);
+}
+@mixin size-h6-fluid {
+    @include fluid-type(font-size, $desktop, $ultrahd, $size-h6-min, $size-h6-max);
+}
 $size-h7-fluid: calc-interpolation($phone, $size-h7-min, $widescreen, $size-h7-max);
 
 
@@ -90,22 +96,27 @@ $selected-height: 8px;
 $picture-heigth: 240px;
 $btpHeader-size: 56px;
 $btn-height: 40px;
+$logo-sticky-height: 42px;
 $btpHeader-size-tablet: 72px;
 $menu-btn-height-mobile: 3rem;
-$menu-desktop-height: 330px;
-$nav-sticky-height: 64px;
+$menu-desktop-height: 480px;
+$nav-sticky-height: 4rem;
 $breadcrump-height: 3rem;
 $share-bar-height: 3rem;
 $share-bar-height-desktop: 4.5rem;
+$share-bar-with: 128px;
+$share-bar-sticky-with: 320px;
 
 $footer-height: 21rem;
 
 ///////////////DESKTOP FIXED
-$report-header-min-height: 392px;
+$report-header-min-height: 242px;
 $report-header-max-height: 512px;
 $report-author-height: 4.5rem;
 $profile-header-height: 7.5rem;
 $footer-license-height-desktop: 42px;
+$maxwith-master-hd: 1560px;
+$maxwith-master-uhd: 1920px;
 
 ////////////>Tablet fluid
 $columns-gap: 1vw;
@@ -160,6 +171,7 @@ $padding-vertical-large: 2rem;
 $padding-vertical-extraLarge: 4rem;
 $padding-horizontal-small: 0.5rem;
 $padding-horizontal-regular: 1.25rem;
+$padding-horizontal-medium: 1.75rem;
 $padding-horizontal-large: 3rem;
 
 $padding-report-content: 6vw;

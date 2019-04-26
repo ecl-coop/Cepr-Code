@@ -98,6 +98,8 @@
     h3{
         @include heading-5;
         color: $Blue-light;
+        margin-bottom: $margin-horizontal-regular;
+        padding: 0 $padding-vertical-extraLarge;
     }
     h4{
         display: flex;

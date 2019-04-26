@@ -8,7 +8,7 @@
 
 %paragraph-2-base{
     font-family: $Sans;
-    font-size: $size-p2-fluid;
+    @include size-p2-fluid;
     line-height: 1.42;
     text-transform: normal;
     letter-spacing: 0;

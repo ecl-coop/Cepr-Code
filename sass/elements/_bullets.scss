@@ -42,3 +42,13 @@
       -webkit-mask: url("/img/ios-arrow-back.svg") no-repeat;
       mask: url("/img/ios-arrow-back.svg") no-repeat;
 }
+
+@mixin bullet-menu {
+      &:before{
+            @include bullet;
+            background-color: $Blue-light;
+            position: absolute;
+            left: -6px;
+            top: 3px;
+        }
+}

@@ -20,6 +20,7 @@
     &::before{
         content: "/";
         margin-right: $margin-vertical-small;
+        margin-left: $margin-vertical-small/2;
     }
 }
 /////Credits component inside article/report

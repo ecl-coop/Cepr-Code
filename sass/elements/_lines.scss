@@ -101,8 +101,9 @@ progress {
     /* Positioning */
     position: fixed;
     left: 0;
-    top: (#{$menu-header-height})+#{$nav-sticky-height};
-    z-index: 1000;
+    top: $menu-header-height;
+    margin-top: $share-bar-height;
+    z-index: 999;
   
     /* Dimensions */
     width: 100%;
@@ -120,7 +121,11 @@ progress {
     background-color: transparent;
   
     /* For IE10+, color of the progress bar */
-    color: $Orange;
+    color: $Blue-light;
+    @include media(">tablet"){
+      margin-top: 0;
+      top: $share-bar-height+$nav-sticky-height;
+    }
   }
   
   progress::-webkit-progress-bar {
@@ -136,8 +141,19 @@ progress {
     display: block;
   }
   .progress-bar {
-    background-color: $Orange;
+    background-color: $Blue-light;
     width: 0%;
     display: block;
     height: inherit;
+  }
+  @mixin menu-desktop-line {
+    &::before{
+      content: "";
+      position: absolute;
+      top: calc(#{$margin-horizontal-regular} * -1);
+      left: 0;
+      height: calc(100% + #{$margin-horizontal-regular});
+      width: 1px;
+      background-color: $Blue-light;
+    }
   }

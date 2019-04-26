@@ -11,7 +11,8 @@
     display: inline-flex;
     padding: 0 $margin-vertical-large;
     background-color: $White;
-    width: 70%;
+    width: calc(100vw - #{$share-bar-with});
+    float: right;
     details{
         display: flex;
         justify-content: flex-end;
@@ -56,20 +57,33 @@
         text-transform: capitalize;
         letter-spacing: 0;
         color: $Grey;
+        &:hover{
+            color: $Orange;
+        }
     }
     .toc-sticky{
         position: fixed;
         top: $menu-header-height;
-        width: 80vw;
-        left: 0;
-        z-index: 99;
-        padding-left: $padding-report-content;
-        margin-left: $padding-report-content*-.5;
-        background-color: white;
+        width: 100vw;
+        right: 0;
+        z-index: 999;
+        padding-right: $padding-report-content*.5;
+        margin-right: 0;
+        background-color: $White;
         animation: slide-down 0.5s ease-out;
-        *{
+        dl{
             background-color: white;
-            box-shadow: none;
+            box-shadow: 0px 5px 5px $Grey-light;
+            padding-right: $padding-report-content;
+            margin-right: $padding-report-content*-1;
+            dt{
+                padding-left: $padding-vertical-large;
+            }
+        }
+    }
+    @include media(">=tablet"){
+        .toc-sticky{
+            top: $nav-sticky-height;
         }
     }
     @include media(">=desktop"){
@@ -91,12 +105,30 @@
             }
         }
         .toc-sticky{
-        width: 25vw;
+        width: 100vw;
+        padding-right: 0;
+        margin-right: 0;
         padding-left: $padding-report-content;
-        margin-left: $padding-report-content*-.5;
+        border-bottom: 1px solid $Grey-light;
+        //margin-left: $padding-report-content*-.5;
+        right: unset;
+        left: 0;
+        //background-color: white;
+        summary{
+            justify-content: flex-start;
+            width: min-content;
+            margin-right: auto;
+            margin-left: 0;
+            //border-bottom: 1px solid $Grey-light;
+        }
         }
         dt{
             text-align: left;
+        }
+    }
+    @include media ('>=widescreen'){
+        .toc-sticky{
+            padding-left: 20vw;
         }
     }
     [open] summary{
