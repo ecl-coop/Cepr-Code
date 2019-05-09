@@ -3599,21 +3599,30 @@ footer {
 @media (min-width: 1360px) {
   .block-footer:after {
     content: "";
-    background: url("/img/footer_illustration.png") right no-repeat;
+    background: url("/img/CEPR_FOOTER.png") left top no-repeat;
     background-size: cover;
-    position: relative;
-    bottom: 25%;
-    flex: 1 0 auto;
-    order: 3;
-    height: 125%;
+    position: absolute;
+    bottom: 42px;
+    right: 0;
+    height: 85%;
     min-width: 20%;
     margin-right: -32px; } }
   @media screen and (min-width: 1360px) and (min-width: 1024px) {
     .block-footer:after {
-      margin-right: calc(-32px + -288 * (100vw - 1024px) / 1536); } }
+      height: calc(85% + 15 * (100vw - 1024px) / 936); } }
+  @media screen and (min-width: 1360px) and (min-width: 1960px) {
+    .block-footer:after {
+      height: 100%; } }
+  @media screen and (min-width: 1360px) and (min-width: 1024px) {
+    .block-footer:after {
+      margin-right: calc(-32px + -40 * (100vw - 1024px) / 1536); } }
   @media screen and (min-width: 1360px) and (min-width: 2560px) {
     .block-footer:after {
-      margin-right: -320px; } }
+      margin-right: -72px; } }
+
+@media (min-width: 1360px) {
+  .block-footer .footer-list {
+    margin-right: 10.5rem; } }
 
 @media (min-width: 1680px) {
   .block-footer .footer-list {

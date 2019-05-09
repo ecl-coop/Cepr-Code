@@ -156,15 +156,19 @@
     .block-footer{
         &:after{
             content: "";
-            background: url("/img/footer_illustration.png") right no-repeat;
+            background: url("/img/CEPR_FOOTER.png") left top no-repeat;
             background-size: cover;
-            position: relative;
-            bottom: 25%;
-            flex: 1 0 auto;
-            order: 3;
-            height: 125%;
+            position: absolute;
+            bottom: $footer-license-height-desktop;
+            right: 0;
+            //flex: 1 0 auto;
+            //order: 3;
+            @include fluid-type(height, $desktop, $ultrahd, 85%, 100%);
             min-width: 20%;
-            @include fluid-type(margin-right, $desktop, 2560px, -32px, -320px);
+            @include fluid-type(margin-right, $desktop, 2560px, -32px, -72px);
+        }
+        .footer-list{
+            margin-right: $margin-vertical-extraLarge*3;
         }
     }
 }
