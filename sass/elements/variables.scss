@@ -19,7 +19,7 @@ $Grey: var(--color-Grey);
 $Grey-light: var(--color-Grey-light);
 $Grey-lilac: var(--color-lilac);
 
-///reset bulma defaults (I had to repeat the hex codes as Bulma doesn't work with css variables)
+///reset bulma defaults (I had to repeat the hex codes as Bulma doesn't work with css variables) These variables aren not in use, they are just to overwrite the framework.
 $blue: #004fa7;
 $orange: #ff5f00;
 $grey: #7f7f7f;
@@ -115,6 +115,7 @@ $report-header-max-height: 512px;
 $report-author-height: 4.5rem;
 $profile-header-height: 7.5rem;
 $footer-license-height-desktop: 42px;
+$footer-list-max-width: 540px;
 $maxwith-master-hd: 1560px;
 $maxwith-master-uhd: 1920px;
 
@@ -143,9 +144,8 @@ $profile-picture-large-min: 144px;
 $profile-picture-large-max: 172px;
 $profile-picture-small: $profile-picture-large-min/2;
 
-$btpHeader-size-fluid: calc-interpolation($phone, 56px, $widescreen, 120px); ///keeps growing beyond the media query!!!
 @mixin blogs-block-header_height {
-    @include fluid-type(height, $phone, $ultrahd, 56px, 150px);
+    @include fluid-type(height, $phone, $ultrahd, $btpHeader-size, 150px);
 }
 
 //$column-title-fluid: calc-interpolation($phone, 97%, $widescreen, 98.5%);
@@ -168,15 +168,18 @@ $margin-horizontal-extraLarge: 3rem;
 $padding-vertical-small: 1rem;
 $padding-vertical-normal: 1.5rem;
 $padding-vertical-large: 2rem;
-$padding-vertical-extraLarge: 4rem;
+$padding-vertical-extraLarge: 4.5rem;
 $padding-horizontal-small: 0.5rem;
 $padding-horizontal-regular: 1.25rem;
 $padding-horizontal-medium: 1.75rem;
 $padding-horizontal-large: 3rem;
 
 $padding-report-content: 6vw;
+@mixin padding-1col-mobile{
+    @include fluid-type(padding-left padding-right, $phone, $tablet, $padding-vertical-large, $padding-vertical-extraLarge);
+}
 @mixin padding-master-desktop{
-     @include fluid-type(padding-left padding-right, $fullhd, 2560px, 32px, 72px);
+     @include fluid-type(padding-left padding-right, $fullhd, 2560px, $padding-vertical-large, $padding-vertical-extraLarge);
 }
 
 //////////////////LINE WEIGHTS

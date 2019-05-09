@@ -146,14 +146,14 @@ progress {
     display: block;
     height: inherit;
   }
-  @mixin menu-desktop-line {
-    &::before{
-      content: "";
-      position: absolute;
-      top: calc(#{$margin-horizontal-regular} * -1);
-      left: 0;
-      height: calc(100% + #{$margin-horizontal-regular});
-      width: 1px;
-      background-color: $Blue-light;
-    }
+@mixin menu-desktop-line {
+  &::before{
+    content: "";
+    position: absolute;
+    top: calc(#{$margin-horizontal-regular} * -1);
+    left: 0;
+    height: calc(100% + #{$margin-horizontal-regular});
+    width: 1px;
+    background-color: $Blue-light;
   }
+}

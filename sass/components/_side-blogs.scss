@@ -2,6 +2,7 @@
     background-color: $White;
     width: 90%;
     margin: 0 auto;
+    margin-top: $margin-horizontal-large;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -10,10 +11,11 @@
     padding-left: $columns-gap;
     padding-bottom: $padding-horizontal-large;
     border-bottom: 2px solid $Grey-light;
+    border-radius: 0 100px 0 0;
     .heading-4{
         font-size: $size-h4-min;
         color: $Black;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .side-blogs-header {
@@ -41,38 +43,37 @@
         .heading-7{
             color: $Orange;
             margin-right: auto;
-        }
-    }
-    @include media(">=desktop"){
-        width: auto;
-        border-radius: 0 100px 0 0;
-        margin: 0;
-        border-bottom: 0;
-        .heading-4{
-            justify-content: flex-start;
-        }
-        &:before{
-            content: "";
-            background: url("/img/texture-diagonal.svg") left no-repeat;
-            //flipping the background image to use the original svg
-            //transform:scaleX(-1);
-            border-radius: 100px 0 0 0;
-            //
-            opacity: 0.25;
-            filter: alpha(opacity=25);
-            width: 100%;
-            height: 100%;
-            background-clip: cover;
-            position: absolute;
-            left: 0;
-        }
-        .heading-7{
             border: 2px solid $Orange;
             padding-top: .75em;
             border-bottom: 0;
             border-left: 0;
             border-radius: 0 20px 0 0;
             padding-right: $padding-vertical-small;
+        }
+    }
+    &:before{
+        content: "";
+        background: url("/img/texture-diagonal.svg") left no-repeat;
+        //flipping the background image to use the original svg
+        transform:scaleX(-1);
+        border-radius: 100px 0 0 0;
+        opacity: 0.25;
+        filter: alpha(opacity=25);
+        width: 100%;
+        height: 100%;
+        background-clip: cover;
+        position: absolute;
+        left: 0;
+    }
+    @include media(">=desktop"){
+        width: auto;
+        margin: 0;
+        border-bottom: 0;
+        .heading-4{
+            justify-content: flex-start;
+        }
+        &:before{
+            transform:scaleX(1);
         }
     }
 }

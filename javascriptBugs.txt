@@ -1,0 +1,6 @@
+CEPR CSS javascript Bugs
+
+1. INDEX:
+1.1.Menu "More" jump to top of the page.
+1.2.Featured tabs navigation jump to to of the page.
+1.3.

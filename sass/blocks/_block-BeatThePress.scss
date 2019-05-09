@@ -7,7 +7,10 @@
     width: 90%;
     //padding-bottom: $padding-horizontal-large;
     margin-bottom: 0;
-
+    .article-related{
+        width: 100%;
+        padding-bottom: 0;
+    }
     .heading-4{
             padding-top: $btpHeader-size;
             padding-left: $padding-vertical-small;
@@ -32,9 +35,6 @@
 
     .list-3-container{
         margin-top: $margin-horizontal-large;
-    }
-    .list-3-item {
-        border-bottom-color: $Green-dark;
     }
 }
 

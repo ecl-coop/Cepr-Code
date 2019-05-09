@@ -270,7 +270,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 ///////////////////////////MENU HEADER TABLET
 
 @include media ('>=tablet') {
-
     #nav{
         display: grid;
         grid-template-columns: minmax(33%, 50%) 1fr;
@@ -327,6 +326,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         #menubar-container{
             background-color: transparent;
             align-items: center;
+            position: initial !important;
             .menubar-target{
                 color: $White;
                 &[data-state=open] {
@@ -335,7 +335,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
             }
         }
         .menu-container{
-            left: -35vw;
+            left: 0;
             top: 12px;
         }
         * {
@@ -348,6 +348,32 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     #accordian{
         grid-column: 2;
         grid-row: 2;
+    }
+    #accordian li .menubar-item{
+        &::after{
+            content: "";
+            position: absolute;
+            right: -14px;
+            width: 12px;
+            height: 12px;
+            bottom: calc(calc(-120px * .47) + 100% + 10px);
+            transform-origin: center;
+            transform: rotate(45deg);
+            background-color: transparent;
+            @include transition-basic;
+        }
+    }
+    #accordian li.active .menubar-item{
+        a{
+            color: $Blue-light;
+            &::after{
+                transform: translateX(12px) rotate(-90deg);
+            }
+        }
+        &::after{
+            //transform: translateY(0px) rotate(45deg);
+            background-color: $Blue-dark;
+        }
     }
     #accordian li.active>ul {
         display: flex !important;
@@ -523,6 +549,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     .menubar-item{
         height: 100%;
+        //position: initial;
         &:hover{
             .menubar-target {
                 color: $Black;
@@ -622,10 +649,13 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     }
     .menu-container{
         max-width: $maxwith-master-uhd;
-        @include padding-master-desktop
+        @include padding-master-desktop;
         margin: 0 auto;
+        }
+    .menu__toggle:after{
+        font-size: 12px;
     }
-    }
+}
 @include media ('>=widescreen') {
     .nav-sticky {
         padding: 0 20%;

@@ -1212,8 +1212,8 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     align-items: center;
     top: 0;
     left: 0;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     background-color: var(--color-Black);
     animation: slide-down 0.3s ease-in; }
     .nav-sticky::before {
@@ -1226,23 +1226,24 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       display: flex; } }
   @media screen and (min-width: 769px) and (min-width: 1680px) {
     .nav-sticky {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 769px) and (min-width: 2560px) {
     .nav-sticky {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
 
 @media (min-width: 769px) {
     .nav-sticky #menubar-container {
       background-color: transparent;
-      align-items: center; }
+      align-items: center;
+      position: initial !important; }
       .nav-sticky #menubar-container .menubar-target {
         color: var(--color-White); }
         .nav-sticky #menubar-container .menubar-target[data-state=open] {
           color: var(--color-Primary-light); }
     .nav-sticky .menu-container {
-      left: -35vw;
+      left: 0;
       top: 12px; }
     .nav-sticky * {
       justify-content: space-evenly !important;
@@ -1250,6 +1251,23 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   #accordian {
     grid-column: 2;
     grid-row: 2; }
+  #accordian li .menubar-item::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    width: 12px;
+    height: 12px;
+    bottom: calc(calc(-120px * .47) + 100% + 10px);
+    transform-origin: center;
+    transform: rotate(45deg);
+    background-color: transparent;
+    transition: all 200ms ease-out; }
+  #accordian li.active .menubar-item a, #accordian ul ul li .menubar-item a {
+    color: var(--color-Primary-light); }
+    #accordian li.active .menubar-item a::after, #accordian ul ul li .menubar-item a::after {
+      transform: translateX(12px) rotate(-90deg); }
+  #accordian li.active .menubar-item::after, #accordian ul ul li .menubar-item::after {
+    background-color: var(--color-Primary-dark); }
   #accordian li.active > ul, #accordian ul ul li > ul {
     display: flex !important;
     align-items: flex-start;
@@ -1457,16 +1475,16 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
 
 @media (min-width: 1024px) {
   #nav {
-    padding-left: 32px;
-    padding-right: 32px; } }
+    padding-left: 2rem;
+    padding-right: 2rem; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     #nav {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     #nav {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
 
 @media (min-width: 1024px) {
   .menubar__header {
@@ -1475,17 +1493,21 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     height: 80%; }
   .menu-container {
     max-width: 1920px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin: 0 auto; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     .menu-container {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     .menu-container {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
+
+@media (min-width: 1024px) {
+  .menu__toggle:after {
+    font-size: 12px; } }
 
 @media (min-width: 1360px) {
   .nav-sticky {
@@ -1598,6 +1620,32 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       mask-repeat: no-repeat;
       margin-right: 1rem;
       background-color: var(--color-Primary-dark); }
+  .list-3-item-btp {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem; }
+    .list-3-item-btp .heading-6 {
+      padding-bottom: 0.8rem;
+      border-bottom: 1px dotted currentColor; }
+    .list-3-item-btp:not(:last-child) {
+      border-bottom: none; }
+    .list-3-item-btp:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      top: -0.8rem;
+      height: 1px;
+      width: 90vw;
+      margin-left: -3rem;
+      border-bottom: 1px solid white; }
+      @media screen and (min-width: 373px) {
+        .list-3-item-btp:not(:first-child)::before {
+          margin-left: calc(-3rem + -3.5 * (100vw - 373px) / 396); } }
+      @media screen and (min-width: 769px) {
+        .list-3-item-btp:not(:first-child)::before {
+          margin-left: -6.5rem; } }
+    .list-3-item-btp:last-child {
+      margin-bottom: 0.8rem;
+      padding-bottom: 1.25rem; }
 
 @media (min-width: 769px) {
   .list-item:not(:last-child) {
@@ -1646,7 +1694,18 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       margin-left: 0;
       margin-right: .5rem;
       width: 2rem;
-      height: 2rem; } }
+      height: 2rem; }
+  .list-3-item-btp {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: flex-start; }
+    .list-3-item-btp .heading-6 {
+      padding-bottom: 0;
+      border-bottom: none; }
+    .list-3-item-btp:nth-child(1), .list-3-item-btp:nth-child(2) {
+      border-bottom: 1px dotted var(--color-Secondary); }
+    .list-3-item-btp:not(:first-child)::before {
+      content: none; } }
 
 .banner-subscribe, .banner-donate {
   display: flex;
@@ -1987,6 +2046,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   background-color: var(--color-White);
   width: 90%;
   margin: 0 auto;
+  margin-top: 2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1994,11 +2054,12 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   position: relative;
   padding-left: 1vw;
   padding-bottom: 3rem;
-  border-bottom: 2px solid var(--color-Grey-light); }
+  border-bottom: 2px solid var(--color-Grey-light);
+  border-radius: 0 100px 0 0; }
   .side-blogs .heading-4 {
     font-size: 24px;
     color: var(--color-Black);
-    justify-content: center; }
+    justify-content: flex-start; }
   .side-blogs .side-blogs-header {
     height: 56px;
     display: flex;
@@ -2025,33 +2086,34 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
       border-bottom-color: var(--color-Grey-light); }
     .side-blogs .side-blogs-content .heading-7 {
       color: var(--color-Accent);
-      margin-right: auto; }
+      margin-right: auto;
+      border: 2px solid var(--color-Accent);
+      padding-top: .75em;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 0 20px 0 0;
+      padding-right: 1rem; }
+  .side-blogs:before {
+    content: "";
+    background: url("/img/texture-diagonal.svg") left no-repeat;
+    transform: scaleX(-1);
+    border-radius: 100px 0 0 0;
+    opacity: 0.25;
+    filter: alpha(opacity=25);
+    width: 100%;
+    height: 100%;
+    background-clip: cover;
+    position: absolute;
+    left: 0; }
   @media (min-width: 1024px) {
     .side-blogs {
       width: auto;
-      border-radius: 0 100px 0 0;
       margin: 0;
       border-bottom: 0; }
       .side-blogs .heading-4 {
         justify-content: flex-start; }
       .side-blogs:before {
-        content: "";
-        background: url("/img/texture-diagonal.svg") left no-repeat;
-        border-radius: 100px 0 0 0;
-        opacity: 0.25;
-        filter: alpha(opacity=25);
-        width: 100%;
-        height: 100%;
-        background-clip: cover;
-        position: absolute;
-        left: 0; }
-      .side-blogs .heading-7 {
-        border: 2px solid var(--color-Accent);
-        padding-top: .75em;
-        border-bottom: 0;
-        border-left: 0;
-        border-radius: 0 20px 0 0;
-        padding-right: 1rem; } }
+        transform: scaleX(1); } }
 
 .report-header h1 {
   font-family: var(--font-Display);
@@ -2151,7 +2213,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     color: var(--color-Black);
     color: var(--color-Primary-light);
     margin-bottom: 0.8rem;
-    padding: 0 4rem; }
+    padding: 0 4.5rem; }
     @media screen and (min-width: 373px) {
       .report-content h3 {
         font-size: calc(20px + 6 * (100vw - 373px) / 987); } }
@@ -2279,7 +2341,7 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         background-color: inherit;
         color: var(--color-Primary-dark);
         border-left: 1px solid var(--color-Grey);
-        padding-right: 12rem; } }
+        padding-right: 13.5rem; } }
   @media (min-width: 1360px) {
     .figure-graphic {
       padding-top: 3rem;
@@ -2510,16 +2572,16 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
   @media (min-width: 1024px) {
     .breadcrumps {
       margin: 0;
-      padding-left: 32px;
-      padding-right: 32px; } }
+      padding-left: 2rem;
+      padding-right: 2rem; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     .breadcrumps {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     .breadcrumps {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
 
 @keyframes slide-down {
   0% {
@@ -2786,7 +2848,7 @@ footer {
           content: none; } }
     @media (min-width: 1680px) {
       footer ol.footnotes {
-        padding-right: 8rem; } }
+        padding-right: 9rem; } }
   footer ol.footnotes li {
     font-size: calc(0.20263vw + 11.24417px);
     line-height: 1.8;
@@ -2863,7 +2925,7 @@ footer {
       margin-bottom: 2em; }
   @media (min-width: 1680px) {
     .bibliography {
-      padding-right: 8rem; } }
+      padding-right: 9rem; } }
 
 .block-featured {
   display: flex;
@@ -3154,6 +3216,9 @@ footer {
   padding: 0 1rem;
   width: 90%;
   margin-bottom: 0; }
+  .block-BeatThePress .article-related {
+    width: 100%;
+    padding-bottom: 0; }
   .block-BeatThePress .heading-4 {
     padding-top: 56px;
     padding-left: 1rem; }
@@ -3179,8 +3244,6 @@ footer {
         font-size: 14px; } }
   .block-BeatThePress .list-3-container {
     margin-top: 2rem; }
-  .block-BeatThePress .list-3-item {
-    border-bottom-color: var(--color-Secondary-dark); }
 
 .BeatThePress-Header {
   display: flex;
@@ -3234,12 +3297,12 @@ footer {
 
 @media (min-width: 769px) {
   .block-BeatThePress {
-    padding: 0 4rem; }
+    padding: 0 4.5rem; }
   .BeatThePress-Header {
-    margin: 0 -4rem; }
+    margin: 0 -4.5rem; }
     .BeatThePress-Header .heading-4, .BeatThePress-Header p {
-      padding-left: 4rem;
-      padding-right: 4rem; }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; }
     .BeatThePress-Header:before {
       height: 72px;
       top: -20px; }
@@ -3458,12 +3521,13 @@ footer {
     overflow: visible;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     color: var(--color-Primary);
     align-items: flex-start;
     justify-content: space-between;
-    padding-top: 3rem; }
+    padding-top: 3rem;
+    padding-bottom: 42px; }
     .block-footer::before {
       content: "";
       background-color: var(--color-White);
@@ -3471,12 +3535,12 @@ footer {
       flex: 1 0 auto; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     .block-footer {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     .block-footer {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
 
 @media (min-width: 1024px) {
     .block-footer .footer-ident {
@@ -3501,14 +3565,22 @@ footer {
     .block-footer .footer-item {
       flex: 1 0 50%; }
     .block-footer .footer-license {
-      flex: 1 0 200%;
       text-align: center;
-      margin-left: -50%;
-      margin-right: -50%;
+      margin-left: -2rem;
       height: 42px;
-      order: 5;
       display: flex;
-      align-self: flex-end; }
+      position: absolute;
+      bottom: 0;
+      background-color: white;
+      z-index: 99; } }
+    @media screen and (min-width: 1024px) and (min-width: 1680px) {
+      .block-footer .footer-license {
+        margin-left: calc(-2rem + -2.5 * (100vw - 1680px) / 880); } }
+    @media screen and (min-width: 1024px) and (min-width: 2560px) {
+      .block-footer .footer-license {
+        margin-left: -4.5rem; } }
+
+@media (min-width: 1024px) {
       .block-footer .footer-license em a {
         color: var(--color-Accent-dark);
         font-weight: 400;
@@ -3556,7 +3628,7 @@ footer {
     min-height: 150px;
     padding-bottom: 0;
     margin-bottom: 0;
-    padding-left: 4rem;
+    padding-left: 4.5rem;
     padding-top: 0.5rem;
     padding-bottom: 1.25rem; }
 
@@ -3672,13 +3744,13 @@ ul.list-2 {
     .block-report-related .list-2-item:last-child:before {
       content: none; }
     .block-report-related .preheading {
-      padding-left: 4rem; }
+      padding-left: 4.5rem; }
     .block-report-related .heading-7 {
       font-size: 30px;
       border-bottom: 0;
       position: relative;
       overflow: visible;
-      padding: 0 4rem;
+      padding: 0 4.5rem;
       margin-bottom: 0; }
     .block-report-related .heading-7-underline::before {
       content: "";
@@ -3809,18 +3881,18 @@ ul.list-2 {
       grid-gap: 1vw;
       grid-row-gap: 5vh;
       grid-auto-flow: row;
-      padding-left: 32px;
-      padding-right: 32px;
+      padding-left: 2rem;
+      padding-right: 2rem;
       margin: 0 auto;
       padding-bottom: 3rem; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     #home-grid {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     #home-grid {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
   @media (min-width: 1024px) and (min-width: 1680px) {
     #home-grid {
       padding-bottom: 10vh; } }
@@ -3919,18 +3991,18 @@ ul.list-2 {
     grid-gap: 1vw;
     grid-row-gap: 5vh;
     grid-auto-flow: row;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin: 0 auto;
     padding-bottom: 3rem; } }
   @media screen and (min-width: 1024px) and (min-width: 1680px) {
     #report-grid {
-      padding-left: calc(32px + 40 * (100vw - 1680px) / 880);
-      padding-right: calc(32px + 40 * (100vw - 1680px) / 880); } }
+      padding-left: calc(2rem + 2.5 * (100vw - 1680px) / 880);
+      padding-right: calc(2rem + 2.5 * (100vw - 1680px) / 880); } }
   @media screen and (min-width: 1024px) and (min-width: 2560px) {
     #report-grid {
-      padding-left: 72px;
-      padding-right: 72px; } }
+      padding-left: 4.5rem;
+      padding-right: 4.5rem; } }
   @media (min-width: 1024px) and (min-width: 1680px) {
     #report-grid {
       padding-bottom: 10vh; } }

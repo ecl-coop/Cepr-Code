@@ -91,6 +91,7 @@
         align-items: flex-start;
         justify-content: space-between;
         padding-top: $padding-horizontal-large;
+        padding-bottom: $footer-license-height-desktop;
 
         .footer-ident{
             position: relative;
@@ -114,21 +115,21 @@
             order: 2;
             margin-top: 56px;
             flex: 1 1 auto;
-            max-width: 540px;
+            max-width: $footer-list-max-width;
             margin-bottom: 0;
         }
         .footer-item{
             flex: 1 0 50%;
         }
         .footer-license{
-            flex: 1 0 200%;
             text-align: center;
-            margin-left: -50%;
-            margin-right: -50%;
+            @include fluid-type(margin-left, $fullhd, 2560px, $padding-vertical-large*-1, $padding-vertical-extraLarge*-1);
             height: $footer-license-height-desktop;
-            order: 5;
             display: flex;
-            align-self: flex-end;
+            position: absolute;
+            bottom: 0;
+            background-color: white;
+            z-index: 99;
             em a{
                 color: $Orange-dark;
                 font-weight: $Regular;
