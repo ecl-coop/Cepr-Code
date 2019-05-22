@@ -16,6 +16,7 @@
     <script defer src="/js/tabs.js"></script>
     <script defer src="/js/sticky.js"></script>
     <script defer src="/js/Cutter.js"></script>
+    <script defer src="/js/search.js"></script>
     <script type="text/javascript">
         $(document).ready(function ()
         {
@@ -55,7 +56,7 @@
                     </svg>
                 </a>
                 <div class="menubar__search level-right is-hidden-tablet">
-                    <button type="button" class="search-toggle" data-toggle="collapse" data-target="#search-collapse">
+                    <button type="button" class="search-toggle" data-toggle="collapse" data-state="closed" data-target="#search-collapse">
                         <svg width="36" height="36">
                             <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
                         </svg>
@@ -218,6 +219,24 @@
                     </li> 
                 </ul>
             </nav>
+        </section>
+        <section class="search-container" data-state="closed">
+            <header class="search-field">
+                <input class="input" type="text" name="search-term" id="search-term" placeholder="search by Topics, Keywords or Authors">
+                <button class="search-in-field" for="search-term">
+                    <svg width="32" height="32">
+                        <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
+                    </svg>
+                </button>
+            </header>
+            <div class="search-suggestions-container">
+                <dl class="search-suggestions-list">
+                    <dt class="search-suggestions-item"><a class="heading-6" href="search.html">Keyword 1</a></dt>
+                    <dt class="search-suggestions-item"><a class="heading-6" href="search.html">Keyword 2</a></dt>
+                    <dt class="search-suggestions-item"><a class="heading-6" href="search.html">Keyword 3</a></dt>
+                    <dt class="search-suggestions-item"><a class="heading-6" href="search.html">Keyword 4</a></dt>
+                </dl>
+            </div>
         </section>
         <div class="content-wraper">
             <div class="grid-container" id="home-grid">
