@@ -140,6 +140,37 @@ input::-moz-focus-inner {
         }
     }
 }
+.btn-cross{
+    fill: $Yellow-light;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: $side-icon_size;
+    height: $side-icon_size;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    margin: 0 0;
+    cursor: pointer;
+    position: relative;
+    &:hover{
+        fill: $Yellow-dark;
+        transform: scale(1.05);
+        @include transition-basic;
+        &::after{
+            content: "cancel";
+            position: absolute;
+            bottom: -.65rem;
+            width: 100%;
+            color: $Yellow-light;
+            font-size: $size-smallest-min;
+        }
+    }
+    svg{
+        transform: rotate(45deg);
+        z-index: 10;
+    }
+}
 
 #btn-toTop{
     //display: none;

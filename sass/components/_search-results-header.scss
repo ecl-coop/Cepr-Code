@@ -13,5 +13,8 @@
         color: $Yellow-light;
         border-top: 1px solid $Yellow-light;
         padding-top: $padding-horizontal-small;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }

@@ -694,6 +694,34 @@ input::-moz-focus-inner {
       right: 0;
       margin: 0 auto; }
 
+.btn-cross {
+  fill: var(--color-Action-light);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  margin: 0 0;
+  cursor: pointer;
+  position: relative; }
+  .btn-cross:hover {
+    fill: var(--color-Action-dark);
+    transform: scale(1.05);
+    transition: all 200ms ease-out; }
+    .btn-cross:hover::after {
+      content: "cancel";
+      position: absolute;
+      bottom: -.65rem;
+      width: 100%;
+      color: var(--color-Action-light);
+      font-size: 8px; }
+  .btn-cross svg {
+    transform: rotate(45deg);
+    z-index: 10; }
+
 #btn-toTop {
   position: fixed;
   right: 30px;
@@ -3016,7 +3044,10 @@ footer {
   .search-results-header .search-term {
     color: var(--color-Action-light);
     border-top: 1px solid var(--color-Action-light);
-    padding-top: 0.5rem; }
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
 
 .search-suggestions-container {
   background-color: var(--color-White);
@@ -3994,6 +4025,9 @@ ul.list-2 {
   @media (min-width: 1360px) {
     .report-header figure {
       flex: 1 0 70%; } }
+
+#block-search-results {
+  margin-bottom: calc(2rem*4); }
 
 #home-grid {
   display: flex;
