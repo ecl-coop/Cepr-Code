@@ -1,0 +1,25 @@
+%input-defaults{
+    &:focus{
+        background-color: $Yellow-light;
+    }
+    &::placeholder {
+        color: $Grey-lilac;
+    }
+    height: 100%;
+    padding-left: $padding-vertical-normal;
+    border: none;
+    min-height: $btn-height;
+}
+
+.input-half-pill-left{
+    @include outline-regular-white;
+    width: 80%;
+    border-radius: $input-heigth 0 0 $input-heigth;
+    border-right: none;
+    @extend %input-defaults;
+}
+.input-pill{
+    @extend %input-defaults;
+    width: 100%;
+    border-radius: $input-heigth $input-heigth $input-heigth $input-heigth;
+}

@@ -16,6 +16,7 @@
 @import "elements/pictures.scss";
 @import "elements/logo.scss";
 @import "elements/paragraphs.scss";
+@import "elements/input";
 
 
 //components
@@ -36,6 +37,7 @@
 @import "components/search-input";
 @import "components/search-results-header";
 @import "components/search-suggestions";
+@import "components/filters";
 
 //blocks
 @import "blocks/block-featured.scss";

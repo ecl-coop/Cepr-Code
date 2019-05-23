@@ -222,7 +222,7 @@
         </section>
         <section class="search-container" data-state="closed">
             <header class="search-field">
-                <input class="input" type="text" name="search-term" id="search-term" placeholder="search by Topics, Keywords or Authors">
+                <input class="input-pill" type="text" name="search-term" id="search-term" placeholder="search by Topics, Keywords or Authors">
                 <button class="search-in-field" for="search-term">
                     <svg width="32" height="32">
                         <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
@@ -242,35 +242,38 @@
             <div class="grid-container" id="search-grid">
                 <header class=search-results-header>
                     <div class="search-results-header-title">
-                        <h3>Search Results for</h3>
-                        <h3>Economic</h3>
+                        <h3 class="heading-2-sans">Search Results for</h3>
+                        <div class="search-term">
+                            <h3 class="heading-2-sans-bold">Economic</h3>
+                            <button></button>
+                        </div>                        
                     </div>
-                    <div class="search-results-header-filters">
-                        <details>
-                            <summary>filters</summary>
-                            <details>
-                                <summary>keyword</summary>
-                                <input type="text">
+                    <div>
+                        <details class="filters-container">
+                            <summary class="filter-label">filters</summary>
+                            <details class="filter-container">
+                                <summary class="filter-label">keyword</summary>
+                                <input class="input-pill" type="text" placeholder="economic, politics, intervention...">
                             </details>
-                            <details>
-                                <summary>author</summary>
-                                <input type="text">
+                            <details class="filter-container">
+                                <summary class="filter-label">author</summary>
+                                <input class="input-pill" type="text" placeholder="Dean Baker, Mark Weisbrot, Deborah James...">
                             </details>
-                            <details>
-                                <summary>category</summary>
-                                <input type="text">
+                            <details class="filter-container">
+                                <summary class="filter-label">category</summary>
+                                <input class="input-pill" type="text" placeholder="Europe, Globalization, Latin Amerinca...">
                             </details>
-                            <details>
-                                <summary>type of publication</summary>
-                                <input type="text">
+                            <details class="filter-container">
+                                <summary class="filter-label">type of publication</summary>
+                                <input class="input-pill" type="text" placeholder="report, article, presentation, data byte, event">
                             </details>
-                            <details>
-                                <summary>language</summary>
-                                <input type="text">
+                            <details class="filter-container">
+                                <summary class="filter-label">language</summary>
+                                <input class="input-pill" type="text" placeholder="filter selection by language">
                             </details>
-                            <details>
-                                <summary>date</summary>
-                                <input type="text">
+                            <details class="filter-container">
+                                <summary class="filter-label">date</summary>
+                                <input class="input-pill" type="text" placeholder="filter selection by date">
                             </details>
                         </details>
                     </div>

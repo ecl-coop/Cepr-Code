@@ -3,4 +3,15 @@
     background-color: $Black;
     display: flex;
     flex-direction: column;
+    @include fluid-type(padding-left padding-right, $phone, $tablet, 7.5%, 25%);
+    padding-top: $padding-horizontal-large;
+    padding-bottom: $padding-horizontal-regular;
+    .heading-2-sans{
+        color: $White;
+    }
+    .search-term{
+        color: $Yellow-light;
+        border-top: 1px solid $Yellow-light;
+        padding-top: $padding-horizontal-small;
+    }
 }

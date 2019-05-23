@@ -16,11 +16,6 @@
         padding: $padding-horizontal-large $padding-vertical-normal;
         @include fluid-type(padding-left padding-right, $phone, $tablet, 7.5%, 25%);
     }
-    .input{
-        width: 100%;
-        box-shadow: none;
-        border-radius: $input-heigth $input-heigth $input-heigth $input-heigth;
-    }
     .search-field{
         position: relative;
         display: flex;
@@ -37,7 +32,7 @@
             padding-right: $padding-vertical-small;
             cursor: pointer;
         }
-        .input:focus + .search-in-field{
+        .input-pill:focus + .search-in-field{
             svg{
             fill: $Green;
             }

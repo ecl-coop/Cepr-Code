@@ -36,8 +36,6 @@
 ////////////////////////////////////////
 /////SUBSCRIPTION BANNER
 
-$input-heigth: $height-1-max;
-
 .banner-subscribe{
     background-color: $Black;
     @extend %banner-base;
@@ -74,21 +72,6 @@ $input-heigth: $height-1-max;
     max-width: 420px;
 }
 
-.input{
-    @include outline-regular-white;
-    height: 100%;
-    width: 80%;
-    border-radius: $input-heigth 0 0 $input-heigth;
-    border-right: none;
-    padding-left: $padding-vertical-normal;
-
-    &:focus{
-        background-color: $Yellow-light;
-    }
-    &::placeholder {
-        color: $Grey-lilac;
-    }
-}
 
 ////////////////////////////////////////
 /////DONATION BANNER

@@ -72,11 +72,21 @@ body {
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   transition: all 200ms ease-out; }
 
-.small-text-sans, .tag, .credits, .date, .btn-1, .btn-2, .btn-5, .article-hero-summary a.more, .table-of-contents summary, .table-of-contents dt a, .footer-item a, .footer-license p {
+.small-text-sans, .tag, .credits, .date, .btn-1, .btn-2, .btn-5, .article-hero-summary a.more, .table-of-contents summary, .table-of-contents dt a, .filters-container .filter-label, .footer-item a, .footer-license p {
   font-family: var(--font-Primary);
   font-size: calc(0.10132vw + 9.62209px);
   text-transform: uppercase;
   letter-spacing: .1em; }
+
+.heading-2, .heading-2-sans, .heading-2-sans-bold, .report-header h1 {
+  font-family: var(--font-Display);
+  font-weight: 700;
+  font-size: calc(29.71691px + 0.61209vw);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem; }
 
 .column-header-container {
   display: flex;
@@ -127,6 +137,14 @@ h4.column-header {
   h4.column-header:after {
     left: 1.5%;
     margin-left: 0.5rem; }
+
+.heading-2-sans {
+  font-family: var(--font-Primary);
+  font-weight: 300; }
+
+.heading-2-sans-bold {
+  font-family: var(--font-Primary);
+  font-weight: 700; }
 
 .heading-3 {
   font-family: var(--font-Primary);
@@ -883,6 +901,27 @@ a.icon-link {
 
 .paragraph-2-light {
   font-weight: 300; }
+
+.input-half-pill-left, .input-pill {
+  height: 100%;
+  padding-left: 1.5rem;
+  border: none;
+  min-height: 40px; }
+  .input-half-pill-left:focus, .input-pill:focus {
+    background-color: var(--color-Action-light); }
+  .input-half-pill-left::placeholder, .input-pill::placeholder {
+    color: var(--color-lilac); }
+
+.input-half-pill-left {
+  border-width: 0;
+  box-shadow: 0 0 0 2pt var(--color-White);
+  width: 80%;
+  border-radius: 52px 0 0 52px;
+  border-right: none; }
+
+.input-pill {
+  width: 100%;
+  border-radius: 52px 52px 52px 52px; }
 
 .article-hero-text {
   grid-area: title;
@@ -1803,19 +1842,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
     .sign-up {
       height: 52px; } }
 
-.input {
-  border-width: 0;
-  box-shadow: 0 0 0 2pt var(--color-White);
-  height: 100%;
-  width: 80%;
-  border-radius: 52px 0 0 52px;
-  border-right: none;
-  padding-left: 1.5rem; }
-  .input:focus {
-    background-color: var(--color-Action-light); }
-  .input::placeholder {
-    color: var(--color-lilac); }
-
 .banner-donate {
   background-color: var(--color-Action-light); }
   .banner-donate .btn-2 {
@@ -2116,14 +2142,6 @@ The accompaining Js is a very rudimentary implementaion just to show the basic f
         transform: scaleX(1); } }
 
 .report-header h1 {
-  font-family: var(--font-Display);
-  font-weight: 700;
-  font-size: calc(29.71691px + 0.61209vw);
-  line-height: 1.25;
-  letter-spacing: -.02em;
-  text-transform: capitalize;
-  margin-top: 0.5rem;
-  margin-bottom: 0.8rem;
   color: var(--color-Primary); }
 
 .report-content {
@@ -2953,11 +2971,6 @@ footer {
       padding-left: 25%;
       padding-right: 25%; } }
 
-.search-container .input {
-  width: 100%;
-  box-shadow: none;
-  border-radius: 52px 52px 52px 52px; }
-
 .search-container .search-field {
   position: relative;
   display: flex;
@@ -2978,14 +2991,32 @@ footer {
     justify-content: center;
     padding-right: 1rem;
     cursor: pointer; }
-  .search-container .search-field .input:focus + .search-in-field svg {
+  .search-container .search-field .input-pill:focus + .search-in-field svg {
     fill: var(--color-Secondary); }
 
 .search-results-header {
   min-height: 15rem;
   background-color: var(--color-Black);
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-top: 3rem;
+  padding-bottom: 1.25rem; }
+  @media screen and (min-width: 373px) {
+    .search-results-header {
+      padding-left: calc(7.5% + 17.5 * (100vw - 373px) / 396);
+      padding-right: calc(7.5% + 17.5 * (100vw - 373px) / 396); } }
+  @media screen and (min-width: 769px) {
+    .search-results-header {
+      padding-left: 25%;
+      padding-right: 25%; } }
+  .search-results-header .heading-2-sans {
+    color: var(--color-White); }
+  .search-results-header .search-term {
+    color: var(--color-Action-light);
+    border-top: 1px solid var(--color-Action-light);
+    padding-top: 0.5rem; }
 
 .search-suggestions-container {
   background-color: var(--color-White);
@@ -3011,6 +3042,25 @@ footer {
     z-index: 99; }
     .search-suggestions-container .search-suggestions-item:hover {
       background-color: var(--color-Action-light); }
+
+.filters-container {
+  border-top: 1px solid var(--color-lilac);
+  margin-top: 2rem;
+  padding-top: 0.5rem; }
+  .filters-container .filter-label {
+    font-weight: 700;
+    color: var(--color-White);
+    padding: 0.5rem 0; }
+  .filters-container[open] > .filter-label {
+    color: var(--color-Action-dark); }
+
+.filter-container {
+  margin-left: 1rem; }
+  .filter-container[open] .filter-label {
+    color: var(--color-Action-light); }
+
+.filter-label {
+  transition: all 200ms ease-out; }
 
 .block-featured {
   display: flex;

@@ -143,6 +143,7 @@ $side-icon_size: 2rem;
 $profile-picture-large-min: 144px;
 $profile-picture-large-max: 172px;
 $profile-picture-small: $profile-picture-large-min/2;
+$input-heigth: $height-1-max;
 
 @mixin blogs-block-header_height {
     @include fluid-type(height, $phone, $ultrahd, $btpHeader-size, 150px);

@@ -7,6 +7,17 @@
     letter-spacing: .1em;
 }
 
+%heading-2-base{
+    font-family: $Serif;
+    font-weight: $Bold;
+    font-size: $size-h2-fluid;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-transform: capitalize;
+    margin-top: $margin-horizontal-small;
+    margin-bottom: $margin-horizontal-regular;
+}
+
 @mixin smallest-sans-base  {
     font-family: $Sans;
     font-size: $size-smallest-fluid;
@@ -30,6 +41,10 @@
 
 @mixin small-text {
     @extend %small-text-base;
+}
+@mixin small-text-bold {
+    @extend %small-text-base;
+    font-weight: $Bold;
 }
 @mixin small-text-sans-2 {
     @extend %small-text-base;
@@ -79,14 +94,17 @@
 //////////////////HEADINGS
 
 @mixin heading-2 {
-    font-family: $Serif;
+    @extend %heading-2-base;
+}
+@mixin heading-2-sans {
+    @extend %heading-2-base;
+    font-family: $Sans;
+    font-weight: $Light;
+}
+@mixin heading-2-sans-bold {
+    @extend %heading-2-base;
+    font-family: $Sans;
     font-weight: $Bold;
-    font-size: $size-h2-fluid;
-    line-height: 1.25;
-    letter-spacing: -.02em;
-    text-transform: capitalize;
-    margin-top: $margin-horizontal-small;
-    margin-bottom: $margin-horizontal-regular;
 }
 
 @mixin heading-3 {

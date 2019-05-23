@@ -51,6 +51,15 @@ h4.column-header{
         margin-left: $padding-vertical-small/2
     }
 }
+.heading-2{
+    @include heading-2;
+    &-sans{
+        @include heading-2-sans;
+    }
+    &-sans-bold{
+        @include heading-2-sans-bold;
+    }
+}
 
 .heading-3{
     @include heading-3;
