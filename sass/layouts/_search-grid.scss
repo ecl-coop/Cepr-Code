@@ -1,6 +1,5 @@
-#home-grid{
+#search-grid{
     @include base-flex;
-    #block-latest{order:3;}
 
     @include media(">=tablet"){
         .grid-container{

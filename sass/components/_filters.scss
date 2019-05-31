@@ -6,6 +6,7 @@
         @include small-text-bold;
         color: $White;
         padding: $padding-horizontal-small 0;
+        cursor: pointer;
     }
     &[open]>.filter-label{
         color: $Yellow-dark;

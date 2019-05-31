@@ -3038,6 +3038,12 @@ footer {
   .search-container .search-field .input-pill:focus + .search-in-field svg {
     fill: var(--color-Secondary); }
 
+@media (min-width: 1024px) {
+  .search-container[data-state=closed] {
+    display: none; }
+  .search-container[data-state=open] {
+    top: 120px; } }
+
 .search-results-header {
   min-height: 15rem;
   background-color: var(--color-Black);
@@ -3121,7 +3127,8 @@ footer {
   .filters-container .filter-label {
     font-weight: 700;
     color: var(--color-White);
-    padding: 0.5rem 0; }
+    padding: 0.5rem 0;
+    cursor: pointer; }
   .filters-container[open] > .filter-label {
     color: var(--color-Action-dark); }
 

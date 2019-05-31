@@ -41,4 +41,13 @@
         }
 
     }
+    @include media(">=desktop"){
+        &[data-state=closed]{
+            display: none;
+        }
+        &[data-state=open]{
+            top: $menu-height-tablet;
+        }
+        
+    }
 }
