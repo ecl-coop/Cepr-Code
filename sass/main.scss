@@ -17,7 +17,7 @@
 @import "elements/logo.scss";
 @import "elements/paragraphs.scss";
 @import "elements/input";
-
+@import "elements/selectors";
 
 //components
 @import "components/article-hero.scss";
@@ -38,6 +38,7 @@
 @import "components/search-results-header";
 @import "components/search-suggestions";
 @import "components/filters";
+@import "components/sort-by";
 
 //blocks
 @import "blocks/block-featured.scss";

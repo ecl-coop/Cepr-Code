@@ -17,4 +17,19 @@
         align-items: center;
         justify-content: space-between;
     }
+    @include media(">=desktop"){
+        position: relative;
+        z-index: 2;
+        @include fluid-type(padding-left padding-right, $tablet, $desktop, 25%, 15%);
+        &:before{
+            content: "";
+            width: 200vw;
+            background-color: $Black;
+            height: 100%;
+            position: absolute;
+            left: -50%;
+            top: 0;
+            z-index: -1;
+        }
+    }
 }

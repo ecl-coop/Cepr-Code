@@ -17,6 +17,8 @@
     <script defer src="/js/sticky.js"></script>
     <script defer src="/js/Cutter.js"></script>
     <script defer src="/js/search.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function ()
         {
@@ -209,8 +211,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menubar__search">
-                        <button type="button" class="search-toggle is-hidden-mobile" data-toggle="collapse" data-target="#search-collapse">
+                    <li class="menubar__search-dkt">
+                        <button type="button" class="search-toggle is-hidden-mobile" data-toggle="collapse" data-state="closed" data-target="#search-collapse">
                             <svg width="24" height="24">
                                 <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-search"></use>
                             </svg>
@@ -257,32 +259,73 @@
                             <summary class="filter-label">filters</summary>
                             <details class="filter-container">
                                 <summary class="filter-label">keyword</summary>
-                                <input class="input-pill" type="text" placeholder="economic, politics, intervention...">
+                                <input class="input-pill" type="text" placeholder="Trump, intervention...">
                             </details>
                             <details class="filter-container">
                                 <summary class="filter-label">author</summary>
-                                <input class="input-pill" type="text" placeholder="Dean Baker, Mark Weisbrot, Deborah James...">
+                                <select class="input-pill filter-selector" name="authors">
+                                    <option value="" selected>-- Please choose an author --</option>
+                                    <option value="Dan Beeton" class="heading-6">Dan Beeton</option>
+                                    <option value="David Rosnick" class="heading-6">David Rosnick</option>
+                                    <option value="Dawn Niederhauser" class="heading-6">Dawn Niederhauser</option>
+                                    <option value="Dean Baker" class="heading-6">Dean Baker</option>
+                                    <option value="Eileen Appelbaum" class="heading-6">Eileen Appelbaum</option>
+                                    <option value="Mark Weisbrot" class="heading-6">Mark Weisbrot</option>
+                                </select>
                             </details>
                             <details class="filter-container">
                                 <summary class="filter-label">category</summary>
-                                <input class="input-pill" type="text" placeholder="Europe, Globalization, Latin Amerinca...">
+                                <select class="input-pill filter-selector" name="categs">
+                                    <option value="" selected>-- Please choose an category --</option>
+                                    <option value="World" class="selection-item heading-6">World</option>
+                                    <option value="Haiti" class="heading-6">Haiti</option>
+                                    <option value="Globalization and trade">Globalization and Trade</option>
+                                    <option value="Europe" class="heading-6">Europe</option>
+                                    <option value="Latin America" class="heading-6">Latin America and the Caribbean</option>
+                                    <option value="Foreign Policy" class="heading-6">US Foreign Policy</option>
+                                </select>
                             </details>
                             <details class="filter-container">
                                 <summary class="filter-label">type of publication</summary>
-                                <input class="input-pill" type="text" placeholder="report, article, presentation, data byte, event">
+                                <select class="input-pill filter-selector" name="pub-type">
+                                    <option value="" selected>-- Please choose an publication type --</option>
+                                        <option value="article" class="heading-6">Article</option>
+                                        <option value="presentation" class="heading-6">Presentation</option>
+                                        <option value="report" class="heading-6">Report</option>
+                                        <option value="data byte" class="heading-6">Data Byte</option>
+                                        <option value="press release" class="heading-6">Press Release</option>
+                                        <option value="event" class="heading-6">Event</option>
+                                </select>
                             </details>
                             <details class="filter-container">
                                 <summary class="filter-label">language</summary>
-                                <input class="input-pill" type="text" placeholder="filter selection by language">
+                                <select class="input-pill filter-selector" name="leng">
+                                    <option value="english" class="heading-6" selected>English</option>
+                                    <option value="spanish" class="heading-6">Spanish</option>
+                                    <option value="spanish" class="heading-6">Italian</option>
+                                </select>
                             </details>
                             <details class="filter-container">
                                 <summary class="filter-label">date</summary>
-                                <input class="input-pill" type="text" placeholder="filter selection by date">
+                                <input class="input-pill" type="date">
                             </details>
                         </details>
                     </div>
                 </header>
                 <section class="section" id="block-search-results">
+                    <header class="sort-by-container">
+                        <small class="tag">Sort by</small>
+                        <select class="sort-by-options" name="sort by">
+                            <option class="tag " selected>relevance</option>
+                            <option class="tag">date</option>
+                            <option class="tag">author</option>
+                        </select>
+                        <button type="button" class="btn-sort" data-state="down">
+                            <svg width="16" height="16">
+                                <use xlink:href="/img/symbol-defs.svg?v=1.0#icon-menu"></use>
+                            </svg>
+                        </button>
+                    </header>
                     <div class="block-list-2">
                         <dl class="list-2-container">
                             <dt class="list-2-item">

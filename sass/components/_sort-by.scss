@@ -1,0 +1,39 @@
+.sort-by-container{
+    display: flex;
+    width: 85%;
+    margin: $margin-horizontal-large auto;
+    padding-bottom: $padding-horizontal-medium;
+    border-bottom: 1px solid $Grey-light;
+    color: $Black;
+    .tag{
+        text-transform: capitalize;
+    }
+    .sort-by-options{
+        margin-left: $margin-vertical-normal;
+        text-transform: uppercase;
+        font-weight: $Bold;
+        letter-spacing: .05em;
+        text-decoration: underline;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+    }
+}
+.btn-sort{
+    cursor: pointer;
+    margin-left: $margin-vertical-small;
+    transform: scaleY(1);
+    transform-origin: center;
+    @include transition-basic;
+    &:hover{
+        svg{fill: $Orange;}
+    }
+    &:active{
+        
+    }
+    &[data-state = up]{
+        transform: scaleY(-1) translateY(4px);
+    }
+}

@@ -13,6 +13,10 @@
 }
 .filter-container{
     margin-left: $margin-vertical-normal;
+    .input-pill{
+        margin-left: -1rem;
+        width: calc(100% + 1rem);
+    }
     &[open]{
         .filter-label{
             color: $Yellow-light;

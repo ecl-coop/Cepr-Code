@@ -1,0 +1,17 @@
+.filter-selector{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-top: .5em;
+    font: $Sans;
+    &:focus{
+        background-color: $White;
+    }
+    .selection-item{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &:checked{
+            background-color: $Yellow-light;
+        }
+    }
+}
